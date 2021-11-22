@@ -14,7 +14,7 @@
         "topic": "infind/GRUPO8/datos",
         "qos": "2",
         "datatype": "auto",
-        "broker": "78a248d7449de1b6",
+        "broker": "b28d2bfe1e8b4833",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -39,7 +39,7 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "78a248d7449de1b6",
+        "broker": "b28d2bfe1e8b4833",
         "x": 850,
         "y": 1140,
         "wires": []
@@ -102,7 +102,6 @@
             [
                 "f4b8ba1d9952d4e1",
                 "8335d39d28c3a0a9",
-                "b709b709e990f518",
                 "14015571851fda49",
                 "1f50a55a51e07590",
                 "29dda00e30074bf9",
@@ -138,8 +137,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 80,
+        "x": 780,
+        "y": 100,
         "wires": [
             [
                 "263b2b126472c5a1"
@@ -177,40 +176,6 @@
         "wires": [
             [
                 "92e3ba809a991ec7"
-            ]
-        ]
-    },
-    {
-        "id": "b709b709e990f518",
-        "type": "change",
-        "z": "33fbaaef875ea5c7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.LED",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "LED",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 790,
-        "y": 260,
-        "wires": [
-            [
-                "b0cdfc55ad9cb9d4"
             ]
         ]
     },
@@ -281,8 +246,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1060,
-        "y": 260,
+        "x": 870,
+        "y": 800,
         "wires": []
     },
     {
@@ -304,8 +269,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 800,
-        "y": 340,
+        "x": 780,
+        "y": 240,
         "wires": [
             [
                 "8714da4e969f85be"
@@ -325,8 +290,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1060,
-        "y": 340,
+        "x": 1040,
+        "y": 240,
         "wires": []
     },
     {
@@ -355,8 +320,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 420,
+        "x": 770,
+        "y": 320,
         "wires": [
             [
                 "542d7461b620a251"
@@ -376,8 +341,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1050,
-        "y": 420,
+        "x": 1030,
+        "y": 320,
         "wires": []
     },
     {
@@ -406,8 +371,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 500,
+        "x": 770,
+        "y": 400,
         "wires": [
             [
                 "d3738e68ccf3a79c"
@@ -427,8 +392,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1050,
-        "y": 500,
+        "x": 1030,
+        "y": 400,
         "wires": []
     },
     {
@@ -457,8 +422,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 580,
+        "x": 770,
+        "y": 480,
         "wires": [
             [
                 "695df66e1486ee2a"
@@ -478,8 +443,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1050,
-        "y": 580,
+        "x": 1030,
+        "y": 480,
         "wires": []
     },
     {
@@ -508,8 +473,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 660,
+        "x": 760,
+        "y": 540,
         "wires": [
             [
                 "5218b6f43a6f7c14"
@@ -529,8 +494,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1050,
-        "y": 660,
+        "x": 1020,
+        "y": 540,
         "wires": []
     },
     {
@@ -566,7 +531,7 @@
         "type": "debug",
         "z": "33fbaaef875ea5c7",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -585,7 +550,7 @@
         "topic": "infind/GRUPO8/conexion",
         "qos": "2",
         "datatype": "auto",
-        "broker": "78a248d7449de1b6",
+        "broker": "b28d2bfe1e8b4833",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -683,10 +648,97 @@
         "wires": []
     },
     {
-        "id": "78a248d7449de1b6",
+        "id": "65bce2a68f578c69",
+        "type": "mqtt in",
+        "z": "33fbaaef875ea5c7",
+        "name": "",
+        "topic": "infind/GRUPO8/led/status",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b28d2bfe1e8b4833",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 250,
+        "y": 800,
+        "wires": [
+            [
+                "078dc4d776b4e0af"
+            ]
+        ]
+    },
+    {
+        "id": "8610af9403c98804",
+        "type": "debug",
+        "z": "33fbaaef875ea5c7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "93922e1b466db0a0",
+        "type": "change",
+        "z": "33fbaaef875ea5c7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Estado_LED",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "LED",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 800,
+        "wires": [
+            [
+                "b0cdfc55ad9cb9d4"
+            ]
+        ]
+    },
+    {
+        "id": "078dc4d776b4e0af",
+        "type": "json",
+        "z": "33fbaaef875ea5c7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 800,
+        "wires": [
+            [
+                "93922e1b466db0a0",
+                "8610af9403c98804"
+            ]
+        ]
+    },
+    {
+        "id": "b28d2bfe1e8b4833",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "iot.ac.uma.es",
+        "broker": "localhost",
         "port": "1883",
         "clientid": "",
         "usetls": false,
@@ -695,17 +747,14 @@
         "cleansession": true,
         "birthTopic": "",
         "birthQos": "0",
-        "birthRetain": "false",
         "birthPayload": "",
         "birthMsg": {},
         "closeTopic": "",
         "closeQos": "0",
-        "closeRetain": "false",
         "closePayload": "",
         "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willRetain": "false",
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
