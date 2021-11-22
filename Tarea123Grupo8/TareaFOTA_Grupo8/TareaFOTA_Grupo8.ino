@@ -7,7 +7,7 @@ ADC_MODE(ADC_VCC);
 
 
 // datos para actualización   >>>> SUSTITUIR IP <<<<<
-#define HTTP_OTA_ADDRESS      F("192.168.255.214")         // Address of OTA update server
+#define HTTP_OTA_ADDRESS      F("192.168.31.94")         // Address of OTA update server
 #define HTTP_OTA_PATH         F("/esp8266-ota/update") // Path to update firmware
 #define HTTP_OTA_PORT         1880                     // Port of update server
                                                        // Name of firmware
@@ -20,7 +20,7 @@ DHTesp dht;
 // Update these with values suitable for your network.
 const char* ssid = "masdoritos";
 const char* password = "12345678";
-const char* mqtt_server = "iot.ac.uma.es";
+const char* mqtt_server = "192.168.31.94";
 const char* mqtt_user = "infind";
 const char* mqtt_pass = "zancudo";
 const char* online = "{\"online\":true}" ;
@@ -28,13 +28,20 @@ const char* offline = "{\"online\":false}" ;
 
 char ID_PLACA[16];
 char topicPubDatos[256];
-char topic_estado[256];//"infind/GRUPOX/conexion"
+char topic_estado[256];//"infind/GRUPO8/conexion"
 char topicSubLed[256];
+char topicLedStatus[256];
+
 
 // GPIOs
 int LED1 = 2;  
 int LED2 = 16;
 int estadoLed = 0; 
+
+// ------
+unsigned long ultimo_mensaje=0;
+unsigned long ahora;
+char mensaje[192];
 
 // AÑADIDO NUEVA VERSIÓN
 
@@ -157,6 +164,7 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
   // compruebo el topic
     if(strcmp(topic,"infind/GRUPO8/led/cmd")==0)
   {
+    Serial.print("me llega el topic");
     StaticJsonDocument<512> root; // el tamaño tiene que ser adecuado para el mensaje
     // Deserialize the JSON document
     DeserializationError error = deserializeJson(root, mensaje);
@@ -172,6 +180,12 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
      valorLED = root["level"];
      Serial.print("Mensaje OK, level = ");
      Serial.println(valorLED);
+       if (valorLEDact != valorLED) {
+      
+        control_led();
+       
+        valorLEDact = valorLED;
+       }
     }
     else
     {
@@ -213,13 +227,19 @@ String serializaJSONDatos (struct registro_datos datos)
   return jsonString;
 }
 
-void control_led(){
+static void control_led(){
 
   int LEDPWM = map(valorLED,0,100,255,0);
 
   analogWrite(LED1,LEDPWM);
   
   estadoLed = valorLED;
+
+  snprintf(mensaje, 128, "{\"Estado_LED\": %d}",estadoLed);
+  Serial.println(mensaje);
+  mqtt_client.publish(topicLedStatus, mensaje);
+  digitalWrite(LED2, LOW); // enciende el led al enviar mensaje
+  
    
 } 
 
@@ -272,6 +292,9 @@ void setup() {
   sprintf(topicPubDatos,"infind/GRUPO8/datos");
   sprintf(topic_estado,"infind/GRUPO8/conexion");
   sprintf(topicSubLed, "infind/GRUPO8/led/cmd");
+  sprintf(topicLedStatus, "infind/GRUPO8/led/status");
+  
+  
   
   conecta_wifi();
   mqtt_client.setServer(mqtt_server, 1883);
@@ -285,9 +308,7 @@ void setup() {
 }
 
 //-----------------------------------------------------
-unsigned long ultimo_mensaje=0;
-unsigned long ahora;
-char mensaje[192];
+
 
 //-----------------------------------------------------
 //     LOOP
@@ -302,12 +323,6 @@ void loop() {
 
   registro_datos datos;
 
-  if (valorLEDact != valorLED) {
-    
-      control_led();
-     
-      valorLEDact = valorLED;
-  }
   
   if (ahora - ultimo_mensaje >= 5000) {
 
