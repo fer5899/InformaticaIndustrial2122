@@ -164,7 +164,7 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
   // compruebo el topic
     if(strcmp(topic,"infind/GRUPO8/led/cmd")==0)
   {
-    Serial.print("me llega el topic");
+    // Serial.print("me llega el topic");
     StaticJsonDocument<512> root; // el tamaño tiene que ser adecuado para el mensaje
     // Deserialize the JSON document
     DeserializationError error = deserializeJson(root, mensaje);
