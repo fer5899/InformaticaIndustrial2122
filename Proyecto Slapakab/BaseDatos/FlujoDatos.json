@@ -1,0 +1,1362 @@
+[
+    {
+        "id": "14ac0420f1a0bfc8",
+        "type": "tab",
+        "label": "Skapalab - USUARIOS",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1f38d0cc3e374536",
+        "type": "tab",
+        "label": "Skapalab - SALAS",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "78a248d7449de1b6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7896cb0adef157f1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b093064f46cccefd",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "0f7f6e70da20ca58",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "c2ae31caf04d2665",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "d93efa9076b0daa2",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "25f148d34d1b4bcc",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "756b7cc2b7d024d7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "23d4dc5f7ed4177b",
+        "type": "ui_group",
+        "name": "Conexión",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b3021d1356c5cfed",
+        "type": "ui_group",
+        "name": "Selección Límite Registros",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e7e7830bb32aa4a7",
+        "type": "ui_group",
+        "name": "Selección Temperatura Mínima",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "239abb42114b5977",
+        "type": "ui_group",
+        "name": "Últimos 5 Min",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "93e63aa002e4d7b9",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "bf7b51e9b29c1755",
+        "type": "ui_group",
+        "name": "Entre hace 5 y 15 min",
+        "tab": "",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "76d18b3dddc42797",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "2d81e295292d3fc2",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "dfefd42be31cab40",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0289aa265c3f7233",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9c5d72c032588f2c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "94c87523d3eb4c94",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "90808ee5d1be108a",
+        "type": "ui_group",
+        "name": "Registro Nuevos Usuarios",
+        "tab": "85e09d78d27b8f31",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "19c2994a8eb73f37",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "65423e4b22f2f48a",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "10b08af911daa1d3",
+        "type": "ui_group",
+        "name": "LEDs",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fc5c9554.5f0878",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "afb9672f.6b30b8",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "prueba",
+        "name": ""
+    },
+    {
+        "id": "76f6e655.008da8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "9a9120bb.a8527",
+        "type": "ui_group",
+        "name": "datos",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "4",
+        "collapse": false
+    },
+    {
+        "id": "a33007c1.35c758",
+        "type": "ui_group",
+        "name": "leds",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3436161c.29343a",
+        "type": "ui_group",
+        "name": "histograma",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "9",
+        "collapse": false
+    },
+    {
+        "id": "1c655ae2.f58ec5",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "f2aa349e568a7253",
+        "type": "ui_group",
+        "name": "Charts Sensores",
+        "tab": "",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1f4657ac2fc84d97",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e9f6dd8493d71a77",
+        "type": "ui_group",
+        "name": "InfoConexion",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "920348df260f9805",
+        "type": "ui_group",
+        "name": "SensoresJSON",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eb719ee8d219704a",
+        "type": "ui_group",
+        "name": "Lectura Sensor",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2ca33c1386643f30",
+        "type": "ui_link",
+        "name": "Link 2",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 2
+    },
+    {
+        "id": "4438be7ef4f489da",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ee5932a0611fb33d",
+        "type": "ui_group",
+        "name": "Lectura Luz",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "03d7cdc07a127a3a",
+        "type": "ui_group",
+        "name": "Lectura Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3421770fccb87a46",
+        "type": "ui_group",
+        "name": "LED",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f605fa69.8f5008",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "c7a3425e606353b2",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1f33bd2091f1c0f0",
+        "type": "telegram bot",
+        "botname": "minuevobot2020_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "f40f40be67917aaa",
+        "type": "telegram bot",
+        "botname": "previsionAEMET_InfInd_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "b207b4812b497d76",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "",
+        "name": ""
+    },
+    {
+        "id": "1ba31a8c9b757d77",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "85e09d78d27b8f31",
+        "type": "ui_tab",
+        "name": "Skapalab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f43a5b4958e02f1d",
+        "type": "mongodb in",
+        "z": "14ac0420f1a0bfc8",
+        "mongodb": "1ba31a8c9b757d77",
+        "name": "",
+        "collection": "usuarios",
+        "operation": "aggregate",
+        "x": 620,
+        "y": 460,
+        "wires": [
+            [
+                "cd065e45b0c8986a"
+            ]
+        ]
+    },
+    {
+        "id": "14fa4e813abdfe4f",
+        "type": "debug",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e6c1d90fcb8b31f3",
+        "type": "mongodb out",
+        "z": "14ac0420f1a0bfc8",
+        "mongodb": "1ba31a8c9b757d77",
+        "name": "",
+        "collection": "usuarios",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1460,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "04cd5bf34e830f6c",
+        "type": "inject",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 290,
+        "y": 460,
+        "wires": [
+            [
+                "f43a5b4958e02f1d"
+            ]
+        ]
+    },
+    {
+        "id": "cd065e45b0c8986a",
+        "type": "debug",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a2ae8fadec0d9792",
+        "type": "mongodb out",
+        "z": "14ac0420f1a0bfc8",
+        "mongodb": "1ba31a8c9b757d77",
+        "name": "",
+        "collection": "usuarios",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 600,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "ad0ca4fee9f2145d",
+        "type": "inject",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 270,
+        "y": 760,
+        "wires": [
+            [
+                "a2ae8fadec0d9792"
+            ]
+        ]
+    },
+    {
+        "id": "cea51155a13f4e7a",
+        "type": "comment",
+        "z": "14ac0420f1a0bfc8",
+        "name": "Lectura registros base de datos",
+        "info": "",
+        "x": 350,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "bd69588aadaf6be5",
+        "type": "comment",
+        "z": "14ac0420f1a0bfc8",
+        "name": "Borrado de la base de datos",
+        "info": "",
+        "x": 320,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "3306cdcbb10d881b",
+        "type": "comment",
+        "z": "14ac0420f1a0bfc8",
+        "name": "Registro en la base de datos",
+        "info": "",
+        "x": 340,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4e4a5209949de81b",
+        "type": "ui_form",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "label": "Registro Usuario",
+        "group": "90808ee5d1be108a",
+        "order": 7,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Nombre Completo",
+                "value": "Nombre",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Arranque",
+                "value": "Arranque",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Maker",
+                "value": "Maker",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Entusiasta",
+                "value": "Entusiasta",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Profesional",
+                "value": "Profesional",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Fecha Vencimiento",
+                "value": "Fecha Vencimiento",
+                "type": "date",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Acceso CNC",
+                "value": "Acceso CNC",
+                "type": "switch",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Acceso 3D",
+                "value": "Acceso 3D",
+                "type": "switch",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "ID NFC",
+                "value": "ID NFC",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Nombre": "",
+            "Arranque": false,
+            "Maker": false,
+            "Entusiasta": false,
+            "Profesional": false,
+            "Fecha Vencimiento": "",
+            "Acceso CNC": false,
+            "Acceso 3D": false,
+            "ID NFC": ""
+        },
+        "payload": "",
+        "submit": "Registrar",
+        "cancel": "Cancelar",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            [
+                "432994aec261ee98",
+                "fd9d1ca6b67cabf4"
+            ]
+        ]
+    },
+    {
+        "id": "432994aec261ee98",
+        "type": "debug",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fd9d1ca6b67cabf4",
+        "type": "function",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "func": "var Arranque = msg.payload.Arranque;\nvar Maker = msg.payload.Maker;\nvar Entusiasta = msg.payload.Entusiasta;\nvar Profesional = msg.payload.Profesional; \n\nif (Arranque == true)\n{\n    msg.payload.Suscipcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.Suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.Suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.Suscripcion = \"Profesional\"\n}\n\nmsg.payload.date = new Date();\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 160,
+        "wires": [
+            [
+                "d79fccf665ac811d"
+            ]
+        ]
+    },
+    {
+        "id": "d79fccf665ac811d",
+        "type": "change",
+        "z": "14ac0420f1a0bfc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload.Arranque",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.Maker",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.Entusiasta",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.Profesional",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 160,
+        "wires": [
+            [
+                "e6c1d90fcb8b31f3",
+                "14fa4e813abdfe4f"
+            ]
+        ]
+    },
+    {
+        "id": "9dd35d02baf71c19",
+        "type": "debug",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d94a0a21640dcfa7",
+        "type": "mongodb out",
+        "z": "1f38d0cc3e374536",
+        "mongodb": "1ba31a8c9b757d77",
+        "name": "",
+        "collection": "reservas",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 960,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "291b58039841a669",
+        "type": "mongodb in",
+        "z": "1f38d0cc3e374536",
+        "mongodb": "1ba31a8c9b757d77",
+        "name": "",
+        "collection": "reservas",
+        "operation": "aggregate",
+        "x": 520,
+        "y": 640,
+        "wires": [
+            [
+                "0c2a3b01ef7e97d5"
+            ]
+        ]
+    },
+    {
+        "id": "5fd1170bda9fd332",
+        "type": "inject",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 640,
+        "wires": [
+            [
+                "291b58039841a669"
+            ]
+        ]
+    },
+    {
+        "id": "6c07a8c0963a9cd2",
+        "type": "debug",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "bd34aecfe2e658f9",
+        "type": "mongodb out",
+        "z": "1f38d0cc3e374536",
+        "mongodb": "1ba31a8c9b757d77",
+        "name": "",
+        "collection": "reservas",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 520,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "bc612763825d1d22",
+        "type": "inject",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 820,
+        "wires": [
+            [
+                "bd34aecfe2e658f9"
+            ]
+        ]
+    },
+    {
+        "id": "9b9d9c8a62a2a2b7",
+        "type": "comment",
+        "z": "1f38d0cc3e374536",
+        "name": "Lectura registros base de datos",
+        "info": "",
+        "x": 250,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "27f3da4322f34b53",
+        "type": "comment",
+        "z": "1f38d0cc3e374536",
+        "name": "Borrado de la base de datos",
+        "info": "",
+        "x": 240,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "b1f33e41829dd901",
+        "type": "function",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "func": "msg.payload.id_usuario = 123;\nmsg.payload.sala = \"3D\"; \nmsg.payload.hora_inicio = 15; \nmsg.payload.hora_fin = 18; \n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "9dd35d02baf71c19",
+                "d94a0a21640dcfa7"
+            ]
+        ]
+    },
+    {
+        "id": "ec83f587edebd493",
+        "type": "inject",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "b1f33e41829dd901"
+            ]
+        ]
+    },
+    {
+        "id": "a2608ef290ea3bec",
+        "type": "function",
+        "z": "1f38d0cc3e374536",
+        "name": "Variables Globales",
+        "func": "var aforo_max_CNC; \nvar aforo_max_3D;\nvar aforo_real_CNC;\nvar aforo_real_3D;\nvar num_accesos_CNC;\nvar num_accesos_3D;\n\nglobal.set(\"aforo_max_CNC\",2); \nglobal.set(\"aforo_max_3D\",4); \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c2a3b01ef7e97d5",
+        "type": "function",
+        "z": "1f38d0cc3e374536",
+        "name": "",
+        "func": "db.reservas.aggregate([\n    {$match: {sala: \"3D\"}}\n    \n    ])\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 640,
+        "wires": [
+            [
+                "6c07a8c0963a9cd2"
+            ]
+        ]
+    }
+]
