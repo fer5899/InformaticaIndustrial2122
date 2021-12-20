@@ -12,6 +12,9 @@
                                                        // Name of firmware
 #define HTTP_OTA_VERSION      String(__FILE__).substring(String(__FILE__).lastIndexOf('\\')+1) + ".nodemcu" 
 
+// numero de puerta (cambiar para cada modulo)
+#define N_PUERTA  1
+
 WiFiClient wClient;
 PubSubClient mqtt_client(wClient);
 
@@ -19,20 +22,25 @@ PubSubClient mqtt_client(wClient);
 const char* ssid = "masdoritos";
 const char* password = "12345678";
 const char* mqtt_server = "192.168.31.94";
-/*
-const char* mqtt_user = "infind";
-const char* mqtt_pass = "zancudo";
-*/
+
+const char* mqtt_user = "";
+const char* mqtt_pass = "";
+
 
 // Definiciones de chars (nombres para topics y otros datos)
 
 char ID_PLACA[16];
-/*
-char topicPubDatos[256];
-char topicSubLed[256];
-char topicLedStatus[256];
-char mensaje[192];
-*/
+char topicPubIDmatch[256];
+char topicPubIDunmatch[256];
+char topicPubEstado[256];
+char topicPubUpdateCache[256];
+char topicPubEstadoPuerta[256];
+
+char topicSubCache[256];
+char topicSubAbrir[256];
+
+const char* online = "{\"online\":true}" ;
+const char* offline = "{\"online\":false}" ;
 
 // GPIOs
 
@@ -127,11 +135,11 @@ void conecta_mqtt() {
   while (!mqtt_client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    if (mqtt_client.connect(ID_PLACA)) { //, mqtt_user, mqtt_pass,topic_estado,0,true,offline)) {  //connect (clientID, [username, password], [willTopic, willQoS, willRetain, willMessage], [cleanSession])
+    if (mqtt_client.connect(ID_PLACA, mqtt_user, mqtt_pass,topicPubEstado,0,true,offline)) {  //connect (clientID, [username, password], [willTopic, willQoS, willRetain, willMessage], [cleanSession])
       Serial.printf(" conectado a broker: %s\n",mqtt_server);
-      //mqtt_client.publish(topic_estado,online,true);
-      //mqtt_client.subscribe(topicSubLed);
-      
+      mqtt_client.subscribe(topicSubCache);
+      mqtt_client.subscribe(topicSubAbrir);
+      mqtt_client.publish(topicPubEstado,online,true);
     } else {
       Serial.printf("failed, rc=%d  try again in 5s\n", mqtt_client.state());
       // Wait 5 seconds before retrying
@@ -156,15 +164,15 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);    // inicializa GPIO como salida  
   digitalWrite(LED_BUILTIN, HIGH); // apaga el led
 
-  // AÑADIDO NUEVA VERSIÓN
-
   sprintf(ID_PLACA, "ESP_%d", ESP.getChipId());
-  /*
-  sprintf(topicPubDatos,"infind/GRUPO8/datos");
-  sprintf(topic_estado,"infind/GRUPO8/conexion");
-  sprintf(topicSubLed, "infind/GRUPO8/led/cmd");
-  sprintf(topicLedStatus, "infind/GRUPO8/led/status");
-  */
+  sprintf(topicPubIDmatch,"puerta_%d/ID_detectado/match",N_PUERTA);  
+  sprintf(topicPubIDunmatch,"puerta_%d/ID_detectado/unmatch",N_PUERTA);
+  sprintf(topicPubEstado,"puerta_%d/estado",N_PUERTA);
+  sprintf(topicPubUpdateCache,"puerta_%d/IDs_cache/update",N_PUERTA);
+  sprintf(topicPubEstadoPuerta,"puerta_%d/puerta/estado",N_PUERTA);
+  
+  sprintf(topicSubCache,"puerta_%d/IDs_cache");
+  sprintf(topicSubAbrir,"puerta_%d/puerta/abrir");
   
   conecta_wifi();
   mqtt_client.setServer(mqtt_server, 1883);
