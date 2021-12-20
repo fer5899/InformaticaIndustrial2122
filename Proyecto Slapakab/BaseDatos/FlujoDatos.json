@@ -1,20 +1,20 @@
 [
     {
-        "id": "14ac0420f1a0bfc8",
+        "id": "4261ebd7f96bb503",
         "type": "tab",
         "label": "Skapalab - USUARIOS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "1f38d0cc3e374536",
+        "id": "a8ee48fc3248decb",
         "type": "tab",
         "label": "Skapalab - SALAS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "78a248d7449de1b6",
+        "id": "d1bd5f5047fbe178",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -26,101 +26,42 @@
         "cleansession": true,
         "birthTopic": "",
         "birthQos": "0",
-        "birthRetain": "false",
         "birthPayload": "",
         "birthMsg": {},
         "closeTopic": "",
         "closeQos": "0",
-        "closeRetain": "false",
         "closePayload": "",
         "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willRetain": "false",
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
     },
     {
-        "id": "7896cb0adef157f1",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "iot.ac.uma.es",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "id": "b4eb3d3dca556878",
+        "type": "ui_group",
+        "name": "Historiales",
+        "tab": "",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
-        "id": "b093064f46cccefd",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
+        "id": "e18675c0e8491a0e",
+        "type": "ui_group",
+        "name": "Gauges",
+        "tab": "",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
-        "id": "0f7f6e70da20ca58",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "c2ae31caf04d2665",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "d93efa9076b0daa2",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "25f148d34d1b4bcc",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "756b7cc2b7d024d7",
+        "id": "0d8ab506c19c508b",
         "type": "ui_base",
         "theme": {
             "name": "theme-light",
@@ -217,91 +158,6 @@
         }
     },
     {
-        "id": "23d4dc5f7ed4177b",
-        "type": "ui_group",
-        "name": "Conexión",
-        "tab": "",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "b3021d1356c5cfed",
-        "type": "ui_group",
-        "name": "Selección Límite Registros",
-        "tab": "",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "e7e7830bb32aa4a7",
-        "type": "ui_group",
-        "name": "Selección Temperatura Mínima",
-        "tab": "",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "239abb42114b5977",
-        "type": "ui_group",
-        "name": "Últimos 5 Min",
-        "tab": "",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "93e63aa002e4d7b9",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "bf7b51e9b29c1755",
-        "type": "ui_group",
-        "name": "Entre hace 5 y 15 min",
-        "tab": "",
-        "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "76d18b3dddc42797",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "2d81e295292d3fc2",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
         "id": "dfefd42be31cab40",
         "type": "mqtt-broker",
         "name": "",
@@ -327,35 +183,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "0289aa265c3f7233",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "iot.ac.uma.es",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "9c5d72c032588f2c",
+        "id": "e151e1d008301ff9",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -380,9 +208,34 @@
         "sessionExpiry": ""
     },
     {
-        "id": "94c87523d3eb4c94",
+        "id": "2de6eedc1fa4c588",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4cbc01ddfb07fefc",
         "type": "ui_group",
-        "name": "Sensores",
+        "name": "SENSORS DATA",
         "tab": "",
         "order": 2,
         "disp": true,
@@ -391,10 +244,10 @@
         "className": ""
     },
     {
-        "id": "90808ee5d1be108a",
+        "id": "4421c708cfe58085",
         "type": "ui_group",
-        "name": "Registro Nuevos Usuarios",
-        "tab": "85e09d78d27b8f31",
+        "name": "CONTROL LEDS",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -402,7 +255,221 @@
         "className": ""
     },
     {
-        "id": "19c2994a8eb73f37",
+        "id": "5ed624a9a6edd788",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b2c1b570479ce91e",
+        "type": "ui_group",
+        "name": "Humedad",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c57fbfa6ca334690",
+        "type": "ui_group",
+        "name": "Presión",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "071c847d45d8d3b4",
+        "type": "ui_group",
+        "name": "Iluminación",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "100866f60dd6b3cb",
+        "type": "ui_group",
+        "name": "Conexión",
+        "tab": "",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e5b8784f5838f34a",
+        "type": "mongodb",
+        "hostname": "localhost",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "prueba",
+        "name": ""
+    },
+    {
+        "id": "45a7d5cc.b3cb3c",
+        "type": "ui_group",
+        "name": "Registros de los últimos 10 minutos desde hace 5 minutos",
+        "tab": "ff6ad649.003498",
+        "order": 1,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ff6ad649.003498",
+        "type": "ui_tab",
+        "name": "Ejemplo Mongo",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f62ab646e3b2c7d9",
+        "type": "ui_group",
+        "name": "Últimos Datos",
+        "tab": "ff6ad649.003498",
+        "order": 3,
+        "disp": false,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a2b23a377738b01a",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "ff6ad649.003498",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "48b06cea27af03c7",
+        "type": "ui_group",
+        "name": "Registros por temperatura",
+        "tab": "ff6ad649.003498",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f605fa69.8f5008",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "c7a3425e606353b2",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a0ee0fa8eae04a85",
+        "type": "telegram bot",
+        "botname": "AemetFernando2122_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "00a8d7012236d5d9",
+        "type": "telegram bot",
+        "botname": "SkapaLaBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "3cc01e3e385d0ded",
+        "type": "chatbot-telegram-node",
+        "botname": "SkapaLaBot",
+        "usernames": "",
+        "token": "5084907312:AAFDpRGPmrdDihcbN7ZjePncQ779rPZBYWc",
+        "providerToken": "",
+        "polling": "1",
+        "store": "",
+        "log": "",
+        "debug": false,
+        "webHook": "",
+        "connectMode": "polling"
+    },
+    {
+        "id": "6052dbb45f086c0c",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -430,7 +497,223 @@
         "sessionExpiry": ""
     },
     {
-        "id": "65423e4b22f2f48a",
+        "id": "dfeb4f7103d9f61a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "06c2acdce6287ce8",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "c3c8c1dd31f8b3c2",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "3bb0542f487e3e1a",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "14e5d3c3240e4ad3",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "2b4119c5ef03bd25",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "ecffd46b17c1adab",
+        "type": "ui_group",
+        "name": "Conexión",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "aafa679d29e9b741",
+        "type": "ui_group",
+        "name": "Selección Límite Registros",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c4b6a79009246dff",
+        "type": "ui_group",
+        "name": "Selección Temperatura Mínima",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "45d5d3385eeb423a",
+        "type": "ui_group",
+        "name": "Últimos 5 Min",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "da4e1fc8a237efff",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "2285489cb233f453",
+        "type": "ui_group",
+        "name": "Entre hace 5 y 15 min",
+        "tab": "",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5fa4ef561478b77c",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "1fcd809c305f1425",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "7056efce268b6a61",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "20b866865426f373",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "424be61cede35da8",
         "type": "ui_group",
         "name": "Sensores",
         "tab": "",
@@ -441,7 +724,57 @@
         "className": ""
     },
     {
-        "id": "10b08af911daa1d3",
+        "id": "70462dfdf7f2eace",
+        "type": "ui_group",
+        "name": "Registro Nuevos Usuarios",
+        "tab": "a8f33caba2aa5d3b",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3d710e6c9d34e39f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "505ab5e52d2009b7",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ebb0b39abcf4d936",
         "type": "ui_group",
         "name": "LEDs",
         "tab": "",
@@ -452,7 +785,7 @@
         "className": ""
     },
     {
-        "id": "fc5c9554.5f0878",
+        "id": "fc64d651a2d05233",
         "type": "mqtt-broker",
         "name": "",
         "broker": "localhost",
@@ -473,7 +806,7 @@
         "willPayload": ""
     },
     {
-        "id": "afb9672f.6b30b8",
+        "id": "a3eb2672e3840940",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "port": "27017",
@@ -481,7 +814,7 @@
         "name": ""
     },
     {
-        "id": "76f6e655.008da8",
+        "id": "9ce1de9f1272e4dd",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -502,7 +835,7 @@
         "willPayload": ""
     },
     {
-        "id": "9a9120bb.a8527",
+        "id": "b3794ed6f8c3e20a",
         "type": "ui_group",
         "name": "datos",
         "tab": "",
@@ -512,7 +845,7 @@
         "collapse": false
     },
     {
-        "id": "a33007c1.35c758",
+        "id": "3b13d5b67d91ad68",
         "type": "ui_group",
         "name": "leds",
         "tab": "",
@@ -522,7 +855,7 @@
         "collapse": false
     },
     {
-        "id": "3436161c.29343a",
+        "id": "241262896ec7fcce",
         "type": "ui_group",
         "name": "histograma",
         "tab": "",
@@ -532,7 +865,7 @@
         "collapse": false
     },
     {
-        "id": "1c655ae2.f58ec5",
+        "id": "abbb632609badef9",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "port": "27017",
@@ -540,7 +873,7 @@
         "name": ""
     },
     {
-        "id": "f2aa349e568a7253",
+        "id": "e85f19f301f7812b",
         "type": "ui_group",
         "name": "Charts Sensores",
         "tab": "",
@@ -551,7 +884,7 @@
         "className": ""
     },
     {
-        "id": "1f4657ac2fc84d97",
+        "id": "702137777bfe85cf",
         "type": "ui_group",
         "name": "Sensores",
         "tab": "",
@@ -562,7 +895,7 @@
         "className": ""
     },
     {
-        "id": "e9f6dd8493d71a77",
+        "id": "1582e24ef93461b2",
         "type": "ui_group",
         "name": "InfoConexion",
         "tab": "",
@@ -573,7 +906,7 @@
         "className": ""
     },
     {
-        "id": "920348df260f9805",
+        "id": "0e25cd81a5d4415e",
         "type": "ui_group",
         "name": "SensoresJSON",
         "tab": "",
@@ -584,7 +917,7 @@
         "className": ""
     },
     {
-        "id": "eb719ee8d219704a",
+        "id": "704d13f14caa9384",
         "type": "ui_group",
         "name": "Lectura Sensor",
         "tab": "",
@@ -595,7 +928,7 @@
         "className": ""
     },
     {
-        "id": "2ca33c1386643f30",
+        "id": "6c5e0601d320acc5",
         "type": "ui_link",
         "name": "Link 2",
         "icon": "open_in_browser",
@@ -603,7 +936,7 @@
         "order": 2
     },
     {
-        "id": "4438be7ef4f489da",
+        "id": "b84bfdaa0c66f4ef",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -631,7 +964,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "ee5932a0611fb33d",
+        "id": "63b729607f721f51",
         "type": "ui_group",
         "name": "Lectura Luz",
         "tab": "",
@@ -642,7 +975,7 @@
         "className": ""
     },
     {
-        "id": "03d7cdc07a127a3a",
+        "id": "78f58297a8492ba1",
         "type": "ui_group",
         "name": "Lectura Sensores",
         "tab": "",
@@ -653,7 +986,7 @@
         "className": ""
     },
     {
-        "id": "3421770fccb87a46",
+        "id": "48fbf5099aa6392e",
         "type": "ui_group",
         "name": "LED",
         "tab": "",
@@ -664,44 +997,7 @@
         "className": ""
     },
     {
-        "id": "f605fa69.8f5008",
-        "type": "mongodb",
-        "hostname": "127.0.0.1",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "ejercicio",
-        "name": ""
-    },
-    {
-        "id": "c7a3425e606353b2",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "iot.ac.uma.es",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "1f33bd2091f1c0f0",
+        "id": "69d325a87dd6f30a",
         "type": "telegram bot",
         "botname": "minuevobot2020_bot",
         "usernames": "",
@@ -725,7 +1021,7 @@
         "verboselogging": false
     },
     {
-        "id": "f40f40be67917aaa",
+        "id": "ac0802755d02097d",
         "type": "telegram bot",
         "botname": "previsionAEMET_InfInd_bot",
         "usernames": "",
@@ -749,7 +1045,7 @@
         "verboselogging": false
     },
     {
-        "id": "b207b4812b497d76",
+        "id": "34b41b2a197775ab",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -759,7 +1055,7 @@
         "name": ""
     },
     {
-        "id": "1ba31a8c9b757d77",
+        "id": "2e604f11a27a3a2f",
         "type": "mongodb",
         "hostname": "iot.ac.uma.es",
         "topology": "direct",
@@ -769,7 +1065,7 @@
         "name": ""
     },
     {
-        "id": "85e09d78d27b8f31",
+        "id": "a8f33caba2aa5d3b",
         "type": "ui_tab",
         "name": "Skapalab",
         "icon": "dashboard",
@@ -777,10 +1073,10 @@
         "hidden": false
     },
     {
-        "id": "f43a5b4958e02f1d",
+        "id": "2172d09c7291d370",
         "type": "mongodb in",
-        "z": "14ac0420f1a0bfc8",
-        "mongodb": "1ba31a8c9b757d77",
+        "z": "4261ebd7f96bb503",
+        "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "usuarios",
         "operation": "aggregate",
@@ -788,14 +1084,14 @@
         "y": 460,
         "wires": [
             [
-                "cd065e45b0c8986a"
+                "dc85d97060446132"
             ]
         ]
     },
     {
-        "id": "14fa4e813abdfe4f",
+        "id": "81e0c4b49da09df5",
         "type": "debug",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -810,10 +1106,10 @@
         "wires": []
     },
     {
-        "id": "e6c1d90fcb8b31f3",
+        "id": "394021f73750de7d",
         "type": "mongodb out",
-        "z": "14ac0420f1a0bfc8",
-        "mongodb": "1ba31a8c9b757d77",
+        "z": "4261ebd7f96bb503",
+        "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "usuarios",
         "payonly": true,
@@ -825,9 +1121,9 @@
         "wires": []
     },
     {
-        "id": "04cd5bf34e830f6c",
+        "id": "72af7c3318c929f3",
         "type": "inject",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
         "props": [
             {
@@ -849,16 +1145,16 @@
         "y": 460,
         "wires": [
             [
-                "f43a5b4958e02f1d"
+                "2172d09c7291d370"
             ]
         ]
     },
     {
-        "id": "cd065e45b0c8986a",
+        "id": "dc85d97060446132",
         "type": "debug",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -870,10 +1166,10 @@
         "wires": []
     },
     {
-        "id": "a2ae8fadec0d9792",
+        "id": "ecaf6395563eb600",
         "type": "mongodb out",
-        "z": "14ac0420f1a0bfc8",
-        "mongodb": "1ba31a8c9b757d77",
+        "z": "4261ebd7f96bb503",
+        "mongodb": "2e604f11a27a3a2f",
         "name": "",
         "collection": "usuarios",
         "payonly": true,
@@ -885,9 +1181,9 @@
         "wires": []
     },
     {
-        "id": "ad0ca4fee9f2145d",
+        "id": "4b12cd1a7068b1e0",
         "type": "inject",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
         "props": [
             {
@@ -909,14 +1205,14 @@
         "y": 760,
         "wires": [
             [
-                "a2ae8fadec0d9792"
+                "ecaf6395563eb600"
             ]
         ]
     },
     {
-        "id": "cea51155a13f4e7a",
+        "id": "bb9333a493a392dd",
         "type": "comment",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "Lectura registros base de datos",
         "info": "",
         "x": 350,
@@ -924,9 +1220,9 @@
         "wires": []
     },
     {
-        "id": "bd69588aadaf6be5",
+        "id": "fcea2e24d3fb2e38",
         "type": "comment",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "Borrado de la base de datos",
         "info": "",
         "x": 320,
@@ -934,9 +1230,9 @@
         "wires": []
     },
     {
-        "id": "3306cdcbb10d881b",
+        "id": "6d9580262b4d324e",
         "type": "comment",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "Registro en la base de datos",
         "info": "",
         "x": 340,
@@ -944,12 +1240,12 @@
         "wires": []
     },
     {
-        "id": "4e4a5209949de81b",
+        "id": "cc04bdedc8a78743",
         "type": "ui_form",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
         "label": "Registro Usuario",
-        "group": "90808ee5d1be108a",
+        "group": "70462dfdf7f2eace",
         "order": 7,
         "width": "0",
         "height": "0",
@@ -1040,15 +1336,15 @@
         "y": 160,
         "wires": [
             [
-                "432994aec261ee98",
-                "fd9d1ca6b67cabf4"
+                "5973eef501b196aa",
+                "fa8deef377c530f2"
             ]
         ]
     },
     {
-        "id": "432994aec261ee98",
+        "id": "5973eef501b196aa",
         "type": "debug",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1062,11 +1358,11 @@
         "wires": []
     },
     {
-        "id": "fd9d1ca6b67cabf4",
+        "id": "fa8deef377c530f2",
         "type": "function",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
-        "func": "var Arranque = msg.payload.Arranque;\nvar Maker = msg.payload.Maker;\nvar Entusiasta = msg.payload.Entusiasta;\nvar Profesional = msg.payload.Profesional; \n\nif (Arranque == true)\n{\n    msg.payload.Suscipcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.Suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.Suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.Suscripcion = \"Profesional\"\n}\n\nmsg.payload.date = new Date();\n\nreturn msg;",
+        "func": "var Arranque = msg.payload.Arranque;\nvar Maker = msg.payload.Maker;\nvar Entusiasta = msg.payload.Entusiasta;\nvar Profesional = msg.payload.Profesional; \n\nif (Arranque == true)\n{\n    msg.payload.Suscripcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.Suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.Suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.Suscripcion = \"Profesional\"\n}\n\nmsg.payload.date = new Date();\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1076,14 +1372,14 @@
         "y": 160,
         "wires": [
             [
-                "d79fccf665ac811d"
+                "ecf1278676838dc2"
             ]
         ]
     },
     {
-        "id": "d79fccf665ac811d",
+        "id": "ecf1278676838dc2",
         "type": "change",
-        "z": "14ac0420f1a0bfc8",
+        "z": "4261ebd7f96bb503",
         "name": "",
         "rules": [
             {
@@ -1116,15 +1412,15 @@
         "y": 160,
         "wires": [
             [
-                "e6c1d90fcb8b31f3",
-                "14fa4e813abdfe4f"
+                "394021f73750de7d",
+                "81e0c4b49da09df5"
             ]
         ]
     },
     {
-        "id": "9dd35d02baf71c19",
+        "id": "5ad5ad74da4b38d3",
         "type": "debug",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1139,10 +1435,10 @@
         "wires": []
     },
     {
-        "id": "d94a0a21640dcfa7",
+        "id": "cdc7cd0e452c49c3",
         "type": "mongodb out",
-        "z": "1f38d0cc3e374536",
-        "mongodb": "1ba31a8c9b757d77",
+        "z": "a8ee48fc3248decb",
+        "mongodb": "2e604f11a27a3a2f",
         "name": "",
         "collection": "reservas",
         "payonly": true,
@@ -1154,10 +1450,10 @@
         "wires": []
     },
     {
-        "id": "291b58039841a669",
+        "id": "fecdf714a15e1f2d",
         "type": "mongodb in",
-        "z": "1f38d0cc3e374536",
-        "mongodb": "1ba31a8c9b757d77",
+        "z": "a8ee48fc3248decb",
+        "mongodb": "2e604f11a27a3a2f",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -1165,14 +1461,14 @@
         "y": 640,
         "wires": [
             [
-                "0c2a3b01ef7e97d5"
+                "e0f639e0dc96f3ad"
             ]
         ]
     },
     {
-        "id": "5fd1170bda9fd332",
+        "id": "c0a785af1a4fe760",
         "type": "inject",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "props": [
             {
@@ -1194,14 +1490,14 @@
         "y": 640,
         "wires": [
             [
-                "291b58039841a669"
+                "fecdf714a15e1f2d"
             ]
         ]
     },
     {
-        "id": "6c07a8c0963a9cd2",
+        "id": "5b45faa0f63d3bde",
         "type": "debug",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -1215,10 +1511,10 @@
         "wires": []
     },
     {
-        "id": "bd34aecfe2e658f9",
+        "id": "6018bb4c042c56fe",
         "type": "mongodb out",
-        "z": "1f38d0cc3e374536",
-        "mongodb": "1ba31a8c9b757d77",
+        "z": "a8ee48fc3248decb",
+        "mongodb": "2e604f11a27a3a2f",
         "name": "",
         "collection": "reservas",
         "payonly": true,
@@ -1230,9 +1526,9 @@
         "wires": []
     },
     {
-        "id": "bc612763825d1d22",
+        "id": "5c58386097e8f994",
         "type": "inject",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "props": [
             {
@@ -1254,14 +1550,14 @@
         "y": 820,
         "wires": [
             [
-                "bd34aecfe2e658f9"
+                "6018bb4c042c56fe"
             ]
         ]
     },
     {
-        "id": "9b9d9c8a62a2a2b7",
+        "id": "93bd3bac41eeba8f",
         "type": "comment",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "Lectura registros base de datos",
         "info": "",
         "x": 250,
@@ -1269,9 +1565,9 @@
         "wires": []
     },
     {
-        "id": "27f3da4322f34b53",
+        "id": "cbccf7e8a66ad06a",
         "type": "comment",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "Borrado de la base de datos",
         "info": "",
         "x": 240,
@@ -1279,9 +1575,9 @@
         "wires": []
     },
     {
-        "id": "b1f33e41829dd901",
+        "id": "b9562630dd7d80a1",
         "type": "function",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "func": "msg.payload.id_usuario = 123;\nmsg.payload.sala = \"3D\"; \nmsg.payload.hora_inicio = 15; \nmsg.payload.hora_fin = 18; \n\n\nreturn msg;",
         "outputs": 1,
@@ -1293,15 +1589,15 @@
         "y": 260,
         "wires": [
             [
-                "9dd35d02baf71c19",
-                "d94a0a21640dcfa7"
+                "5ad5ad74da4b38d3",
+                "cdc7cd0e452c49c3"
             ]
         ]
     },
     {
-        "id": "ec83f587edebd493",
+        "id": "06595af7a82810e3",
         "type": "inject",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "props": [
             {
@@ -1319,14 +1615,14 @@
         "y": 260,
         "wires": [
             [
-                "b1f33e41829dd901"
+                "b9562630dd7d80a1"
             ]
         ]
     },
     {
-        "id": "a2608ef290ea3bec",
+        "id": "9f8fbef204e002cb",
         "type": "function",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "Variables Globales",
         "func": "var aforo_max_CNC; \nvar aforo_max_3D;\nvar aforo_real_CNC;\nvar aforo_real_3D;\nvar num_accesos_CNC;\nvar num_accesos_3D;\n\nglobal.set(\"aforo_max_CNC\",2); \nglobal.set(\"aforo_max_3D\",4); \n",
         "outputs": 1,
@@ -1341,9 +1637,9 @@
         ]
     },
     {
-        "id": "0c2a3b01ef7e97d5",
+        "id": "e0f639e0dc96f3ad",
         "type": "function",
-        "z": "1f38d0cc3e374536",
+        "z": "a8ee48fc3248decb",
         "name": "",
         "func": "db.reservas.aggregate([\n    {$match: {sala: \"3D\"}}\n    \n    ])\nreturn msg;",
         "outputs": 1,
@@ -1355,7 +1651,7 @@
         "y": 640,
         "wires": [
             [
-                "6c07a8c0963a9cd2"
+                "5b45faa0f63d3bde"
             ]
         ]
     }

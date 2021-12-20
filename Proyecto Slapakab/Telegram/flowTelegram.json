@@ -16,7 +16,7 @@
         "passThrough": false,
         "errorOutput": false,
         "outputs": 0,
-        "x": 930,
+        "x": 1150,
         "y": 80,
         "wires": []
     },
@@ -98,7 +98,7 @@
         "y": 140,
         "wires": [
             [
-                "8d9a42c9a537990e"
+                "88b9d079a8553d3e"
             ]
         ]
     },
@@ -117,7 +117,7 @@
         "y": 200,
         "wires": [
             [
-                "8d9a42c9a537990e"
+                "88b9d079a8553d3e"
             ]
         ]
     },
@@ -136,7 +136,7 @@
         "y": 80,
         "wires": [
             [
-                "8d9a42c9a537990e"
+                "88b9d079a8553d3e"
             ]
         ]
     },
@@ -155,7 +155,7 @@
         "y": 260,
         "wires": [
             [
-                "8d9a42c9a537990e"
+                "88b9d079a8553d3e"
             ]
         ]
     },
@@ -382,7 +382,7 @@
         "type": "function",
         "z": "8c1c42aee3611507",
         "name": "Extraer nombre",
-        "func": "msg.telegram = msg.payload;\nmsg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\nreturn msg;",
+        "func": "msg.payload = {\"Nombre\": {\"$eq\": msg.payload.content}};\nmsg.nombre = msg.payload.content;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -500,7 +500,9 @@
             [
                 "995d12fa935a6857"
             ],
-            []
+            [
+                "185ff049fa6d1b5b"
+            ]
         ]
     },
     {
@@ -521,6 +523,11 @@
         "property": "telegram.content",
         "propertyType": "msg",
         "rules": [
+            {
+                "t": "eq",
+                "v": "/asociarUsuario",
+                "vt": "str"
+            },
             {
                 "t": "eq",
                 "v": "/aforo",
@@ -544,10 +551,13 @@
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 4,
+        "outputs": 5,
         "x": 920,
-        "y": 520,
+        "y": 560,
         "wires": [
+            [
+                "909c44eb21044da8"
+            ],
             [],
             [],
             [],
@@ -575,11 +585,11 @@
             }
         ],
         "language": "none",
-        "x": 1660,
-        "y": 220,
+        "x": 1700,
+        "y": 240,
         "wires": [
             [
-                "45d2e81755f3f3fb"
+                "d1daf5ab4c4fa30c"
             ]
         ]
     },
@@ -594,20 +604,6 @@
         "wires": []
     },
     {
-        "id": "45d2e81755f3f3fb",
-        "type": "chatbot-telegram-send",
-        "z": "8c1c42aee3611507",
-        "bot": "3cc01e3e385d0ded",
-        "botProduction": "",
-        "track": false,
-        "passThrough": false,
-        "errorOutput": false,
-        "outputs": 0,
-        "x": 1910,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "2d10bf96d22b36fc",
         "type": "mongodb out",
         "z": "8c1c42aee3611507",
@@ -618,9 +614,101 @@
         "upsert": false,
         "multi": false,
         "operation": "update",
-        "x": 1820,
+        "x": 1940,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "909c44eb21044da8",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "message": [
+            {
+                "message": "Eres un putísimo genio."
+            }
+        ],
+        "language": "none",
+        "x": 1140,
+        "y": 520,
+        "wires": [
+            [
+                "10976ba845e76e78"
+            ]
+        ]
+    },
+    {
+        "id": "88b9d079a8553d3e",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "Mandar a Telegram",
+        "links": [
+            "6dbe0cc4ec53bbd7"
+        ],
+        "x": 815,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "10976ba845e76e78",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "Mandar a Telegram",
+        "links": [
+            "6dbe0cc4ec53bbd7"
+        ],
+        "x": 1255,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "6dbe0cc4ec53bbd7",
+        "type": "link in",
+        "z": "8c1c42aee3611507",
+        "name": "Telegram sender",
+        "links": [
+            "10976ba845e76e78",
+            "88b9d079a8553d3e",
+            "d1daf5ab4c4fa30c"
+        ],
+        "x": 1015,
+        "y": 80,
+        "wires": [
+            [
+                "8d9a42c9a537990e"
+            ]
+        ]
+    },
+    {
+        "id": "d1daf5ab4c4fa30c",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "Mandar a Telegram",
+        "links": [
+            "6dbe0cc4ec53bbd7"
+        ],
+        "x": 1865,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "185ff049fa6d1b5b",
+        "type": "function",
+        "z": "8c1c42aee3611507",
+        "name": "preparar",
+        "func": "msg.query = {\"Nombre\": {\"$eq\": msg.nombre}};\nmsg.payload = { \"$set\": {\"ID Telegram\": msg.telegram.chatId} };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 400,
+        "wires": [
+            [
+                "2d10bf96d22b36fc"
+            ]
+        ]
     },
     {
         "id": "3cc01e3e385d0ded",
