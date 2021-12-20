@@ -1,0 +1,649 @@
+[
+    {
+        "id": "8c1c42aee3611507",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8d9a42c9a537990e",
+        "type": "chatbot-telegram-send",
+        "z": "8c1c42aee3611507",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "track": false,
+        "passThrough": false,
+        "errorOutput": false,
+        "outputs": 0,
+        "x": 930,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b85bc4b29ab7709a",
+        "type": "chatbot-telegram-receive",
+        "z": "8c1c42aee3611507",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "73cc4d7b392d7fc9",
+                "9ccaaf1e99c8a613"
+            ]
+        ]
+    },
+    {
+        "id": "73cc4d7b392d7fc9",
+        "type": "chatbot-rules",
+        "z": "8c1c42aee3611507",
+        "name": "comandos públicos",
+        "rules": [
+            {
+                "type": "notMessageType",
+                "messageType": "command"
+            },
+            {
+                "type": "command",
+                "command": "/start"
+            },
+            {
+                "type": "command",
+                "command": "/contacto"
+            },
+            {
+                "type": "command",
+                "command": "/preguntasFrecuentes"
+            },
+            {
+                "type": "command",
+                "command": "/asociarUsuario"
+            }
+        ],
+        "outputs": 5,
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "a08ce41219846c59"
+            ],
+            [
+                "cafe54f29af8d1d6"
+            ],
+            [
+                "5b4f9be4bbf45dd6"
+            ],
+            [
+                "b9c0a6ab5ae23a16"
+            ],
+            [
+                "942c2a2a389a3ef8"
+            ]
+        ]
+    },
+    {
+        "id": "cafe54f29af8d1d6",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "Bienvenida",
+        "message": [
+            {
+                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\nComandos públicos\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\nComandos para usuarios registrados:\n/outfitIdir\n/aforo\n/reservaCNC\n/reservaImpresora\nPara una explicación sobre cada comando puedes usar /ayuda."
+            }
+        ],
+        "language": "none",
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "8d9a42c9a537990e"
+            ]
+        ]
+    },
+    {
+        "id": "5b4f9be4bbf45dd6",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "Contacto",
+        "message": [
+            {
+                "message": "Datos de contacto:\n- Teléfono Skapalab: 98734534\n- Ubicación Skapalab: pimpum\n- Telegram de Idir: link a su telegram?\n- no sé si más cosas"
+            }
+        ],
+        "language": "none",
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "8d9a42c9a537990e"
+            ]
+        ]
+    },
+    {
+        "id": "a08ce41219846c59",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "No entiendo humano",
+        "message": [
+            {
+                "message": "Por desgracia mi inteligencia no llega a tanto. Por favor usa comandos para comunicarte conmigo a no ser que te pida otra cosa. \n\nPara un resumen de los comandos puedes usar /start. Para una explicación sobre cada comando disponible puedes usar /ayuda."
+            }
+        ],
+        "language": "none",
+        "x": 620,
+        "y": 80,
+        "wires": [
+            [
+                "8d9a42c9a537990e"
+            ]
+        ]
+    },
+    {
+        "id": "b9c0a6ab5ae23a16",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "Preguntas frecuentes",
+        "message": [
+            {
+                "message": "- ¿Es el acceso a SkapaLab gratuito?\n+ No\n\n- ¿Qué máquinas hay disponibles?\n+ Cositas\n\n- etc"
+            }
+        ],
+        "language": "none",
+        "x": 620,
+        "y": 260,
+        "wires": [
+            [
+                "8d9a42c9a537990e"
+            ]
+        ]
+    },
+    {
+        "id": "9ccaaf1e99c8a613",
+        "type": "chatbot-rules",
+        "z": "8c1c42aee3611507",
+        "name": "comandos de usuario",
+        "rules": [
+            {
+                "type": "command",
+                "command": "/aforo"
+            },
+            {
+                "type": "command",
+                "command": "/reservaCNC"
+            },
+            {
+                "type": "command",
+                "command": "/reservaImpresora"
+            },
+            {
+                "type": "command",
+                "command": "/outfitIdir"
+            }
+        ],
+        "outputs": 4,
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "942c2a2a389a3ef8"
+            ],
+            [
+                "942c2a2a389a3ef8"
+            ],
+            [
+                "942c2a2a389a3ef8"
+            ],
+            [
+                "942c2a2a389a3ef8"
+            ]
+        ]
+    },
+    {
+        "id": "942c2a2a389a3ef8",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "verificación de usuario",
+        "links": [
+            "7314cdb4370b3f8a"
+        ],
+        "x": 495,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "413b995cdfe62152",
+        "type": "mongodb in",
+        "z": "8c1c42aee3611507",
+        "mongodb": "f605fa69.8f5008",
+        "name": "Comprobar usuario por chatId en DB",
+        "collection": "usuarios",
+        "operation": "count",
+        "x": 450,
+        "y": 820,
+        "wires": [
+            [
+                "8d0bb6e5c8805a63"
+            ]
+        ]
+    },
+    {
+        "id": "24f933eea70f084e",
+        "type": "function",
+        "z": "8c1c42aee3611507",
+        "name": "Extraer chatId",
+        "func": "msg.telegram = msg.payload;\nmsg.payload = {\"ID Telegram\": {\"$eq\": msg.payload.chatId}};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 820,
+        "wires": [
+            [
+                "413b995cdfe62152"
+            ]
+        ]
+    },
+    {
+        "id": "7314cdb4370b3f8a",
+        "type": "link in",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "942c2a2a389a3ef8"
+        ],
+        "x": 75,
+        "y": 820,
+        "wires": [
+            [
+                "24f933eea70f084e"
+            ]
+        ]
+    },
+    {
+        "id": "8d0bb6e5c8805a63",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "bcbdb5d0362746bf"
+        ],
+        "x": 635,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "bcbdb5d0362746bf",
+        "type": "link in",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "8d0bb6e5c8805a63"
+        ],
+        "x": 545,
+        "y": 420,
+        "wires": [
+            [
+                "7a193e2d3bf26186"
+            ]
+        ]
+    },
+    {
+        "id": "7a193e2d3bf26186",
+        "type": "switch",
+        "z": "8c1c42aee3611507",
+        "name": "¿Está este Id de Telegram registrado?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "544de2f6cd94224e"
+            ],
+            [
+                "e824c833483c2040"
+            ]
+        ]
+    },
+    {
+        "id": "9e419bc5978861ee",
+        "type": "chatbot-telegram-send",
+        "z": "8c1c42aee3611507",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "track": true,
+        "passThrough": false,
+        "errorOutput": false,
+        "outputs": 1,
+        "x": 1090,
+        "y": 320,
+        "wires": [
+            [
+                "f802bfbd6d7e65f7"
+            ]
+        ]
+    },
+    {
+        "id": "544de2f6cd94224e",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "Asociar usuario",
+        "message": [
+            {
+                "message": "No pareces estar en la base de datos. ¿Cómo te llamas?"
+            }
+        ],
+        "language": "none",
+        "x": 900,
+        "y": 320,
+        "wires": [
+            [
+                "9e419bc5978861ee"
+            ]
+        ]
+    },
+    {
+        "id": "79d4d23b6d344e85",
+        "type": "mongodb in",
+        "z": "8c1c42aee3611507",
+        "mongodb": "f605fa69.8f5008",
+        "name": "Comprobar usuario por nombre en DB",
+        "collection": "usuarios",
+        "operation": "count",
+        "x": 450,
+        "y": 1000,
+        "wires": [
+            [
+                "fb9293c652c48f54"
+            ]
+        ]
+    },
+    {
+        "id": "90da02f6168a45e0",
+        "type": "function",
+        "z": "8c1c42aee3611507",
+        "name": "Extraer nombre",
+        "func": "msg.telegram = msg.payload;\nmsg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 1000,
+        "wires": [
+            [
+                "79d4d23b6d344e85"
+            ]
+        ]
+    },
+    {
+        "id": "4a789c24a2ce1b73",
+        "type": "link in",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "f802bfbd6d7e65f7"
+        ],
+        "x": 75,
+        "y": 1000,
+        "wires": [
+            [
+                "90da02f6168a45e0"
+            ]
+        ]
+    },
+    {
+        "id": "fb9293c652c48f54",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "a682eb25d9e4ce24"
+        ],
+        "x": 635,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f802bfbd6d7e65f7",
+        "type": "link out",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "4a789c24a2ce1b73"
+        ],
+        "x": 1215,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a682eb25d9e4ce24",
+        "type": "link in",
+        "z": "8c1c42aee3611507",
+        "name": "",
+        "links": [
+            "fb9293c652c48f54"
+        ],
+        "x": 1255,
+        "y": 320,
+        "wires": [
+            [
+                "0f6908844d8689e2"
+            ]
+        ]
+    },
+    {
+        "id": "d926c1ac56099e89",
+        "type": "comment",
+        "z": "8c1c42aee3611507",
+        "name": "Comprobar si existe algún usuario con cierto Id de Telegram",
+        "info": "",
+        "x": 340,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "86c282f65a93b7ec",
+        "type": "comment",
+        "z": "8c1c42aee3611507",
+        "name": "Comprobar si existe algún usuario con cierto nombre",
+        "info": "",
+        "x": 310,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "0f6908844d8689e2",
+        "type": "switch",
+        "z": "8c1c42aee3611507",
+        "name": "¿Está su nombre en la DB?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1420,
+        "y": 320,
+        "wires": [
+            [
+                "995d12fa935a6857"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e72536eb2c84797b",
+        "type": "comment",
+        "z": "8c1c42aee3611507",
+        "name": "No",
+        "info": "",
+        "x": 730,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e824c833483c2040",
+        "type": "switch",
+        "z": "8c1c42aee3611507",
+        "name": "Recuperar comando",
+        "property": "telegram.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/aforo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/reservaCNC",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/reservaImpresora",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/outfitIdir",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 920,
+        "y": 520,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f8b745699d86826a",
+        "type": "comment",
+        "z": "8c1c42aee3611507",
+        "name": "Sí",
+        "info": "",
+        "x": 730,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "995d12fa935a6857",
+        "type": "chatbot-message",
+        "z": "8c1c42aee3611507",
+        "name": "No estás registrad@ o error",
+        "message": [
+            {
+                "message": "Vaya. Tu nombre tampoco figura en nuestros registros. \nSi estás registrad@ con nosotros puede que hayas introducido el nombre de manera incorrecta. Prueba otra vez usando /asociarUsuario y asegúrate de introducir el nombre tal y cómo lo hiciste al registrarte.\nSi sigues teniendo problemas, ponte en /contacto con nosotros."
+            }
+        ],
+        "language": "none",
+        "x": 1660,
+        "y": 220,
+        "wires": [
+            [
+                "45d2e81755f3f3fb"
+            ]
+        ]
+    },
+    {
+        "id": "3ed8e71b36f8dc9e",
+        "type": "comment",
+        "z": "8c1c42aee3611507",
+        "name": "No",
+        "info": "",
+        "x": 1450,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "45d2e81755f3f3fb",
+        "type": "chatbot-telegram-send",
+        "z": "8c1c42aee3611507",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "track": false,
+        "passThrough": false,
+        "errorOutput": false,
+        "outputs": 0,
+        "x": 1910,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2d10bf96d22b36fc",
+        "type": "mongodb out",
+        "z": "8c1c42aee3611507",
+        "mongodb": "f605fa69.8f5008",
+        "name": "Actualizar chatId del usuario",
+        "collection": "usuarios",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "update",
+        "x": 1820,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3cc01e3e385d0ded",
+        "type": "chatbot-telegram-node",
+        "botname": "SkapaLaBot",
+        "usernames": "",
+        "token": "5084907312:AAFDpRGPmrdDihcbN7ZjePncQ779rPZBYWc",
+        "providerToken": "",
+        "polling": "1",
+        "store": "",
+        "log": "",
+        "debug": false,
+        "webHook": "",
+        "connectMode": "polling"
+    },
+    {
+        "id": "f605fa69.8f5008",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    }
+]
