@@ -41,14 +41,17 @@ char topicSubAbrir[256];
 
 const char* online = "{\"online\":true}" ;
 const char* offline = "{\"online\":false}" ;
+const char* abierta = "{\"open\":true}" ;
+const char* cerrada = "{\"open\":false}" ;
+//GPIOs
 
-// GPIOs
+int pinPuerta = 1;  //Low=cerrado, High=abierto
 
 //int LED = 2; 
 
 
 // Vars
-//unsigned long ahora;
+unsigned long ahora;
 
 
 // funciones para progreso de OTA
@@ -155,6 +158,20 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
 }
 
 //-----------------------------------------------------
+
+void abrirPuerta(){
+  digitalWrite(pinPuerta, HIGH);
+  ahora = millis();
+  mqtt_client.publish(topicPubEstadoPuerta,abierta,true);
+  Serial.printf("Puerta abierta\n\n");
+}
+void cerrarPuerta(){
+  digitalWrite(pinPuerta, LOW);
+  mqtt_client.publish(topicPubEstadoPuerta,cerrada,true);
+    Serial.printf("Puerta cerrada\n\n");
+}
+
+//-----------------------------------------------------
 //     SETUP
 //-----------------------------------------------------
 void setup() {
@@ -163,6 +180,8 @@ void setup() {
   Serial.println("Empieza setup...");
   pinMode(LED_BUILTIN, OUTPUT);    // inicializa GPIO como salida  
   digitalWrite(LED_BUILTIN, HIGH); // apaga el led
+  pinMode(pinPuerta, OUTPUT);    
+  digitalWrite(pinPuerta, LOW);
 
   sprintf(ID_PLACA, "ESP_%d", ESP.getChipId());
   sprintf(topicPubIDmatch,"puerta_%d/ID_detectado/match",N_PUERTA);  
@@ -194,5 +213,8 @@ void setup() {
 void loop() {
   if (!mqtt_client.connected()) conecta_mqtt();
   mqtt_client.loop(); // esta llamada para que la librería recupere el control
+
+  if (millis()-ahora>2000) cerrarPuerta();
+  
   delay(1);
 }
