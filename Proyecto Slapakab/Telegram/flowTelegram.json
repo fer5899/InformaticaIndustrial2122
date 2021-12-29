@@ -1,15 +1,15 @@
 [
     {
-        "id": "8c1c42aee3611507",
+        "id": "f3e96f594243addc",
         "type": "tab",
         "label": "Flow 2",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "8d9a42c9a537990e",
+        "id": "5ae724eef7f141f4",
         "type": "chatbot-telegram-send",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": false,
@@ -21,24 +21,24 @@
         "wires": []
     },
     {
-        "id": "b85bc4b29ab7709a",
+        "id": "909feb66f01f25c9",
         "type": "chatbot-telegram-receive",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "x": 110,
         "y": 180,
         "wires": [
             [
-                "73cc4d7b392d7fc9",
-                "9ccaaf1e99c8a613"
+                "93e2d1288c0e048c",
+                "07312d0c061f87b0"
             ]
         ]
     },
     {
-        "id": "73cc4d7b392d7fc9",
+        "id": "93e2d1288c0e048c",
         "type": "chatbot-rules",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "comandos públicos",
         "rules": [
             {
@@ -67,30 +67,30 @@
         "y": 180,
         "wires": [
             [
-                "a08ce41219846c59"
+                "a05254dd89e51a58"
             ],
             [
-                "cafe54f29af8d1d6"
+                "519840d5b0c9a9ee"
             ],
             [
-                "5b4f9be4bbf45dd6"
+                "de40d3c80fdef3dc"
             ],
             [
-                "b9c0a6ab5ae23a16"
+                "fb465ce77f402fc8"
             ],
             [
-                "942c2a2a389a3ef8"
+                "59864c6b5717c418"
             ]
         ]
     },
     {
-        "id": "cafe54f29af8d1d6",
+        "id": "519840d5b0c9a9ee",
         "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Bienvenida",
         "message": [
             {
-                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\nComandos públicos\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\nComandos para usuarios registrados:\n/outfitIdir\n/aforo\n/reservaCNC\n/reservaImpresora\nPara una explicación sobre cada comando puedes usar /ayuda."
+                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\nComandos públicos\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\nComandos para usuarios registrados:\n/outfitIdir\n/aforo\n/reservaCNC\n/reservaImpresora3D\nPara una explicación sobre cada comando puedes usar /ayuda."
             }
         ],
         "language": "none",
@@ -98,14 +98,14 @@
         "y": 140,
         "wires": [
             [
-                "88b9d079a8553d3e"
+                "bc5ff0bb4b4278ba"
             ]
         ]
     },
     {
-        "id": "5b4f9be4bbf45dd6",
+        "id": "de40d3c80fdef3dc",
         "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Contacto",
         "message": [
             {
@@ -117,14 +117,14 @@
         "y": 200,
         "wires": [
             [
-                "88b9d079a8553d3e"
+                "bc5ff0bb4b4278ba"
             ]
         ]
     },
     {
-        "id": "a08ce41219846c59",
+        "id": "a05254dd89e51a58",
         "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "No entiendo humano",
         "message": [
             {
@@ -136,14 +136,14 @@
         "y": 80,
         "wires": [
             [
-                "88b9d079a8553d3e"
+                "bc5ff0bb4b4278ba"
             ]
         ]
     },
     {
-        "id": "b9c0a6ab5ae23a16",
+        "id": "aafbab700fb840b6",
         "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Preguntas frecuentes",
         "message": [
             {
@@ -155,14 +155,14 @@
         "y": 260,
         "wires": [
             [
-                "88b9d079a8553d3e"
+                "bc5ff0bb4b4278ba"
             ]
         ]
     },
     {
-        "id": "9ccaaf1e99c8a613",
+        "id": "07312d0c061f87b0",
         "type": "chatbot-rules",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "comandos de usuario",
         "rules": [
             {
@@ -175,7 +175,7 @@
             },
             {
                 "type": "command",
-                "command": "/reservaImpresora"
+                "command": "/reservaImpresora3D"
             },
             {
                 "type": "command",
@@ -187,35 +187,35 @@
         "y": 420,
         "wires": [
             [
-                "942c2a2a389a3ef8"
+                "59864c6b5717c418"
             ],
             [
-                "942c2a2a389a3ef8"
+                "59864c6b5717c418"
             ],
             [
-                "942c2a2a389a3ef8"
+                "59864c6b5717c418"
             ],
             [
-                "942c2a2a389a3ef8"
+                "59864c6b5717c418"
             ]
         ]
     },
     {
-        "id": "942c2a2a389a3ef8",
+        "id": "59864c6b5717c418",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "verificación de usuario",
         "links": [
-            "7314cdb4370b3f8a"
+            "96223fe7725dc4f4"
         ],
         "x": 495,
         "y": 420,
         "wires": []
     },
     {
-        "id": "413b995cdfe62152",
+        "id": "5c90bc0b322d901d",
         "type": "mongodb in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "mongodb": "f605fa69.8f5008",
         "name": "Comprobar usuario por chatId en DB",
         "collection": "usuarios",
@@ -224,14 +224,14 @@
         "y": 820,
         "wires": [
             [
-                "8d0bb6e5c8805a63"
+                "60900fac85766cf8"
             ]
         ]
     },
     {
-        "id": "24f933eea70f084e",
+        "id": "43f9e8078572e92d",
         "type": "function",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Extraer chatId",
         "func": "msg.telegram = msg.payload;\nmsg.payload = {\"ID Telegram\": {\"$eq\": msg.payload.chatId}};\nreturn msg;",
         "outputs": 1,
@@ -243,58 +243,58 @@
         "y": 820,
         "wires": [
             [
-                "413b995cdfe62152"
+                "5c90bc0b322d901d"
             ]
         ]
     },
     {
-        "id": "7314cdb4370b3f8a",
+        "id": "96223fe7725dc4f4",
         "type": "link in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "942c2a2a389a3ef8"
+            "59864c6b5717c418"
         ],
         "x": 75,
         "y": 820,
         "wires": [
             [
-                "24f933eea70f084e"
+                "43f9e8078572e92d"
             ]
         ]
     },
     {
-        "id": "8d0bb6e5c8805a63",
+        "id": "60900fac85766cf8",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "bcbdb5d0362746bf"
+            "1572f12c91bcdf83"
         ],
         "x": 635,
         "y": 820,
         "wires": []
     },
     {
-        "id": "bcbdb5d0362746bf",
+        "id": "1572f12c91bcdf83",
         "type": "link in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "8d0bb6e5c8805a63"
+            "60900fac85766cf8"
         ],
         "x": 545,
         "y": 420,
         "wires": [
             [
-                "7a193e2d3bf26186"
+                "18300c5ebedb58bf"
             ]
         ]
     },
     {
-        "id": "7a193e2d3bf26186",
+        "id": "18300c5ebedb58bf",
         "type": "switch",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "¿Está este Id de Telegram registrado?",
         "property": "payload",
         "propertyType": "msg",
@@ -317,17 +317,17 @@
         "y": 420,
         "wires": [
             [
-                "544de2f6cd94224e"
+                "adeacc6619e3dafa"
             ],
             [
-                "e824c833483c2040"
+                "dfee45b180a2a5d0"
             ]
         ]
     },
     {
-        "id": "9e419bc5978861ee",
+        "id": "97e956de3738325b",
         "type": "chatbot-telegram-send",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": true,
@@ -338,14 +338,14 @@
         "y": 320,
         "wires": [
             [
-                "f802bfbd6d7e65f7"
+                "e46084f7e4fb11aa"
             ]
         ]
     },
     {
-        "id": "544de2f6cd94224e",
+        "id": "adeacc6619e3dafa",
         "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Asociar usuario",
         "message": [
             {
@@ -357,14 +357,14 @@
         "y": 320,
         "wires": [
             [
-                "9e419bc5978861ee"
+                "97e956de3738325b"
             ]
         ]
     },
     {
-        "id": "79d4d23b6d344e85",
+        "id": "83915e9a576031e8",
         "type": "mongodb in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "mongodb": "f605fa69.8f5008",
         "name": "Comprobar usuario por nombre en DB",
         "collection": "usuarios",
@@ -373,14 +373,14 @@
         "y": 1000,
         "wires": [
             [
-                "fb9293c652c48f54"
+                "e389a45a91bfeed2"
             ]
         ]
     },
     {
-        "id": "90da02f6168a45e0",
+        "id": "c80ff8e1bfe3489c",
         "type": "function",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Extraer nombre",
         "func": "msg.payload = {\"Nombre\": {\"$eq\": msg.payload.content}};\nmsg.nombre = msg.payload.content;\nreturn msg;",
         "outputs": 1,
@@ -392,70 +392,70 @@
         "y": 1000,
         "wires": [
             [
-                "79d4d23b6d344e85"
+                "83915e9a576031e8"
             ]
         ]
     },
     {
-        "id": "4a789c24a2ce1b73",
+        "id": "8023094eeefdd03a",
         "type": "link in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "f802bfbd6d7e65f7"
+            "e46084f7e4fb11aa"
         ],
         "x": 75,
         "y": 1000,
         "wires": [
             [
-                "90da02f6168a45e0"
+                "c80ff8e1bfe3489c"
             ]
         ]
     },
     {
-        "id": "fb9293c652c48f54",
+        "id": "e389a45a91bfeed2",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "a682eb25d9e4ce24"
+            "72db5925a8acd9de"
         ],
         "x": 635,
         "y": 1000,
         "wires": []
     },
     {
-        "id": "f802bfbd6d7e65f7",
+        "id": "e46084f7e4fb11aa",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "4a789c24a2ce1b73"
+            "8023094eeefdd03a"
         ],
         "x": 1215,
         "y": 320,
         "wires": []
     },
     {
-        "id": "a682eb25d9e4ce24",
+        "id": "72db5925a8acd9de",
         "type": "link in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "",
         "links": [
-            "fb9293c652c48f54"
+            "e389a45a91bfeed2"
         ],
         "x": 1255,
         "y": 320,
         "wires": [
             [
-                "0f6908844d8689e2"
+                "0a7b07d437f84475"
             ]
         ]
     },
     {
-        "id": "d926c1ac56099e89",
+        "id": "c5ec51ce8b76fbbd",
         "type": "comment",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Comprobar si existe algún usuario con cierto Id de Telegram",
         "info": "",
         "x": 340,
@@ -463,9 +463,9 @@
         "wires": []
     },
     {
-        "id": "86c282f65a93b7ec",
+        "id": "87305c41a6221085",
         "type": "comment",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Comprobar si existe algún usuario con cierto nombre",
         "info": "",
         "x": 310,
@@ -473,9 +473,9 @@
         "wires": []
     },
     {
-        "id": "0f6908844d8689e2",
+        "id": "0a7b07d437f84475",
         "type": "switch",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "¿Está su nombre en la DB?",
         "property": "payload",
         "propertyType": "msg",
@@ -498,27 +498,27 @@
         "y": 320,
         "wires": [
             [
-                "995d12fa935a6857"
+                "aae4242f244024c3"
             ],
             [
-                "185ff049fa6d1b5b"
+                "22f517ea030ae6fe"
             ]
         ]
     },
     {
-        "id": "e72536eb2c84797b",
+        "id": "277add5c8375ed19",
         "type": "comment",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "No",
         "info": "",
-        "x": 730,
-        "y": 340,
+        "x": 770,
+        "y": 380,
         "wires": []
     },
     {
-        "id": "e824c833483c2040",
+        "id": "dfee45b180a2a5d0",
         "type": "switch",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Recuperar comando",
         "property": "telegram.content",
         "propertyType": "msg",
@@ -540,7 +540,7 @@
             },
             {
                 "t": "eq",
-                "v": "/reservaImpresora",
+                "v": "/reservaImpresora3D",
                 "vt": "str"
             },
             {
@@ -552,32 +552,32 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 920,
-        "y": 560,
+        "x": 1040,
+        "y": 700,
         "wires": [
+            [],
+            [],
+            [],
             [
-                "909c44eb21044da8"
+                "fb465ce77f402fc8"
             ],
-            [],
-            [],
-            [],
             []
         ]
     },
     {
-        "id": "f8b745699d86826a",
+        "id": "5b6408dc436db296",
         "type": "comment",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Sí",
         "info": "",
-        "x": 730,
-        "y": 500,
+        "x": 770,
+        "y": 460,
         "wires": []
     },
     {
-        "id": "995d12fa935a6857",
+        "id": "aae4242f244024c3",
         "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "No estás registrad@ o error",
         "message": [
             {
@@ -589,24 +589,24 @@
         "y": 240,
         "wires": [
             [
-                "d1daf5ab4c4fa30c"
+                "cb053219e866e76a"
             ]
         ]
     },
     {
-        "id": "3ed8e71b36f8dc9e",
+        "id": "d1e11da870568737",
         "type": "comment",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "No",
         "info": "",
-        "x": 1450,
-        "y": 240,
+        "x": 1490,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "2d10bf96d22b36fc",
+        "id": "c43c5c65dddd98d1",
         "type": "mongodb out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "mongodb": "f605fa69.8f5008",
         "name": "Actualizar chatId del usuario",
         "collection": "usuarios",
@@ -614,87 +614,69 @@
         "upsert": false,
         "multi": false,
         "operation": "update",
-        "x": 1940,
-        "y": 400,
+        "x": 2660,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "909c44eb21044da8",
-        "type": "chatbot-message",
-        "z": "8c1c42aee3611507",
-        "name": "",
-        "message": [
-            {
-                "message": "Eres un putísimo genio."
-            }
-        ],
-        "language": "none",
-        "x": 1140,
-        "y": 520,
-        "wires": [
-            [
-                "10976ba845e76e78"
-            ]
-        ]
-    },
-    {
-        "id": "88b9d079a8553d3e",
+        "id": "bc5ff0bb4b4278ba",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Mandar a Telegram",
         "links": [
-            "6dbe0cc4ec53bbd7"
+            "2e2ef2455389223b"
         ],
         "x": 815,
         "y": 160,
         "wires": []
     },
     {
-        "id": "10976ba845e76e78",
+        "id": "64e9460e4df2dfa7",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Mandar a Telegram",
         "links": [
-            "6dbe0cc4ec53bbd7"
+            "2e2ef2455389223b"
         ],
-        "x": 1255,
-        "y": 520,
+        "x": 1635,
+        "y": 540,
         "wires": []
     },
     {
-        "id": "6dbe0cc4ec53bbd7",
+        "id": "2e2ef2455389223b",
         "type": "link in",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Telegram sender",
         "links": [
-            "10976ba845e76e78",
-            "88b9d079a8553d3e",
-            "d1daf5ab4c4fa30c"
+            "64e9460e4df2dfa7",
+            "bc5ff0bb4b4278ba",
+            "cb053219e866e76a",
+            "56167c4c4bb3f129"
         ],
         "x": 1015,
         "y": 80,
         "wires": [
             [
-                "8d9a42c9a537990e"
+                "5ae724eef7f141f4"
             ]
         ]
     },
     {
-        "id": "d1daf5ab4c4fa30c",
+        "id": "cb053219e866e76a",
         "type": "link out",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "Mandar a Telegram",
         "links": [
-            "6dbe0cc4ec53bbd7"
+            "2e2ef2455389223b"
         ],
         "x": 1865,
         "y": 240,
         "wires": []
     },
     {
-        "id": "185ff049fa6d1b5b",
+        "id": "61e7ed4254c1d73b",
         "type": "function",
-        "z": "8c1c42aee3611507",
+        "z": "f3e96f594243addc",
         "name": "preparar",
         "func": "msg.query = {\"Nombre\": {\"$eq\": msg.nombre}};\nmsg.payload = { \"$set\": {\"ID Telegram\": msg.telegram.chatId} };\nreturn msg;",
         "outputs": 1,
@@ -702,13 +684,421 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1660,
+        "x": 2460,
+        "y": 440,
+        "wires": [
+            [
+                "c43c5c65dddd98d1"
+            ]
+        ]
+    },
+    {
+        "id": "e8231867576bb53b",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "CAMBIO DE KEY",
+        "info": "",
+        "x": 180,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "42af1bb0a2a62372",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "CAMBIO DE KEY",
+        "info": "",
+        "x": 160,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "cbbdf1f3186fb51d",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "CAMBIO DE KEY",
+        "info": "",
+        "x": 2460,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "86bb486ea7386aa1",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Funciona?",
+        "info": "",
+        "x": 2660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "bc9337c6fb6a5f75",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Sí",
+        "info": "",
+        "x": 1490,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "59a3487e1c1835e3",
+        "type": "chatbot-telegram-send",
+        "z": "f3e96f594243addc",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "track": true,
+        "passThrough": false,
+        "errorOutput": false,
+        "outputs": 1,
+        "x": 1510,
+        "y": 720,
+        "wires": [
+            [
+                "577b284ffab89dca"
+            ]
+        ]
+    },
+    {
+        "id": "fb465ce77f402fc8",
+        "type": "chatbot-message",
+        "z": "f3e96f594243addc",
+        "name": "¿Día?",
+        "message": [
+            {
+                "message": "Marchando una de impresora 3D. ¿En qué día tienes pensado imprimir? (Formato aaaa/mm/dd, por favor)."
+            }
+        ],
+        "language": "none",
+        "x": 1330,
+        "y": 720,
+        "wires": [
+            [
+                "59a3487e1c1835e3"
+            ]
+        ]
+    },
+    {
+        "id": "577b284ffab89dca",
+        "type": "function",
+        "z": "f3e96f594243addc",
+        "name": "¿Formato correcto?",
+        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\nif (mes == 2 || dia > 28) {\n    error = true;\n}\n\nvar fecha = new Date(msg.payload.content);\n\nif (!error && fecha !== \"Invalid Date\") {\n    msg.payload.dia = new Date(parts[2], parts[1] - 1, parts[0]);\n    msg.payload.sala = \"3D\";\n    return [ msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, msg ];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1730,
+        "y": 760,
+        "wires": [
+            [],
+            [
+                "0cb1ecb3346b2d76"
+            ]
+        ]
+    },
+    {
+        "id": "0cb1ecb3346b2d76",
+        "type": "chatbot-message",
+        "z": "f3e96f594243addc",
+        "name": "Error, ¿día?",
+        "message": [
+            {
+                "message": "La fecha que has introducido no es correcta, por favor, introdúcela de nuevo pero correctamente. (Formato dd/mm/aaaa)."
+            }
+        ],
+        "language": "none",
+        "x": 1310,
+        "y": 820,
+        "wires": [
+            [
+                "59a3487e1c1835e3"
+            ]
+        ]
+    },
+    {
+        "id": "7770a75c81a404bd",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Petición a DB con día, sala",
+        "info": "msg.payload.dia = \"dd/mm/aaaa\"\nmsg.payload.sala = \"3D\"",
+        "x": 1950,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a09f190543e1856a",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Recepción de lista de reservas",
+        "info": "",
+        "x": 2210,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "bbdecb6f618c690e",
+        "type": "chatbot-telegram-send",
+        "z": "f3e96f594243addc",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "track": true,
+        "passThrough": false,
+        "errorOutput": false,
+        "outputs": 1,
+        "x": 1890,
         "y": 400,
         "wires": [
             [
-                "2d10bf96d22b36fc"
+                "54292ed9ce7b9bce"
             ]
         ]
+    },
+    {
+        "id": "22f517ea030ae6fe",
+        "type": "chatbot-message",
+        "z": "f3e96f594243addc",
+        "name": "Pedir contraseña",
+        "message": [
+            {
+                "message": "Genial, te he encontrado en la base de datos. Ahora sólo necesito que me escribas la contraseña que dijiste al registrarte."
+            }
+        ],
+        "language": "none",
+        "x": 1670,
+        "y": 400,
+        "wires": [
+            [
+                "bbdecb6f618c690e"
+            ]
+        ]
+    },
+    {
+        "id": "192a4afb9e9781a2",
+        "type": "mongodb in",
+        "z": "f3e96f594243addc",
+        "mongodb": "f605fa69.8f5008",
+        "name": "Comprobar contraseña en DB",
+        "collection": "usuarios",
+        "operation": "count",
+        "x": 470,
+        "y": 1140,
+        "wires": [
+            [
+                "0b0e320d2125d989"
+            ]
+        ]
+    },
+    {
+        "id": "b8e2aafc85f20089",
+        "type": "function",
+        "z": "f3e96f594243addc",
+        "name": "Comprobar contraseña",
+        "func": "msg.payload = { \"$match\": {\"Nombre\": {\"$eq\": { \"Contraseña\": msg.payload.content }}}};\nmsg.contraseña = msg.payload.content;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 1140,
+        "wires": [
+            [
+                "192a4afb9e9781a2"
+            ]
+        ]
+    },
+    {
+        "id": "f8680b70504536af",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "CAMBIO DE KEY",
+        "info": "",
+        "x": 180,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "5ea893ef8b02a6bc",
+        "type": "link in",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "links": [
+            "54292ed9ce7b9bce"
+        ],
+        "x": 75,
+        "y": 1140,
+        "wires": [
+            [
+                "b8e2aafc85f20089"
+            ]
+        ]
+    },
+    {
+        "id": "54292ed9ce7b9bce",
+        "type": "link out",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "links": [
+            "5ea893ef8b02a6bc"
+        ],
+        "x": 2015,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0b0e320d2125d989",
+        "type": "link out",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "links": [
+            "ffa0945999b85ffb"
+        ],
+        "x": 635,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "ffa0945999b85ffb",
+        "type": "link in",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "links": [
+            "0b0e320d2125d989"
+        ],
+        "x": 2055,
+        "y": 400,
+        "wires": [
+            [
+                "7dcf6b2e87a35db2"
+            ]
+        ]
+    },
+    {
+        "id": "4fd671e793c996bb",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "PROBAR",
+        "info": "",
+        "x": 480,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "7dcf6b2e87a35db2",
+        "type": "switch",
+        "z": "f3e96f594243addc",
+        "name": "¿Es la contraseña correcta?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2220,
+        "y": 400,
+        "wires": [
+            [
+                "afca105ef19bef93"
+            ],
+            [
+                "61e7ed4254c1d73b"
+            ]
+        ]
+    },
+    {
+        "id": "afca105ef19bef93",
+        "type": "chatbot-message",
+        "z": "f3e96f594243addc",
+        "name": "Contraseña incorrecta",
+        "message": [
+            {
+                "message": "Vaya. La contraseña no es correcta. \nPrueba otra vez usando /asociarUsuario y asegúrate de introducir la contraseña tal y cómo lo hiciste al registrarte.\nSi sigues teniendo problemas, ponte en /contacto con nosotros."
+            }
+        ],
+        "language": "none",
+        "x": 2480,
+        "y": 320,
+        "wires": [
+            [
+                "56167c4c4bb3f129"
+            ]
+        ]
+    },
+    {
+        "id": "95cb24f0cae04a57",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "No",
+        "info": "",
+        "x": 2290,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "56167c4c4bb3f129",
+        "type": "link out",
+        "z": "f3e96f594243addc",
+        "name": "Mandar a Telegram",
+        "links": [
+            "2e2ef2455389223b"
+        ],
+        "x": 2615,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0929ea72c76c1899",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Mostrar horas reservadas en el día + pedir horas",
+        "info": "",
+        "x": 2540,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "db61cf509fb10c56",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Comprobar si las horas introducidas son posibles",
+        "info": "",
+        "x": 2920,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "36a1d79b5545c8c9",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Error",
+        "info": "",
+        "x": 3170,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "fbfde5c77722251c",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Guardar reserva",
+        "info": "",
+        "x": 3200,
+        "y": 780,
+        "wires": []
     },
     {
         "id": "3cc01e3e385d0ded",
