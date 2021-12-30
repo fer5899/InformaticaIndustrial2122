@@ -154,17 +154,6 @@
         "name": ""
     },
     {
-        "id": "c1cbb9916e7cfba4",
-        "type": "ui_group",
-        "name": "Reservas Sala CNC",
-        "tab": "4fc54e2b527fa054",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "9be3b7eb8de0b550",
         "type": "ui_group",
         "name": "Estadísticas",
@@ -216,20 +205,31 @@
         "connectMode": "polling"
     },
     {
-        "id": "bb496c5032aa9334",
+        "id": "145acc67c1a00cae",
         "type": "ui_group",
-        "name": "Reservas Sala Impresión 3D",
+        "name": "Interacción",
         "tab": "4fc54e2b527fa054",
-        "order": 2,
+        "order": 5,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f29aa066a911a8a",
+        "type": "ui_group",
+        "name": "Sala Impresión 3D",
+        "tab": "4fc54e2b527fa054",
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false,
         "className": ""
     },
     {
-        "id": "145acc67c1a00cae",
+        "id": "1b6f0e7eccfe7fd9",
         "type": "ui_group",
-        "name": "",
+        "name": "Sala CNC",
         "tab": "4fc54e2b527fa054",
         "order": 3,
         "disp": true,
@@ -238,15 +238,34 @@
         "className": ""
     },
     {
-        "id": "6f29aa066a911a8a",
-        "type": "ui_group",
-        "name": "Reservas Actuales",
-        "tab": "4fc54e2b527fa054",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
+        "id": "7bdcd2986108df44",
+        "type": "ui_spacer",
+        "z": "5bb08916b44f7d9f",
+        "name": "spacer",
+        "group": "c1cbb9916e7cfba4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e160383d541f9bb3",
+        "type": "ui_spacer",
+        "z": "5bb08916b44f7d9f",
+        "name": "spacer",
+        "group": "c1cbb9916e7cfba4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2657e1ea9f15ad90",
+        "type": "ui_spacer",
+        "z": "5bb08916b44f7d9f",
+        "name": "spacer",
+        "group": "c1cbb9916e7cfba4",
+        "order": 1,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "f43a5b4958e02f1d",
@@ -428,86 +447,86 @@
         "options": [
             {
                 "label": "Nombre Completo",
-                "value": "Nombre",
+                "value": "nombre",
                 "type": "text",
                 "required": true,
                 "rows": null
             },
             {
                 "label": "Arranque",
-                "value": "Arranque",
+                "value": "arranque",
                 "type": "checkbox",
                 "required": false,
                 "rows": null
             },
             {
                 "label": "Entusiasta",
-                "value": "Entusiasta",
+                "value": "entusiasta",
                 "type": "checkbox",
                 "required": false,
                 "rows": null
             },
             {
                 "label": "Maker",
-                "value": "Maker",
+                "value": "maker",
                 "type": "checkbox",
                 "required": false,
                 "rows": null
             },
             {
                 "label": "Profesional",
-                "value": "Profesional",
+                "value": "profesional",
                 "type": "checkbox",
                 "required": false,
                 "rows": null
             },
             {
                 "label": "Fecha Vencimiento",
-                "value": "Fecha Vencimiento",
+                "value": "fecha_vencimiento",
                 "type": "date",
                 "required": true,
                 "rows": null
             },
             {
                 "label": "Acceso CNC",
-                "value": "Acceso CNC",
+                "value": "acceso_CNC",
                 "type": "switch",
                 "required": true,
                 "rows": null
             },
             {
                 "label": "Acceso 3D",
-                "value": "Acceso 3D",
+                "value": "acceso_3D",
                 "type": "switch",
                 "required": true,
                 "rows": null
             },
             {
                 "label": "Contraseña",
-                "value": "Password",
+                "value": "password",
                 "type": "text",
                 "required": true,
                 "rows": null
             },
             {
                 "label": "ID NFC",
-                "value": "ID NFC",
+                "value": "id_NFC",
                 "type": "number",
                 "required": false,
                 "rows": null
             }
         ],
         "formValue": {
-            "Nombre": "",
-            "Arranque": false,
-            "Entusiasta": false,
-            "Maker": false,
-            "Profesional": false,
-            "Fecha Vencimiento": "",
-            "Acceso CNC": false,
-            "Acceso 3D": false,
-            "Password": "",
-            "ID NFC": ""
+            "nombre": "",
+            "arranque": false,
+            "entusiasta": false,
+            "maker": false,
+            "profesional": false,
+            "fecha_vencimiento": "",
+            "acceso_CNC": false,
+            "acceso_3D": false,
+            "password": "",
+            "id_NFC": ""
         },
         "payload": "",
         "submit": "Registrar",
@@ -546,7 +565,7 @@
         "type": "function",
         "z": "14ac0420f1a0bfc8",
         "name": "",
-        "func": "var Arranque = msg.payload.Arranque;\nvar Maker = msg.payload.Maker;\nvar Entusiasta = msg.payload.Entusiasta;\nvar Profesional = msg.payload.Profesional; \n\nif (Arranque == true)\n{\n    msg.payload.Suscipcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.Suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.Suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.Suscripcion = \"Profesional\"\n}\n\nmsg.payload.date = new Date();\n\nreturn msg;",
+        "func": "var Arranque = msg.payload.arranque;\nvar Maker = msg.payload.maker;\nvar Entusiasta = msg.payload.entusiasta;\nvar Profesional = msg.payload.profesional; \n\nif (Arranque == true)\n{\n    msg.payload.suscipcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.suscripcion = \"Profesional\"\n}\n\nmsg.payload.fecha_inclusion = new Date();\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -568,22 +587,22 @@
         "rules": [
             {
                 "t": "delete",
-                "p": "payload.Arranque",
+                "p": "payload.arranque",
                 "pt": "msg"
             },
             {
                 "t": "delete",
-                "p": "payload.Maker",
+                "p": "payload.maker",
                 "pt": "msg"
             },
             {
                 "t": "delete",
-                "p": "payload.Entusiasta",
+                "p": "payload.entusiasta",
                 "pt": "msg"
             },
             {
                 "t": "delete",
-                "p": "payload.Profesional",
+                "p": "payload.profesional",
                 "pt": "msg"
             }
         ],
@@ -692,7 +711,7 @@
         "type": "function",
         "z": "1f38d0cc3e374536",
         "name": "",
-        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"María\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"10/11/2022\"; \nmsg.payload.hora_inicio = 10; \nmsg.payload.hora_fin = 20; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
+        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"María\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"31/12/2021\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1141,91 +1160,6 @@
         "x": 300,
         "y": 75,
         "wires": []
-    },
-    {
-        "id": "e8eea8a7591a3c68",
-        "type": "mongodb in",
-        "z": "5bb08916b44f7d9f",
-        "mongodb": "47f7b2f5047c4435",
-        "name": "",
-        "collection": "reservas",
-        "operation": "aggregate",
-        "x": 825,
-        "y": 555,
-        "wires": [
-            [
-                "567fa14f2717da7d"
-            ]
-        ]
-    },
-    {
-        "id": "768c635e118d3384",
-        "type": "comment",
-        "z": "5bb08916b44f7d9f",
-        "name": "Listados generales de reservas por sala",
-        "info": "",
-        "x": 300,
-        "y": 435,
-        "wires": []
-    },
-    {
-        "id": "2f34a2f612e63c13",
-        "type": "function",
-        "z": "5bb08916b44f7d9f",
-        "name": "Mostrar Reservas 3D",
-        "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"3D\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 485,
-        "y": 555,
-        "wires": [
-            [
-                "e8eea8a7591a3c68"
-            ]
-        ]
-    },
-    {
-        "id": "567fa14f2717da7d",
-        "type": "template",
-        "z": "5bb08916b44f7d9f",
-        "name": "lista en formato html",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": " <h1>Reservas: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Fecha: {{fecha}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
-        "output": "str",
-        "x": 1135,
-        "y": 555,
-        "wires": [
-            [
-                "fd487419085882b6"
-            ]
-        ]
-    },
-    {
-        "id": "fd487419085882b6",
-        "type": "ui_template",
-        "z": "5bb08916b44f7d9f",
-        "group": "bb496c5032aa9334",
-        "name": "",
-        "order": 0,
-        "width": "6",
-        "height": "9",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1375,
-        "y": 555,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "48d7d96a19d72568",
@@ -1719,98 +1653,13 @@
         "wires": []
     },
     {
-        "id": "446fe74f79732249",
-        "type": "mongodb in",
-        "z": "5bb08916b44f7d9f",
-        "mongodb": "47f7b2f5047c4435",
-        "name": "",
-        "collection": "reservas",
-        "operation": "aggregate",
-        "x": 825,
-        "y": 660,
-        "wires": [
-            [
-                "9564ab8b757e9ce5"
-            ]
-        ]
-    },
-    {
-        "id": "f06d9342fa774169",
-        "type": "function",
-        "z": "5bb08916b44f7d9f",
-        "name": "Mostrar Reservas CNC",
-        "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"CNC\" } },\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 495,
-        "y": 660,
-        "wires": [
-            [
-                "446fe74f79732249"
-            ]
-        ]
-    },
-    {
-        "id": "9564ab8b757e9ce5",
-        "type": "template",
-        "z": "5bb08916b44f7d9f",
-        "name": "lista en formato html",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": " <h1>Reservas: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Fecha: {{fecha}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
-        "output": "str",
-        "x": 1135,
-        "y": 660,
-        "wires": [
-            [
-                "e67c0f85205e150a"
-            ]
-        ]
-    },
-    {
-        "id": "e67c0f85205e150a",
-        "type": "ui_template",
-        "z": "5bb08916b44f7d9f",
-        "group": "c1cbb9916e7cfba4",
-        "name": "",
-        "order": 0,
-        "width": "6",
-        "height": "9",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1375,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "9b50fedb395fe363",
         "type": "comment",
         "z": "5bb08916b44f7d9f",
         "name": "Reserva Actual",
         "info": "",
         "x": 245,
-        "y": 750,
-        "wires": []
-    },
-    {
-        "id": "cc2ea971ebe2586c",
-        "type": "comment",
-        "z": "5bb08916b44f7d9f",
-        "name": "Próxima Reserva",
-        "info": "",
-        "x": 230,
-        "y": 1470,
+        "y": 435,
         "wires": []
     },
     {
@@ -1859,28 +1708,14 @@
         "name": "",
         "links": [
             "2099185171915f1a",
-            "d47141ebe5881f1c"
+            "d47141ebe5881f1c",
+            "2f9a406bd3a6a2ed",
+            "d802a404e8d068f5",
+            "43763c0509ad57fc"
         ],
         "x": 385,
         "y": 195,
         "wires": []
-    },
-    {
-        "id": "2099185171915f1a",
-        "type": "link in",
-        "z": "5bb08916b44f7d9f",
-        "name": "",
-        "links": [
-            "0bc938b894b4b8d0"
-        ],
-        "x": 195,
-        "y": 600,
-        "wires": [
-            [
-                "2f34a2f612e63c13",
-                "f06d9342fa774169"
-            ]
-        ]
     },
     {
         "id": "1d7fb34d05ad28d8",
@@ -1923,16 +1758,18 @@
         "type": "function",
         "z": "5bb08916b44f7d9f",
         "name": "Reserva Actual CNC",
-        "func": "var fecha;\nvar fecha_actual;\nvar hora_actual;\nvar hora_inicio;\nvar hora_fin;\n\nfecha = msg.payload.fecha;\nfecha_actual = Date.now();\nhora_actual = fecha_actual.getHours;\nhora_inicio = msg.payload.hora_inicio;\nhora_fin = msg.payload.hora_fin;\n\n\nmsg.collection = \"reservas\";\n\nif (hora_actual <= hora_inicio && hora_actual <= hora_fin) {\n    msg.payload = [ \n    { \"$match\" : { \"sala\" : \"3D\" , \"fecha\": Date.now()}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n}\nelse {\n    msg.payload = \"No hay reservas en curso\";\n}\n\nreturn msg;\n\n",
+        "func": "var hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar ahora;\n\nahora = new Date();\nhora_actual = ahora.getHours();\n\n\nif (msg.payload != []) {\n\n    hora_inicio = msg.payload[0].hora_inicio;\n    hora_fin = msg.payload[0].hora_fin;\n    \n    if (hora_inicio <= hora_actual && hora_actual <= hora_fin) {\n        msg.reserva_actual_CNC = true;\n        \n    }\n    else {\n        msg.reserva_actual_CNC = false;\n    }\n}\n\nelse {\n    msg.reservaa_actual_CNC = false;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 1050,
+        "x": 1195,
+        "y": 840,
         "wires": [
-            []
+            [
+                "d76a3215a277e8e0"
+            ]
         ]
     },
     {
@@ -1943,12 +1780,12 @@
         "links": [
             "0bc938b894b4b8d0"
         ],
-        "x": 200,
-        "y": 960,
+        "x": 195,
+        "y": 705,
         "wires": [
             [
-                "5c5cd8cfa31f7d01",
-                "9e976f64960dc64d"
+                "84c6b9231c96a277",
+                "7a5564fec8bdf870"
             ]
         ]
     },
@@ -1957,17 +1794,18 @@
         "type": "function",
         "z": "5bb08916b44f7d9f",
         "name": "Reserva Actual 3D",
-        "func": "var fecha;\nvar hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar fecha_actual;\n\nfecha = msg.payload.fecha;\nfecha_actual = Date.now();\nhora_actual = fecha_actual.getHours;\nhora_inicio = msg.payload.hora_inicio;\nhora_fin = msg.payload.hora_fin;\n\n\nmsg.collection = \"reservas\";\n\n\nif (hora_actual <= hora_inicio && hora_actual <= hora_fin) {\n    msg.payload = [ \n    { \"$match\" : { \"sala\" : \"3D\" , \"fecha\": Date.now()}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n    \n}\nelse {\n    msg.payload = \"No hay reservas en curso\";\n}\n\nreturn msg;\n\n\n",
+        "func": "var hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar ahora;\n\nahora = new Date();\nhora_actual = ahora.getHours();\nhora_inicio = msg.payload[0].hora_inicio;\nhora_fin = msg.payload[0].hora_fin;\n\n\n\nif (hora_actual >= hora_inicio && hora_actual <= hora_fin) {\n    msg.reserva_actual_3D = true;\n    \n}\nelse {\n    msg.reserva_actual_3D = false;\n}\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 900,
+        "x": 1170,
+        "y": 525,
         "wires": [
             [
-                "27b67cb1a2d55630"
+                "da44d343cd74f868",
+                "8781dc8892609a05"
             ]
         ]
     },
@@ -1979,11 +1817,11 @@
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
-        "x": 510,
-        "y": 1155,
+        "x": 660,
+        "y": 525,
         "wires": [
             [
-                "008b01bd33e670d9"
+                "24acb34b82d31639"
             ]
         ]
     },
@@ -1995,11 +1833,11 @@
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
-        "x": 510,
-        "y": 1305,
+        "x": 660,
+        "y": 855,
         "wires": [
             [
-                "bf65da2dcade80eb"
+                "1820ed174b9141c2"
             ]
         ]
     },
@@ -2014,8 +1852,8 @@
         "syntax": "mustache",
         "template": " <h1>Reserva actual Impresión 3D: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
         "output": "str",
-        "x": 820,
-        "y": 1155,
+        "x": 1705,
+        "y": 420,
         "wires": [
             [
                 "c40f3954809b413a"
@@ -2027,18 +1865,18 @@
         "type": "ui_template",
         "z": "5bb08916b44f7d9f",
         "group": "6f29aa066a911a8a",
-        "name": "",
-        "order": 0,
+        "name": "Reserva Actual 3D",
+        "order": 2,
         "width": "6",
-        "height": "9",
+        "height": "4",
         "format": "<div ng-bind-html=\"msg.payload\"></div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1050,
-        "y": 1155,
+        "x": 2010,
+        "y": 420,
         "wires": [
             []
         ]
@@ -2054,8 +1892,8 @@
         "syntax": "mustache",
         "template": " <h1>Reserva Actual CNC: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
         "output": "str",
-        "x": 820,
-        "y": 1305,
+        "x": 1735,
+        "y": 765,
         "wires": [
             [
                 "e09c77a85bd4f232"
@@ -2063,39 +1901,22 @@
         ]
     },
     {
-        "id": "27b67cb1a2d55630",
-        "type": "debug",
-        "z": "5bb08916b44f7d9f",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 795,
-        "y": 750,
-        "wires": []
-    },
-    {
         "id": "e09c77a85bd4f232",
         "type": "ui_template",
         "z": "5bb08916b44f7d9f",
-        "group": "6f29aa066a911a8a",
-        "name": "",
-        "order": 0,
+        "group": "1b6f0e7eccfe7fd9",
+        "name": "Reserva Actual CNC",
+        "order": 4,
         "width": "6",
-        "height": "9",
+        "height": "4",
         "format": "<div ng-bind-html=\"msg.payload\"></div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1050,
-        "y": 1305,
+        "x": 2035,
+        "y": 765,
         "wires": [
             []
         ]
@@ -2105,26 +1926,223 @@
         "type": "switch",
         "z": "5bb08916b44f7d9f",
         "name": "",
-        "property": "payload",
+        "property": "reserva_actual_3D",
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
+                "t": "true"
+            },
+            {
+                "t": "false"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 695,
-        "y": 900,
+        "outputs": 2,
+        "x": 1415,
+        "y": 525,
         "wires": [
-            []
+            [
+                "008b01bd33e670d9",
+                "636b7b5f44eae12f"
+            ],
+            [
+                "f1c79680a1068fc8"
+            ]
         ]
     },
     {
-        "id": "cd15b15bd6aeb2f3",
+        "id": "84c6b9231c96a277",
+        "type": "function",
+        "z": "5bb08916b44f7d9f",
+        "name": "Agregación",
+        "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"3D\" , \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}}},\n    { \"$sort\" : {\"hora_inicio\" : 1}},\n    { \"$limit\" : 1 }\n    ];\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 385,
+        "y": 525,
+        "wires": [
+            [
+                "d053c04810199df4",
+                "16ed16e34d76eee3"
+            ]
+        ]
+    },
+    {
+        "id": "7a5564fec8bdf870",
+        "type": "function",
+        "z": "5bb08916b44f7d9f",
+        "name": "Agregación",
+        "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"CNC\" , \"fecha\": Date.now()}},\n    { \"$sort\" : {\"hora_inicio\" : 1}},\n    {\"$limit\" : 1}\n    ];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 385,
+        "y": 855,
+        "wires": [
+            [
+                "c1168d323023dae4"
+            ]
+        ]
+    },
+    {
+        "id": "d76a3215a277e8e0",
+        "type": "switch",
+        "z": "5bb08916b44f7d9f",
+        "name": "",
+        "property": "payload.reserva_actual_CNC",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1445,
+        "y": 840,
+        "wires": [
+            [
+                "bf65da2dcade80eb",
+                "1ab2545a3a62816c"
+            ],
+            [
+                "b27423d4ad3dfe25"
+            ]
+        ]
+    },
+    {
+        "id": "f1c79680a1068fc8",
+        "type": "change",
+        "z": "5bb08916b44f7d9f",
+        "name": "No hay reservas en curso",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "No hay reservas en curso",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1715,
+        "y": 645,
+        "wires": [
+            [
+                "6609433d5b5b8f89"
+            ]
+        ]
+    },
+    {
+        "id": "b27423d4ad3dfe25",
+        "type": "change",
+        "z": "5bb08916b44f7d9f",
+        "name": "No hay reservas en curso",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "No hay reservas en curso",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1745,
+        "y": 975,
+        "wires": [
+            [
+                "23e89fb7dd06e00b"
+            ]
+        ]
+    },
+    {
+        "id": "6609433d5b5b8f89",
+        "type": "ui_text",
+        "z": "5bb08916b44f7d9f",
+        "group": "6f29aa066a911a8a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Estado Actual 3D",
+        "label": "Estado Actual 3D",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 2025,
+        "y": 555,
+        "wires": []
+    },
+    {
+        "id": "23e89fb7dd06e00b",
+        "type": "ui_text",
+        "z": "5bb08916b44f7d9f",
+        "group": "1b6f0e7eccfe7fd9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Estado Actual CNC",
+        "label": "Estado Actual CNC",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 2055,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "16ed16e34d76eee3",
+        "type": "debug",
+        "z": "5bb08916b44f7d9f",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 625,
+        "y": 450,
+        "wires": []
+    },
+    {
+        "id": "8781dc8892609a05",
+        "type": "debug",
+        "z": "5bb08916b44f7d9f",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1415,
+        "y": 435,
+        "wires": []
+    },
+    {
+        "id": "24acb34b82d31639",
         "type": "switch",
         "z": "5bb08916b44f7d9f",
         "name": "",
@@ -2132,35 +2150,461 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
+                "t": "nempty"
+            },
+            {
+                "t": "empty"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 695,
-        "y": 1050,
+        "outputs": 2,
+        "x": 915,
+        "y": 525,
         "wires": [
-            []
+            [
+                "9e976f64960dc64d"
+            ],
+            [
+                "f1c79680a1068fc8"
+            ]
         ]
     },
     {
-        "id": "84c6b9231c96a277",
-        "type": "function",
+        "id": "1820ed174b9141c2",
+        "type": "switch",
         "z": "5bb08916b44f7d9f",
         "name": "",
-        "func": "\nreturn msg;",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 920,
+        "y": 855,
+        "wires": [
+            [
+                "5c5cd8cfa31f7d01"
+            ],
+            [
+                "b27423d4ad3dfe25"
+            ]
+        ]
+    },
+    {
+        "id": "636b7b5f44eae12f",
+        "type": "change",
+        "z": "5bb08916b44f7d9f",
+        "name": "Hay reservas en curso",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hay reservas en curso en la sala de impresión 3D",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1705,
+        "y": 525,
+        "wires": [
+            [
+                "6609433d5b5b8f89"
+            ]
+        ]
+    },
+    {
+        "id": "1ab2545a3a62816c",
+        "type": "change",
+        "z": "5bb08916b44f7d9f",
+        "name": "Hay reservas en curso",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hay reservas en curso en la sala de CNC",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1750,
+        "y": 855,
+        "wires": [
+            [
+                "23e89fb7dd06e00b"
+            ]
+        ]
+    },
+    {
+        "id": "71d1a57559b999d7",
+        "type": "mongodb in",
+        "z": "5bb08916b44f7d9f",
+        "mongodb": "47f7b2f5047c4435",
+        "name": "",
+        "collection": "reservas",
+        "operation": "aggregate",
+        "x": 840,
+        "y": 1155,
+        "wires": [
+            [
+                "e3977749b9aa65c3"
+            ]
+        ]
+    },
+    {
+        "id": "9cb853412e74316a",
+        "type": "comment",
+        "z": "5bb08916b44f7d9f",
+        "name": "Listados generales de reservas por sala - Hoy",
+        "info": "",
+        "x": 335,
+        "y": 1035,
+        "wires": []
+    },
+    {
+        "id": "1e74657b7ff27c9c",
+        "type": "function",
+        "z": "5bb08916b44f7d9f",
+        "name": "Mostrar Reservas 3D",
+        "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"3D\" }, \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 915,
+        "x": 500,
+        "y": 1155,
+        "wires": [
+            [
+                "71d1a57559b999d7"
+            ]
+        ]
+    },
+    {
+        "id": "e3977749b9aa65c3",
+        "type": "template",
+        "z": "5bb08916b44f7d9f",
+        "name": "lista en formato html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": " <h1>Más reservas hoy: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Fecha: {{fecha}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
+        "output": "str",
+        "x": 1150,
+        "y": 1155,
+        "wires": [
+            [
+                "25b2567e6e12f612"
+            ]
+        ]
+    },
+    {
+        "id": "25b2567e6e12f612",
+        "type": "ui_template",
+        "z": "5bb08916b44f7d9f",
+        "group": "6f29aa066a911a8a",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1390,
+        "y": 1155,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "5e8040a6f74b5d30",
+        "type": "mongodb in",
+        "z": "5bb08916b44f7d9f",
+        "mongodb": "47f7b2f5047c4435",
+        "name": "",
+        "collection": "reservas",
+        "operation": "aggregate",
+        "x": 840,
+        "y": 1260,
+        "wires": [
+            [
+                "0da828a74784ebbc"
+            ]
+        ]
+    },
+    {
+        "id": "064aa729ce466ce0",
+        "type": "function",
+        "z": "5bb08916b44f7d9f",
+        "name": "Mostrar Reservas CNC",
+        "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"CNC\" }, \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1260,
+        "wires": [
+            [
+                "5e8040a6f74b5d30"
+            ]
+        ]
+    },
+    {
+        "id": "0da828a74784ebbc",
+        "type": "template",
+        "z": "5bb08916b44f7d9f",
+        "name": "lista en formato html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": " <h1> Más reservas hoy: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Fecha: {{fecha}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
+        "output": "str",
+        "x": 1150,
+        "y": 1260,
+        "wires": [
+            [
+                "c20e09a4db04c9f3"
+            ]
+        ]
+    },
+    {
+        "id": "c20e09a4db04c9f3",
+        "type": "ui_template",
+        "z": "5bb08916b44f7d9f",
+        "group": "1b6f0e7eccfe7fd9",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1390,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d802a404e8d068f5",
+        "type": "link in",
+        "z": "5bb08916b44f7d9f",
+        "name": "",
+        "links": [
+            "0bc938b894b4b8d0"
+        ],
+        "x": 210,
+        "y": 1200,
+        "wires": [
+            [
+                "1e74657b7ff27c9c",
+                "064aa729ce466ce0"
+            ]
+        ]
+    },
+    {
+        "id": "e27dad1a8b410e95",
+        "type": "mongodb in",
+        "z": "5bb08916b44f7d9f",
+        "mongodb": "47f7b2f5047c4435",
+        "name": "",
+        "collection": "reservas",
+        "operation": "aggregate",
+        "x": 840,
+        "y": 1485,
+        "wires": [
+            [
+                "96652d7087609c3d"
+            ]
+        ]
+    },
+    {
+        "id": "5272e0a505cdc685",
+        "type": "function",
+        "z": "5bb08916b44f7d9f",
+        "name": "Mostrar Reservas 3D",
+        "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"3D\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1485,
+        "wires": [
+            [
+                "e27dad1a8b410e95"
+            ]
+        ]
+    },
+    {
+        "id": "96652d7087609c3d",
+        "type": "template",
+        "z": "5bb08916b44f7d9f",
+        "name": "lista en formato html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": " <h1>Reservas próximos días: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Fecha: {{fecha}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
+        "output": "str",
+        "x": 1150,
+        "y": 1485,
+        "wires": [
+            [
+                "54d4c5d510297afd"
+            ]
+        ]
+    },
+    {
+        "id": "54d4c5d510297afd",
+        "type": "ui_template",
+        "z": "5bb08916b44f7d9f",
+        "group": "6f29aa066a911a8a",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1390,
+        "y": 1485,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "32dec91c51e761cb",
+        "type": "mongodb in",
+        "z": "5bb08916b44f7d9f",
+        "mongodb": "47f7b2f5047c4435",
+        "name": "",
+        "collection": "reservas",
+        "operation": "aggregate",
+        "x": 840,
+        "y": 1590,
+        "wires": [
+            [
+                "3c8bc11212ef4f2a"
+            ]
+        ]
+    },
+    {
+        "id": "ccf058365d53bdf2",
+        "type": "function",
+        "z": "5bb08916b44f7d9f",
+        "name": "Mostrar Reservas CNC",
+        "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"CNC\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1590,
+        "wires": [
+            [
+                "32dec91c51e761cb"
+            ]
+        ]
+    },
+    {
+        "id": "3c8bc11212ef4f2a",
+        "type": "template",
+        "z": "5bb08916b44f7d9f",
+        "name": "lista en formato html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": " <h1>Reservas próximos días: </h1>\n <ul>\n{{#payload}}\n<dl>  \n<dt>   \n    <dd> Nombre: {{nombre}}  \n    <dd> Fecha: {{fecha}}\n    <dd> Hora inicio: {{hora_inicio}}\n    <dd> Hora fin: {{hora_fin}}\n<dt>\n{{/payload}}\n </ul>",
+        "output": "str",
+        "x": 1150,
+        "y": 1590,
+        "wires": [
+            [
+                "31fc35b6f0d70dc8"
+            ]
+        ]
+    },
+    {
+        "id": "31fc35b6f0d70dc8",
+        "type": "ui_template",
+        "z": "5bb08916b44f7d9f",
+        "group": "1b6f0e7eccfe7fd9",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1390,
+        "y": 1590,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43763c0509ad57fc",
+        "type": "link in",
+        "z": "5bb08916b44f7d9f",
+        "name": "",
+        "links": [
+            "0bc938b894b4b8d0"
+        ],
+        "x": 210,
+        "y": 1530,
+        "wires": [
+            [
+                "5272e0a505cdc685",
+                "ccf058365d53bdf2"
+            ]
+        ]
+    },
+    {
+        "id": "b304bb1fe9c13be2",
+        "type": "comment",
+        "z": "5bb08916b44f7d9f",
+        "name": "Listados generales de reservas por sala - Próximos días",
+        "info": "",
+        "x": 395,
+        "y": 1395,
+        "wires": []
     }
 ]
