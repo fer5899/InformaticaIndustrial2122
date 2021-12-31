@@ -12,8 +12,7 @@
                                                        // Name of firmware
 #define HTTP_OTA_VERSION      String(__FILE__).substring(String(__FILE__).lastIndexOf('\\')+1) + ".nodemcu" 
 
-// numero de puerta (cambiar para cada modulo)
-#define N_PUERTA  1
+#define N_PUERTA  1 // numero de puerta (cambiar para cada modulo)
 
 WiFiClient wClient;
 PubSubClient mqtt_client(wClient);
