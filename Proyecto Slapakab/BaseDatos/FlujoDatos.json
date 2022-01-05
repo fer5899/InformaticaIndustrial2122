@@ -28,6 +28,13 @@
         "info": ""
     },
     {
+        "id": "5b39e5cdc1e06e94",
+        "type": "tab",
+        "label": "Skapalab - mqtt",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "4fc54e2b527fa054",
         "type": "ui_tab",
         "name": "Reservas",
@@ -266,6 +273,34 @@
         "order": 1,
         "width": 1,
         "height": 1
+    },
+    {
+        "id": "f6c0679bfecfef4c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     },
     {
         "id": "f43a5b4958e02f1d",
@@ -511,7 +546,7 @@
             {
                 "label": "ID NFC",
                 "value": "id_NFC",
-                "type": "number",
+                "type": "text",
                 "required": false,
                 "rows": null
             }
@@ -711,7 +746,7 @@
         "type": "function",
         "z": "1f38d0cc3e374536",
         "name": "",
-        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"María\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"31/12/2021\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
+        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"Maria\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"5/1/2022\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2606,5 +2641,372 @@
         "x": 395,
         "y": 1395,
         "wires": []
+    },
+    {
+        "id": "47f2b0ddaf34f2f6",
+        "type": "inject",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 225,
+        "wires": [
+            [
+                "a7c623a1eb5f3139"
+            ]
+        ]
+    },
+    {
+        "id": "2fb513f328ac43a8",
+        "type": "comment",
+        "z": "5b39e5cdc1e06e94",
+        "name": "Me llega el id de la tarjeta",
+        "info": "Este id me llega porque en la caché de la placa no existe nadie con este identificador. Se pretende buscar el identificador en la base de datos y, si existe, abrir la puerta y si no existe, no abrirla. ",
+        "x": 140,
+        "y": 165,
+        "wires": []
+    },
+    {
+        "id": "a7c623a1eb5f3139",
+        "type": "function",
+        "z": "5b39e5cdc1e06e94",
+        "name": "id_NFC",
+        "func": "msg.id_NFC = \"88:109:195:73\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 225,
+        "wires": [
+            [
+                "3a6a8a5656e59b06"
+            ]
+        ]
+    },
+    {
+        "id": "4149ddfa75b647da",
+        "type": "mongodb in",
+        "z": "5b39e5cdc1e06e94",
+        "mongodb": "47f7b2f5047c4435",
+        "name": "",
+        "collection": "usuarios",
+        "operation": "aggregate",
+        "x": 795,
+        "y": 225,
+        "wires": [
+            [
+                "db7a83de86b86990"
+            ]
+        ]
+    },
+    {
+        "id": "3a6a8a5656e59b06",
+        "type": "function",
+        "z": "5b39e5cdc1e06e94",
+        "name": "Match",
+        "func": "var id_buscado;\nid_buscado = msg.id_NFC;\n\nmsg.collection = \"usuarios\";\nmsg.payload = [ \n    { \"$match\" : { \"id_NFC\" : id_buscado}}];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 225,
+        "wires": [
+            [
+                "4149ddfa75b647da"
+            ]
+        ]
+    },
+    {
+        "id": "db7a83de86b86990",
+        "type": "switch",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 225,
+        "wires": [
+            [
+                "88c2672e7cc36c3d"
+            ]
+        ]
+    },
+    {
+        "id": "3d31d9acaa013d20",
+        "type": "mqtt out",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "topic": "puerta_[n]/puerta/abrir",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f6c0679bfecfef4c",
+        "x": 1300,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "46cfa9752262ecf9",
+        "type": "comment",
+        "z": "5b39e5cdc1e06e94",
+        "name": "manda (o no) la señal para abrir la puerta",
+        "info": "",
+        "x": 1300,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6efa39e77d1851b6",
+        "type": "debug",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 435,
+        "wires": []
+    },
+    {
+        "id": "f07963922bc7e7ec",
+        "type": "link in",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "links": [
+            "88c2672e7cc36c3d"
+        ],
+        "x": 810,
+        "y": 390,
+        "wires": [
+            [
+                "beeb5cb94a1028e2"
+            ]
+        ]
+    },
+    {
+        "id": "88c2672e7cc36c3d",
+        "type": "link out",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "links": [
+            "f07963922bc7e7ec"
+        ],
+        "x": 1180,
+        "y": 225,
+        "wires": []
+    },
+    {
+        "id": "beeb5cb94a1028e2",
+        "type": "change",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 390,
+        "wires": [
+            [
+                "3d31d9acaa013d20",
+                "6efa39e77d1851b6"
+            ]
+        ]
+    },
+    {
+        "id": "3e9f5c4ebe56d6c9",
+        "type": "comment",
+        "z": "5b39e5cdc1e06e94",
+        "name": "ABRIR PUERTA CON ID_NFC",
+        "info": "",
+        "x": 150,
+        "y": 105,
+        "wires": []
+    },
+    {
+        "id": "68b178730a9cd99b",
+        "type": "comment",
+        "z": "5b39e5cdc1e06e94",
+        "name": "MANDAR LISTA DIARIA DE IDS CON RESERVA + ID ADMIN",
+        "info": "",
+        "x": 265,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "cbfdde434e6e53cf",
+        "type": "function",
+        "z": "5b39e5cdc1e06e94",
+        "name": "agregación - reservas hoy",
+        "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ { \"$match\" : {\"fecha\": fecha_actual}}\n];\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 705,
+        "wires": [
+            [
+                "112ae4b11018da2d"
+            ]
+        ]
+    },
+    {
+        "id": "112ae4b11018da2d",
+        "type": "mongodb in",
+        "z": "5b39e5cdc1e06e94",
+        "mongodb": "47f7b2f5047c4435",
+        "name": "",
+        "collection": "reservas",
+        "operation": "aggregate",
+        "x": 900,
+        "y": 705,
+        "wires": [
+            [
+                "68393fadab7b894d",
+                "3106c1a52299b891"
+            ]
+        ]
+    },
+    {
+        "id": "99a376c995a05750",
+        "type": "inject",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 08 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 705,
+        "wires": [
+            [
+                "cbfdde434e6e53cf"
+            ]
+        ]
+    },
+    {
+        "id": "68393fadab7b894d",
+        "type": "debug",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1295,
+        "y": 645,
+        "wires": []
+    },
+    {
+        "id": "64441cd560dba17a",
+        "type": "link in",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "links": [
+            "3106c1a52299b891"
+        ],
+        "x": 75,
+        "y": 840,
+        "wires": [
+            [
+                "a85be552377e484f"
+            ]
+        ]
+    },
+    {
+        "id": "3106c1a52299b891",
+        "type": "link out",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "links": [
+            "64441cd560dba17a"
+        ],
+        "x": 1215,
+        "y": 705,
+        "wires": []
+    },
+    {
+        "id": "415e433cdd673a85",
+        "type": "comment",
+        "z": "5b39e5cdc1e06e94",
+        "name": "readme",
+        "info": "Ajustar la fecha y los días en los que queremos que se mande. ",
+        "x": 95,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a85be552377e484f",
+        "type": "function",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "func": "var num_ids;\n\nfor (let i = 0; i < num_ids; i++) {\n    \n    msg.ids_reservas[i] = msg.usuarios_reservas[i];\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 840,
+        "wires": [
+            []
+        ]
     }
 ]
