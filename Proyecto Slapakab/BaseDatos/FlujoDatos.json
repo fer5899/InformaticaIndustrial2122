@@ -746,7 +746,7 @@
         "type": "function",
         "z": "1f38d0cc3e374536",
         "name": "",
-        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"Maria\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"5/1/2022\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
+        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"María\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"8/1/2022\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15;\nmsg.payload.id_NFC = \"100:90:231:164\"; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2909,8 +2909,7 @@
         "y": 705,
         "wires": [
             [
-                "68393fadab7b894d",
-                "3106c1a52299b891"
+                "dd654c196b819d45"
             ]
         ]
     },
@@ -2947,11 +2946,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1295,
-        "y": 645,
+        "x": 1310,
+        "y": 630,
         "wires": []
     },
     {
@@ -2960,9 +2960,10 @@
         "z": "5b39e5cdc1e06e94",
         "name": "",
         "links": [
-            "3106c1a52299b891"
+            "3106c1a52299b891",
+            "a6609b2445449f60"
         ],
-        "x": 75,
+        "x": 90,
         "y": 840,
         "wires": [
             [
@@ -2978,7 +2979,7 @@
         "links": [
             "64441cd560dba17a"
         ],
-        "x": 1215,
+        "x": 1365,
         "y": 705,
         "wires": []
     },
@@ -2986,7 +2987,7 @@
         "id": "415e433cdd673a85",
         "type": "comment",
         "z": "5b39e5cdc1e06e94",
-        "name": "readme",
+        "name": "LEER",
         "info": "Ajustar la fecha y los días en los que queremos que se mande. ",
         "x": 95,
         "y": 660,
@@ -2996,17 +2997,86 @@
         "id": "a85be552377e484f",
         "type": "function",
         "z": "5b39e5cdc1e06e94",
-        "name": "",
-        "func": "var num_ids;\n\nfor (let i = 0; i < num_ids; i++) {\n    \n    msg.ids_reservas[i] = msg.usuarios_reservas[i];\n}\n\nreturn msg;",
+        "name": "ids comunes",
+        "func": "var num_ids;\nvar ids_comunes = [\"88:109:194:73\"];\n\n\nnum_ids = msg.num_ids;\n\nfor (let i = 0; i < num_ids; i++) {\n    \n    ids_comunes.push(msg.reservas_hoy[i].id_NFC);\n    msg.payload = ids_comunes;\n}\n\nmsg.payload = ids_comunes;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
+        "x": 310,
         "y": 840,
         "wires": [
-            []
+            [
+                "95561fe443ac46ce"
+            ]
         ]
+    },
+    {
+        "id": "95561fe443ac46ce",
+        "type": "debug",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 885,
+        "wires": []
+    },
+    {
+        "id": "dd654c196b819d45",
+        "type": "change",
+        "z": "5b39e5cdc1e06e94",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reservas_hoy",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "num_ids",
+                "pt": "msg",
+                "to": "$count(msg.reservas_hoy)\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1205,
+        "y": 705,
+        "wires": [
+            [
+                "3106c1a52299b891",
+                "68393fadab7b894d"
+            ]
+        ]
+    },
+    {
+        "id": "2010b83bdb0e529f",
+        "type": "comment",
+        "z": "5b39e5cdc1e06e94",
+        "name": "se manda por mqtt - LEER",
+        "info": "No sé si es necesario que tenga la key \"idComun1\", \"idComun2\", etc...si no hace falta es mucho más simple como está ahora. ",
+        "x": 575,
+        "y": 795,
+        "wires": []
     }
 ]
