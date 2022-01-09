@@ -233,7 +233,7 @@
         "type": "function",
         "z": "f3e96f594243addc",
         "name": "Extraer chatId",
-        "func": "msg.telegram = msg.payload;\nmsg.payload = {\"ID Telegram\": {\"$eq\": msg.payload.chatId}};\nreturn msg;",
+        "func": "msg.telegram = msg.payload;\nmsg.payload = {\"id_telegram\": {\"$eq\": msg.payload.chatId}};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -346,14 +346,14 @@
         "id": "adeacc6619e3dafa",
         "type": "chatbot-message",
         "z": "f3e96f594243addc",
-        "name": "Asociar usuario",
+        "name": "Preguntar nombre",
         "message": [
             {
                 "message": "No pareces estar en la base de datos. ¿Cómo te llamas?"
             }
         ],
         "language": "none",
-        "x": 900,
+        "x": 870,
         "y": 320,
         "wires": [
             [
@@ -382,7 +382,7 @@
         "type": "function",
         "z": "f3e96f594243addc",
         "name": "Extraer nombre",
-        "func": "msg.payload = {\"Nombre\": {\"$eq\": msg.payload.content}};\nmsg.nombre = msg.payload.content;\nreturn msg;",
+        "func": "if (msg.payload.content != \"salir\") {\n    msg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\n    msg.nombre = msg.payload.content;\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -530,11 +530,6 @@
             },
             {
                 "t": "eq",
-                "v": "/aforo",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
                 "v": "/reservaCNC",
                 "vt": "str"
             },
@@ -542,26 +537,19 @@
                 "t": "eq",
                 "v": "/reservaImpresora3D",
                 "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "/outfitIdir",
-                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 5,
+        "outputs": 3,
         "x": 1040,
         "y": 700,
         "wires": [
             [],
             [],
-            [],
             [
                 "fb465ce77f402fc8"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -581,7 +569,7 @@
         "name": "No estás registrad@ o error",
         "message": [
             {
-                "message": "Vaya. Tu nombre tampoco figura en nuestros registros. \nSi estás registrad@ con nosotros puede que hayas introducido el nombre de manera incorrecta. Prueba otra vez usando /asociarUsuario y asegúrate de introducir el nombre tal y cómo lo hiciste al registrarte.\nSi sigues teniendo problemas, ponte en /contacto con nosotros."
+                "message": "Vaya. Tu nombre no figura en nuestros registros. \nSi estás registrad@ con nosotros puede que hayas introducido el nombre de manera incorrecta. Prueba otra vez usando /asociarUsuario y asegúrate de introducir el nombre tal y cómo lo hiciste al registrarte.\nSi sigues teniendo problemas, ponte en /contacto con nosotros."
             }
         ],
         "language": "none",
@@ -638,8 +626,8 @@
         "links": [
             "2e2ef2455389223b"
         ],
-        "x": 1635,
-        "y": 540,
+        "x": 1355,
+        "y": 480,
         "wires": []
     },
     {
@@ -678,7 +666,7 @@
         "type": "function",
         "z": "f3e96f594243addc",
         "name": "preparar",
-        "func": "msg.query = {\"Nombre\": {\"$eq\": msg.nombre}};\nmsg.payload = { \"$set\": {\"ID Telegram\": msg.telegram.chatId} };\nreturn msg;",
+        "func": "msg.query = {\"id_telegram\": {\"$eq\": msg.nombre}};\nmsg.payload = { \"$set\": {\"id_telegram\": msg.telegram.chatId} };\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -691,36 +679,6 @@
                 "c43c5c65dddd98d1"
             ]
         ]
-    },
-    {
-        "id": "e8231867576bb53b",
-        "type": "comment",
-        "z": "f3e96f594243addc",
-        "name": "CAMBIO DE KEY",
-        "info": "",
-        "x": 180,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "42af1bb0a2a62372",
-        "type": "comment",
-        "z": "f3e96f594243addc",
-        "name": "CAMBIO DE KEY",
-        "info": "",
-        "x": 160,
-        "y": 860,
-        "wires": []
-    },
-    {
-        "id": "cbbdf1f3186fb51d",
-        "type": "comment",
-        "z": "f3e96f594243addc",
-        "name": "CAMBIO DE KEY",
-        "info": "",
-        "x": 2460,
-        "y": 480,
-        "wires": []
     },
     {
         "id": "86bb486ea7386aa1",
@@ -767,7 +725,7 @@
         "name": "¿Día?",
         "message": [
             {
-                "message": "Marchando una de impresora 3D. ¿En qué día tienes pensado imprimir? (Formato aaaa/mm/dd, por favor)."
+                "message": "Marchando una de impresora 3D. ¿En qué día tienes pensado imprimir? (Formato dd/mm/aaaa, por favor)."
             }
         ],
         "language": "none",
@@ -784,8 +742,8 @@
         "type": "function",
         "z": "f3e96f594243addc",
         "name": "¿Formato correcto?",
-        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\nif (mes == 2 || dia > 28) {\n    error = true;\n}\n\nvar fecha = new Date(msg.payload.content);\n\nif (!error && fecha !== \"Invalid Date\") {\n    msg.payload.dia = new Date(parts[2], parts[1] - 1, parts[0]);\n    msg.payload.sala = \"3D\";\n    return [ msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, msg ];\n}",
-        "outputs": 2,
+        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\nif (mes == 2 || dia > 28) {\n    error = true;\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"salir\") {\n    return [null, null, null];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = \"3D\";\n    return [ msg, null, null ];\n} else if (fecha < Date.now()){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg ];\n}",
+        "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -793,7 +751,12 @@
         "x": 1730,
         "y": 760,
         "wires": [
-            [],
+            [
+                "99e352af81bde24b"
+            ],
+            [
+                "676c91b0b59a4a89"
+            ],
             [
                 "0cb1ecb3346b2d76"
             ]
@@ -803,15 +766,15 @@
         "id": "0cb1ecb3346b2d76",
         "type": "chatbot-message",
         "z": "f3e96f594243addc",
-        "name": "Error, ¿día?",
+        "name": "Error, formato incorrecto",
         "message": [
             {
                 "message": "La fecha que has introducido no es correcta, por favor, introdúcela de nuevo pero correctamente. (Formato dd/mm/aaaa)."
             }
         ],
         "language": "none",
-        "x": 1310,
-        "y": 820,
+        "x": 1350,
+        "y": 980,
         "wires": [
             [
                 "59a3487e1c1835e3"
@@ -822,20 +785,20 @@
         "id": "7770a75c81a404bd",
         "type": "comment",
         "z": "f3e96f594243addc",
-        "name": "Petición a DB con día, sala",
+        "name": "Petición a DB con día y sala a María",
         "info": "msg.payload.dia = \"dd/mm/aaaa\"\nmsg.payload.sala = \"3D\"",
-        "x": 1950,
-        "y": 740,
+        "x": 1900,
+        "y": 700,
         "wires": []
     },
     {
         "id": "a09f190543e1856a",
         "type": "comment",
         "z": "f3e96f594243addc",
-        "name": "Recepción de lista de reservas",
+        "name": "Recepción de lista de reservas de María",
         "info": "",
-        "x": 2210,
-        "y": 740,
+        "x": 2060,
+        "y": 820,
         "wires": []
     },
     {
@@ -896,8 +859,8 @@
         "type": "function",
         "z": "f3e96f594243addc",
         "name": "Comprobar contraseña",
-        "func": "msg.payload = { \"$match\": {\"Nombre\": {\"$eq\": { \"Contraseña\": msg.payload.content }}}};\nmsg.contraseña = msg.payload.content;\nreturn msg;",
-        "outputs": 1,
+        "func": "if (msg.payload.content != \"salir\") {\n    msg.payload = { \"$match\": {\"nombre\": {\"$eq\": { \"password\": msg.payload.content }}}};\n    msg.contraseña = msg.payload.content;\n    return msg;\n}",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -907,18 +870,9 @@
         "wires": [
             [
                 "192a4afb9e9781a2"
-            ]
+            ],
+            []
         ]
-    },
-    {
-        "id": "f8680b70504536af",
-        "type": "comment",
-        "z": "f3e96f594243addc",
-        "name": "CAMBIO DE KEY",
-        "info": "",
-        "x": 180,
-        "y": 1180,
-        "wires": []
     },
     {
         "id": "5ea893ef8b02a6bc",
@@ -1066,17 +1020,7 @@
         "z": "f3e96f594243addc",
         "name": "Mostrar horas reservadas en el día + pedir horas",
         "info": "",
-        "x": 2540,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "db61cf509fb10c56",
-        "type": "comment",
-        "z": "f3e96f594243addc",
-        "name": "Comprobar si las horas introducidas son posibles",
-        "info": "",
-        "x": 2920,
+        "x": 2580,
         "y": 760,
         "wires": []
     },
@@ -1097,8 +1041,121 @@
         "name": "Guardar reserva",
         "info": "",
         "x": 3200,
-        "y": 780,
+        "y": 800,
         "wires": []
+    },
+    {
+        "id": "8840447e1a493fc9",
+        "type": "function",
+        "z": "f3e96f594243addc",
+        "name": "¿Horas correctas?",
+        "func": "var hora_abrir;\nvar hora_cerrar;\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\nvar error = false;\n// Comprobar que la hora de inicio es anterior a la hora de fin\nif (inicio_nueva_reserva >= fin_nueva_reserva) {\n    error = true;\n} else {\n    // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao\n    if (inicio_nueva_reserva < hora_abrir || inicio_nueva_reserva > hora_cerrar) {\n        error = true;\n    } else {\n        // Comprobar que las horas no se solapan con otra reserva\n        for (const i of msg.payload) {\n            if (msg.payload[i].hora_inicio >= inicio_nueva_reserva && msg.payload[i].hora_inicio < fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n            if (msg.payload[i].hora_fin > inicio_nueva_reserva && msg.payload[i].hora_fin <= fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n        }\n    }\n}\n\nif (!error) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2910,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caab87e91c767cc4",
+        "type": "function",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "func": "msg.payload.type = \"message\";\nmsg.payload.content = \"pichaffff\";\nmsg.payload.chatId = 430815035;\nmsg.payload.messageId = 1;\nmsg.payload.inbound = false;\nmsg.payload.fallback;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2480,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "894e75328f3d09cf",
+        "type": "chatbot-telegram-send",
+        "z": "f3e96f594243addc",
+        "bot": "3cc01e3e385d0ded",
+        "botProduction": "",
+        "track": false,
+        "passThrough": false,
+        "errorOutput": false,
+        "outputs": 0,
+        "x": 2670,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "e5f9f1903188062b",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "¿Aforo?",
+        "info": "",
+        "x": 990,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "559f947c03c38b28",
+        "type": "comment",
+        "z": "f3e96f594243addc",
+        "name": "Comprobar si existe algún usuario con ese nombre y contraseña",
+        "info": "",
+        "x": 350,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "676c91b0b59a4a89",
+        "type": "chatbot-message",
+        "z": "f3e96f594243addc",
+        "name": "Error, día introducido anterior a hoy",
+        "message": [
+            {
+                "message": "La fecha que has introducido es anterior al día de hoy. Por favor, introduce el día de hoy o una fecha posterior. (Formato dd/mm/aaaa)."
+            }
+        ],
+        "language": "none",
+        "x": 1380,
+        "y": 860,
+        "wires": [
+            [
+                "59a3487e1c1835e3"
+            ]
+        ]
+    },
+    {
+        "id": "99e352af81bde24b",
+        "type": "link out",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "links": [
+            "27be31c689baea40"
+        ],
+        "x": 1915,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "16ff79ca21cb7d3f",
+        "type": "link in",
+        "z": "f3e96f594243addc",
+        "name": "",
+        "links": [
+            "66988095b2f77c76"
+        ],
+        "x": 2055,
+        "y": 760,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "3cc01e3e385d0ded",
