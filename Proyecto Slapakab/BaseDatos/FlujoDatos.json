@@ -2338,7 +2338,7 @@
         "type": "function",
         "z": "9737ff214ffcf68e",
         "name": "Aggregation",
-        "func": "var newMsg = {};\nnewMsg.collection = \"reservas\";\nnewMsg.payload = [ \n    { \"$match\" : { \"sala\": msg.payload.sala, \"fecha\": msg.payload.fecha }}\n    ];\n\nreturn newMsg;",
+        "func": "var newMsg = {};\nnewMsg.msgAntiguo = msg;\nnewMsg.collection = \"reservas\";\nnewMsg.payload = [ \n    { \"$match\" : { \"sala\": msg.payload.sala, \"fecha\": msg.payload.fecha }}\n    ];\n\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2357,7 +2357,7 @@
         "type": "debug",
         "z": "9737ff214ffcf68e",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2373,7 +2373,7 @@
         "type": "debug",
         "z": "9737ff214ffcf68e",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4190,8 +4190,18 @@
         "z": "9737ff214ffcf68e",
         "name": "Mandar lista de reservas a Fer",
         "info": "",
-        "x": 1420,
-        "y": 480,
+        "x": 1440,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a3fecce11bf5b1e0",
+        "type": "comment",
+        "z": "9737ff214ffcf68e",
+        "name": "¿Necesitas muy fuerte crear un nuevo mensaje? Porque me jodes un poquito xd",
+        "info": "",
+        "x": 1040,
+        "y": 540,
         "wires": []
     }
 ]
