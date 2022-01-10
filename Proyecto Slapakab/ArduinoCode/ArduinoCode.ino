@@ -1,6 +1,5 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include <ESP8266httpUpdate.h>
 #include <ArduinoJson.h>
 #include <SPI.h>      // incluye libreria bus SPI
 #include <MFRC522.h>      // incluye libreria especifica para MFRC522
@@ -15,7 +14,7 @@
 
 //Pin cerradura
 
-#define PIN_PUERTA 16  //pin D0, Low=cerrado, High=abierto
+#define PIN_PUERTA 10  //pin SD3, Low=cerrado, High=abierto
 
 #define N_PUERTA  1 // numero de puerta (cambiar para cada modulo)
 
@@ -26,7 +25,7 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);
 // Update these with values suitable for your network.
 const char* ssid = "masdoritos";
 const char* password = "12345678";
-const char* mqtt_server = "192.168.137.1";
+const char* mqtt_server = "192.168.216.94";
 
 const char* mqtt_user = "";
 const char* mqtt_pass = "";
@@ -49,20 +48,16 @@ char buffer[128];  // cadena de 128 caracteres
 
 const char* online = "{\"online\":true}" ;
 const char* offline = "{\"online\":false}" ;
-const char* abierta = "{\"open\":true}" ;
-const char* cerrada = "{\"open\":false}" ;
+const char* abierta = "{\"estado_puerta\":\"abierta\"}" ;
+const char* cerrada = "{\"estado_puerta\":\"cerrada\"}" ;
 
 // Vars
 unsigned long ahora;
 
 //variables para lectura y comparacion usuarios
 byte LecturaUID[4];         // crea array para almacenar el UID leido
-byte Usuario1[4]= {0x00, 0x00, 0x00, 0x00} ;    // UID de tarjeta leido en programa 1
-byte Usuario2[4]= {0x00, 0x00, 0x00, 0x00} ;    // UID de llavero leido en programa 1
-byte Usuario3[4]= {0x00, 0x00, 0x00, 0x00} ;
-byte Usuario4[4]= {0x00, 0x00, 0x00, 0x00} ;
+
 struct usuario {
-  String nombre;
   byte id[4]; 
 };
 struct usuario usuarios_comunes[4];
@@ -108,59 +103,61 @@ void conecta_mqtt() {
 // funcion de procesado de mensaje de ids comunes de la base de datos
 
 void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
-  //String idAux ;
   char *mensaje = (char *)malloc(length + 1); // reservo memoria para copia del mensaje
   strncpy(mensaje, (char*)payload, length); // copio el mensaje en cadena de caracteres
   mensaje[length] = '\0'; // caracter cero marca el final de la cadena
   Serial.printf("Mensaje recibido [%s] %s\n", topic, mensaje);
   // compruebo el topic
   if(strcmp(topic,topicSubAbrir)==0){
-    abrirPuerta();
+    if(strcmp(mensaje,"true")==0){
+      abrirPuerta();
+    }
   }else if(strcmp(topic,topicSubCache)==0){
-    Serial.print("me llega el topic");
+    Serial.println("Cache recibido");
     StaticJsonDocument<512> root; // el tamaño tiene que ser adecuado para el mensaje
     // Deserialize the JSON document
     DeserializationError error = deserializeJson(root, mensaje);
 
     // Compruebo si no hubo error
     if (error) {
-      Serial.print("Error deserializeJson() failed: ");
-      Serial.println(error.c_str());
-    }
-    else
-    if(root.containsKey("idComun1")){  // comprobar si existe el campo/clave que estamos buscando    
-      String idAux1 = root["idComun1"];
-      stringIDtoByteID( idAux1, 0);
+      Serial.print("Error deserializeJson failed: ");
+      Serial.print(error.c_str());
+      Serial.println();
     }
     else{
-      Serial.print("Error : ");
-      Serial.println("\"idComun1\" key not found in JSON");
+      if(root.containsKey("idComun1")){  // comprobar si existe el campo/clave que estamos buscando    
+        String idAux1 = root["idComun1"];
+        stringIDtoByteID( idAux1, 0);
+      }
+      else{
+        Serial.print("Error : ");
+        Serial.println("\"idComun1\" key not found in JSON");
+      }
+      if(root.containsKey("idComun2")){  // comprobar si existe el campo/clave que estamos buscando
+        String idAux2 = root["idComun2"];
+        stringIDtoByteID( idAux2, 1);
+      }
+      else{
+        Serial.print("Error : ");
+        Serial.println("\"idComun2\" key not found in JSON");
+      }
+      if(root.containsKey("idComun3")){  // comprobar si existe el campo/clave que estamos buscando
+        String idAux3 = root["idComun3"];
+        stringIDtoByteID( idAux3, 2);
+      }
+      else{
+        Serial.print("Error : ");
+        Serial.println("\"idComun3\" key not found in JSON");
+      }
+      if(root.containsKey("idComun4")){  // comprobar si existe el campo/clave que estamos buscando
+        String idAux4 = root["idComun4"];
+        stringIDtoByteID( idAux4, 3);
+      }
+      else{
+        Serial.print("Error : ");
+        Serial.println("\"idComun4\" key not found in JSON");
+      }
     }
-    if(root.containsKey("idComun2")){  // comprobar si existe el campo/clave que estamos buscando
-       String idAux2 = root["idComun2"];
-      stringIDtoByteID( idAux2, 1);
-    }
-    else{
-      Serial.print("Error : ");
-      Serial.println("\"idComun2\" key not found in JSON");
-    }
-    if(root.containsKey("idComun3")){  // comprobar si existe el campo/clave que estamos buscando
-      String idAux3 = root["idComun3"];
-      stringIDtoByteID( idAux3, 2);
-    }
-    else{
-      Serial.print("Error : ");
-      Serial.println("\"idComun3\" key not found in JSON");
-    }
-    if(root.containsKey("idComun4")){  // comprobar si existe el campo/clave que estamos buscando
-      String idAux4 = root["idComun4"];
-      stringIDtoByteID( idAux4, 3);
-    }
-    else{
-      Serial.print("Error : ");
-      Serial.println("\"idComun4\" key not found in JSON");
-    }    
-    
   }
   else{
     Serial.println("Error: Topic desconocido");
@@ -176,12 +173,12 @@ void abrirPuerta(){
   digitalWrite(PIN_PUERTA, HIGH);
   ahora = millis();
   mqtt_client.publish(topicPubEstadoPuerta,abierta,true);
-  Serial.printf("Puerta abierta\n\n");
+  Serial.println("Puerta abierta\n");
 }
 void cerrarPuerta(){
   digitalWrite(PIN_PUERTA, LOW);
   mqtt_client.publish(topicPubEstadoPuerta,cerrada,true);
-    Serial.printf("Puerta cerrada\n\n");
+    Serial.println("Puerta cerrada\n");
 }
 
 //-----------------------------------------------------
@@ -193,32 +190,6 @@ boolean comparaUID(byte lectura[],byte usuario[]) // funcion comparaUID
     return(false);          // retorna falso
   }
   return(true);           // si los 4 bytes coinciden retorna verdadero
-}
-
-//-----------------------------------------------------
-
-void Iguala_Array( byte usuarioN[4], int user)
-{
-  
-    for (int i = 0; i < 4; i ++)
-    {
-    usuarios_comunes[user].id[i] = usuarioN[i];
-    }
-    //lineas de comprobacion de la actulizacion de la base de datos
-//    for (byte i = 0; i < 4; i++) 
-//    { // bucle recorre de a un byte por vez el UID
-//      if (usuarios_comunes[user].id[i] < 0x10){   // si el byte leido es menor a 0x10
-//        Serial.print(" 0");       // imprime espacio en blanco y numero cero
-//      }
-//      else{           // sino
-//        Serial.print(" ");        // imprime un espacio en blanco
-//      }
-//      Serial.print(usuarios_comunes[user].id[i], HEX);    // imprime el byte del UID leido en hexadecimal
-      
-       
-//    }
- 
-    
 }
 
 //-----------------------------------------------------
@@ -277,14 +248,6 @@ void setup() {
 
   SPI.begin();        // inicializa bus SPI
   mfrc522.PCD_Init();     // inicializa modulo lector
-//  Iguala_Array(Usuario1, 0);
-//  Iguala_Array(Usuario2, 1);
-//  Iguala_Array(Usuario3, 2);
-//  Iguala_Array(Usuario4, 3);
-  usuarios_comunes[0].nombre = "juan";
-  usuarios_comunes[1].nombre = "pedro";
-  usuarios_comunes[2].nombre = "nada1";
-  usuarios_comunes[3].nombre = "nada2";
   
 }
 
@@ -304,51 +267,38 @@ void loop() {
     cerrarPuerta();
     ahora=millis();
   }
-  
-  //delay(1);
 
   if ( !mfrc522.PICC_IsNewCardPresent())   // si no hay una tarjeta presente
-  return;           // retorna al loop esperando por una tarjeta
+    return;           // retorna al loop esperando por una tarjeta
   
   if ( !mfrc522.PICC_ReadCardSerial()){     // si no puede obtener datos de la tarjeta
     Serial.println("no se pueden obtener datos");
     return;           // retorna al loop esperando por otra tarjeta
   }
-
-  Serial.print("UID leido:");       // muestra texto UID:
   
   for (byte i = 0; i < mfrc522.uid.size; i++){      // bucle recorre de a un byte por vez el UID
-    if (mfrc522.uid.uidByte[i] < 0x10){   // si el byte leido es menor a 0x10
-      Serial.print(" 0");       // imprime espacio en blanco y numero cero
-    }
-    else{           // sino
-      Serial.print(" ");        // imprime un espacio en blanco
-    }
-    Serial.print(mfrc522.uid.uidByte[i], DEC);    // imprime el byte del UID leido en hexadecimal
     LecturaUID[i]=mfrc522.uid.uidByte[i];     
   }
           
-  Serial.print("\t");         // imprime un espacio de tabulacion             
+  //Serial.print("\t");         // imprime un espacio de tabulacion             
 
   for ( int i = 0; i < 4; i++)
   {
     if(comparaUID(LecturaUID, usuarios_comunes[i].id)){  
       // llama a funcion comparaUID con Usuario1              
-      sprintf (buffer,"Bienvenido Usuario: %s \n", usuarios_comunes[i].nombre); // si retorna verdadero muestra texto bienvenida
-      Serial.print (buffer);
+      sprintf (buffer,"Bienvenido \n"); // si retorna verdadero muestra texto bienvenida
+      Serial.println(buffer);
       usuario_conocido = true;
-      snprintf(mensaje, 128, "{\n\"usuario conocido\": %s, \"id usuario: %d:%d:%d:%d }",usuarios_comunes[i].nombre , usuarios_comunes[i].id[0], usuarios_comunes[i].id[1], usuarios_comunes[i].id[2], usuarios_comunes[i].id[3]);
-      Serial.print (mensaje);
-      
-//        snprintf(mensaje, 128, "{\"usuario conocido\": %s, \"id usuario: %02X:%02X:%02X:%02X }",usuarios_comunes[i].nombre , usuarios_comunes[i].id[0], usuarios_comunes[i].id[1], usuarios_comunes[i].id[2], usuarios_comunes[i].id[3]);
-//        Serial.print (mensaje);
-      mqtt_client.publish(topicPubIDmatch, mensaje);   
-    }     
+      snprintf(mensaje, 128, "{\"ID\": \"%d:%d:%d:%d\" }", usuarios_comunes[i].id[0], usuarios_comunes[i].id[1], usuarios_comunes[i].id[2], usuarios_comunes[i].id[3]);
+
+      mqtt_client.publish(topicPubIDmatch, mensaje);
+      abrirPuerta();
+    }
   }
   
   if (usuario_conocido == false){
     Serial.println("No te conozco");    // muestra texto equivalente a acceso denegado
-    snprintf(mensaje, 128, "{\"usuario deconocido id\": %02X:%02X:%02X:%02X }",LecturaUID[0],LecturaUID[1],LecturaUID[2],LecturaUID[3]);
+    snprintf(mensaje, 128, "{\"ID\": \"%d:%d:%d:%d\" }",LecturaUID[0],LecturaUID[1],LecturaUID[2],LecturaUID[3]);
     mqtt_client.publish(topicPubIDunmatch, mensaje);
   }
       
