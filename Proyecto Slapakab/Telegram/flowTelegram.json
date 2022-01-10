@@ -90,7 +90,7 @@
         "name": "Bienvenida",
         "message": [
             {
-                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\n\nComandos públicos:\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\n\nComandos para usuarios registrados:\n/reservaCNC\n/reservaImpresora3D"
+                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\n\nComandos públicos:\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\n\nComandos para usuarios registrados:\n/reservaCNC\n/reservaImpresora3D\n\nEn cualquier momento puedes escribir /salir para que te deje en paz."
             }
         ],
         "language": "none",
@@ -336,7 +336,7 @@
         "name": "Preguntar nombre",
         "message": [
             {
-                "message": "No pareces estar en la base de datos. ¿Cómo te llamas?"
+                "message": "No pareces estar en la base de datos. ¿Cómo te llamas? (Nombre y primer apellido).\n\nSi no quieres continuar con el proceso de registro, escribe /salir"
             }
         ],
         "language": "none",
@@ -369,7 +369,7 @@
         "type": "function",
         "z": "6fd240d0a5125c84",
         "name": "Extraer nombre",
-        "func": "if (msg.payload.content != \"salir\") {\n    msg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\n    msg.nombre = msg.payload.content;\n    return msg;\n}",
+        "func": "if (msg.payload.content != \"/salir\") {\n    msg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\n    msg.nombre = msg.payload.content;\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -659,7 +659,7 @@
         "type": "function",
         "z": "6fd240d0a5125c84",
         "name": "preparar",
-        "func": "msg.query = {\"id_telegram\": {\"$eq\": msg.nombre}};\nmsg.payload = { \"$set\": {\"id_telegram\": msg.telegram.chatId} };\nreturn msg;",
+        "func": "msg.query = {\"nombre\": {\"$eq\": msg.nombre}};\nmsg.payload = { \"$set\": {\"id_telegram\": msg.telegram.chatId} };\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -715,14 +715,14 @@
         "id": "bfdf8a2b6ca9f1a2",
         "type": "chatbot-message",
         "z": "6fd240d0a5125c84",
-        "name": "¿Día?",
+        "name": "¿Día? 3D",
         "message": [
             {
-                "message": "Marchando una de impresora 3D. ¿En qué día tienes pensado imprimir? (Formato dd/mm/aaaa, por favor)."
+                "message": "Marchando una de impresora 3D. ¿En qué día tienes pensado imprimir? (Formato dd/mm/aaaa, por favor).\n\nSi no quieres continuar con el proceso de reserva, escribe /salir"
             }
         ],
         "language": "none",
-        "x": 1530,
+        "x": 1500,
         "y": 720,
         "wires": [
             [
@@ -734,14 +734,14 @@
         "id": "0bd2f925d758c8ec",
         "type": "function",
         "z": "6fd240d0a5125c84",
-        "name": "¿Formato correcto?",
+        "name": "¿Día correcto?",
         "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\n\nif (mes == 2 && dia > 29) {\n    error = true;\n}\n\n// Si el año no es bisiesto entonces...\nif ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n    // Si el mes es febrero y el día es mayor que 28\n    if (mes == 2 && dia > 28) {\n        error = true;\n    }\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"salir\") {\n    return [null, null, null];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = msg.sala;\n    return [ msg, null, null ];\n} else if (fecha < Date.now() && !Error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg ];\n}",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1930,
+        "x": 1920,
         "y": 760,
         "wires": [
             [
@@ -838,7 +838,7 @@
         "mongodb": "f605fa69.8f5008",
         "name": "Comprobar contraseña en DB",
         "collection": "usuarios",
-        "operation": "count",
+        "operation": "aggregate",
         "x": 470,
         "y": 1140,
         "wires": [
@@ -852,7 +852,7 @@
         "type": "function",
         "z": "6fd240d0a5125c84",
         "name": "Comprobar contraseña",
-        "func": "if (msg.payload.content != \"salir\") {\n    msg.payload = { \"$match\": {\"nombre\": {\"$eq\": { \"password\": msg.payload.content }}}};\n    msg.contraseña = msg.payload.content;\n    return msg;\n}",
+        "func": "if (msg.payload.content != \"/salir\") {\n    msg.payload = [{ \"$match\": {\"nombre\": msg.nombre, \"password\": msg.contraseña}}];\n    msg.contraseña = msg.payload.content;\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -941,14 +941,10 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
+                "t": "empty"
             },
             {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
+                "t": "nempty"
             }
         ],
         "checkall": "true",
@@ -1022,8 +1018,8 @@
         "z": "6fd240d0a5125c84",
         "name": "Guardar reserva",
         "info": "",
-        "x": 3800,
-        "y": 680,
+        "x": 3880,
+        "y": 620,
         "wires": []
     },
     {
@@ -1031,7 +1027,7 @@
         "type": "function",
         "z": "6fd240d0a5125c84",
         "name": "¿Horas correctas?",
-        "func": "// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\n\nvar hora_apertura;\nvar hora_cierre;\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\nvar error = false;\n// Comprobar que la hora de inicio es anterior a la hora de fin\nif (inicio_nueva_reserva >= fin_nueva_reserva) {\n    error = true;\n} else {\n    // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n    if (inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) {\n        error = true;\n    } else {\n        // Comprobar que las horas no se solapan con otra reserva\n        for (const i of msg.payload) {\n            if (msg.payload[i].hora_inicio >= inicio_nueva_reserva && msg.payload[i].hora_inicio < fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n            if (msg.payload[i].hora_fin > inicio_nueva_reserva && msg.payload[i].hora_fin <= fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n        }\n    }\n}\n\nif (!error) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}\n\nreturn msg;",
+        "func": "// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\nvar horasReserva = msg.payload.content;\nlet pattern = /w3schools/i;\n\nvar hora_apertura;\nvar hora_cierre;\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\nvar error = false;\n// Comprobar que la hora de inicio es anterior a la hora de fin\nif (inicio_nueva_reserva >= fin_nueva_reserva) {\n    error = true;\n} else {\n    // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n    if (inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) {\n        error = true;\n    } else {\n        // Comprobar que las horas no se solapan con otra reserva\n        for (const i of msg.payload) {\n            if (msg.payload[i].hora_inicio >= inicio_nueva_reserva && msg.payload[i].hora_inicio < fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n            if (msg.payload[i].hora_fin > inicio_nueva_reserva && msg.payload[i].hora_fin <= fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n        }\n    }\n}\n\nif (!error) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}\n\nreturn msg;",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -1040,7 +1036,9 @@
         "x": 3510,
         "y": 680,
         "wires": [
-            [],
+            [
+                "84477599338ab290"
+            ],
             [
                 "1689fac7be87a2ae"
             ]
@@ -1164,15 +1162,18 @@
         "type": "function",
         "z": "6fd240d0a5125c84",
         "name": "Asignar sala",
-        "func": "if (msg.telegram.content == \"/reservaCNC\") {\n    msg.sala = \"CNC\";\n} else {\n    msg.sala = \"3D\";\n}\nreturn msg;",
-        "outputs": 1,
+        "func": "if (msg.telegram.content == \"/reservaCNC\") {\n    msg.sala = \"CNC\";\n    return [ msg, null ];\n} else {\n    msg.sala = \"3D\";\n    return [ null, msg ];\n}",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1330,
+        "x": 1310,
         "y": 720,
         "wires": [
+            [
+                "a75cda36a02ab456"
+            ],
             [
                 "bfdf8a2b6ca9f1a2"
             ]
@@ -1285,6 +1286,52 @@
         "info": "Para guardar reservas de la impresiones nocturnas, las hora de inicio y fin tienen que tener una fecha asociadas y es tremendo follón a estas alturas.",
         "x": 3530,
         "y": 580,
+        "wires": []
+    },
+    {
+        "id": "791c0707f2ecf029",
+        "type": "comment",
+        "z": "6fd240d0a5125c84",
+        "name": "Conseguir variables globales",
+        "info": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\n",
+        "x": 2940,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a75cda36a02ab456",
+        "type": "chatbot-message",
+        "z": "6fd240d0a5125c84",
+        "name": "¿Día? CNC",
+        "message": [
+            {
+                "message": "Marchando una de CNC. ¿En qué día tienes pensado usar la máquina? (Formato dd/mm/aaaa, por favor).\n\nSi no quieres continuar con el proceso de reserva, escribe /salir"
+            }
+        ],
+        "language": "none",
+        "x": 1490,
+        "y": 660,
+        "wires": [
+            [
+                "a82301407e10cb6f"
+            ]
+        ]
+    },
+    {
+        "id": "84477599338ab290",
+        "type": "debug",
+        "z": "6fd240d0a5125c84",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3830,
+        "y": 680,
         "wires": []
     },
     {
