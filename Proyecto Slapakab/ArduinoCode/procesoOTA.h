@@ -1,5 +1,7 @@
+#include <ESP8266httpUpdate.h>
+
 // datos para actualización   >>>> SUSTITUIR IP <<<<<
-#define HTTP_OTA_ADDRESS      F("192.168.137.1")         // Address of OTA update server
+#define HTTP_OTA_ADDRESS      F("192.168.216.94")         // Address of OTA update server
 #define HTTP_OTA_PATH         F("/esp8266-ota/update") // Path to update firmware
 #define HTTP_OTA_PORT         1880                     // Port of update server
                                                        // Name of firmware
