@@ -1,88 +1,49 @@
 [
     {
-        "id": "1a787168837f3499",
+        "id": "f4fd661cef8e8694",
         "type": "tab",
         "label": "Skapalab - USUARIOS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "9737ff214ffcf68e",
+        "id": "2b6b3f18928fcd9d",
         "type": "tab",
         "label": "Skapalab - RESERVAS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "e9a8bf588bc16e41",
+        "id": "dbcaebc777febea5",
         "type": "tab",
         "label": "Skapalab - VIS. RESERVAS",
         "disabled": false,
         "info": "Flujo reservado a la clasificación de reservas para su posterior visualización en el dashboard."
     },
     {
-        "id": "d9da143bd53b7832",
+        "id": "bd8c6ea666878db4",
         "type": "tab",
         "label": "Skapalab - ESTADÍSTICAS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "6636195c7fb0d804",
+        "id": "5d189995a81fad90",
         "type": "tab",
         "label": "Skapalab - mqtt",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "d1bd5f5047fbe178",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "iot.ac.uma.es",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "id": "4fc54e2b527fa054",
+        "type": "ui_tab",
+        "name": "Reservas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
-        "id": "b4eb3d3dca556878",
-        "type": "ui_group",
-        "name": "Historiales",
-        "tab": "",
-        "order": 1,
-        "disp": false,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "e18675c0e8491a0e",
-        "type": "ui_group",
-        "name": "Gauges",
-        "tab": "",
-        "order": 2,
-        "disp": false,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "0d8ab506c19c508b",
+        "id": "90181f567204f406",
         "type": "ui_base",
         "theme": {
             "name": "theme-light",
@@ -179,7 +140,284 @@
         }
     },
     {
-        "id": "dfefd42be31cab40",
+        "id": "4245ea240d944531",
+        "type": "ui_group",
+        "name": "Registro",
+        "tab": "aeba555f0d01b19a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "47f7b2f5047c4435",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "9be3b7eb8de0b550",
+        "type": "ui_group",
+        "name": "Estadísticas",
+        "tab": "29016fe013cee439",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "aeba555f0d01b19a",
+        "type": "ui_tab",
+        "name": "Usuarios",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "29016fe013cee439",
+        "type": "ui_tab",
+        "name": "Estadísticas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f605fa69.8f5008",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "3cc01e3e385d0ded",
+        "type": "chatbot-telegram-node",
+        "botname": "SkapaLaBot",
+        "usernames": "",
+        "token": "5084907312:AAFDpRGPmrdDihcbN7ZjePncQ779rPZBYWc",
+        "providerToken": "",
+        "polling": "1",
+        "store": "",
+        "log": "",
+        "debug": false,
+        "webHook": "",
+        "connectMode": "polling"
+    },
+    {
+        "id": "145acc67c1a00cae",
+        "type": "ui_group",
+        "name": "Interacción",
+        "tab": "4fc54e2b527fa054",
+        "order": 5,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f29aa066a911a8a",
+        "type": "ui_group",
+        "name": "Sala Impresión 3D",
+        "tab": "4fc54e2b527fa054",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1b6f0e7eccfe7fd9",
+        "type": "ui_group",
+        "name": "Sala CNC",
+        "tab": "4fc54e2b527fa054",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f6c0679bfecfef4c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "58cddd92300775bc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e86ab820ee7f9542",
+        "type": "ui_group",
+        "name": "Historiales",
+        "tab": "",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e58eddaddafbd7c1",
+        "type": "ui_group",
+        "name": "Gauges",
+        "tab": "",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e405141084bf3426",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "8f23f98f56a82fef",
         "type": "mqtt-broker",
         "name": "",
         "broker": "localhost",
@@ -204,7 +442,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "e151e1d008301ff9",
+        "id": "011cc4451efea589",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -229,7 +467,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "2de6eedc1fa4c588",
+        "id": "b85d78808ba123cf",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -254,7 +492,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "4cbc01ddfb07fefc",
+        "id": "72574d0cc0ff727f",
         "type": "ui_group",
         "name": "SENSORS DATA",
         "tab": "",
@@ -265,7 +503,7 @@
         "className": ""
     },
     {
-        "id": "4421c708cfe58085",
+        "id": "79ac9a25e193746b",
         "type": "ui_group",
         "name": "CONTROL LEDS",
         "tab": "",
@@ -276,7 +514,7 @@
         "className": ""
     },
     {
-        "id": "5ed624a9a6edd788",
+        "id": "9340736d8ab22b61",
         "type": "ui_group",
         "name": "Temperatura",
         "tab": "",
@@ -287,7 +525,7 @@
         "className": ""
     },
     {
-        "id": "b2c1b570479ce91e",
+        "id": "d217ee92cc641a7d",
         "type": "ui_group",
         "name": "Humedad",
         "tab": "",
@@ -298,7 +536,7 @@
         "className": ""
     },
     {
-        "id": "c57fbfa6ca334690",
+        "id": "47b6a4f8a3de4dec",
         "type": "ui_group",
         "name": "Presión",
         "tab": "",
@@ -309,7 +547,7 @@
         "className": ""
     },
     {
-        "id": "071c847d45d8d3b4",
+        "id": "5e4e1f63e014cd82",
         "type": "ui_group",
         "name": "Iluminación",
         "tab": "",
@@ -320,7 +558,7 @@
         "className": ""
     },
     {
-        "id": "100866f60dd6b3cb",
+        "id": "3d0f5259731b924d",
         "type": "ui_group",
         "name": "Conexión",
         "tab": "",
@@ -331,7 +569,7 @@
         "className": ""
     },
     {
-        "id": "e5b8784f5838f34a",
+        "id": "d96357f17648afa0",
         "type": "mongodb",
         "hostname": "localhost",
         "topology": "direct",
@@ -341,7 +579,7 @@
         "name": ""
     },
     {
-        "id": "45a7d5cc.b3cb3c",
+        "id": "3b8ec35816a77f75",
         "type": "ui_group",
         "name": "Registros de los últimos 10 minutos desde hace 5 minutos",
         "tab": "",
@@ -352,7 +590,7 @@
         "className": ""
     },
     {
-        "id": "f62ab646e3b2c7d9",
+        "id": "52fe8028f61c9ef7",
         "type": "ui_group",
         "name": "Últimos Datos",
         "tab": "",
@@ -363,7 +601,7 @@
         "className": ""
     },
     {
-        "id": "a2b23a377738b01a",
+        "id": "8373d4449c8c7553",
         "type": "ui_group",
         "name": "Control",
         "tab": "",
@@ -374,7 +612,7 @@
         "className": ""
     },
     {
-        "id": "48b06cea27af03c7",
+        "id": "19c1f8c21ad17f43",
         "type": "ui_group",
         "name": "Registros por temperatura",
         "tab": "",
@@ -385,17 +623,7 @@
         "className": ""
     },
     {
-        "id": "f605fa69.8f5008",
-        "type": "mongodb",
-        "hostname": "iot.ac.uma.es",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "II8",
-        "name": ""
-    },
-    {
-        "id": "c7a3425e606353b2",
+        "id": "40e5e263cecdacd7",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -420,7 +648,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "a0ee0fa8eae04a85",
+        "id": "14e1f28ba6ec0cda",
         "type": "telegram bot",
         "botname": "AemetFernando2122_bot",
         "usernames": "",
@@ -444,7 +672,7 @@
         "verboselogging": false
     },
     {
-        "id": "00a8d7012236d5d9",
+        "id": "0cc8efcd89376980",
         "type": "telegram bot",
         "botname": "SkapaLaBot",
         "usernames": "",
@@ -468,21 +696,7 @@
         "verboselogging": false
     },
     {
-        "id": "3cc01e3e385d0ded",
-        "type": "chatbot-telegram-node",
-        "botname": "SkapaLaBot",
-        "usernames": "",
-        "token": "5084907312:AAFDpRGPmrdDihcbN7ZjePncQ779rPZBYWc",
-        "providerToken": "",
-        "polling": "1",
-        "store": "",
-        "log": "",
-        "debug": false,
-        "webHook": "",
-        "connectMode": "polling"
-    },
-    {
-        "id": "6052dbb45f086c0c",
+        "id": "a2ff1b6f58bbf813",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -510,7 +724,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "dfeb4f7103d9f61a",
+        "id": "42a3806a6fc7d1fe",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -538,7 +752,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "06c2acdce6287ce8",
+        "id": "31cdc6cabf3a5156",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -548,7 +762,7 @@
         "name": ""
     },
     {
-        "id": "c3c8c1dd31f8b3c2",
+        "id": "284e0e5e633a0ea8",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -558,7 +772,7 @@
         "name": ""
     },
     {
-        "id": "3bb0542f487e3e1a",
+        "id": "8aaa8b8235944b1e",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -568,7 +782,7 @@
         "name": ""
     },
     {
-        "id": "14e5d3c3240e4ad3",
+        "id": "08a5abdc7d868821",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -578,7 +792,7 @@
         "name": ""
     },
     {
-        "id": "2b4119c5ef03bd25",
+        "id": "50c91d79dbee1cb0",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -588,7 +802,7 @@
         "name": ""
     },
     {
-        "id": "ecffd46b17c1adab",
+        "id": "8dfc6d720a4afdbd",
         "type": "ui_group",
         "name": "Conexión",
         "tab": "",
@@ -599,7 +813,7 @@
         "className": ""
     },
     {
-        "id": "aafa679d29e9b741",
+        "id": "fda0339d38cfd417",
         "type": "ui_group",
         "name": "Selección Límite Registros",
         "tab": "",
@@ -610,7 +824,7 @@
         "className": ""
     },
     {
-        "id": "c4b6a79009246dff",
+        "id": "da3acc6250d69143",
         "type": "ui_group",
         "name": "Selección Temperatura Mínima",
         "tab": "",
@@ -621,7 +835,7 @@
         "className": ""
     },
     {
-        "id": "45d5d3385eeb423a",
+        "id": "66a0cc2e4c937a60",
         "type": "ui_group",
         "name": "Últimos 5 Min",
         "tab": "",
@@ -632,7 +846,7 @@
         "className": ""
     },
     {
-        "id": "da4e1fc8a237efff",
+        "id": "d806c60040a526a8",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -642,7 +856,7 @@
         "name": ""
     },
     {
-        "id": "2285489cb233f453",
+        "id": "93b95cf091d417dd",
         "type": "ui_group",
         "name": "Entre hace 5 y 15 min",
         "tab": "",
@@ -653,7 +867,7 @@
         "className": ""
     },
     {
-        "id": "5fa4ef561478b77c",
+        "id": "06559a7feeaeed2b",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -663,7 +877,7 @@
         "name": ""
     },
     {
-        "id": "1fcd809c305f1425",
+        "id": "94aba9c76c875f6b",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -673,7 +887,7 @@
         "name": ""
     },
     {
-        "id": "7056efce268b6a61",
+        "id": "6115496e09229e68",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -701,7 +915,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "20b866865426f373",
+        "id": "8d0cba29cc570272",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -726,7 +940,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "424be61cede35da8",
+        "id": "15a8f5d640cc31f4",
         "type": "ui_group",
         "name": "Sensores",
         "tab": "",
@@ -737,10 +951,10 @@
         "className": ""
     },
     {
-        "id": "70462dfdf7f2eace",
+        "id": "b445703690785290",
         "type": "ui_group",
         "name": "Registro Nuevos Usuarios",
-        "tab": "a8f33caba2aa5d3b",
+        "tab": "0d2fb8c21ea5a180",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -748,7 +962,7 @@
         "className": ""
     },
     {
-        "id": "3d710e6c9d34e39f",
+        "id": "9dce2e656e77cdb8",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -776,7 +990,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "505ab5e52d2009b7",
+        "id": "02421c4eb8266b72",
         "type": "ui_group",
         "name": "Sensores",
         "tab": "",
@@ -787,7 +1001,7 @@
         "className": ""
     },
     {
-        "id": "ebb0b39abcf4d936",
+        "id": "21d581705d23e622",
         "type": "ui_group",
         "name": "LEDs",
         "tab": "",
@@ -798,7 +1012,7 @@
         "className": ""
     },
     {
-        "id": "fc64d651a2d05233",
+        "id": "dfb86f5d204d67ef",
         "type": "mqtt-broker",
         "name": "",
         "broker": "localhost",
@@ -819,7 +1033,7 @@
         "willPayload": ""
     },
     {
-        "id": "a3eb2672e3840940",
+        "id": "743f93d2cf645d3f",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "port": "27017",
@@ -827,7 +1041,7 @@
         "name": ""
     },
     {
-        "id": "9ce1de9f1272e4dd",
+        "id": "b981dd28d9ab0dd9",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -848,7 +1062,7 @@
         "willPayload": ""
     },
     {
-        "id": "b3794ed6f8c3e20a",
+        "id": "a4b225439cd031e4",
         "type": "ui_group",
         "name": "datos",
         "tab": "",
@@ -858,7 +1072,7 @@
         "collapse": false
     },
     {
-        "id": "3b13d5b67d91ad68",
+        "id": "276606943804a541",
         "type": "ui_group",
         "name": "leds",
         "tab": "",
@@ -868,7 +1082,7 @@
         "collapse": false
     },
     {
-        "id": "241262896ec7fcce",
+        "id": "adc9a6506d234959",
         "type": "ui_group",
         "name": "histograma",
         "tab": "",
@@ -878,7 +1092,7 @@
         "collapse": false
     },
     {
-        "id": "abbb632609badef9",
+        "id": "8e1d611fe03ebd54",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "port": "27017",
@@ -886,7 +1100,7 @@
         "name": ""
     },
     {
-        "id": "e85f19f301f7812b",
+        "id": "e28b56a282cbbdbd",
         "type": "ui_group",
         "name": "Charts Sensores",
         "tab": "",
@@ -897,7 +1111,7 @@
         "className": ""
     },
     {
-        "id": "702137777bfe85cf",
+        "id": "302adf098a9989ec",
         "type": "ui_group",
         "name": "Sensores",
         "tab": "",
@@ -908,7 +1122,7 @@
         "className": ""
     },
     {
-        "id": "1582e24ef93461b2",
+        "id": "50b9b522d1637cfd",
         "type": "ui_group",
         "name": "InfoConexion",
         "tab": "",
@@ -919,7 +1133,7 @@
         "className": ""
     },
     {
-        "id": "0e25cd81a5d4415e",
+        "id": "f39b8defbdb973ec",
         "type": "ui_group",
         "name": "SensoresJSON",
         "tab": "",
@@ -930,7 +1144,7 @@
         "className": ""
     },
     {
-        "id": "704d13f14caa9384",
+        "id": "ea6c2ae41885f758",
         "type": "ui_group",
         "name": "Lectura Sensor",
         "tab": "",
@@ -941,7 +1155,7 @@
         "className": ""
     },
     {
-        "id": "6c5e0601d320acc5",
+        "id": "45bde5bf0c4e5eb3",
         "type": "ui_link",
         "name": "Link 2",
         "icon": "open_in_browser",
@@ -949,7 +1163,7 @@
         "order": 2
     },
     {
-        "id": "b84bfdaa0c66f4ef",
+        "id": "e9476415c5a23fc6",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -977,7 +1191,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "63b729607f721f51",
+        "id": "f8ef0e8ae67dcb2e",
         "type": "ui_group",
         "name": "Lectura Luz",
         "tab": "",
@@ -988,7 +1202,7 @@
         "className": ""
     },
     {
-        "id": "78f58297a8492ba1",
+        "id": "2f2f0dd99a25155a",
         "type": "ui_group",
         "name": "Lectura Sensores",
         "tab": "",
@@ -999,7 +1213,7 @@
         "className": ""
     },
     {
-        "id": "48fbf5099aa6392e",
+        "id": "3a2d2a22b9cf41e4",
         "type": "ui_group",
         "name": "LED",
         "tab": "",
@@ -1010,7 +1224,7 @@
         "className": ""
     },
     {
-        "id": "69d325a87dd6f30a",
+        "id": "a9e7f93bd9320b54",
         "type": "telegram bot",
         "botname": "minuevobot2020_bot",
         "usernames": "",
@@ -1034,7 +1248,7 @@
         "verboselogging": false
     },
     {
-        "id": "ac0802755d02097d",
+        "id": "d75ec0decfac1297",
         "type": "telegram bot",
         "botname": "previsionAEMET_InfInd_bot",
         "usernames": "",
@@ -1058,7 +1272,7 @@
         "verboselogging": false
     },
     {
-        "id": "34b41b2a197775ab",
+        "id": "2c2b05f8215f4db1",
         "type": "mongodb",
         "hostname": "127.0.0.1",
         "topology": "direct",
@@ -1068,7 +1282,7 @@
         "name": ""
     },
     {
-        "id": "2e604f11a27a3a2f",
+        "id": "9cce4be55c716a11",
         "type": "mongodb",
         "hostname": "iot.ac.uma.es",
         "topology": "direct",
@@ -1078,7 +1292,7 @@
         "name": ""
     },
     {
-        "id": "a8f33caba2aa5d3b",
+        "id": "0d2fb8c21ea5a180",
         "type": "ui_tab",
         "name": "Skapalab",
         "icon": "dashboard",
@@ -1086,7 +1300,7 @@
         "hidden": false
     },
     {
-        "id": "3752afa1.deaf9",
+        "id": "f67482a54cdbf8f7",
         "type": "mongodb",
         "hostname": "iot.ac.uma.es",
         "port": "27017",
@@ -1094,7 +1308,7 @@
         "name": ""
     },
     {
-        "id": "32919b2c36d096c4",
+        "id": "34063b49d594c87a",
         "type": "ui_group",
         "name": "Grupo aggregación",
         "tab": "",
@@ -1104,7 +1318,7 @@
         "collapse": false
     },
     {
-        "id": "2b251178.95ad2e",
+        "id": "c061a8435a7021c0",
         "type": "mqtt-broker",
         "name": "iot infind",
         "broker": "iot.ac.uma.es",
@@ -1125,7 +1339,7 @@
         "willPayload": ""
     },
     {
-        "id": "e09a70911f161970",
+        "id": "b5657422806fac9e",
         "type": "ui_tab",
         "name": "Reservas",
         "icon": "dashboard",
@@ -1133,7 +1347,7 @@
         "hidden": false
     },
     {
-        "id": "da87d3f57272efb5",
+        "id": "7f5bf0b7ce89b21a",
         "type": "ui_base",
         "theme": {
             "name": "theme-light",
@@ -1230,10 +1444,10 @@
         }
     },
     {
-        "id": "6d967cf6cf6c49c4",
+        "id": "023e745e7f62cbdb",
         "type": "ui_group",
         "name": "Registro",
-        "tab": "be9663360939d630",
+        "tab": "0a52107ee1c71a92",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1241,7 +1455,7 @@
         "className": ""
     },
     {
-        "id": "02a79ecccb411cca",
+        "id": "ed537c6efdb3e4c6",
         "type": "mongodb",
         "hostname": "iot.ac.uma.es",
         "topology": "direct",
@@ -1251,10 +1465,10 @@
         "name": ""
     },
     {
-        "id": "0acaf709e07e555b",
+        "id": "c63e80a6d21d4387",
         "type": "ui_group",
         "name": "Estadísticas",
-        "tab": "ff6861ab153e9537",
+        "tab": "b5e6e14f5bcafba4",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -1262,7 +1476,7 @@
         "className": ""
     },
     {
-        "id": "be9663360939d630",
+        "id": "0a52107ee1c71a92",
         "type": "ui_tab",
         "name": "Usuarios",
         "icon": "dashboard",
@@ -1270,7 +1484,7 @@
         "hidden": false
     },
     {
-        "id": "ff6861ab153e9537",
+        "id": "b5e6e14f5bcafba4",
         "type": "ui_tab",
         "name": "Estadísticas",
         "icon": "dashboard",
@@ -1278,10 +1492,10 @@
         "hidden": false
     },
     {
-        "id": "e06870e71eafc671",
+        "id": "bbf7b0734e6930f6",
         "type": "ui_group",
         "name": "Interacción",
-        "tab": "e09a70911f161970",
+        "tab": "b5657422806fac9e",
         "order": 5,
         "disp": false,
         "width": "6",
@@ -1289,10 +1503,10 @@
         "className": ""
     },
     {
-        "id": "be8fc419a201d0b4",
+        "id": "d67eb0ea01571d9d",
         "type": "ui_group",
         "name": "Sala Impresión 3D",
-        "tab": "e09a70911f161970",
+        "tab": "b5657422806fac9e",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1300,10 +1514,10 @@
         "className": ""
     },
     {
-        "id": "f7732870e5603a4c",
+        "id": "36e8e5988eb4f67c",
         "type": "ui_group",
         "name": "Sala CNC",
-        "tab": "e09a70911f161970",
+        "tab": "b5657422806fac9e",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -1311,37 +1525,7 @@
         "className": ""
     },
     {
-        "id": "3a6f2b5f11d304d4",
-        "type": "ui_spacer",
-        "z": "e9a8bf588bc16e41",
-        "name": "spacer",
-        "group": "c1cbb9916e7cfba4",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "35b563b24f34096d",
-        "type": "ui_spacer",
-        "z": "e9a8bf588bc16e41",
-        "name": "spacer",
-        "group": "c1cbb9916e7cfba4",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9e8a93e0278215b5",
-        "type": "ui_spacer",
-        "z": "e9a8bf588bc16e41",
-        "name": "spacer",
-        "group": "c1cbb9916e7cfba4",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a7ac40b8ef47a69c",
+        "id": "adc7598d2d6197a0",
         "type": "mqtt-broker",
         "name": "",
         "broker": "iot.ac.uma.es",
@@ -1369,10 +1553,1320 @@
         "sessionExpiry": ""
     },
     {
-        "id": "c05eb2c3824fe0f9",
+        "id": "e15152fd8130ff73",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ea02369fdb67f254",
+        "type": "ui_group",
+        "name": "Historiales",
+        "tab": "",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c12a436eb1a725c9",
+        "type": "ui_group",
+        "name": "Gauges",
+        "tab": "",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "56e6b9559103322e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6f4b53e91f58c00b",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "41f52b555216d731",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f208b4c555dc36eb",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3d468a8a5d113928",
+        "type": "ui_group",
+        "name": "SENSORS DATA",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e4f2276af0b7a6a3",
+        "type": "ui_group",
+        "name": "CONTROL LEDS",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b43acae1feb24484",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "75854abeb20e4d56",
+        "type": "ui_group",
+        "name": "Humedad",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "15659cbceba19493",
+        "type": "ui_group",
+        "name": "Presión",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "90305b5480bd1631",
+        "type": "ui_group",
+        "name": "Iluminación",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b3802188aa8b37b8",
+        "type": "ui_group",
+        "name": "Conexión",
+        "tab": "",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e74264cb3bb0bc2c",
+        "type": "mongodb",
+        "hostname": "localhost",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "prueba",
+        "name": ""
+    },
+    {
+        "id": "788f96284bc8191d",
+        "type": "ui_group",
+        "name": "Registros de los últimos 10 minutos desde hace 5 minutos",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ae5c1afa3225d17a",
+        "type": "ui_group",
+        "name": "Últimos Datos",
+        "tab": "",
+        "order": 3,
+        "disp": false,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e15331c101beff3f",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "204d525fe1659f7b",
+        "type": "ui_group",
+        "name": "Registros por temperatura",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e60cdbcba4ddf9d3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f2602d38cb626c8c",
+        "type": "telegram bot",
+        "botname": "AemetFernando2122_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "6248ad0b76899073",
+        "type": "telegram bot",
+        "botname": "SkapaLaBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "9cde280edb7d1299",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9d2f1c8f7f47f623",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "be4e9cd4b5d3b39c",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "c037f96e344ecde5",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "f169bfa2f0af1d49",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "26b09dd95b062d92",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "96717c5e73ffb850",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "825c084fc984beb9",
+        "type": "ui_group",
+        "name": "Conexión",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "971aee874ee6e826",
+        "type": "ui_group",
+        "name": "Selección Límite Registros",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2b798e149df89554",
+        "type": "ui_group",
+        "name": "Selección Temperatura Mínima",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bb7bb8bb9046b9bc",
+        "type": "ui_group",
+        "name": "Últimos 5 Min",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9e83ee820a3a29fb",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "b6c5e08384e41135",
+        "type": "ui_group",
+        "name": "Entre hace 5 y 15 min",
+        "tab": "",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "02968316b4859ba7",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "fc1bc9357a03e9d3",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "b9e3f1698d6a2fdc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7789918a65fb53e0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fe5da3af22f0fb69",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "81d4326a1806c1a0",
+        "type": "ui_group",
+        "name": "Registro Nuevos Usuarios",
+        "tab": "4aaa4f3387ef1858",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "858f89b486504a3c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "17363cb320cd60cb",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cfae12311ea63fbf",
+        "type": "ui_group",
+        "name": "LEDs",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4d4f2bf8dbb1bcb4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "6ad143df8a43a700",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "prueba",
+        "name": ""
+    },
+    {
+        "id": "99af4c9b3df7c36e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "91f3d8a0866daaa5",
+        "type": "ui_group",
+        "name": "datos",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "4",
+        "collapse": false
+    },
+    {
+        "id": "786472ca1cb3b4fd",
+        "type": "ui_group",
+        "name": "leds",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7fbc6ecc2b1998e3",
+        "type": "ui_group",
+        "name": "histograma",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "9",
+        "collapse": false
+    },
+    {
+        "id": "4e673481f7f20930",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "ejercicio",
+        "name": ""
+    },
+    {
+        "id": "de117372150c310b",
+        "type": "ui_group",
+        "name": "Charts Sensores",
+        "tab": "",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1e497d03d25965ef",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "755952239830d4eb",
+        "type": "ui_group",
+        "name": "InfoConexion",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5854bd91783b6249",
+        "type": "ui_group",
+        "name": "SensoresJSON",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fd4da733687897bd",
+        "type": "ui_group",
+        "name": "Lectura Sensor",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "51f692948ed5da8a",
+        "type": "ui_link",
+        "name": "Link 2",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 2
+    },
+    {
+        "id": "3b1fc0ed4d9c1732",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b272652481e2f816",
+        "type": "ui_group",
+        "name": "Lectura Luz",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "81d5ec6ea30025f7",
+        "type": "ui_group",
+        "name": "Lectura Sensores",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7e09212e4e191b16",
+        "type": "ui_group",
+        "name": "LED",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5aedac2dadb628ad",
+        "type": "telegram bot",
+        "botname": "minuevobot2020_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "bd122ca71dcf421f",
+        "type": "telegram bot",
+        "botname": "previsionAEMET_InfInd_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "de838e0e029a74ea",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "",
+        "name": ""
+    },
+    {
+        "id": "207cdc44e94342f6",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "4aaa4f3387ef1858",
+        "type": "ui_tab",
+        "name": "Skapalab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b6952b892d262428",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "port": "27017",
+        "db": "pruebas",
+        "name": ""
+    },
+    {
+        "id": "7cb7dfa80c49bd8a",
+        "type": "ui_group",
+        "name": "Grupo aggregación",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "79b5b82019e9a5de",
+        "type": "mqtt-broker",
+        "name": "iot infind",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ebec286ac914cbc7",
+        "type": "ui_tab",
+        "name": "Reservas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "21901e8aa089d19b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3aadf0d6becded83",
+        "type": "ui_group",
+        "name": "Registro",
+        "tab": "14ee4befcc4eb8a5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cd92b6c876f519ad",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "d4b0bac5dc6a3913",
+        "type": "ui_group",
+        "name": "Estadísticas",
+        "tab": "249e18e2fbc18c15",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "14ee4befcc4eb8a5",
+        "type": "ui_tab",
+        "name": "Usuarios",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "249e18e2fbc18c15",
+        "type": "ui_tab",
+        "name": "Estadísticas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0c439ca76ee63225",
+        "type": "ui_group",
+        "name": "Interacción",
+        "tab": "ebec286ac914cbc7",
+        "order": 5,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a3ae9a947ec21923",
+        "type": "ui_group",
+        "name": "Sala Impresión 3D",
+        "tab": "ebec286ac914cbc7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2f0255d74ac73ce4",
+        "type": "ui_group",
+        "name": "Sala CNC",
+        "tab": "ebec286ac914cbc7",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f7ff94441517dd4b",
+        "type": "ui_spacer",
+        "z": "dbcaebc777febea5",
+        "name": "spacer",
+        "group": "c1cbb9916e7cfba4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bfc5a25606ca594b",
+        "type": "ui_spacer",
+        "z": "dbcaebc777febea5",
+        "name": "spacer",
+        "group": "c1cbb9916e7cfba4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3ec40bc7485f4b60",
+        "type": "ui_spacer",
+        "z": "dbcaebc777febea5",
+        "name": "spacer",
+        "group": "c1cbb9916e7cfba4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a0c7e5742b6b961a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "454e5fbde1e180df",
         "type": "mongodb in",
-        "z": "1a787168837f3499",
-        "mongodb": "02a79ecccb411cca",
+        "z": "f4fd661cef8e8694",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "usuarios",
         "operation": "aggregate",
@@ -1380,14 +2874,14 @@
         "y": 460,
         "wires": [
             [
-                "15a17b24bcbbc0e6"
+                "3f92051b341a3ef2"
             ]
         ]
     },
     {
-        "id": "0917ce19a22dae85",
+        "id": "63bedc2673abbef2",
         "type": "debug",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -1402,10 +2896,10 @@
         "wires": []
     },
     {
-        "id": "5980e5fbcbf0c8e0",
+        "id": "238583302f694a00",
         "type": "mongodb out",
-        "z": "1a787168837f3499",
-        "mongodb": "02a79ecccb411cca",
+        "z": "f4fd661cef8e8694",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "usuarios",
         "payonly": true,
@@ -1417,9 +2911,9 @@
         "wires": []
     },
     {
-        "id": "05f52425a9082e93",
+        "id": "0514c9020590f217",
         "type": "inject",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "props": [
             {
@@ -1441,14 +2935,14 @@
         "y": 460,
         "wires": [
             [
-                "c05eb2c3824fe0f9"
+                "454e5fbde1e180df"
             ]
         ]
     },
     {
-        "id": "15a17b24bcbbc0e6",
+        "id": "3f92051b341a3ef2",
         "type": "debug",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -1462,10 +2956,10 @@
         "wires": []
     },
     {
-        "id": "c150af9f6c756b9c",
+        "id": "e868491324a5a3d9",
         "type": "mongodb out",
-        "z": "1a787168837f3499",
-        "mongodb": "02a79ecccb411cca",
+        "z": "f4fd661cef8e8694",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "usuarios",
         "payonly": true,
@@ -1477,9 +2971,9 @@
         "wires": []
     },
     {
-        "id": "922d3f5b3ac9e14e",
+        "id": "41c621db19261d14",
         "type": "inject",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "props": [
             {
@@ -1501,14 +2995,14 @@
         "y": 760,
         "wires": [
             [
-                "c150af9f6c756b9c"
+                "e868491324a5a3d9"
             ]
         ]
     },
     {
-        "id": "7f09b15c66068fd0",
+        "id": "535f6e27fdaf99f9",
         "type": "comment",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "Lectura registros base de datos",
         "info": "",
         "x": 350,
@@ -1516,9 +3010,9 @@
         "wires": []
     },
     {
-        "id": "79f395da6f547291",
+        "id": "89dcb32684b6b18c",
         "type": "comment",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "Borrado de la base de datos",
         "info": "",
         "x": 340,
@@ -1526,9 +3020,9 @@
         "wires": []
     },
     {
-        "id": "868cc61e7774e074",
+        "id": "57217a171cf3b210",
         "type": "comment",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "Registro en la base de datos",
         "info": "",
         "x": 340,
@@ -1536,12 +3030,12 @@
         "wires": []
     },
     {
-        "id": "23a58f753d2705a6",
+        "id": "405015e6df745044",
         "type": "ui_form",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "label": "Registro Usuario",
-        "group": "6d967cf6cf6c49c4",
+        "group": "3aadf0d6becded83",
         "order": 7,
         "width": "0",
         "height": "0",
@@ -1640,15 +3134,15 @@
         "y": 160,
         "wires": [
             [
-                "d8f04a5b74b4d3dd",
-                "9522666460ab42fa"
+                "d89917e034b9a97a",
+                "068ec1e0b8d5eb5e"
             ]
         ]
     },
     {
-        "id": "d8f04a5b74b4d3dd",
+        "id": "d89917e034b9a97a",
         "type": "debug",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1662,11 +3156,11 @@
         "wires": []
     },
     {
-        "id": "9522666460ab42fa",
+        "id": "068ec1e0b8d5eb5e",
         "type": "function",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
-        "func": "var Arranque = msg.payload.arranque;\nvar Maker = msg.payload.maker;\nvar Entusiasta = msg.payload.entusiasta;\nvar Profesional = msg.payload.profesional; \n\nif (Arranque == true)\n{\n    msg.payload.suscipcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.suscripcion = \"Profesional\"\n}\n\nmsg.payload.fecha_inclusion = new Date();\n\nreturn msg;",
+        "func": "var Arranque = msg.payload.arranque;\nvar Maker = msg.payload.maker;\nvar Entusiasta = msg.payload.entusiasta;\nvar Profesional = msg.payload.profesional; \n\nif (Arranque == true)\n{\n    msg.payload.suscipcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.suscripcion = \"Profesional\"\n}\n\nmsg.payload.fecha_inclusion = new Date();\nmsg.payload.id_telegram = null;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1676,14 +3170,14 @@
         "y": 160,
         "wires": [
             [
-                "7252dfa548645846"
+                "b42139f0e1366ca6"
             ]
         ]
     },
     {
-        "id": "7252dfa548645846",
+        "id": "b42139f0e1366ca6",
         "type": "change",
-        "z": "1a787168837f3499",
+        "z": "f4fd661cef8e8694",
         "name": "",
         "rules": [
             {
@@ -1716,15 +3210,15 @@
         "y": 160,
         "wires": [
             [
-                "5980e5fbcbf0c8e0",
-                "0917ce19a22dae85"
+                "238583302f694a00",
+                "63bedc2673abbef2"
             ]
         ]
     },
     {
-        "id": "652ae669949f0360",
+        "id": "d33aeda228dad114",
         "type": "debug",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -1739,9 +3233,9 @@
         "wires": []
     },
     {
-        "id": "ee4724b10b65fdeb",
+        "id": "bd1046bb82937331",
         "type": "mongodb out",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "reservas",
@@ -1754,10 +3248,10 @@
         "wires": []
     },
     {
-        "id": "3cc6ac2466037e74",
+        "id": "2bde05e81fee6b38",
         "type": "mongodb out",
-        "z": "9737ff214ffcf68e",
-        "mongodb": "02a79ecccb411cca",
+        "z": "2b6b3f18928fcd9d",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "payonly": true,
@@ -1769,9 +3263,9 @@
         "wires": []
     },
     {
-        "id": "8a6928654ab0f218",
+        "id": "9f24f2058966c0cf",
         "type": "inject",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "props": [
             {
@@ -1793,14 +3287,14 @@
         "y": 1350,
         "wires": [
             [
-                "3cc6ac2466037e74"
+                "2bde05e81fee6b38"
             ]
         ]
     },
     {
-        "id": "3d2938b7a703aad5",
+        "id": "aaf5ab90348e7aed",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Borrado de la base de datos",
         "info": "",
         "x": 245,
@@ -1808,11 +3302,11 @@
         "wires": []
     },
     {
-        "id": "fc393c3ce106610d",
+        "id": "d136ad9f0864da94",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
-        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"María\"\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"13/1/2022\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15;\nmsg.payload.id_NFC = \"100:90:231:164\"; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
+        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"Miguel\";\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"10/01/2022\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15;\nmsg.payload.id_NFC = \"100:90:231:164\"; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1822,15 +3316,15 @@
         "y": 320,
         "wires": [
             [
-                "652ae669949f0360",
-                "ee4724b10b65fdeb"
+                "d33aeda228dad114",
+                "bd1046bb82937331"
             ]
         ]
     },
     {
-        "id": "ba408b35e792f004",
+        "id": "6201254d61eeb708",
         "type": "inject",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "props": [
             {
@@ -1848,14 +3342,14 @@
         "y": 320,
         "wires": [
             [
-                "fc393c3ce106610d"
+                "d136ad9f0864da94"
             ]
         ]
     },
     {
-        "id": "defeeafdbbab7072",
+        "id": "d608283e05220681",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Variables Globales",
         "func": "var aforo_max_CNC; \nvar aforo_max_3D;\nvar aforo_real_CNC;\nvar aforo_real_3D;\nvar num_accesos_CNC;\nvar num_accesos_3D;\n\nvar hora_apertura;\nvar hora_cierre;\n\naforo_max_CNC = 2; \naforo_max_3D = 4; \nhora_apertura = 9; \nhora_cierre = 21; \n\nmsg.payload.hora_apertura = hora_apertura;\nmsg.payload.hora_cierre = hora_cierre;\nmsg.payload.aforomax = aforo_max_CNC;\n\nreturn msg\n\n// asignar los mensajes que me lleguen por mqtt a las variables correspondientes\n",
         "outputs": 1,
@@ -1867,14 +3361,14 @@
         "y": 135,
         "wires": [
             [
-                "d8c5e2b0136648bd"
+                "f808548edbc5a143"
             ]
         ]
     },
     {
-        "id": "cf3736757ab2382c",
+        "id": "3e65e8359d436583",
         "type": "function",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "agrega por dias",
         "func": "// fecha por defecto es hoy\nvar ahora = new Date();\n// pillo los globales si los hay, si no la fecha de hoy\nvar desde = new Date(global.get(\"desde\") || ahora);\nvar hasta = new Date(global.get(\"hasta\") || ahora); \n// el día de inicio desde las cero horas\nvar inicio = new Date(desde.getFullYear(),desde.getMonth(),desde.getDate(),1,0,0,0);\n// el día final es hasta final del día\nvar final = new Date(hasta.getFullYear(),hasta.getMonth(),hasta.getDate(),24,59,59,99);\n\nmsg.payload=\n[\n    { \"$match\": { \"date\": { \"$gte\": inicio , \"$lte\": final } } },\n    { \"$project\": {\n        \"date\": 1,\n        \"temperatura\": \"$BME280.Temperatura\"\n        }\n    },\n    { \"$group\": {\n        \"_id\": { \n        \"$dateFromParts\" : {\n            \"year\": { \"$year\": \"$date\" }, \n            \"month\": { \"$month\": \"$date\" },\n            \"day\": { \"$dayOfMonth\": \"$date\" }\n        }},\n\n        \"Tmedia\":{\"$avg\":\"$temperatura\"},\n        \"Tmax\":  {\"$max\":\"$temperatura\"},\n        \"Tmin\":  {\"$min\":\"$temperatura\"},\n        \"datos\": {\"$sum\":1},\n    }},\n    { \"$sort\": {\"_id\": 1} }\n];\n\nreturn msg;",
         "outputs": 1,
@@ -1886,15 +3380,15 @@
         "y": 500,
         "wires": [
             [
-                "f40a50efcb6aa104"
+                "fdd8c52ec6e54b02"
             ]
         ]
     },
     {
-        "id": "f40a50efcb6aa104",
+        "id": "fdd8c52ec6e54b02",
         "type": "mongodb in",
-        "z": "d9da143bd53b7832",
-        "mongodb": "02a79ecccb411cca",
+        "z": "bd8c6ea666878db4",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -1902,15 +3396,15 @@
         "y": 500.00581550598145,
         "wires": [
             [
-                "aa7679cdc70bbd60",
-                "45880337ca458f61"
+                "82f777a373e24490",
+                "e9896b66ccedac58"
             ]
         ]
     },
     {
-        "id": "aa7679cdc70bbd60",
+        "id": "82f777a373e24490",
         "type": "function",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "genera datos grafica",
         "func": "var arrayavg=[];\nvar arraymax=[];\nvar arraymin=[];\n\n// los arrays usados en la represenstaciÃ³n grÃ¡fica deben contener objetos JSON con dos campos: {x , y}\n// en x debemos poner la hora en formato \"timestamp\". Si tenemos un objeto fecha se puede convertir usando el mÃ©todo getTime()\n// en y debemos poner el valor de la variable\n// mas info en: https://github.com/node-red/node-red-dashboard/blob/master/Charts.md\n\nif(Array.isArray(msg.payload) && msg.payload.length>0)\n{\n    for (var i = 0; i < msg.payload.length; i++) { // aÃ±ade datos a los array\n        arrayavg.push({x : msg.payload[i]._id.getTime() , y : msg.payload[i].Tmedia});\n        arraymax.push({x : msg.payload[i]._id.getTime() , y : msg.payload[i].Tmax});\n        arraymin.push({x : msg.payload[i]._id.getTime() , y : msg.payload[i].Tmin});\n    }\n}\n    \nmsg.payload = [{\n        \"series\":[\"T.media\",\"T.max\",\"T.min\"],\n        \"data\":[arrayavg, arraymax, arraymin],\n        \"labels\":[\"\"]\n        }];\n\nreturn msg;  ",
         "outputs": "1",
@@ -1922,16 +3416,16 @@
         "y": 559.0001182556152,
         "wires": [
             [
-                "e0ffbaa29617a5e9"
+                "4bca89c5351453a2"
             ]
         ]
     },
     {
-        "id": "e0ffbaa29617a5e9",
+        "id": "4bca89c5351453a2",
         "type": "ui_chart",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
-        "group": "0acaf709e07e555b",
+        "group": "d4b0bac5dc6a3913",
         "order": 8,
         "width": 0,
         "height": 0,
@@ -1971,9 +3465,9 @@
         ]
     },
     {
-        "id": "14380921a8212d35",
+        "id": "f9f7b7ee5d6dd6e4",
         "type": "change",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "rules": [
             {
@@ -1993,14 +3487,14 @@
         "y": 220.57114505767822,
         "wires": [
             [
-                "65178cc307ee2af0"
+                "c414f40d97b1a19b"
             ]
         ]
     },
     {
-        "id": "f2d3bfcd84ea920a",
+        "id": "0d31506ae3a5997c",
         "type": "change",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "rules": [
             {
@@ -2020,43 +3514,43 @@
         "y": 272.4546866416931,
         "wires": [
             [
-                "65178cc307ee2af0"
+                "c414f40d97b1a19b"
             ]
         ]
     },
     {
-        "id": "65178cc307ee2af0",
+        "id": "c414f40d97b1a19b",
         "type": "link out",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "links": [
-            "81eb1b08d13b216c"
+            "00b5f96358aa27d3"
         ],
         "x": 677.4556064605713,
         "y": 252.70185661315918,
         "wires": []
     },
     {
-        "id": "81eb1b08d13b216c",
+        "id": "00b5f96358aa27d3",
         "type": "link in",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "links": [
-            "65178cc307ee2af0"
+            "c414f40d97b1a19b"
         ],
         "x": 196.46699905395508,
         "y": 460.8295669555664,
         "wires": [
             [
-                "cf3736757ab2382c",
-                "d66ec7c88ce8d89a"
+                "3e65e8359d436583",
+                "c511a5bdfd3abde1"
             ]
         ]
     },
     {
-        "id": "d66ec7c88ce8d89a",
+        "id": "c511a5bdfd3abde1",
         "type": "function",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "agreaga todo",
         "func": "// fecha por defecto es hoy\nvar ahora = new Date();\n// pillo los globales si los hay, si no la fecha de hoy\nvar desde = new Date(global.get(\"desde\") || ahora);\nvar hasta = new Date(global.get(\"hasta\") || ahora); \n// el díaa de inicio desde las cero horas\nvar inicio = new Date(desde.getFullYear(),desde.getMonth(),desde.getDate(),1,0,0,0);\n// el día final es hasta final del díaa\nvar final = new Date(hasta.getFullYear(),hasta.getMonth(),hasta.getDate(),24,59,59,99);\n\nmsg.payload=\n[\n    { \"$match\": { \"date\": { \"$gte\": inicio , \"$lte\": final } } },\n    { \"$project\": {\n        \"temperatura\": \"$BME280.Temperatura\"\n        }\n    },\n    { \"$group\": {\n        \"_id\": 0,\n        \"Tmedia\":{\"$avg\":\"$temperatura\"},\n        \"Tmax\":  {\"$max\":\"$temperatura\"},\n        \"Tmin\":  {\"$min\":\"$temperatura\"},\n        \"datos\": {\"$sum\":1}\n    }}\n];\n\nreturn msg;",
         "outputs": 1,
@@ -2068,15 +3562,15 @@
         "y": 418.909143447876,
         "wires": [
             [
-                "e01471b2bf0c1ae9"
+                "c07e154b9b1f6a76"
             ]
         ]
     },
     {
-        "id": "e01471b2bf0c1ae9",
+        "id": "c07e154b9b1f6a76",
         "type": "mongodb in",
-        "z": "d9da143bd53b7832",
-        "mongodb": "02a79ecccb411cca",
+        "z": "bd8c6ea666878db4",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -2084,19 +3578,19 @@
         "y": 417.9147596359253,
         "wires": [
             [
-                "d39111dc0e1444e8",
-                "0e60045c434fa340",
-                "e811ecb8d55dfad3",
-                "0cbde623b04a2ae7",
-                "c26a6c8831c61c64"
+                "e37b36a54751e86e",
+                "a42f647d40fb06d7",
+                "512af5f6bbf238eb",
+                "919253f370ac722a",
+                "225e154e872d827c"
             ]
         ]
     },
     {
-        "id": "d39111dc0e1444e8",
+        "id": "e37b36a54751e86e",
         "type": "ui_text",
-        "z": "d9da143bd53b7832",
-        "group": "0acaf709e07e555b",
+        "z": "bd8c6ea666878db4",
+        "group": "d4b0bac5dc6a3913",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -2110,10 +3604,10 @@
         "wires": []
     },
     {
-        "id": "0e60045c434fa340",
+        "id": "a42f647d40fb06d7",
         "type": "ui_text",
-        "z": "d9da143bd53b7832",
-        "group": "0acaf709e07e555b",
+        "z": "bd8c6ea666878db4",
+        "group": "d4b0bac5dc6a3913",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -2127,10 +3621,10 @@
         "wires": []
     },
     {
-        "id": "e811ecb8d55dfad3",
+        "id": "512af5f6bbf238eb",
         "type": "ui_text",
-        "z": "d9da143bd53b7832",
-        "group": "0acaf709e07e555b",
+        "z": "bd8c6ea666878db4",
+        "group": "d4b0bac5dc6a3913",
         "order": 5,
         "width": 0,
         "height": 0,
@@ -2144,9 +3638,9 @@
         "wires": []
     },
     {
-        "id": "d74e83b660edee5e",
+        "id": "9c19936b85be0ae9",
         "type": "comment",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "Controles para seleccionar fechas",
         "info": "",
         "x": 278.6857490539551,
@@ -2154,9 +3648,9 @@
         "wires": []
     },
     {
-        "id": "93cc22f147d1cf24",
+        "id": "bdded805d86ac620",
         "type": "comment",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "Consultas agregadas",
         "info": "",
         "x": 254.47550582885742,
@@ -2164,9 +3658,9 @@
         "wires": []
     },
     {
-        "id": "45880337ca458f61",
+        "id": "e9896b66ccedac58",
         "type": "debug",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2178,9 +3672,9 @@
         "wires": []
     },
     {
-        "id": "0cbde623b04a2ae7",
+        "id": "919253f370ac722a",
         "type": "debug",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2192,10 +3686,10 @@
         "wires": []
     },
     {
-        "id": "c26a6c8831c61c64",
+        "id": "225e154e872d827c",
         "type": "ui_text",
-        "z": "d9da143bd53b7832",
-        "group": "0acaf709e07e555b",
+        "z": "bd8c6ea666878db4",
+        "group": "d4b0bac5dc6a3913",
         "order": 6,
         "width": 0,
         "height": 0,
@@ -2209,12 +3703,12 @@
         "wires": []
     },
     {
-        "id": "263e713ed12374ac",
+        "id": "911ec10784b6a815",
         "type": "ui_date_picker",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "label": "Fecha de inicio",
-        "group": "0acaf709e07e555b",
+        "group": "d4b0bac5dc6a3913",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -2226,17 +3720,17 @@
         "y": 220,
         "wires": [
             [
-                "14380921a8212d35"
+                "f9f7b7ee5d6dd6e4"
             ]
         ]
     },
     {
-        "id": "724d3285282889a6",
+        "id": "3afac1a26dd62306",
         "type": "ui_date_picker",
-        "z": "d9da143bd53b7832",
+        "z": "bd8c6ea666878db4",
         "name": "",
         "label": "Fecha de final",
-        "group": "0acaf709e07e555b",
+        "group": "d4b0bac5dc6a3913",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -2248,14 +3742,14 @@
         "y": 270.7359809875488,
         "wires": [
             [
-                "f2d3bfcd84ea920a"
+                "0d31506ae3a5997c"
             ]
         ]
     },
     {
-        "id": "b7bc666728b1a631",
+        "id": "6994eaf4c217d1aa",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Datos constantes de aforo y recibidos por mqtt",
         "info": "",
         "x": 300,
@@ -2263,9 +3757,9 @@
         "wires": []
     },
     {
-        "id": "71689e0fadf77c3b",
+        "id": "eb878fc97f1f98b5",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Petición de día y sala",
         "info": "",
         "x": 220,
@@ -2273,11 +3767,11 @@
         "wires": []
     },
     {
-        "id": "9338c4f82a6059cf",
+        "id": "277a45eaa5c7bb68",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Desde Telegram",
-        "func": "// Simulación del mensaje que enviaría Fer\n\nmsg.payload.dia = \"12/01/2022\"\nmsg.payload.sala= \"CNC\"\n\n\nreturn msg;",
+        "func": "// Simulación del mensaje que enviaría Fer\n\nmsg.payload.dia = \"10/01/2022\"\nmsg.payload.sala= \"CNC\"\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2287,14 +3781,14 @@
         "y": 600,
         "wires": [
             [
-                "d390c974f088363a"
+                "a1887e48e4b840b7"
             ]
         ]
     },
     {
-        "id": "24f22a7bbdc9d0af",
+        "id": "739a505425e4525e",
         "type": "inject",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "props": [
             {
@@ -2312,14 +3806,14 @@
         "y": 600,
         "wires": [
             [
-                "9338c4f82a6059cf"
+                "277a45eaa5c7bb68"
             ]
         ]
     },
     {
-        "id": "be82a248e0c67a24",
+        "id": "3d331d18c9841301",
         "type": "mongodb in",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "reservas",
@@ -2328,17 +3822,17 @@
         "y": 600,
         "wires": [
             [
-                "c6dbdf1ddc47e68a",
-                "66988095b2f77c76"
+                "6d0b372570f4c2a3",
+                "6bc4104d8c4a1315"
             ]
         ]
     },
     {
-        "id": "2f08021a8d3075dc",
+        "id": "a1887e48e4b840b7",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Aggregation",
-        "func": "var newMsg = {};\nnewMsg.msgAntiguo = msg;\nnewMsg.collection = \"reservas\";\nnewMsg.payload = [ \n    { \"$match\" : { \"sala\": msg.payload.sala, \"fecha\": msg.payload.fecha }}\n    ];\n\nreturn newMsg;",
+        "func": "msg.msgAntiguo = msg;\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\": msg.payload.sala, \"fecha\": msg.payload.dia }}\n    ];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2348,16 +3842,17 @@
         "y": 600,
         "wires": [
             [
-                "be82a248e0c67a24"
+                "3d331d18c9841301",
+                "4a95ff5deaf66dea"
             ]
         ]
     },
     {
-        "id": "c6dbdf1ddc47e68a",
+        "id": "6d0b372570f4c2a3",
         "type": "debug",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2369,25 +3864,9 @@
         "wires": []
     },
     {
-        "id": "7bf61251386f5f7b",
-        "type": "debug",
-        "z": "9737ff214ffcf68e",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 985,
-        "y": 690,
-        "wires": []
-    },
-    {
-        "id": "760d7962294e612e",
+        "id": "267a08a591a62b01",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Simulación de reservas creadas",
         "info": "",
         "x": 250,
@@ -2395,9 +3874,9 @@
         "wires": []
     },
     {
-        "id": "af54ac0a3d1cca5c",
+        "id": "27b9393141eaa36e",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Petición de franja horaria",
         "info": "",
         "x": 245,
@@ -2405,9 +3884,9 @@
         "wires": []
     },
     {
-        "id": "ab7c94caeffc5b14",
+        "id": "2278a18f78dbecc3",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Desde Telegram",
         "func": "// Simulación del mensaje que enviaría Fer\n\nmsg.payload.dia = \"12/01/2022\"\nmsg.payload.sala= \"CNC\"\n\n// Desde telegram me envían la fecha de inicio y fin\n\nmsg.payload.hora_inicio = 10;\nmsg.payload.hora_fin = 22; \n\nreturn msg;",
         "outputs": 1,
@@ -2419,14 +3898,14 @@
         "y": 885,
         "wires": [
             [
-                "70ae9bb7bbfda1e7"
+                "fcb4403aa24a94bd"
             ]
         ]
     },
     {
-        "id": "9662cf79697c5e3e",
+        "id": "b3fd02f0788c7c34",
         "type": "inject",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "props": [
             {
@@ -2444,14 +3923,14 @@
         "y": 885,
         "wires": [
             [
-                "ab7c94caeffc5b14"
+                "2278a18f78dbecc3"
             ]
         ]
     },
     {
-        "id": "d390c974f088363a",
+        "id": "9cc47bfa75622f17",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "convertir fecha",
         "func": "// Se convierte el string de la fecha recibida en el mensaje de telegram en un formato de fecha\n// aceptado y en formato dia/mes/año\n\nvar fecha; \n\nfecha = new Date(msg.payload.dia);\n\nmsg.payload.fecha = fecha.toLocaleDateString(\"es-ES\");\n\nreturn msg;",
         "outputs": 1,
@@ -2459,19 +3938,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 725,
-        "y": 600,
+        "x": 710,
+        "y": 645,
         "wires": [
-            [
-                "2f08021a8d3075dc",
-                "7bf61251386f5f7b"
-            ]
+            []
         ]
     },
     {
-        "id": "70ae9bb7bbfda1e7",
+        "id": "fcb4403aa24a94bd",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "ack_hora_valida",
         "func": "// Se convierte el string de la fecha recibida en el mensaje de telegram en un formato de fecha\n// aceptado y en formato dia/mes/año\n\nvar fecha; \n\nfecha = new Date(msg.payload.dia);\n\nmsg.payload.fecha = fecha.toLocaleDateString(\"es-ES\");\n\n\n\n// Se comprueba si la hora de la reserva es válida\n\nvar hora_inicio = msg.payload.hora_inicio;\nvar hora_fin = msg.payload.hora_fin;\nvar ack_hora_valida;\nvar sala = msg.payload.sala; \nvar hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\"); \n\n// no funca\n\nif (hora_inicio >= hora_apertura && hora_inicio < hora_cierre) {\n    if (sala == 'CNC' && hora_fin >= hora_cierre) {\n        ack_hora_valida = false;\n    }\n    else {\n        ack_hora_valida = true;\n    }\n}\n\nelse {\n    ack_hora_valida = false;\n}\n\nmsg.payload.ack_hora_valida = ack_hora_valida;\n\n\n\nreturn msg;",
         "outputs": 1,
@@ -2483,15 +3959,15 @@
         "y": 885,
         "wires": [
             [
-                "6f59eb6f190e9815",
-                "b5ba5178747016e7"
+                "3c111ff22e3887b0",
+                "224ab74de940ac0d"
             ]
         ]
     },
     {
-        "id": "043e147cdc3aa559",
+        "id": "1cadaccef56c3634",
         "type": "inject",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "props": [
             {
@@ -2509,14 +3985,14 @@
         "y": 135,
         "wires": [
             [
-                "defeeafdbbab7072"
+                "d608283e05220681"
             ]
         ]
     },
     {
-        "id": "e12512dce61a1d15",
+        "id": "c031c06dc5a62f43",
         "type": "debug",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2531,9 +4007,9 @@
         "wires": []
     },
     {
-        "id": "d8c5e2b0136648bd",
+        "id": "f808548edbc5a143",
         "type": "change",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "rules": [
             {
@@ -2560,15 +4036,15 @@
         "y": 135,
         "wires": [
             [
-                "e12512dce61a1d15"
+                "c031c06dc5a62f43"
             ]
         ]
     },
     {
-        "id": "e019da94344057fb",
+        "id": "92b164173e3e67fa",
         "type": "mongodb in",
-        "z": "9737ff214ffcf68e",
-        "mongodb": "02a79ecccb411cca",
+        "z": "2b6b3f18928fcd9d",
+        "mongodb": "cd92b6c876f519ad",
         "name": "Ver si hay alguna reserva en esa hora",
         "collection": "reservas",
         "operation": "count",
@@ -2576,14 +4052,14 @@
         "y": 1065,
         "wires": [
             [
-                "e49f9d61b01ce2fb"
+                "6c70352708ca9d56"
             ]
         ]
     },
     {
-        "id": "a63b223bef55d3e5",
+        "id": "d8f729e85efb105e",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Aggregation",
         "func": "var newMsg = {};\nnewMsg.collection = \"reservas\";\nnewMsg.payload = [\n    {   \"$match\" : {    \"sala\":         msg.payload.sala, \n                        \"fecha\":        msg.payload.fecha,\n                        \"hora_inicio\":  msg.payload.hora_inicio,\n                        \"hora_fin\" :    msg.payload.hora_fin}}\n    ];\n\nreturn newMsg;",
         "outputs": 1,
@@ -2595,14 +4071,14 @@
         "y": 1065,
         "wires": [
             [
-                "e019da94344057fb"
+                "92b164173e3e67fa"
             ]
         ]
     },
     {
-        "id": "b5ba5178747016e7",
+        "id": "224ab74de940ac0d",
         "type": "debug",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2616,9 +4092,9 @@
         "wires": []
     },
     {
-        "id": "6f59eb6f190e9815",
+        "id": "3c111ff22e3887b0",
         "type": "switch",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "hora válida?",
         "property": "payload.ack_hora_valida",
         "propertyType": "msg",
@@ -2637,45 +4113,45 @@
         "y": 885,
         "wires": [
             [
-                "e73e1be786c4e9ae"
+                "fde32e0f10a664cb"
             ],
             [
-                "a0fb1b2eb5bff73e"
+                "5d3e6c437a08351c"
             ]
         ]
     },
     {
-        "id": "a0fb1b2eb5bff73e",
+        "id": "5d3e6c437a08351c",
         "type": "link out",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "links": [
-            "e95204506a868cd0"
+            "81aae098d1ca595b"
         ],
         "x": 1155,
         "y": 915,
         "wires": []
     },
     {
-        "id": "e95204506a868cd0",
+        "id": "81aae098d1ca595b",
         "type": "link in",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "links": [
-            "a0fb1b2eb5bff73e"
+            "5d3e6c437a08351c"
         ],
         "x": 150,
         "y": 1065,
         "wires": [
             [
-                "a63b223bef55d3e5"
+                "d8f729e85efb105e"
             ]
         ]
     },
     {
-        "id": "e49f9d61b01ce2fb",
+        "id": "6c70352708ca9d56",
         "type": "switch",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -2698,17 +4174,17 @@
         "y": 1065,
         "wires": [
             [
-                "38c2c0663a068c9c"
+                "fa57c360c14de6e4"
             ],
             [
-                "2c3faeaf3439516e"
+                "8da797603c03cca5"
             ]
         ]
     },
     {
-        "id": "e73e1be786c4e9ae",
+        "id": "fde32e0f10a664cb",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "hora no válida",
         "func": "// mandar mensaje a Telegram\n\nreturn msg;",
         "outputs": 1,
@@ -2723,9 +4199,9 @@
         ]
     },
     {
-        "id": "38c2c0663a068c9c",
+        "id": "fa57c360c14de6e4",
         "type": "function",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "franja ocupada - no se puede reservar",
         "func": "// mandar mensaje a Telegram\n\nreturn msg;",
         "outputs": 1,
@@ -2740,10 +4216,10 @@
         ]
     },
     {
-        "id": "2c3faeaf3439516e",
+        "id": "8da797603c03cca5",
         "type": "mongodb out",
-        "z": "9737ff214ffcf68e",
-        "mongodb": "02a79ecccb411cca",
+        "z": "2b6b3f18928fcd9d",
+        "mongodb": "cd92b6c876f519ad",
         "name": "guardar reserva",
         "collection": "reservas",
         "payonly": true,
@@ -2755,9 +4231,9 @@
         "wires": []
     },
     {
-        "id": "7a3d2925bd70bb5d",
+        "id": "c9f24f52f5c9183e",
         "type": "comment",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Reserva Actual",
         "info": "",
         "x": 245,
@@ -2765,11 +4241,11 @@
         "wires": []
     },
     {
-        "id": "1bbe20485d9216bc",
+        "id": "bcf5720fffa304f6",
         "type": "ui_button",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
-        "group": "e06870e71eafc671",
+        "group": "0c439ca76ee63225",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -2788,15 +4264,15 @@
         "y": 195,
         "wires": [
             [
-                "0b30f31b6e84ead5",
-                "bcf90579f6a0d03c"
+                "ee529e9ae0ed1316",
+                "20f76dfce413c49c"
             ]
         ]
     },
     {
-        "id": "acb5e41c30a4b668",
+        "id": "790a78194b354ef1",
         "type": "comment",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Actualizar y Última Actualización",
         "info": "",
         "x": 275,
@@ -2804,25 +4280,25 @@
         "wires": []
     },
     {
-        "id": "0b30f31b6e84ead5",
+        "id": "ee529e9ae0ed1316",
         "type": "link out",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "links": [
             "2099185171915f1a",
-            "265008ce1420060e",
+            "f06b8df2c6f6e96d",
             "2f9a406bd3a6a2ed",
-            "fc2176fc9353c42f",
-            "7c27e066144e18cb"
+            "f466f9b07be49f43",
+            "e6619a39a2cc6d57"
         ],
         "x": 385,
         "y": 195,
         "wires": []
     },
     {
-        "id": "bcf90579f6a0d03c",
+        "id": "20f76dfce413c49c",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Última Actualización",
         "func": "var fecha;\n\nfecha = new Date();\n\nmsg.payload = fecha.toLocaleString(\"es-ES\");\n\nreturn msg;",
         "outputs": 1,
@@ -2834,15 +4310,15 @@
         "y": 285,
         "wires": [
             [
-                "02c525b5326ce2f5"
+                "2f98ec22df4f55ad"
             ]
         ]
     },
     {
-        "id": "02c525b5326ce2f5",
+        "id": "2f98ec22df4f55ad",
         "type": "ui_text",
-        "z": "e9a8bf588bc16e41",
-        "group": "e06870e71eafc671",
+        "z": "dbcaebc777febea5",
+        "group": "0c439ca76ee63225",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -2856,9 +4332,9 @@
         "wires": []
     },
     {
-        "id": "08aa8541d0129ba6",
+        "id": "1c9edc62780952d8",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Reserva Actual CNC",
         "func": "var hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar ahora;\n\nahora = new Date();\nhora_actual = ahora.getHours();\n\n\nif (msg.payload != []) {\n\n    hora_inicio = msg.payload[0].hora_inicio;\n    hora_fin = msg.payload[0].hora_fin;\n    \n    if (hora_inicio <= hora_actual && hora_actual <= hora_fin) {\n        msg.reserva_actual_CNC = true;\n        \n    }\n    else {\n        msg.reserva_actual_CNC = false;\n    }\n}\n\nelse {\n    msg.reservaa_actual_CNC = false;\n}\n\nreturn msg;\n",
         "outputs": 1,
@@ -2870,31 +4346,31 @@
         "y": 840,
         "wires": [
             [
-                "2e5cd5d556dec4d8"
+                "4f0da5b6df6491cc"
             ]
         ]
     },
     {
-        "id": "265008ce1420060e",
+        "id": "f06b8df2c6f6e96d",
         "type": "link in",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "links": [
-            "0b30f31b6e84ead5"
+            "ee529e9ae0ed1316"
         ],
         "x": 195,
         "y": 705,
         "wires": [
             [
-                "6c738284965556ed",
-                "1c698b57b4b387c6"
+                "05f143eb68d67243",
+                "8f63d1c236838cad"
             ]
         ]
     },
     {
-        "id": "76053fc224fdaec1",
+        "id": "9795dc2cdbd848be",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Reserva Actual 3D",
         "func": "var hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar ahora;\n\nahora = new Date();\nhora_actual = ahora.getHours();\nhora_inicio = msg.payload[0].hora_inicio;\nhora_fin = msg.payload[0].hora_fin;\n\n\n\nif (hora_actual >= hora_inicio && hora_actual <= hora_fin) {\n    msg.reserva_actual_3D = true;\n    \n}\nelse {\n    msg.reserva_actual_3D = false;\n}\n\nreturn msg;\n\n",
         "outputs": 1,
@@ -2906,16 +4382,16 @@
         "y": 525,
         "wires": [
             [
-                "d36ee1716a6c286a",
-                "da66fe2798d2f80d"
+                "b53484349b5e8ee4",
+                "dd2cdb211a0a3c9f"
             ]
         ]
     },
     {
-        "id": "2555b016b8d06780",
+        "id": "4241b45be3409bee",
         "type": "mongodb in",
-        "z": "e9a8bf588bc16e41",
-        "mongodb": "02a79ecccb411cca",
+        "z": "dbcaebc777febea5",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -2923,15 +4399,15 @@
         "y": 525,
         "wires": [
             [
-                "b02901658cd5c532"
+                "81c4c3f705e276b7"
             ]
         ]
     },
     {
-        "id": "7d795a0d9fb2debb",
+        "id": "12de5930f9849db7",
         "type": "mongodb in",
-        "z": "e9a8bf588bc16e41",
-        "mongodb": "02a79ecccb411cca",
+        "z": "dbcaebc777febea5",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -2939,14 +4415,14 @@
         "y": 855,
         "wires": [
             [
-                "df38aa5257fd47a4"
+                "0be0253a3b2658b2"
             ]
         ]
     },
     {
-        "id": "b00d6d7456f65e83",
+        "id": "ee40db5fa973a810",
         "type": "template",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -2958,15 +4434,15 @@
         "y": 420,
         "wires": [
             [
-                "3134a423db23cf95"
+                "938393b1fc35a60b"
             ]
         ]
     },
     {
-        "id": "3134a423db23cf95",
+        "id": "938393b1fc35a60b",
         "type": "ui_template",
-        "z": "e9a8bf588bc16e41",
-        "group": "be8fc419a201d0b4",
+        "z": "dbcaebc777febea5",
+        "group": "a3ae9a947ec21923",
         "name": "Reserva Actual 3D",
         "order": 2,
         "width": "6",
@@ -2984,9 +4460,9 @@
         ]
     },
     {
-        "id": "b1d4addd26809289",
+        "id": "b28d47aae20b130a",
         "type": "template",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -2998,15 +4474,15 @@
         "y": 765,
         "wires": [
             [
-                "f0646b5178cdd464"
+                "d91341929cf334c4"
             ]
         ]
     },
     {
-        "id": "f0646b5178cdd464",
+        "id": "d91341929cf334c4",
         "type": "ui_template",
-        "z": "e9a8bf588bc16e41",
-        "group": "f7732870e5603a4c",
+        "z": "dbcaebc777febea5",
+        "group": "2f0255d74ac73ce4",
         "name": "Reserva Actual CNC",
         "order": 4,
         "width": "6",
@@ -3024,9 +4500,9 @@
         ]
     },
     {
-        "id": "d36ee1716a6c286a",
+        "id": "b53484349b5e8ee4",
         "type": "switch",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "property": "reserva_actual_3D",
         "propertyType": "msg",
@@ -3045,18 +4521,18 @@
         "y": 525,
         "wires": [
             [
-                "b00d6d7456f65e83",
-                "a36ca7946d7d4930"
+                "ee40db5fa973a810",
+                "764d29f620753b9e"
             ],
             [
-                "a0e0423d59a6cef3"
+                "0c0b45208e7866b6"
             ]
         ]
     },
     {
-        "id": "6c738284965556ed",
+        "id": "05f143eb68d67243",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Agregación",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"3D\" , \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}}},\n    { \"$sort\" : {\"hora_inicio\" : 1}},\n    { \"$limit\" : 1 }\n    ];\n\nreturn msg;\n\n",
         "outputs": 1,
@@ -3068,15 +4544,15 @@
         "y": 525,
         "wires": [
             [
-                "2555b016b8d06780",
-                "f60f9a05ac1b9d6f"
+                "4241b45be3409bee",
+                "f49c84ac0f94dd26"
             ]
         ]
     },
     {
-        "id": "1c698b57b4b387c6",
+        "id": "8f63d1c236838cad",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Agregación",
         "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"CNC\" , \"fecha\": Date.now()}},\n    { \"$sort\" : {\"hora_inicio\" : 1}},\n    {\"$limit\" : 1}\n    ];\nreturn msg;",
         "outputs": 1,
@@ -3088,14 +4564,14 @@
         "y": 855,
         "wires": [
             [
-                "7d795a0d9fb2debb"
+                "12de5930f9849db7"
             ]
         ]
     },
     {
-        "id": "2e5cd5d556dec4d8",
+        "id": "4f0da5b6df6491cc",
         "type": "switch",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "property": "payload.reserva_actual_CNC",
         "propertyType": "msg",
@@ -3114,18 +4590,18 @@
         "y": 840,
         "wires": [
             [
-                "b1d4addd26809289",
-                "2114b32d5b9c492b"
+                "b28d47aae20b130a",
+                "d5bba68e521021c2"
             ],
             [
-                "bae3980c346221b0"
+                "08439445340c2a03"
             ]
         ]
     },
     {
-        "id": "a0e0423d59a6cef3",
+        "id": "0c0b45208e7866b6",
         "type": "change",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "No hay reservas en curso",
         "rules": [
             {
@@ -3145,14 +4621,14 @@
         "y": 645,
         "wires": [
             [
-                "f8a36591d8d2814e"
+                "d943047363e0768e"
             ]
         ]
     },
     {
-        "id": "bae3980c346221b0",
+        "id": "08439445340c2a03",
         "type": "change",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "No hay reservas en curso",
         "rules": [
             {
@@ -3172,15 +4648,15 @@
         "y": 975,
         "wires": [
             [
-                "d1b674859f418f21"
+                "ec2ef3a626dad67c"
             ]
         ]
     },
     {
-        "id": "f8a36591d8d2814e",
+        "id": "d943047363e0768e",
         "type": "ui_text",
-        "z": "e9a8bf588bc16e41",
-        "group": "be8fc419a201d0b4",
+        "z": "dbcaebc777febea5",
+        "group": "a3ae9a947ec21923",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -3194,10 +4670,10 @@
         "wires": []
     },
     {
-        "id": "d1b674859f418f21",
+        "id": "ec2ef3a626dad67c",
         "type": "ui_text",
-        "z": "e9a8bf588bc16e41",
-        "group": "f7732870e5603a4c",
+        "z": "dbcaebc777febea5",
+        "group": "2f0255d74ac73ce4",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -3211,9 +4687,9 @@
         "wires": []
     },
     {
-        "id": "f60f9a05ac1b9d6f",
+        "id": "f49c84ac0f94dd26",
         "type": "debug",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -3227,9 +4703,9 @@
         "wires": []
     },
     {
-        "id": "da66fe2798d2f80d",
+        "id": "dd2cdb211a0a3c9f",
         "type": "debug",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -3244,9 +4720,9 @@
         "wires": []
     },
     {
-        "id": "b02901658cd5c532",
+        "id": "81c4c3f705e276b7",
         "type": "switch",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -3265,17 +4741,17 @@
         "y": 525,
         "wires": [
             [
-                "76053fc224fdaec1"
+                "9795dc2cdbd848be"
             ],
             [
-                "a0e0423d59a6cef3"
+                "0c0b45208e7866b6"
             ]
         ]
     },
     {
-        "id": "df38aa5257fd47a4",
+        "id": "0be0253a3b2658b2",
         "type": "switch",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -3294,17 +4770,17 @@
         "y": 855,
         "wires": [
             [
-                "08aa8541d0129ba6"
+                "1c9edc62780952d8"
             ],
             [
-                "bae3980c346221b0"
+                "08439445340c2a03"
             ]
         ]
     },
     {
-        "id": "a36ca7946d7d4930",
+        "id": "764d29f620753b9e",
         "type": "change",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Hay reservas en curso",
         "rules": [
             {
@@ -3324,14 +4800,14 @@
         "y": 525,
         "wires": [
             [
-                "f8a36591d8d2814e"
+                "d943047363e0768e"
             ]
         ]
     },
     {
-        "id": "2114b32d5b9c492b",
+        "id": "d5bba68e521021c2",
         "type": "change",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Hay reservas en curso",
         "rules": [
             {
@@ -3351,15 +4827,15 @@
         "y": 855,
         "wires": [
             [
-                "d1b674859f418f21"
+                "ec2ef3a626dad67c"
             ]
         ]
     },
     {
-        "id": "50ef85333764cc9d",
+        "id": "0d4633b330793087",
         "type": "mongodb in",
-        "z": "e9a8bf588bc16e41",
-        "mongodb": "02a79ecccb411cca",
+        "z": "dbcaebc777febea5",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -3367,14 +4843,14 @@
         "y": 1155,
         "wires": [
             [
-                "5a0f2b19c1683ffb"
+                "936334b431f86c73"
             ]
         ]
     },
     {
-        "id": "f620bd88ef8815df",
+        "id": "5716b8e400823de5",
         "type": "comment",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Listados generales de reservas por sala - Hoy",
         "info": "",
         "x": 335,
@@ -3382,9 +4858,9 @@
         "wires": []
     },
     {
-        "id": "3f75ee7b80780f33",
+        "id": "813426f7c85c9b2d",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Mostrar Reservas 3D",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"3D\" }, \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -3396,14 +4872,14 @@
         "y": 1155,
         "wires": [
             [
-                "50ef85333764cc9d"
+                "0d4633b330793087"
             ]
         ]
     },
     {
-        "id": "5a0f2b19c1683ffb",
+        "id": "936334b431f86c73",
         "type": "template",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -3415,15 +4891,15 @@
         "y": 1155,
         "wires": [
             [
-                "9435de7b56e70557"
+                "e905e9fa602241ad"
             ]
         ]
     },
     {
-        "id": "9435de7b56e70557",
+        "id": "e905e9fa602241ad",
         "type": "ui_template",
-        "z": "e9a8bf588bc16e41",
-        "group": "be8fc419a201d0b4",
+        "z": "dbcaebc777febea5",
+        "group": "a3ae9a947ec21923",
         "name": "",
         "order": 0,
         "width": "6",
@@ -3441,10 +4917,10 @@
         ]
     },
     {
-        "id": "466766505233af6c",
+        "id": "f1dce9dfcc7bd89c",
         "type": "mongodb in",
-        "z": "e9a8bf588bc16e41",
-        "mongodb": "02a79ecccb411cca",
+        "z": "dbcaebc777febea5",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -3452,14 +4928,14 @@
         "y": 1260,
         "wires": [
             [
-                "c8daea0a2c52cbc7"
+                "55fbf8929f79f0ca"
             ]
         ]
     },
     {
-        "id": "b6817b8373e4909e",
+        "id": "283086ad27a10457",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Mostrar Reservas CNC",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"CNC\" }, \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -3471,14 +4947,14 @@
         "y": 1260,
         "wires": [
             [
-                "466766505233af6c"
+                "f1dce9dfcc7bd89c"
             ]
         ]
     },
     {
-        "id": "c8daea0a2c52cbc7",
+        "id": "55fbf8929f79f0ca",
         "type": "template",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -3490,15 +4966,15 @@
         "y": 1260,
         "wires": [
             [
-                "2b06a9123b3c406d"
+                "6e74e8a6cbd65759"
             ]
         ]
     },
     {
-        "id": "2b06a9123b3c406d",
+        "id": "6e74e8a6cbd65759",
         "type": "ui_template",
-        "z": "e9a8bf588bc16e41",
-        "group": "f7732870e5603a4c",
+        "z": "dbcaebc777febea5",
+        "group": "2f0255d74ac73ce4",
         "name": "",
         "order": 0,
         "width": "6",
@@ -3516,27 +4992,27 @@
         ]
     },
     {
-        "id": "fc2176fc9353c42f",
+        "id": "f466f9b07be49f43",
         "type": "link in",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "links": [
-            "0b30f31b6e84ead5"
+            "ee529e9ae0ed1316"
         ],
         "x": 210,
         "y": 1200,
         "wires": [
             [
-                "3f75ee7b80780f33",
-                "b6817b8373e4909e"
+                "813426f7c85c9b2d",
+                "283086ad27a10457"
             ]
         ]
     },
     {
-        "id": "d1eadac1e2fe8c26",
+        "id": "f092335c3eb577ed",
         "type": "mongodb in",
-        "z": "e9a8bf588bc16e41",
-        "mongodb": "02a79ecccb411cca",
+        "z": "dbcaebc777febea5",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -3544,14 +5020,14 @@
         "y": 1485,
         "wires": [
             [
-                "237dec0d1c2c6d05"
+                "17fd3dc370601aa0"
             ]
         ]
     },
     {
-        "id": "e12c11c846a8bc00",
+        "id": "17a6b2701440985a",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Mostrar Reservas 3D",
         "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"3D\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -3563,14 +5039,14 @@
         "y": 1485,
         "wires": [
             [
-                "d1eadac1e2fe8c26"
+                "f092335c3eb577ed"
             ]
         ]
     },
     {
-        "id": "237dec0d1c2c6d05",
+        "id": "17fd3dc370601aa0",
         "type": "template",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -3582,15 +5058,15 @@
         "y": 1485,
         "wires": [
             [
-                "7d70f152285a461b"
+                "7441afe314fd5597"
             ]
         ]
     },
     {
-        "id": "7d70f152285a461b",
+        "id": "7441afe314fd5597",
         "type": "ui_template",
-        "z": "e9a8bf588bc16e41",
-        "group": "be8fc419a201d0b4",
+        "z": "dbcaebc777febea5",
+        "group": "a3ae9a947ec21923",
         "name": "",
         "order": 0,
         "width": "6",
@@ -3608,10 +5084,10 @@
         ]
     },
     {
-        "id": "5fcfa937d5d56ecb",
+        "id": "92823db404e44f50",
         "type": "mongodb in",
-        "z": "e9a8bf588bc16e41",
-        "mongodb": "02a79ecccb411cca",
+        "z": "dbcaebc777febea5",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -3619,14 +5095,14 @@
         "y": 1590,
         "wires": [
             [
-                "21a30fbb9ecf8a71"
+                "7152a27a070d350a"
             ]
         ]
     },
     {
-        "id": "e5b0c9f8977e9e55",
+        "id": "a7cb123dbd75d08b",
         "type": "function",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Mostrar Reservas CNC",
         "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"CNC\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -3638,14 +5114,14 @@
         "y": 1590,
         "wires": [
             [
-                "5fcfa937d5d56ecb"
+                "92823db404e44f50"
             ]
         ]
     },
     {
-        "id": "21a30fbb9ecf8a71",
+        "id": "7152a27a070d350a",
         "type": "template",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -3657,15 +5133,15 @@
         "y": 1590,
         "wires": [
             [
-                "2b356c59d217b067"
+                "b29ba25780d43172"
             ]
         ]
     },
     {
-        "id": "2b356c59d217b067",
+        "id": "b29ba25780d43172",
         "type": "ui_template",
-        "z": "e9a8bf588bc16e41",
-        "group": "f7732870e5603a4c",
+        "z": "dbcaebc777febea5",
+        "group": "2f0255d74ac73ce4",
         "name": "",
         "order": 0,
         "width": "6",
@@ -3683,26 +5159,26 @@
         ]
     },
     {
-        "id": "7c27e066144e18cb",
+        "id": "e6619a39a2cc6d57",
         "type": "link in",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "",
         "links": [
-            "0b30f31b6e84ead5"
+            "ee529e9ae0ed1316"
         ],
         "x": 210,
         "y": 1530,
         "wires": [
             [
-                "e12c11c846a8bc00",
-                "e5b0c9f8977e9e55"
+                "17a6b2701440985a",
+                "a7cb123dbd75d08b"
             ]
         ]
     },
     {
-        "id": "6f2461b7eb4ef07b",
+        "id": "d7742e11e15f4549",
         "type": "comment",
-        "z": "e9a8bf588bc16e41",
+        "z": "dbcaebc777febea5",
         "name": "Listados generales de reservas por sala - Próximos días",
         "info": "",
         "x": 395,
@@ -3710,9 +5186,9 @@
         "wires": []
     },
     {
-        "id": "1718efa673d126f5",
+        "id": "8ba97104f113db4a",
         "type": "inject",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "props": [
             {
@@ -3734,14 +5210,14 @@
         "y": 225,
         "wires": [
             [
-                "b1157116731ed6f0"
+                "594469b8cfe73802"
             ]
         ]
     },
     {
-        "id": "51bc0a295686bac8",
+        "id": "38feba53bfd3c5af",
         "type": "comment",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "Me llega el id de la tarjeta",
         "info": "Este id me llega porque en la caché de la placa no existe nadie con este identificador. Se pretende buscar el identificador en la base de datos y, si existe, abrir la puerta y si no existe, no abrirla. ",
         "x": 140,
@@ -3749,9 +5225,9 @@
         "wires": []
     },
     {
-        "id": "b1157116731ed6f0",
+        "id": "594469b8cfe73802",
         "type": "function",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "id_NFC",
         "func": "msg.id_NFC = \"88:109:195:73\";\nreturn msg;",
         "outputs": 1,
@@ -3763,15 +5239,15 @@
         "y": 225,
         "wires": [
             [
-                "0748b6394ae2e08d"
+                "e96f3c2550eb50b1"
             ]
         ]
     },
     {
-        "id": "62fd6666275e1a6b",
+        "id": "239cc124cf57024d",
         "type": "mongodb in",
-        "z": "6636195c7fb0d804",
-        "mongodb": "02a79ecccb411cca",
+        "z": "5d189995a81fad90",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "usuarios",
         "operation": "aggregate",
@@ -3779,14 +5255,14 @@
         "y": 225,
         "wires": [
             [
-                "8131757fd10606e0"
+                "082215425f830b3a"
             ]
         ]
     },
     {
-        "id": "0748b6394ae2e08d",
+        "id": "e96f3c2550eb50b1",
         "type": "function",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "Match",
         "func": "var id_buscado;\nid_buscado = msg.id_NFC;\n\nmsg.collection = \"usuarios\";\nmsg.payload = [ \n    { \"$match\" : { \"id_NFC\" : id_buscado}}];\nreturn msg;",
         "outputs": 1,
@@ -3798,14 +5274,14 @@
         "y": 225,
         "wires": [
             [
-                "62fd6666275e1a6b"
+                "239cc124cf57024d"
             ]
         ]
     },
     {
-        "id": "8131757fd10606e0",
+        "id": "082215425f830b3a",
         "type": "switch",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -3821,14 +5297,14 @@
         "y": 225,
         "wires": [
             [
-                "a80e2fd9683bcfdf"
+                "c3eae3cc2dae4f8c"
             ]
         ]
     },
     {
-        "id": "603e22abb2100e15",
+        "id": "6b85b33fde103649",
         "type": "mqtt out",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "topic": "puerta_[n]/puerta/abrir",
         "qos": "",
@@ -3838,15 +5314,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "a7ac40b8ef47a69c",
+        "broker": "a0c7e5742b6b961a",
         "x": 1300,
         "y": 360,
         "wires": []
     },
     {
-        "id": "a53f62d57e87c990",
+        "id": "a005b435954979e4",
         "type": "comment",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "manda (o no) la señal para abrir la puerta",
         "info": "",
         "x": 1300,
@@ -3854,9 +5330,9 @@
         "wires": []
     },
     {
-        "id": "b02a57a94f3c1e6c",
+        "id": "65adbbac53387039",
         "type": "debug",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -3870,37 +5346,37 @@
         "wires": []
     },
     {
-        "id": "2e4860f6376a576c",
+        "id": "e3f8e298bc88bd1e",
         "type": "link in",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "links": [
-            "a80e2fd9683bcfdf"
+            "c3eae3cc2dae4f8c"
         ],
         "x": 810,
         "y": 390,
         "wires": [
             [
-                "4fe9f23c2bac8829"
+                "998a448211cc8e1b"
             ]
         ]
     },
     {
-        "id": "a80e2fd9683bcfdf",
+        "id": "c3eae3cc2dae4f8c",
         "type": "link out",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "links": [
-            "2e4860f6376a576c"
+            "e3f8e298bc88bd1e"
         ],
         "x": 1180,
         "y": 225,
         "wires": []
     },
     {
-        "id": "4fe9f23c2bac8829",
+        "id": "998a448211cc8e1b",
         "type": "change",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "rules": [
             {
@@ -3920,15 +5396,15 @@
         "y": 390,
         "wires": [
             [
-                "603e22abb2100e15",
-                "b02a57a94f3c1e6c"
+                "6b85b33fde103649",
+                "65adbbac53387039"
             ]
         ]
     },
     {
-        "id": "19019dc1a4e2f02e",
+        "id": "b6bffb525eedce13",
         "type": "comment",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "ABRIR PUERTA CON ID_NFC",
         "info": "",
         "x": 150,
@@ -3936,9 +5412,9 @@
         "wires": []
     },
     {
-        "id": "258d6479b166b65b",
+        "id": "6c48196ae3a884cb",
         "type": "comment",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "MANDAR LISTA DIARIA DE IDS CON RESERVA + ID ADMIN",
         "info": "",
         "x": 265,
@@ -3946,9 +5422,9 @@
         "wires": []
     },
     {
-        "id": "95ed07bbf388b895",
+        "id": "44fba1f13a3466dc",
         "type": "function",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "agregación - reservas hoy",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ { \"$match\" : {\"fecha\": fecha_actual}}\n];\n    \nreturn msg;",
         "outputs": 1,
@@ -3960,15 +5436,15 @@
         "y": 705,
         "wires": [
             [
-                "43780cebd0ad073a"
+                "3db7d30f42371095"
             ]
         ]
     },
     {
-        "id": "43780cebd0ad073a",
+        "id": "3db7d30f42371095",
         "type": "mongodb in",
-        "z": "6636195c7fb0d804",
-        "mongodb": "02a79ecccb411cca",
+        "z": "5d189995a81fad90",
+        "mongodb": "cd92b6c876f519ad",
         "name": "",
         "collection": "reservas",
         "operation": "aggregate",
@@ -3976,14 +5452,14 @@
         "y": 705,
         "wires": [
             [
-                "082518499ac03752"
+                "313c4a2ac96e3585"
             ]
         ]
     },
     {
-        "id": "4513285d100636c2",
+        "id": "9e598883fdfe3794",
         "type": "inject",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "props": [
             {
@@ -4000,14 +5476,14 @@
         "y": 705,
         "wires": [
             [
-                "95ed07bbf388b895"
+                "44fba1f13a3466dc"
             ]
         ]
     },
     {
-        "id": "89178c097e0826d5",
+        "id": "d386bf56cb9de7f7",
         "type": "debug",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -4022,38 +5498,38 @@
         "wires": []
     },
     {
-        "id": "c658f634027eec04",
+        "id": "fd689f16acf3e34a",
         "type": "link in",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "links": [
-            "76787ade490d386c",
+            "9e07d656dfb88efd",
             "a6609b2445449f60"
         ],
         "x": 90,
         "y": 840,
         "wires": [
             [
-                "622cd391f6e1bdd2"
+                "f7926c1640ba8849"
             ]
         ]
     },
     {
-        "id": "76787ade490d386c",
+        "id": "9e07d656dfb88efd",
         "type": "link out",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "links": [
-            "c658f634027eec04"
+            "fd689f16acf3e34a"
         ],
         "x": 1365,
         "y": 705,
         "wires": []
     },
     {
-        "id": "8f05ce0f53c4fd8c",
+        "id": "718f86d24f9746b5",
         "type": "comment",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "LEER",
         "info": "Ajustar la fecha y los días en los que queremos que se mande. ",
         "x": 95,
@@ -4061,9 +5537,9 @@
         "wires": []
     },
     {
-        "id": "622cd391f6e1bdd2",
+        "id": "f7926c1640ba8849",
         "type": "function",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "ids comunes",
         "func": "var num_ids;\nvar ids_comunes = [\"88:109:194:73\"];\n\n\nnum_ids = msg.num_ids;\n\nfor (let i = 0; i < num_ids; i++) {\n    \n    ids_comunes.push(msg.reservas_hoy[i].id_NFC);\n    msg.payload = ids_comunes;\n}\n\nmsg.payload = ids_comunes;\n\n\nreturn msg;",
         "outputs": 1,
@@ -4075,14 +5551,14 @@
         "y": 840,
         "wires": [
             [
-                "7ebcef1665f1f5a1"
+                "3fc4202a62e1155c"
             ]
         ]
     },
     {
-        "id": "7ebcef1665f1f5a1",
+        "id": "3fc4202a62e1155c",
         "type": "debug",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -4097,9 +5573,9 @@
         "wires": []
     },
     {
-        "id": "082518499ac03752",
+        "id": "313c4a2ac96e3585",
         "type": "change",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "",
         "rules": [
             {
@@ -4131,15 +5607,15 @@
         "y": 705,
         "wires": [
             [
-                "76787ade490d386c",
-                "89178c097e0826d5"
+                "9e07d656dfb88efd",
+                "d386bf56cb9de7f7"
             ]
         ]
     },
     {
-        "id": "44a75de3a98594fb",
+        "id": "6f698abd06326192",
         "type": "comment",
-        "z": "6636195c7fb0d804",
+        "z": "5d189995a81fad90",
         "name": "se manda por mqtt - LEER",
         "info": "No sé si es necesario que tenga la key \"idComun1\", \"idComun2\", etc...si no hace falta es mucho más simple como está ahora. ",
         "x": 575,
@@ -4147,9 +5623,9 @@
         "wires": []
     },
     {
-        "id": "b0afc1b1e9d69c93",
+        "id": "e6c098597cfccd7a",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Petición a DB con día y sala de Fer",
         "info": "msg.payload.dia = \"dd/mm/aaaa\"\nmsg.payload.sala = \"3D\"",
         "x": 600,
@@ -4157,9 +5633,9 @@
         "wires": []
     },
     {
-        "id": "27be31c689baea40",
+        "id": "e58fe9b41b302d97",
         "type": "link in",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "links": [
             "99e352af81bde24b"
@@ -4168,14 +5644,14 @@
         "y": 540,
         "wires": [
             [
-                "d390c974f088363a"
+                "a1887e48e4b840b7"
             ]
         ]
     },
     {
-        "id": "66988095b2f77c76",
+        "id": "6bc4104d8c4a1315",
         "type": "link out",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "",
         "links": [
             "16ff79ca21cb7d3f"
@@ -4185,9 +5661,9 @@
         "wires": []
     },
     {
-        "id": "a24d1071f0a97a52",
+        "id": "c4e078d71452a891",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "Mandar lista de reservas a Fer",
         "info": "",
         "x": 1440,
@@ -4195,13 +5671,46 @@
         "wires": []
     },
     {
-        "id": "a3fecce11bf5b1e0",
+        "id": "223319ca02803ba7",
         "type": "comment",
-        "z": "9737ff214ffcf68e",
+        "z": "2b6b3f18928fcd9d",
         "name": "¿Necesitas muy fuerte crear un nuevo mensaje? Porque me jodes un poquito xd",
         "info": "",
         "x": 1040,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "4a95ff5deaf66dea",
+        "type": "debug",
+        "z": "2b6b3f18928fcd9d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1175,
+        "y": 675,
+        "wires": []
+    },
+    {
+        "id": "4159be88c5c19d53",
+        "type": "function",
+        "z": "2b6b3f18928fcd9d",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 715,
+        "y": 270,
+        "wires": [
+            []
+        ]
     }
 ]
