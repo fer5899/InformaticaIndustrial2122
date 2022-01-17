@@ -1,41 +1,41 @@
 [
     {
-        "id": "6fd240d0a5125c84",
+        "id": "89d6dd3d78386063",
         "type": "tab",
         "label": "SkapaLaBot",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "33f26c223e8be56f",
+        "id": "f3fa3730ce47686c",
         "type": "tab",
         "label": "Skapalab - USUARIOS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "b991675b657dc122",
+        "id": "8463448eeef70965",
         "type": "tab",
         "label": "Skapalab - RESERVAS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "4b0ca85bc571f59f",
+        "id": "0c91cd2473cfb11a",
         "type": "tab",
         "label": "Skapalab - VIS. RESERVAS",
         "disabled": false,
         "info": "Flujo reservado a la clasificación de reservas para su posterior visualización en el dashboard."
     },
     {
-        "id": "58772856dc1659a2",
+        "id": "55adc353f784f304",
         "type": "tab",
         "label": "Skapalab - ESTADÍSTICAS",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "6a9899964a8aa4bc",
+        "id": "fcf476b1caabd030",
         "type": "tab",
         "label": "Skapalab - mqtt",
         "disabled": false,
@@ -69,7 +69,7 @@
     {
         "id": "b4eb3d3dca556878",
         "type": "ui_group",
-        "name": "Historiales",
+        "name": "Encuentra clave con ID",
         "tab": "",
         "order": 1,
         "disp": false,
@@ -747,7 +747,7 @@
         "id": "70462dfdf7f2eace",
         "type": "ui_group",
         "name": "Registro Nuevos Usuarios",
-        "tab": "a8f33caba2aa5d3b",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -948,14 +948,6 @@
         "className": ""
     },
     {
-        "id": "6c5e0601d320acc5",
-        "type": "ui_link",
-        "name": "Link 2",
-        "icon": "open_in_browser",
-        "target": "newtab",
-        "order": 2
-    },
-    {
         "id": "b84bfdaa0c66f4ef",
         "type": "mqtt-broker",
         "name": "",
@@ -1067,11 +1059,11 @@
     {
         "id": "34b41b2a197775ab",
         "type": "mongodb",
-        "hostname": "127.0.0.1",
+        "hostname": "iot.ac.uma.es",
         "topology": "direct",
         "connectOptions": "",
         "port": "27017",
-        "db": "",
+        "db": "examen",
         "name": ""
     },
     {
@@ -1083,14 +1075,6 @@
         "port": "27017",
         "db": "II8",
         "name": ""
-    },
-    {
-        "id": "a8f33caba2aa5d3b",
-        "type": "ui_tab",
-        "name": "Skapalab",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "3752afa1.deaf9",
@@ -1118,32 +1102,28 @@
         "port": "1883",
         "clientid": "",
         "usetls": false,
-        "compatmode": true,
+        "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
         "birthTopic": "",
         "birthQos": "0",
         "birthPayload": "",
+        "birthMsg": {},
         "closeTopic": "",
         "closeQos": "0",
         "closePayload": "",
+        "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "e09a70911f161970",
-        "type": "ui_tab",
-        "name": "Reservas",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     },
     {
         "id": "6d967cf6cf6c49c4",
         "type": "ui_group",
         "name": "Registro",
-        "tab": "be9663360939d630",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1164,7 +1144,7 @@
         "id": "0acaf709e07e555b",
         "type": "ui_group",
         "name": "Estadísticas",
-        "tab": "ff6861ab153e9537",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -1172,26 +1152,10 @@
         "className": ""
     },
     {
-        "id": "be9663360939d630",
-        "type": "ui_tab",
-        "name": "Usuarios",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "ff6861ab153e9537",
-        "type": "ui_tab",
-        "name": "Estadísticas",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "e06870e71eafc671",
         "type": "ui_group",
         "name": "Interacción",
-        "tab": "e09a70911f161970",
+        "tab": "",
         "order": 5,
         "disp": false,
         "width": "6",
@@ -1202,7 +1166,7 @@
         "id": "be8fc419a201d0b4",
         "type": "ui_group",
         "name": "Sala Impresión 3D",
-        "tab": "e09a70911f161970",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1213,7 +1177,7 @@
         "id": "f7732870e5603a4c",
         "type": "ui_group",
         "name": "Sala CNC",
-        "tab": "e09a70911f161970",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -1249,115 +1213,10 @@
         "sessionExpiry": ""
     },
     {
-        "id": "f44d140fad8c808e",
-        "type": "ui_tab",
-        "name": "Reservas",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "d94256ebcbe58466",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
         "id": "a3bbba24b3b84ad0",
         "type": "ui_group",
         "name": "Registro",
-        "tab": "83d331a45f419e1d",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1378,7 +1237,7 @@
         "id": "385a249d19d57adc",
         "type": "ui_group",
         "name": "Estadísticas",
-        "tab": "8eaeaad31b35db04",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -1386,26 +1245,10 @@
         "className": ""
     },
     {
-        "id": "83d331a45f419e1d",
-        "type": "ui_tab",
-        "name": "Usuarios",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "8eaeaad31b35db04",
-        "type": "ui_tab",
-        "name": "Estadísticas",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "59678ed0a36491e8",
         "type": "ui_group",
         "name": "Interacción",
-        "tab": "f44d140fad8c808e",
+        "tab": "",
         "order": 5,
         "disp": false,
         "width": "6",
@@ -1416,7 +1259,7 @@
         "id": "97e4144ad3224f8e",
         "type": "ui_group",
         "name": "Sala Impresión 3D",
-        "tab": "f44d140fad8c808e",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1427,7 +1270,7 @@
         "id": "18457b7396b432b7",
         "type": "ui_group",
         "name": "Sala CNC",
-        "tab": "f44d140fad8c808e",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -1508,103 +1351,6 @@
         "width": "6",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "9ce77435ef19417e",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
     },
     {
         "id": "73e2038421f445f0",
@@ -2144,7 +1890,7 @@
         "id": "385d2b782c476762",
         "type": "ui_group",
         "name": "Registro Nuevos Usuarios",
-        "tab": "01de9a38bd4b4d20",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -2345,14 +2091,6 @@
         "className": ""
     },
     {
-        "id": "d9cf96390ae484c6",
-        "type": "ui_link",
-        "name": "Link 2",
-        "icon": "open_in_browser",
-        "target": "newtab",
-        "order": 2
-    },
-    {
         "id": "f9851c4b16dca210",
         "type": "mqtt-broker",
         "name": "",
@@ -2482,14 +2220,6 @@
         "name": ""
     },
     {
-        "id": "01de9a38bd4b4d20",
-        "type": "ui_tab",
-        "name": "Skapalab",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "5697ac6212348913",
         "type": "mongodb",
         "hostname": "iot.ac.uma.es",
@@ -2529,115 +2259,10 @@
         "willPayload": ""
     },
     {
-        "id": "92f06dbfdac3e57a",
-        "type": "ui_tab",
-        "name": "Reservas",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "a6cc1cfb9daa0732",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
         "id": "0d1455b818a40e2b",
         "type": "ui_group",
         "name": "Registro",
-        "tab": "eb95c92e599e84c2",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -2658,7 +2283,7 @@
         "id": "134d386c6552dc96",
         "type": "ui_group",
         "name": "Estadísticas",
-        "tab": "f361523de5d8210e",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -2666,26 +2291,10 @@
         "className": ""
     },
     {
-        "id": "eb95c92e599e84c2",
-        "type": "ui_tab",
-        "name": "Usuarios",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "f361523de5d8210e",
-        "type": "ui_tab",
-        "name": "Estadísticas",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "680c33921e241c50",
         "type": "ui_group",
         "name": "Interacción",
-        "tab": "92f06dbfdac3e57a",
+        "tab": "",
         "order": 5,
         "disp": false,
         "width": "6",
@@ -2696,7 +2305,7 @@
         "id": "4216739fc827dfe5",
         "type": "ui_group",
         "name": "Sala Impresión 3D",
-        "tab": "92f06dbfdac3e57a",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -2707,7 +2316,7 @@
         "id": "d038f43e0423b035",
         "type": "ui_group",
         "name": "Sala CNC",
-        "tab": "92f06dbfdac3e57a",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -2788,103 +2397,6 @@
         "width": "6",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "a786439d5f82697a",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
     },
     {
         "id": "2e5bf7dfb5d27b10",
@@ -3424,7 +2936,7 @@
         "id": "5b540de721375b21",
         "type": "ui_group",
         "name": "Registro Nuevos Usuarios",
-        "tab": "6866ddfded402f88",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -3625,14 +3137,6 @@
         "className": ""
     },
     {
-        "id": "3627e6e808f4a36e",
-        "type": "ui_link",
-        "name": "Link 2",
-        "icon": "open_in_browser",
-        "target": "newtab",
-        "order": 2
-    },
-    {
         "id": "dc3b93db78387fa2",
         "type": "mqtt-broker",
         "name": "",
@@ -3762,14 +3266,6 @@
         "name": ""
     },
     {
-        "id": "6866ddfded402f88",
-        "type": "ui_tab",
-        "name": "Skapalab",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "98f01d5420a7017b",
         "type": "mongodb",
         "hostname": "iot.ac.uma.es",
@@ -3809,7 +3305,116 @@
         "willPayload": ""
     },
     {
-        "id": "16526c6ae59cdd7f",
+        "id": "bd86c294c2c2a199",
+        "type": "ui_group",
+        "name": "Registro",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "56dd38af8b441d46",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II8",
+        "name": ""
+    },
+    {
+        "id": "f36c1a1578e6b483",
+        "type": "ui_group",
+        "name": "Estadísticas",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6c906db842b05668",
+        "type": "ui_group",
+        "name": "Interacción",
+        "tab": "",
+        "order": 5,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "924d0f1c03bb7258",
+        "type": "ui_group",
+        "name": "Sala Impresión 3D",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e2cd0e91e05d4028",
+        "type": "ui_group",
+        "name": "Sala CNC",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "398bb819caa9c660",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f3945a452916d6b6",
+        "type": "ui_link",
+        "name": "Link 2",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 2
+    },
+    {
+        "id": "88b095ace1715542",
+        "type": "ui_tab",
+        "name": "Skapalab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "282113a390b32445",
         "type": "ui_tab",
         "name": "Reservas",
         "icon": "dashboard",
@@ -3817,7 +3422,31 @@
         "hidden": false
     },
     {
-        "id": "b027da40267ec662",
+        "id": "94201542fb364c8e",
+        "type": "ui_tab",
+        "name": "Usuarios",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1b0640f3e9308cf2",
+        "type": "ui_tab",
+        "name": "Estadísticas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d438eb298f29fa31",
+        "type": "ui_tab",
+        "name": "Reservas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "588a6b8b09468391",
         "type": "ui_base",
         "theme": {
             "name": "theme-light",
@@ -3914,39 +3543,7 @@
         }
     },
     {
-        "id": "bd86c294c2c2a199",
-        "type": "ui_group",
-        "name": "Registro",
-        "tab": "51708f6a7f2fcbff",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "56dd38af8b441d46",
-        "type": "mongodb",
-        "hostname": "iot.ac.uma.es",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "II8",
-        "name": ""
-    },
-    {
-        "id": "f36c1a1578e6b483",
-        "type": "ui_group",
-        "name": "Estadísticas",
-        "tab": "dc482259dd9c3f24",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "51708f6a7f2fcbff",
+        "id": "153e7771fe5c7514",
         "type": "ui_tab",
         "name": "Usuarios",
         "icon": "dashboard",
@@ -3954,7 +3551,7 @@
         "hidden": false
     },
     {
-        "id": "dc482259dd9c3f24",
+        "id": "4d4bfc3b9e25f1f8",
         "type": "ui_tab",
         "name": "Estadísticas",
         "icon": "dashboard",
@@ -3962,42 +3559,477 @@
         "hidden": false
     },
     {
-        "id": "6c906db842b05668",
-        "type": "ui_group",
-        "name": "Interacción",
-        "tab": "16526c6ae59cdd7f",
-        "order": 5,
-        "disp": false,
-        "width": "6",
-        "collapse": false,
-        "className": ""
+        "id": "3f3e4ccb93ad960a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
     },
     {
-        "id": "924d0f1c03bb7258",
-        "type": "ui_group",
-        "name": "Sala Impresión 3D",
-        "tab": "16526c6ae59cdd7f",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
+        "id": "f1d14fc5b2dd19c2",
+        "type": "ui_link",
+        "name": "Link 2",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 2
     },
     {
-        "id": "e2cd0e91e05d4028",
-        "type": "ui_group",
-        "name": "Sala CNC",
-        "tab": "16526c6ae59cdd7f",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
+        "id": "80236ced1d3d57a1",
+        "type": "ui_tab",
+        "name": "Skapalab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
-        "id": "935852473e9e48cc",
+        "id": "0a3e89e423cec7b0",
+        "type": "ui_tab",
+        "name": "Reservas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "48491cd649a23006",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "93c6aa589f011dfe",
+        "type": "ui_tab",
+        "name": "Usuarios",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2dd14b24a154472e",
+        "type": "ui_tab",
+        "name": "Estadísticas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b39f8cec194cc914",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f7a27a504d8737cb",
+        "type": "ui_link",
+        "name": "Link 2",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 2
+    },
+    {
+        "id": "25b0c2a42b7b9e22",
+        "type": "ui_tab",
+        "name": "Skapalab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "46a2a332bfeb9a51",
+        "type": "ui_tab",
+        "name": "Reservas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e58ed798fa6d1b1c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ae05b9cbac5739cb",
+        "type": "ui_tab",
+        "name": "Usuarios",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "549f3e54aa1915ca",
+        "type": "ui_tab",
+        "name": "Estadísticas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c025d0c98bc0598d",
         "type": "ui_spacer",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "spacer",
         "group": "c1cbb9916e7cfba4",
         "order": 1,
@@ -4005,9 +4037,9 @@
         "height": 1
     },
     {
-        "id": "3b4b6798db20953a",
+        "id": "86ebdef450fac623",
         "type": "ui_spacer",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "spacer",
         "group": "c1cbb9916e7cfba4",
         "order": 1,
@@ -4015,9 +4047,9 @@
         "height": 1
     },
     {
-        "id": "714bba020dd7b069",
+        "id": "9988ae49a37f808f",
         "type": "ui_spacer",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "spacer",
         "group": "c1cbb9916e7cfba4",
         "order": 1,
@@ -4025,37 +4057,9 @@
         "height": 1
     },
     {
-        "id": "398bb819caa9c660",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "iot.ac.uma.es",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "8e8fdf31617df255",
+        "id": "f46d3d94b9aa0e3b",
         "type": "chatbot-telegram-send",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": false,
@@ -4067,24 +4071,24 @@
         "wires": []
     },
     {
-        "id": "99910f74f235cb3c",
+        "id": "a549211a679dfc59",
         "type": "chatbot-telegram-receive",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "x": 110,
         "y": 180,
         "wires": [
             [
-                "ed8f32951b9a195b",
-                "a5438f06dc0d3d34"
+                "684bfe3f136469bf",
+                "c0f2a31fa54e8a73"
             ]
         ]
     },
     {
-        "id": "ed8f32951b9a195b",
+        "id": "684bfe3f136469bf",
         "type": "chatbot-rules",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "comandos públicos",
         "rules": [
             {
@@ -4113,26 +4117,26 @@
         "y": 180,
         "wires": [
             [
-                "0865b21e5b1a6818"
+                "7678c818f8c4fa3d"
             ],
             [
-                "dc439295dc0c5563"
+                "d8d736d60a985d84"
             ],
             [
-                "049f0996267bdb98"
+                "08ddd21344030680"
             ],
             [
-                "04a9f4491e8735ef"
+                "1595cd71c38c52ce"
             ],
             [
-                "fb88ae0d883c4c8a"
+                "c9ce7766fe1a2aaf"
             ]
         ]
     },
     {
-        "id": "dc439295dc0c5563",
+        "id": "d8d736d60a985d84",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Bienvenida",
         "message": [
             {
@@ -4144,14 +4148,14 @@
         "y": 140,
         "wires": [
             [
-                "f46a7f61817ffe4c"
+                "e57e884c95a70fb9"
             ]
         ]
     },
     {
-        "id": "049f0996267bdb98",
+        "id": "08ddd21344030680",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Contacto",
         "message": [
             {
@@ -4163,14 +4167,14 @@
         "y": 200,
         "wires": [
             [
-                "f46a7f61817ffe4c"
+                "e57e884c95a70fb9"
             ]
         ]
     },
     {
-        "id": "0865b21e5b1a6818",
+        "id": "7678c818f8c4fa3d",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "No entiendo humano",
         "message": [
             {
@@ -4182,14 +4186,14 @@
         "y": 80,
         "wires": [
             [
-                "f46a7f61817ffe4c"
+                "e57e884c95a70fb9"
             ]
         ]
     },
     {
-        "id": "04a9f4491e8735ef",
+        "id": "1595cd71c38c52ce",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Preguntas frecuentes",
         "message": [
             {
@@ -4201,14 +4205,14 @@
         "y": 260,
         "wires": [
             [
-                "f46a7f61817ffe4c"
+                "e57e884c95a70fb9"
             ]
         ]
     },
     {
-        "id": "a5438f06dc0d3d34",
+        "id": "c0f2a31fa54e8a73",
         "type": "chatbot-rules",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "comandos de usuario",
         "rules": [
             {
@@ -4225,29 +4229,29 @@
         "y": 420,
         "wires": [
             [
-                "fb88ae0d883c4c8a"
+                "c9ce7766fe1a2aaf"
             ],
             [
-                "fb88ae0d883c4c8a"
+                "c9ce7766fe1a2aaf"
             ]
         ]
     },
     {
-        "id": "fb88ae0d883c4c8a",
+        "id": "c9ce7766fe1a2aaf",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "verificación de usuario",
         "links": [
-            "8f0d13999e0aee8b"
+            "737114cc6781d114"
         ],
         "x": 495,
         "y": 420,
         "wires": []
     },
     {
-        "id": "0c1a09a0e803ec36",
+        "id": "c240302d32c12da1",
         "type": "mongodb in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "mongodb": "f605fa69.8f5008",
         "name": "Comprobar usuario por chatId en DB",
         "collection": "usuarios",
@@ -4256,14 +4260,14 @@
         "y": 820,
         "wires": [
             [
-                "6b0c0a5920a6ccde"
+                "e06d40e89d6d0564"
             ]
         ]
     },
     {
-        "id": "c24df7029abc4988",
+        "id": "673bd8afa54ed7c7",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Extraer chatId",
         "func": "msg.telegram = msg.payload;\nmsg.payload = {\"id_telegram\": {\"$eq\": msg.payload.chatId}};\nreturn msg;",
         "outputs": 1,
@@ -4275,58 +4279,58 @@
         "y": 820,
         "wires": [
             [
-                "0c1a09a0e803ec36"
+                "c240302d32c12da1"
             ]
         ]
     },
     {
-        "id": "8f0d13999e0aee8b",
+        "id": "737114cc6781d114",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "fb88ae0d883c4c8a"
+            "c9ce7766fe1a2aaf"
         ],
         "x": 75,
         "y": 820,
         "wires": [
             [
-                "c24df7029abc4988"
+                "673bd8afa54ed7c7"
             ]
         ]
     },
     {
-        "id": "6b0c0a5920a6ccde",
+        "id": "e06d40e89d6d0564",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "04b57283547fdcbb"
+            "ed1d1a087259bdfe"
         ],
         "x": 635,
         "y": 820,
         "wires": []
     },
     {
-        "id": "04b57283547fdcbb",
+        "id": "ed1d1a087259bdfe",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "6b0c0a5920a6ccde"
+            "e06d40e89d6d0564"
         ],
         "x": 545,
         "y": 420,
         "wires": [
             [
-                "ef3a1d2c457db1bd"
+                "6e4ce47cb9d6c062"
             ]
         ]
     },
     {
-        "id": "ef3a1d2c457db1bd",
+        "id": "6e4ce47cb9d6c062",
         "type": "switch",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Está este Id de Telegram registrado?",
         "property": "payload",
         "propertyType": "msg",
@@ -4349,17 +4353,17 @@
         "y": 420,
         "wires": [
             [
-                "5007b5e872387cc1"
+                "1995e045b4ed91ce"
             ],
             [
-                "0fdb0d3df1d2a9e5"
+                "6f1110e3455935dd"
             ]
         ]
     },
     {
-        "id": "b117ac281409207a",
+        "id": "431e2428131e548e",
         "type": "chatbot-telegram-send",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": true,
@@ -4370,15 +4374,15 @@
         "y": 320,
         "wires": [
             [
-                "1f949d404d535968",
-                "18db231071e15336"
+                "803291cb8ce1a763",
+                "58bd89d1321e2679"
             ]
         ]
     },
     {
-        "id": "5007b5e872387cc1",
+        "id": "1995e045b4ed91ce",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Preguntar nombre",
         "message": [
             {
@@ -4390,14 +4394,14 @@
         "y": 320,
         "wires": [
             [
-                "b117ac281409207a"
+                "431e2428131e548e"
             ]
         ]
     },
     {
-        "id": "86fb110a3c7019cd",
+        "id": "3a6c2e347114a27c",
         "type": "mongodb in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "mongodb": "f605fa69.8f5008",
         "name": "Comprobar usuario por nombre en DB",
         "collection": "usuarios",
@@ -4406,14 +4410,14 @@
         "y": 1000,
         "wires": [
             [
-                "79d9faf4cc43b2db"
+                "7f06f76c45da271c"
             ]
         ]
     },
     {
-        "id": "403adaf0586b6c2f",
+        "id": "bbe2f595d50c9330",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Extraer nombre",
         "func": "if (msg.payload.content != \"/salir\") {\n    global.set(\"nombre\",msg.payload.content);\n    msg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\n    return msg;\n}",
         "outputs": 1,
@@ -4425,72 +4429,72 @@
         "y": 1000,
         "wires": [
             [
-                "86fb110a3c7019cd",
-                "87a03ad25c11ae6e"
+                "3a6c2e347114a27c",
+                "0340775469c98303"
             ]
         ]
     },
     {
-        "id": "1761407df193db2e",
+        "id": "9b075706fbaf3230",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "1f949d404d535968"
+            "803291cb8ce1a763"
         ],
         "x": 75,
         "y": 1000,
         "wires": [
             [
-                "403adaf0586b6c2f"
+                "bbe2f595d50c9330"
             ]
         ]
     },
     {
-        "id": "79d9faf4cc43b2db",
+        "id": "7f06f76c45da271c",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "86a3677b784bf3eb"
+            "341065c69d7264e2"
         ],
         "x": 635,
         "y": 1000,
         "wires": []
     },
     {
-        "id": "1f949d404d535968",
+        "id": "803291cb8ce1a763",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "1761407df193db2e"
+            "9b075706fbaf3230"
         ],
         "x": 1215,
         "y": 320,
         "wires": []
     },
     {
-        "id": "86a3677b784bf3eb",
+        "id": "341065c69d7264e2",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "79d9faf4cc43b2db"
+            "7f06f76c45da271c"
         ],
         "x": 1255,
         "y": 320,
         "wires": [
             [
-                "cd5fdffa1f44b54f",
-                "140e8eb8b807ef24"
+                "fa986a8e54b57f9a",
+                "b4f40eccd01b7ab8"
             ]
         ]
     },
     {
-        "id": "e29c21245e1268b3",
+        "id": "8e9fa4e2dc079e67",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Comprobar si existe algún usuario con cierto Id de Telegram",
         "info": "",
         "x": 340,
@@ -4498,9 +4502,9 @@
         "wires": []
     },
     {
-        "id": "2bf2cb4571288b04",
+        "id": "0f2e23b6e4843355",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Comprobar si existe algún usuario con cierto nombre",
         "info": "",
         "x": 310,
@@ -4508,9 +4512,9 @@
         "wires": []
     },
     {
-        "id": "cd5fdffa1f44b54f",
+        "id": "fa986a8e54b57f9a",
         "type": "switch",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Está su nombre en la DB?",
         "property": "payload",
         "propertyType": "msg",
@@ -4533,17 +4537,17 @@
         "y": 320,
         "wires": [
             [
-                "e2131933db7418d9"
+                "228fa67fba035ec3"
             ],
             [
-                "09c55e09d85a00ef"
+                "d7326271ec2b68e7"
             ]
         ]
     },
     {
-        "id": "3e3b9504b125dbfb",
+        "id": "d0152f2a4fae2e7a",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "No",
         "info": "",
         "x": 770,
@@ -4551,9 +4555,9 @@
         "wires": []
     },
     {
-        "id": "0fdb0d3df1d2a9e5",
+        "id": "6f1110e3455935dd",
         "type": "switch",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Recuperar comando",
         "property": "telegram.content",
         "propertyType": "msg",
@@ -4581,20 +4585,20 @@
         "y": 700,
         "wires": [
             [
-                "ce65828046276a30"
+                "5263cc4347d5cd62"
             ],
             [
-                "6a6c762a82d172d3"
+                "fb4311aba7515eed"
             ],
             [
-                "6a6c762a82d172d3"
+                "fb4311aba7515eed"
             ]
         ]
     },
     {
-        "id": "23a38f46fa0fd13b",
+        "id": "f67185223a15da8b",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Sí",
         "info": "",
         "x": 770,
@@ -4602,9 +4606,9 @@
         "wires": []
     },
     {
-        "id": "e2131933db7418d9",
+        "id": "228fa67fba035ec3",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "No estás registrad@ o error",
         "message": [
             {
@@ -4616,15 +4620,15 @@
         "y": 240,
         "wires": [
             [
-                "994e0cd493f8df38",
-                "946418c9abcb3007"
+                "71e68d11d7c2fc64",
+                "bf4ea35a7f312c73"
             ]
         ]
     },
     {
-        "id": "a501c8326931ac38",
+        "id": "92fd07c2f9459200",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "No",
         "info": "",
         "x": 1490,
@@ -4632,9 +4636,9 @@
         "wires": []
     },
     {
-        "id": "9990da85023b78cc",
+        "id": "bf23af2b3d71d2fd",
         "type": "mongodb out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "mongodb": "f605fa69.8f5008",
         "name": "Actualizar chatId del usuario",
         "collection": "usuarios",
@@ -4647,64 +4651,65 @@
         "wires": []
     },
     {
-        "id": "f46a7f61817ffe4c",
+        "id": "e57e884c95a70fb9",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Mandar a Telegram",
         "links": [
-            "e4de812328535644"
+            "9b450680f1f39424"
         ],
         "x": 815,
         "y": 160,
         "wires": []
     },
     {
-        "id": "8760325c5f72ae18",
+        "id": "b02a08bf67801cb5",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Mandar a Telegram",
         "links": [
-            "e4de812328535644"
+            "9b450680f1f39424"
         ],
         "x": 1415,
         "y": 580,
         "wires": []
     },
     {
-        "id": "e4de812328535644",
+        "id": "9b450680f1f39424",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Telegram sender",
         "links": [
-            "8760325c5f72ae18",
-            "f46a7f61817ffe4c",
-            "994e0cd493f8df38",
-            "adb4d2673f8fd3dc"
+            "b02a08bf67801cb5",
+            "e57e884c95a70fb9",
+            "71e68d11d7c2fc64",
+            "98b9623fa1196a3d",
+            "6550a62959abc031"
         ],
         "x": 1015,
         "y": 80,
         "wires": [
             [
-                "8e8fdf31617df255"
+                "f46d3d94b9aa0e3b"
             ]
         ]
     },
     {
-        "id": "994e0cd493f8df38",
+        "id": "71e68d11d7c2fc64",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Mandar a Telegram",
         "links": [
-            "e4de812328535644"
+            "9b450680f1f39424"
         ],
         "x": 1865,
         "y": 240,
         "wires": []
     },
     {
-        "id": "f5ac1b2708446749",
+        "id": "080cb87668dddb5b",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "preparar",
         "func": "msg.query = {\"nombre\": {\"$eq\": global.get(\"nombre\")}};\nmsg.payload = { \"$set\": {\"id_telegram\": global.get(\"chatId\")} };\nreturn msg;",
         "outputs": 1,
@@ -4716,15 +4721,15 @@
         "y": 440,
         "wires": [
             [
-                "9990da85023b78cc",
-                "0b2ca62865bb4c53"
+                "bf23af2b3d71d2fd",
+                "4ca94108e14ed9d0"
             ]
         ]
     },
     {
-        "id": "ee6c8e3c51289177",
+        "id": "0660e7ebcf554ae9",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Funciona?",
         "info": "",
         "x": 2660,
@@ -4732,9 +4737,9 @@
         "wires": []
     },
     {
-        "id": "aeb41de4ae05a13b",
+        "id": "33867ecc4e6e2870",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Sí",
         "info": "",
         "x": 1490,
@@ -4742,27 +4747,27 @@
         "wires": []
     },
     {
-        "id": "a82301407e10cb6f",
+        "id": "d81617f10f94635f",
         "type": "chatbot-telegram-send",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": true,
         "passThrough": false,
         "errorOutput": false,
         "outputs": 1,
-        "x": 1710,
-        "y": 720,
+        "x": 2550,
+        "y": 740,
         "wires": [
             [
-                "0bd2f925d758c8ec"
+                "2b4cfd84db6eb819"
             ]
         ]
     },
     {
-        "id": "bfdf8a2b6ca9f1a2",
+        "id": "66feec6ce58718f0",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Día? 3D",
         "message": [
             {
@@ -4770,43 +4775,44 @@
             }
         ],
         "language": "none",
-        "x": 1500,
-        "y": 720,
+        "x": 2340,
+        "y": 740,
         "wires": [
             [
-                "a82301407e10cb6f"
+                "d81617f10f94635f"
             ]
         ]
     },
     {
-        "id": "0bd2f925d758c8ec",
+        "id": "2b4cfd84db6eb819",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Día correcto?",
-        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\n\nif (mes == 2 && dia > 29) {\n    error = true;\n}\n\n// Si el año no es bisiesto entonces...\nif ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n    // Si el mes es febrero y el día es mayor que 28\n    if (mes == 2 && dia > 28) {\n        error = true;\n    }\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"salir\") {\n    return [null, null, null];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = msg.sala;\n    return [ msg, null, null ];\n} else if (fecha < Date.now() && !Error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg ];\n}",
+        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\n\nif (mes == 2 && dia > 29) {\n    error = true;\n}\n\n// Si el año no es bisiesto entonces...\nif ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n    // Si el mes es febrero y el día es mayor que 28\n    if (mes == 2 && dia > 28) {\n        error = true;\n    }\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"/salir\") {\n    return [null, null, null];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = global.get(\"sala\");\n    global.set(\"mensaje\",msg);\n    return [ msg, null, null ];\n} else if (fecha < Date.now() && !Error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg ];\n}",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1920,
-        "y": 760,
+        "x": 2760,
+        "y": 780,
         "wires": [
             [
-                "470e39cd919d192e"
+                "76364fd550e1ece3",
+                "7369a1befbd3b780"
             ],
             [
-                "cf287068731122e6"
+                "020f9665e2547ac2"
             ],
             [
-                "239ff64ea445794d"
+                "b46676248d7ccd50"
             ]
         ]
     },
     {
-        "id": "239ff64ea445794d",
+        "id": "b46676248d7ccd50",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Error, formato incorrecto",
         "message": [
             {
@@ -4814,38 +4820,38 @@
             }
         ],
         "language": "none",
-        "x": 1550,
-        "y": 980,
+        "x": 2390,
+        "y": 1000,
         "wires": [
             [
-                "a82301407e10cb6f"
+                "d81617f10f94635f"
             ]
         ]
     },
     {
-        "id": "026697b2c8be1f26",
+        "id": "2175ffb357795f24",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Petición a DB con día y sala a María",
         "info": "msg.payload.dia = \"dd/mm/aaaa\"\nmsg.payload.sala = \"3D\"",
-        "x": 2100,
-        "y": 700,
+        "x": 2940,
+        "y": 720,
         "wires": []
     },
     {
-        "id": "8962326f212b53b3",
+        "id": "ab09901b0c0d6bee",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Recepción de lista de reservas de María",
         "info": "",
-        "x": 2260,
-        "y": 900,
+        "x": 3100,
+        "y": 920,
         "wires": []
     },
     {
-        "id": "716697bde735e52e",
+        "id": "b8dd067121624cc1",
         "type": "chatbot-telegram-send",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": true,
@@ -4856,14 +4862,14 @@
         "y": 400,
         "wires": [
             [
-                "eec7c916e9281670"
+                "6b364ba56008bc80"
             ]
         ]
     },
     {
-        "id": "09c55e09d85a00ef",
+        "id": "d7326271ec2b68e7",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Pedir contraseña",
         "message": [
             {
@@ -4875,15 +4881,15 @@
         "y": 400,
         "wires": [
             [
-                "716697bde735e52e",
-                "43e36665655da2c9"
+                "b8dd067121624cc1",
+                "e20e675db442f494"
             ]
         ]
     },
     {
-        "id": "e7497af3fce95bb6",
+        "id": "af4ad6ad53820393",
         "type": "mongodb in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "mongodb": "f605fa69.8f5008",
         "name": "Comprobar contraseña en DB",
         "collection": "usuarios",
@@ -4892,15 +4898,15 @@
         "y": 1140,
         "wires": [
             [
-                "e9c22767b8299838",
-                "6afb79cd19695c77"
+                "e1e78a5bd154388c",
+                "c392c2f0015f0757"
             ]
         ]
     },
     {
-        "id": "af71cef3ba7c6750",
+        "id": "976dac12e743aec4",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Comprobar contraseña",
         "func": "if (msg.payload.content != \"/salir\") {\n    global.set(\"chatId\", msg.originalMessage.chatId);\n    msg.contraseña = msg.payload.content;\n    msg.payload = [{ \"$match\": {\"nombre\": global.get(\"nombre\"), \"password\": msg.contraseña}}];\n    return msg;\n}",
         "outputs": 1,
@@ -4912,72 +4918,72 @@
         "y": 1140,
         "wires": [
             [
-                "e7497af3fce95bb6",
-                "82e242254f799a28"
+                "af4ad6ad53820393",
+                "bf0fa877ffff3038"
             ]
         ]
     },
     {
-        "id": "b5ec37403692af5a",
+        "id": "e81456eea06e3e65",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "eec7c916e9281670"
+            "6b364ba56008bc80"
         ],
         "x": 75,
         "y": 1140,
         "wires": [
             [
-                "af71cef3ba7c6750",
-                "201d99ad823f00a0"
+                "976dac12e743aec4",
+                "3071f6bab46e9f46"
             ]
         ]
     },
     {
-        "id": "eec7c916e9281670",
+        "id": "6b364ba56008bc80",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "b5ec37403692af5a"
+            "e81456eea06e3e65"
         ],
         "x": 2015,
         "y": 400,
         "wires": []
     },
     {
-        "id": "e9c22767b8299838",
+        "id": "e1e78a5bd154388c",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "cf2cde2bd529576b"
+            "0c4a249c5c0b8cfe"
         ],
         "x": 635,
         "y": 1140,
         "wires": []
     },
     {
-        "id": "cf2cde2bd529576b",
+        "id": "0c4a249c5c0b8cfe",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "e9c22767b8299838"
+            "e1e78a5bd154388c"
         ],
         "x": 2055,
         "y": 400,
         "wires": [
             [
-                "b19d16957235fc13"
+                "dc2a5bbdd97dd761"
             ]
         ]
     },
     {
-        "id": "3b41ba0d1251cb77",
+        "id": "0644213796642395",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "PROBAR",
         "info": "",
         "x": 480,
@@ -4985,9 +4991,9 @@
         "wires": []
     },
     {
-        "id": "b19d16957235fc13",
+        "id": "dc2a5bbdd97dd761",
         "type": "switch",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Es la contraseña correcta?",
         "property": "payload",
         "propertyType": "msg",
@@ -5006,18 +5012,18 @@
         "y": 400,
         "wires": [
             [
-                "3d3b83d9644e210b"
+                "a75e97ee8db97c7f"
             ],
             [
-                "f5ac1b2708446749",
-                "a57241009d9089ee"
+                "080cb87668dddb5b",
+                "c7dd4e200504c585"
             ]
         ]
     },
     {
-        "id": "3d3b83d9644e210b",
+        "id": "a75e97ee8db97c7f",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Contraseña incorrecta",
         "message": [
             {
@@ -5029,14 +5035,14 @@
         "y": 320,
         "wires": [
             [
-                "adb4d2673f8fd3dc"
+                "98b9623fa1196a3d"
             ]
         ]
     },
     {
-        "id": "b8c7b0953549aabd",
+        "id": "843cbc4d9be09424",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "No",
         "info": "",
         "x": 2290,
@@ -5044,31 +5050,31 @@
         "wires": []
     },
     {
-        "id": "adb4d2673f8fd3dc",
+        "id": "98b9623fa1196a3d",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Mandar a Telegram",
         "links": [
-            "e4de812328535644"
+            "9b450680f1f39424"
         ],
         "x": 2615,
         "y": 320,
         "wires": []
     },
     {
-        "id": "f7b55e6f11b51dae",
+        "id": "fcb7e6cf8576ba03",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Guardar reserva",
         "info": "",
-        "x": 3880,
-        "y": 620,
+        "x": 4720,
+        "y": 640,
         "wires": []
     },
     {
-        "id": "ce93f1d23cd0d9df",
+        "id": "8af7c6dfce9ffdd2",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Horas correctas?",
         "func": "// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\nvar horasReserva = msg.payload.content;\nlet pattern = /w3schools/i;\n\nvar hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\nvar error = false;\n// Comprobar que la hora de inicio es anterior a la hora de fin\nif (inicio_nueva_reserva >= fin_nueva_reserva) {\n    error = true;\n} else {\n    // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n    if (inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) {\n        error = true;\n    } else {\n        // Comprobar que las horas no se solapan con otra reserva\n        for (const i of msg.payload) {\n            if (msg.payload[i].hora_inicio >= inicio_nueva_reserva && msg.payload[i].hora_inicio < fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n            if (msg.payload[i].hora_fin > inicio_nueva_reserva && msg.payload[i].hora_fin <= fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n        }\n    }\n}\n\nif (!error) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}\n\nreturn msg;",
         "outputs": 2,
@@ -5076,21 +5082,21 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3510,
-        "y": 680,
+        "x": 4350,
+        "y": 700,
         "wires": [
             [
-                "84477599338ab290"
+                "3471a2dae8b5f63d"
             ],
             [
-                "1689fac7be87a2ae"
+                "68bdb36502ca8727"
             ]
         ]
     },
     {
-        "id": "1689fac7be87a2ae",
+        "id": "68bdb36502ca8727",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Mostrar horas reservadas y preguntar horas a resevar",
         "func": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\n\nif (msg.horasIncorrectas) {\n    msg.payload.content = \"Las horas que has introducido para la reserva son incorrectas. Venga, intentémoslo de nuevo.\\n\\n\"\n} else {\n    msg.payload.content = \"\";\n}\n\nmsg.payload.content += \"Estas son las horas ya reservadas (las que están entre paréntesis):\\n\\n\";\n\n// msg.reservas es un array de objetos con .hora_inicio y .hora_fin\n\n// Creo un array de 25 posiciones que me indicarán que horas tienen qué paréntesis.\n// Inicialmente pongo todas las horas a 0. \nvar horas;\nfor (let i = 0; i <= 24; i++) {\n    horas[i] = 0;\n}\n\n// Itero a través de las reservas para encontrar coincidencias.\n// Si una hora tiene un paréntesis a su izquierda tendrá un 1.\n// Si una hora tiene un paréntesis a su derecha tendrá un 2.\n// Si una hora tiene paréntesis a ambos lados tendrá un 3.\nfor (let i of msg.reservas) {\n    horas[msg.reservas[i].hora_inicio] += 1;\n    horas[msg.reservas[i].hora_fin] += 2;\n}\n\n// Imprimimos todas las horas con sus respectivos paréntesis\nfor (let j = hora_apertura; j < hora_cierre; j++) {\n    \n    switch(horas[j]) {\n        case 0:\n            msg.payload.content += j + \"  \";\n            break;\n        case 1:\n            msg.payload.content += \"(\" + j + \"  \";\n            break;\n        case 2:\n            msg.payload.content += j + \") \";\n            break;\n        case 3:\n            msg.payload.content += \"(\" + j + \") \";\n            break;\n        default:\n            msg.payload.content += \"error\";\n    }\n    \n    if (j == Math.ceil((hora_apertura + hora_cierre)/2)) {\n        msg.payload.content += \"\\n\";\n    }\n}\n\nmsg.payload.content += \"\\n\\n¿De qué hora a qué hora te gustaría reservar? (Formato ejemplo: \\\"De 14 a 17\\\")\";\n\nmsg.payload.content += \"\\n\\n[ Aclaración: el ejemplo dado sería un tramo horario de 3 horas comenzando a las 14 ]\";\n\nreturn msg;",
         "outputs": 1,
@@ -5098,36 +5104,37 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3000,
-        "y": 760,
+        "x": 3840,
+        "y": 780,
         "wires": [
             [
-                "c02da7614fa8dade"
+                "8ae00ceadedd06f3",
+                "8a0273e96e7b9009"
             ]
         ]
     },
     {
-        "id": "c02da7614fa8dade",
+        "id": "8ae00ceadedd06f3",
         "type": "chatbot-telegram-send",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "bot": "3cc01e3e385d0ded",
         "botProduction": "",
         "track": true,
         "passThrough": false,
         "errorOutput": false,
         "outputs": 1,
-        "x": 3330,
-        "y": 760,
+        "x": 4170,
+        "y": 780,
         "wires": [
             [
-                "ce93f1d23cd0d9df"
+                "8af7c6dfce9ffdd2"
             ]
         ]
     },
     {
-        "id": "7e28462080f54b8e",
+        "id": "58b5c709288c3315",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Comprobar si existe algún usuario con ese nombre y contraseña",
         "info": "",
         "x": 350,
@@ -5135,9 +5142,9 @@
         "wires": []
     },
     {
-        "id": "cf287068731122e6",
+        "id": "020f9665e2547ac2",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Error, día introducido anterior a hoy",
         "message": [
             {
@@ -5145,46 +5152,49 @@
             }
         ],
         "language": "none",
-        "x": 1580,
-        "y": 860,
+        "x": 2420,
+        "y": 880,
         "wires": [
             [
-                "a82301407e10cb6f"
+                "d81617f10f94635f"
             ]
         ]
     },
     {
-        "id": "470e39cd919d192e",
+        "id": "76364fd550e1ece3",
         "type": "link out",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "27be31c689baea40"
+            "27be31c689baea40",
+            "be80b476c522fe50"
         ],
-        "x": 2115,
-        "y": 760,
+        "x": 2955,
+        "y": 780,
         "wires": []
     },
     {
-        "id": "3209c4dbf05450c4",
+        "id": "4ef3fc5391f86cf1",
         "type": "link in",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "links": [
-            "66988095b2f77c76"
+            "66988095b2f77c76",
+            "ec542fc1df39f320"
         ],
-        "x": 2255,
-        "y": 760,
+        "x": 3095,
+        "y": 780,
         "wires": [
             [
-                "0933113de3dcc7d0"
+                "847e806bdc534b36",
+                "e3ac68368a0064bd"
             ]
         ]
     },
     {
-        "id": "ce65828046276a30",
+        "id": "5263cc4347d5cd62",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Usuario ya asociado",
         "message": [
             {
@@ -5196,36 +5206,36 @@
         "y": 580,
         "wires": [
             [
-                "8760325c5f72ae18"
+                "b02a08bf67801cb5"
             ]
         ]
     },
     {
-        "id": "6a6c762a82d172d3",
+        "id": "ca2e458002821d38",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Asignar sala",
-        "func": "if (msg.telegram.content == \"/reservaCNC\") {\n    msg.sala = \"CNC\";\n    return [ msg, null ];\n} else {\n    msg.sala = \"3D\";\n    return [ null, msg ];\n}",
+        "func": "if (msg.originalMessage.text == \"/reservaCNC\") {\n    global.set(\"sala\",\"CNC\");\n    return [ msg, null ];\n} else {\n    global.set(\"sala\",\"3D\");\n    return [ null, msg ];\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1310,
+        "x": 1710,
         "y": 720,
         "wires": [
             [
-                "a75cda36a02ab456"
+                "94149b2d66184822"
             ],
             [
-                "bfdf8a2b6ca9f1a2"
+                "3c7645bb41deb4ab"
             ]
         ]
     },
     {
-        "id": "7caca735683fd1c9",
+        "id": "42f8698e5aca5e24",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Nuevo mensaje",
         "message": [
             {
@@ -5233,18 +5243,19 @@
             }
         ],
         "language": "none",
-        "x": 2660,
-        "y": 760,
+        "x": 3500,
+        "y": 780,
         "wires": [
             [
-                "1689fac7be87a2ae"
+                "68bdb36502ca8727",
+                "8560aae91731fcc6"
             ]
         ]
     },
     {
-        "id": "140e8eb8b807ef24",
+        "id": "b4f40eccd01b7ab8",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -5259,9 +5270,9 @@
         "wires": []
     },
     {
-        "id": "946418c9abcb3007",
+        "id": "bf4ea35a7f312c73",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -5276,9 +5287,9 @@
         "wires": []
     },
     {
-        "id": "18db231071e15336",
+        "id": "58bd89d1321e2679",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -5293,38 +5304,39 @@
         "wires": []
     },
     {
-        "id": "0933113de3dcc7d0",
+        "id": "847e806bdc534b36",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Recuperar msgAntiguo + guardar reservas",
-        "func": "var reservas = msg.payload;\nmsg = msg.msgAntiguo;\nmsg.reservas = reservas;\nmsg.horasIncorrectas = false;\nreturn msg;",
+        "func": "var reservas = msg.payload;\nmsg = global.get(\"mensaje\");\nmsg.reservas = reservas;\nmsg.horasIncorrectas = false;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2370,
-        "y": 840,
+        "x": 3210,
+        "y": 860,
         "wires": [
             [
-                "7caca735683fd1c9"
+                "42f8698e5aca5e24",
+                "01e4c8995324ace2"
             ]
         ]
     },
     {
-        "id": "f495de56c1b8a46d",
+        "id": "6c39e19463e306a2",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Imprimir durante la noche no es posible",
         "info": "Para guardar reservas de la impresiones nocturnas, las hora de inicio y fin tienen que tener una fecha asociadas y es tremendo follón a estas alturas.",
-        "x": 3510,
-        "y": 620,
+        "x": 4350,
+        "y": 640,
         "wires": []
     },
     {
-        "id": "791c0707f2ecf029",
+        "id": "f76baa9d7ecec3b7",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Conseguir variables globales",
         "info": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\n",
         "x": 2940,
@@ -5332,9 +5344,9 @@
         "wires": []
     },
     {
-        "id": "a75cda36a02ab456",
+        "id": "7e6517b26e4cd578",
         "type": "chatbot-message",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "¿Día? CNC",
         "message": [
             {
@@ -5342,18 +5354,18 @@
             }
         ],
         "language": "none",
-        "x": 1490,
-        "y": 660,
+        "x": 2330,
+        "y": 680,
         "wires": [
             [
-                "a82301407e10cb6f"
+                "d81617f10f94635f"
             ]
         ]
     },
     {
-        "id": "84477599338ab290",
+        "id": "3471a2dae8b5f63d",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -5363,14 +5375,14 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3830,
-        "y": 680,
+        "x": 4670,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "05416ebf9975dbd9",
+        "id": "6c71c1fe86f3e1cd",
         "type": "mongodb in",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "usuarios",
@@ -5379,14 +5391,14 @@
         "y": 460,
         "wires": [
             [
-                "3b1da0220c502cd2"
+                "eab1cc768cb6cf1c"
             ]
         ]
     },
     {
-        "id": "795c34ba59963d88",
+        "id": "a6310da7a2c0bfd6",
         "type": "debug",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -5401,9 +5413,9 @@
         "wires": []
     },
     {
-        "id": "0e2f491f6ec1868f",
+        "id": "88d7f3b82db5f6cf",
         "type": "mongodb out",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "usuarios",
@@ -5416,9 +5428,9 @@
         "wires": []
     },
     {
-        "id": "1cc575978a712eea",
+        "id": "efc0eea412721770",
         "type": "inject",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "props": [
             {
@@ -5440,14 +5452,14 @@
         "y": 460,
         "wires": [
             [
-                "05416ebf9975dbd9"
+                "6c71c1fe86f3e1cd"
             ]
         ]
     },
     {
-        "id": "3b1da0220c502cd2",
+        "id": "eab1cc768cb6cf1c",
         "type": "debug",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -5461,9 +5473,9 @@
         "wires": []
     },
     {
-        "id": "69b062a54a79678a",
+        "id": "093250a673fe314c",
         "type": "mongodb out",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "usuarios",
@@ -5476,9 +5488,9 @@
         "wires": []
     },
     {
-        "id": "c2c035ddeb793134",
+        "id": "598b6ffb725b9dc7",
         "type": "inject",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "props": [
             {
@@ -5500,14 +5512,14 @@
         "y": 760,
         "wires": [
             [
-                "69b062a54a79678a"
+                "093250a673fe314c"
             ]
         ]
     },
     {
-        "id": "facaf5744b075a61",
+        "id": "17f47243c3bbd926",
         "type": "comment",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "Lectura registros base de datos",
         "info": "",
         "x": 350,
@@ -5515,9 +5527,9 @@
         "wires": []
     },
     {
-        "id": "2aedc16d9004972f",
+        "id": "8a4597a6612e99ad",
         "type": "comment",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "Borrado de la base de datos",
         "info": "",
         "x": 340,
@@ -5525,9 +5537,9 @@
         "wires": []
     },
     {
-        "id": "175b87929023c633",
+        "id": "bd61a6e002c66fc2",
         "type": "comment",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "Registro en la base de datos",
         "info": "",
         "x": 340,
@@ -5535,9 +5547,9 @@
         "wires": []
     },
     {
-        "id": "766afe41183eabe8",
+        "id": "785e8f6042904bb3",
         "type": "ui_form",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "label": "Registro Usuario",
         "group": "bd86c294c2c2a199",
@@ -5639,15 +5651,15 @@
         "y": 160,
         "wires": [
             [
-                "fddfcef947a87d80",
-                "4ac5044154429d11"
+                "9aac1e9f8e6f22a1",
+                "1b9b12729e92ab67"
             ]
         ]
     },
     {
-        "id": "fddfcef947a87d80",
+        "id": "9aac1e9f8e6f22a1",
         "type": "debug",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -5661,9 +5673,9 @@
         "wires": []
     },
     {
-        "id": "4ac5044154429d11",
+        "id": "1b9b12729e92ab67",
         "type": "function",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "func": "var Arranque = msg.payload.arranque;\nvar Maker = msg.payload.maker;\nvar Entusiasta = msg.payload.entusiasta;\nvar Profesional = msg.payload.profesional; \n\nif (Arranque == true)\n{\n    msg.payload.suscripcion = \"Arranque\"\n}\nelse if (Maker == true)\n{\n    msg.payload.suscripcion = \"Maker\"\n}\nelse if (Entusiasta == true)\n{\n    msg.payload.suscripcion = \"Entusiasta\"\n}\nelse if (Profesional == true)\n{\n    msg.payload.suscripcion = \"Profesional\"\n}\n\nmsg.payload.fecha_inclusion = new Date();\nmsg.payload.id_telegram = null;\n\nreturn msg;",
         "outputs": 1,
@@ -5675,14 +5687,14 @@
         "y": 160,
         "wires": [
             [
-                "0ef89339a25cb8a3"
+                "bd87fe8f31560f4f"
             ]
         ]
     },
     {
-        "id": "0ef89339a25cb8a3",
+        "id": "bd87fe8f31560f4f",
         "type": "change",
-        "z": "33f26c223e8be56f",
+        "z": "f3fa3730ce47686c",
         "name": "",
         "rules": [
             {
@@ -5715,15 +5727,15 @@
         "y": 160,
         "wires": [
             [
-                "0e2f491f6ec1868f",
-                "795c34ba59963d88"
+                "88d7f3b82db5f6cf",
+                "a6310da7a2c0bfd6"
             ]
         ]
     },
     {
-        "id": "953b5ed601fe36cb",
+        "id": "e09311d62a5cc1c7",
         "type": "debug",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -5738,9 +5750,9 @@
         "wires": []
     },
     {
-        "id": "ca5461c5fc33c38a",
+        "id": "eee6293aa44c733b",
         "type": "mongodb out",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "reservas",
@@ -5753,9 +5765,9 @@
         "wires": []
     },
     {
-        "id": "a78edb396ec64054",
+        "id": "c07f6c20e2c98a11",
         "type": "mongodb out",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -5768,9 +5780,9 @@
         "wires": []
     },
     {
-        "id": "8bd0fd6ed9da3b50",
+        "id": "f3d2b85bd0f83b98",
         "type": "inject",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "props": [
             {
@@ -5792,14 +5804,14 @@
         "y": 1350,
         "wires": [
             [
-                "a78edb396ec64054"
+                "c07f6c20e2c98a11"
             ]
         ]
     },
     {
-        "id": "3ae4070a4801e84c",
+        "id": "9d1e6ff654aff17f",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Borrado de la base de datos",
         "info": "",
         "x": 245,
@@ -5807,11 +5819,11 @@
         "wires": []
     },
     {
-        "id": "65dd1d7f7b390ea8",
+        "id": "f84192480acdf48c",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
-        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"Miguel\";\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"10/01/2022\"; \nmsg.payload.hora_inicio = 13; \nmsg.payload.hora_fin = 15;\nmsg.payload.id_NFC = \"100:90:231:164\"; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
+        "func": "\n\nmsg.payload.id_telegram = 123;\nmsg.payload.nombre = \"Miguel\";\nmsg.payload.sala = \"CNC\"; \nmsg.payload.fecha = \"17/01/2022\";\nmsg.payload.hora_inicio = 13;\nmsg.payload.hora_fin = 15;\nmsg.payload.id_NFC = \"100:90:231:164\"; \n\nmsg.payload.fecha_creacion = new Date(); \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5821,15 +5833,15 @@
         "y": 320,
         "wires": [
             [
-                "953b5ed601fe36cb",
-                "ca5461c5fc33c38a"
+                "e09311d62a5cc1c7",
+                "eee6293aa44c733b"
             ]
         ]
     },
     {
-        "id": "fabfe666cde45b5e",
+        "id": "8ded73102a17cc28",
         "type": "inject",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "props": [
             {
@@ -5847,14 +5859,14 @@
         "y": 320,
         "wires": [
             [
-                "65dd1d7f7b390ea8"
+                "f84192480acdf48c"
             ]
         ]
     },
     {
-        "id": "dfa8805b582cfbdf",
+        "id": "614d4a343827cb71",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Variables Globales",
         "func": "var aforo_max_CNC; \nvar aforo_max_3D;\nvar aforo_real_CNC;\nvar aforo_real_3D;\nvar num_accesos_CNC;\nvar num_accesos_3D;\n\nvar hora_apertura;\nvar hora_cierre;\n\naforo_max_CNC = 2; \naforo_max_3D = 4; \nhora_apertura = 9; \nhora_cierre = 21; \n\nmsg.payload.hora_apertura = hora_apertura;\nmsg.payload.hora_cierre = hora_cierre;\nmsg.payload.aforomax = aforo_max_CNC;\n\nreturn msg\n\n// asignar los mensajes que me lleguen por mqtt a las variables correspondientes\n",
         "outputs": 1,
@@ -5866,14 +5878,14 @@
         "y": 135,
         "wires": [
             [
-                "3232a757392c32c3"
+                "6d8fb994a724e932"
             ]
         ]
     },
     {
-        "id": "22db2de0a5e852d6",
+        "id": "8d4e5051746825ec",
         "type": "function",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "agrega por dias",
         "func": "// fecha por defecto es hoy\nvar ahora = new Date();\n// pillo los globales si los hay, si no la fecha de hoy\nvar desde = new Date(global.get(\"desde\") || ahora);\nvar hasta = new Date(global.get(\"hasta\") || ahora); \n// el día de inicio desde las cero horas\nvar inicio = new Date(desde.getFullYear(),desde.getMonth(),desde.getDate(),1,0,0,0);\n// el día final es hasta final del día\nvar final = new Date(hasta.getFullYear(),hasta.getMonth(),hasta.getDate(),24,59,59,99);\n\nmsg.payload=\n[\n    { \"$match\": { \"date\": { \"$gte\": inicio , \"$lte\": final } } },\n    { \"$project\": {\n        \"date\": 1,\n        \"temperatura\": \"$BME280.Temperatura\"\n        }\n    },\n    { \"$group\": {\n        \"_id\": { \n        \"$dateFromParts\" : {\n            \"year\": { \"$year\": \"$date\" }, \n            \"month\": { \"$month\": \"$date\" },\n            \"day\": { \"$dayOfMonth\": \"$date\" }\n        }},\n\n        \"Tmedia\":{\"$avg\":\"$temperatura\"},\n        \"Tmax\":  {\"$max\":\"$temperatura\"},\n        \"Tmin\":  {\"$min\":\"$temperatura\"},\n        \"datos\": {\"$sum\":1},\n    }},\n    { \"$sort\": {\"_id\": 1} }\n];\n\nreturn msg;",
         "outputs": 1,
@@ -5885,14 +5897,14 @@
         "y": 500,
         "wires": [
             [
-                "0c1efe85d831488c"
+                "5b8923f9e3111dba"
             ]
         ]
     },
     {
-        "id": "0c1efe85d831488c",
+        "id": "5b8923f9e3111dba",
         "type": "mongodb in",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -5901,15 +5913,15 @@
         "y": 500.00581550598145,
         "wires": [
             [
-                "5cb65d0eba840a47",
-                "fcd9d4dc6afaf5ff"
+                "e6077830e5facf82",
+                "dcd18a2f54a0c390"
             ]
         ]
     },
     {
-        "id": "5cb65d0eba840a47",
+        "id": "e6077830e5facf82",
         "type": "function",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "genera datos grafica",
         "func": "var arrayavg=[];\nvar arraymax=[];\nvar arraymin=[];\n\n// los arrays usados en la represenstaciÃ³n grÃ¡fica deben contener objetos JSON con dos campos: {x , y}\n// en x debemos poner la hora en formato \"timestamp\". Si tenemos un objeto fecha se puede convertir usando el mÃ©todo getTime()\n// en y debemos poner el valor de la variable\n// mas info en: https://github.com/node-red/node-red-dashboard/blob/master/Charts.md\n\nif(Array.isArray(msg.payload) && msg.payload.length>0)\n{\n    for (var i = 0; i < msg.payload.length; i++) { // aÃ±ade datos a los array\n        arrayavg.push({x : msg.payload[i]._id.getTime() , y : msg.payload[i].Tmedia});\n        arraymax.push({x : msg.payload[i]._id.getTime() , y : msg.payload[i].Tmax});\n        arraymin.push({x : msg.payload[i]._id.getTime() , y : msg.payload[i].Tmin});\n    }\n}\n    \nmsg.payload = [{\n        \"series\":[\"T.media\",\"T.max\",\"T.min\"],\n        \"data\":[arrayavg, arraymax, arraymin],\n        \"labels\":[\"\"]\n        }];\n\nreturn msg;  ",
         "outputs": "1",
@@ -5921,14 +5933,14 @@
         "y": 559.0001182556152,
         "wires": [
             [
-                "a007da46e43e03f5"
+                "3fc836bddfe1cbfa"
             ]
         ]
     },
     {
-        "id": "a007da46e43e03f5",
+        "id": "3fc836bddfe1cbfa",
         "type": "ui_chart",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "group": "f36c1a1578e6b483",
         "order": 8,
@@ -5970,9 +5982,9 @@
         ]
     },
     {
-        "id": "7d22397cd5888861",
+        "id": "865e7ecb48689690",
         "type": "change",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "rules": [
             {
@@ -5992,14 +6004,14 @@
         "y": 220.57114505767822,
         "wires": [
             [
-                "72c67d38344cd872"
+                "e7f34ada576531bf"
             ]
         ]
     },
     {
-        "id": "6a7788a237afb209",
+        "id": "3315c78ed30cd0b2",
         "type": "change",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "rules": [
             {
@@ -6019,43 +6031,43 @@
         "y": 272.4546866416931,
         "wires": [
             [
-                "72c67d38344cd872"
+                "e7f34ada576531bf"
             ]
         ]
     },
     {
-        "id": "72c67d38344cd872",
+        "id": "e7f34ada576531bf",
         "type": "link out",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "links": [
-            "63a482cc4a777f7c"
+            "d21645e84ba3377f"
         ],
         "x": 677.4556064605713,
         "y": 252.70185661315918,
         "wires": []
     },
     {
-        "id": "63a482cc4a777f7c",
+        "id": "d21645e84ba3377f",
         "type": "link in",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "links": [
-            "72c67d38344cd872"
+            "e7f34ada576531bf"
         ],
         "x": 196.46699905395508,
         "y": 460.8295669555664,
         "wires": [
             [
-                "22db2de0a5e852d6",
-                "13e51717bb5f6bcc"
+                "8d4e5051746825ec",
+                "4d0e835126289319"
             ]
         ]
     },
     {
-        "id": "13e51717bb5f6bcc",
+        "id": "4d0e835126289319",
         "type": "function",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "agreaga todo",
         "func": "// fecha por defecto es hoy\nvar ahora = new Date();\n// pillo los globales si los hay, si no la fecha de hoy\nvar desde = new Date(global.get(\"desde\") || ahora);\nvar hasta = new Date(global.get(\"hasta\") || ahora); \n// el díaa de inicio desde las cero horas\nvar inicio = new Date(desde.getFullYear(),desde.getMonth(),desde.getDate(),1,0,0,0);\n// el día final es hasta final del díaa\nvar final = new Date(hasta.getFullYear(),hasta.getMonth(),hasta.getDate(),24,59,59,99);\n\nmsg.payload=\n[\n    { \"$match\": { \"date\": { \"$gte\": inicio , \"$lte\": final } } },\n    { \"$project\": {\n        \"temperatura\": \"$BME280.Temperatura\"\n        }\n    },\n    { \"$group\": {\n        \"_id\": 0,\n        \"Tmedia\":{\"$avg\":\"$temperatura\"},\n        \"Tmax\":  {\"$max\":\"$temperatura\"},\n        \"Tmin\":  {\"$min\":\"$temperatura\"},\n        \"datos\": {\"$sum\":1}\n    }}\n];\n\nreturn msg;",
         "outputs": 1,
@@ -6067,14 +6079,14 @@
         "y": 418.909143447876,
         "wires": [
             [
-                "fe951336a7fc7a79"
+                "a098b6bb0a5e6410"
             ]
         ]
     },
     {
-        "id": "fe951336a7fc7a79",
+        "id": "a098b6bb0a5e6410",
         "type": "mongodb in",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -6083,18 +6095,18 @@
         "y": 417.9147596359253,
         "wires": [
             [
-                "ba46fa1599f8abb9",
-                "e5b966ada7fc957c",
-                "95104ecd4fe67372",
-                "556477ed180e6e33",
-                "6e90627479d85033"
+                "ce6fc4ad7169d60b",
+                "66dd8619eee4b333",
+                "d81d98573a7db2b2",
+                "9eab0b780781ac90",
+                "d19c25ae565a781f"
             ]
         ]
     },
     {
-        "id": "ba46fa1599f8abb9",
+        "id": "ce6fc4ad7169d60b",
         "type": "ui_text",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "group": "f36c1a1578e6b483",
         "order": 3,
         "width": 0,
@@ -6109,9 +6121,9 @@
         "wires": []
     },
     {
-        "id": "e5b966ada7fc957c",
+        "id": "66dd8619eee4b333",
         "type": "ui_text",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "group": "f36c1a1578e6b483",
         "order": 4,
         "width": 0,
@@ -6126,9 +6138,9 @@
         "wires": []
     },
     {
-        "id": "95104ecd4fe67372",
+        "id": "d81d98573a7db2b2",
         "type": "ui_text",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "group": "f36c1a1578e6b483",
         "order": 5,
         "width": 0,
@@ -6143,9 +6155,9 @@
         "wires": []
     },
     {
-        "id": "706dab6a4ae998d3",
+        "id": "9b135e0c92e3e9df",
         "type": "comment",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "Controles para seleccionar fechas",
         "info": "",
         "x": 278.6857490539551,
@@ -6153,9 +6165,9 @@
         "wires": []
     },
     {
-        "id": "5974569415ca9ec7",
+        "id": "245d90b00d10831d",
         "type": "comment",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "Consultas agregadas",
         "info": "",
         "x": 254.47550582885742,
@@ -6163,9 +6175,9 @@
         "wires": []
     },
     {
-        "id": "fcd9d4dc6afaf5ff",
+        "id": "dcd18a2f54a0c390",
         "type": "debug",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -6177,9 +6189,9 @@
         "wires": []
     },
     {
-        "id": "556477ed180e6e33",
+        "id": "9eab0b780781ac90",
         "type": "debug",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -6191,9 +6203,9 @@
         "wires": []
     },
     {
-        "id": "6e90627479d85033",
+        "id": "d19c25ae565a781f",
         "type": "ui_text",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "group": "f36c1a1578e6b483",
         "order": 6,
         "width": 0,
@@ -6208,9 +6220,9 @@
         "wires": []
     },
     {
-        "id": "3825b96abb07c51c",
+        "id": "10bf98bd0aa2a4a3",
         "type": "ui_date_picker",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "label": "Fecha de inicio",
         "group": "f36c1a1578e6b483",
@@ -6225,14 +6237,14 @@
         "y": 220,
         "wires": [
             [
-                "7d22397cd5888861"
+                "865e7ecb48689690"
             ]
         ]
     },
     {
-        "id": "e31cbfa4f077feb5",
+        "id": "878e8e486211918d",
         "type": "ui_date_picker",
-        "z": "58772856dc1659a2",
+        "z": "55adc353f784f304",
         "name": "",
         "label": "Fecha de final",
         "group": "f36c1a1578e6b483",
@@ -6247,14 +6259,14 @@
         "y": 270.7359809875488,
         "wires": [
             [
-                "6a7788a237afb209"
+                "3315c78ed30cd0b2"
             ]
         ]
     },
     {
-        "id": "a03d9d13217bbcee",
+        "id": "8999a13ca704f19c",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Datos constantes de aforo y recibidos por mqtt",
         "info": "",
         "x": 300,
@@ -6262,9 +6274,9 @@
         "wires": []
     },
     {
-        "id": "22403e193a9c4d8e",
+        "id": "124ad3d389075b47",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Petición de día y sala",
         "info": "",
         "x": 220,
@@ -6272,9 +6284,9 @@
         "wires": []
     },
     {
-        "id": "60cc2493a50b46e5",
+        "id": "3f878cf3f52d8e34",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Desde Telegram",
         "func": "// Simulación del mensaje que enviaría Fer\n\nmsg.payload.dia = \"10/01/2022\"\nmsg.payload.sala= \"CNC\"\n\n\nreturn msg;",
         "outputs": 1,
@@ -6286,14 +6298,14 @@
         "y": 600,
         "wires": [
             [
-                "65bbc611c8d1f35a"
+                "138996fa4e1fbd90"
             ]
         ]
     },
     {
-        "id": "e5d79cf61553a14d",
+        "id": "b7bb393c28f806ba",
         "type": "inject",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "props": [
             {
@@ -6311,14 +6323,14 @@
         "y": 600,
         "wires": [
             [
-                "60cc2493a50b46e5"
+                "3f878cf3f52d8e34"
             ]
         ]
     },
     {
-        "id": "c023f183c335514c",
+        "id": "441560e74f2c6858",
         "type": "mongodb in",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "mongodb": "f605fa69.8f5008",
         "name": "",
         "collection": "reservas",
@@ -6327,15 +6339,15 @@
         "y": 600,
         "wires": [
             [
-                "48b38eee23a41da1",
-                "855373c53255d07a"
+                "0d9799db65e9e044",
+                "ec542fc1df39f320"
             ]
         ]
     },
     {
-        "id": "65bbc611c8d1f35a",
+        "id": "138996fa4e1fbd90",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Aggregation",
         "func": "msg.msgAntiguo = msg;\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\": msg.payload.sala, \"fecha\": msg.payload.dia }}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -6347,15 +6359,15 @@
         "y": 600,
         "wires": [
             [
-                "c023f183c335514c",
-                "18a5fe3f139a5155"
+                "441560e74f2c6858",
+                "605f9c6da45b6e16"
             ]
         ]
     },
     {
-        "id": "48b38eee23a41da1",
+        "id": "0d9799db65e9e044",
         "type": "debug",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -6369,9 +6381,9 @@
         "wires": []
     },
     {
-        "id": "b5660ab35e3826e3",
+        "id": "9a759ac65f941765",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Simulación de reservas creadas",
         "info": "",
         "x": 250,
@@ -6379,9 +6391,9 @@
         "wires": []
     },
     {
-        "id": "bfdd18a3a97605c0",
+        "id": "a8d52f7ca3023a21",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Petición de franja horaria",
         "info": "",
         "x": 245,
@@ -6389,9 +6401,9 @@
         "wires": []
     },
     {
-        "id": "fbb76911bd6cd06b",
+        "id": "29216ff974691338",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Desde Telegram",
         "func": "// Simulación del mensaje que enviaría Fer\n\nmsg.payload.dia = \"12/01/2022\"\nmsg.payload.sala= \"CNC\"\n\n// Desde telegram me envían la fecha de inicio y fin\n\nmsg.payload.hora_inicio = 10;\nmsg.payload.hora_fin = 22; \n\nreturn msg;",
         "outputs": 1,
@@ -6403,14 +6415,14 @@
         "y": 885,
         "wires": [
             [
-                "e909162ac61dd0db"
+                "d3801d7fda34955f"
             ]
         ]
     },
     {
-        "id": "e16b27923c5cdf71",
+        "id": "4516f10bfc7512d2",
         "type": "inject",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "props": [
             {
@@ -6428,14 +6440,14 @@
         "y": 885,
         "wires": [
             [
-                "fbb76911bd6cd06b"
+                "29216ff974691338"
             ]
         ]
     },
     {
-        "id": "63663ac78c4066a4",
+        "id": "3589ab37ec4ee4b9",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "convertir fecha",
         "func": "// Se convierte el string de la fecha recibida en el mensaje de telegram en un formato de fecha\n// aceptado y en formato dia/mes/año\n\nvar fecha; \n\nfecha = new Date(msg.payload.dia);\n\nmsg.payload.fecha = fecha.toLocaleDateString(\"es-ES\");\n\nreturn msg;",
         "outputs": 1,
@@ -6450,9 +6462,9 @@
         ]
     },
     {
-        "id": "e909162ac61dd0db",
+        "id": "d3801d7fda34955f",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "ack_hora_valida",
         "func": "// Se convierte el string de la fecha recibida en el mensaje de telegram en un formato de fecha\n// aceptado y en formato dia/mes/año\n\nvar fecha; \n\nfecha = new Date(msg.payload.dia);\n\nmsg.payload.fecha = fecha.toLocaleDateString(\"es-ES\");\n\n\n\n// Se comprueba si la hora de la reserva es válida\n\nvar hora_inicio = msg.payload.hora_inicio;\nvar hora_fin = msg.payload.hora_fin;\nvar ack_hora_valida;\nvar sala = msg.payload.sala; \nvar hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\"); \n\n// no funca\n\nif (hora_inicio >= hora_apertura && hora_inicio < hora_cierre) {\n    if (sala == 'CNC' && hora_fin >= hora_cierre) {\n        ack_hora_valida = false;\n    }\n    else {\n        ack_hora_valida = true;\n    }\n}\n\nelse {\n    ack_hora_valida = false;\n}\n\nmsg.payload.ack_hora_valida = ack_hora_valida;\n\n\n\nreturn msg;",
         "outputs": 1,
@@ -6464,15 +6476,15 @@
         "y": 885,
         "wires": [
             [
-                "278e31a9e9df500a",
-                "a2de3c881281827c"
+                "13d26cd2a4307de5",
+                "96a17363fdd58de8"
             ]
         ]
     },
     {
-        "id": "b125bf3a56bcca44",
+        "id": "26404324a8a2073f",
         "type": "inject",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "props": [
             {
@@ -6490,14 +6502,14 @@
         "y": 135,
         "wires": [
             [
-                "dfa8805b582cfbdf"
+                "614d4a343827cb71"
             ]
         ]
     },
     {
-        "id": "f7927892750fb3f9",
+        "id": "fb3ebcf46be7878f",
         "type": "debug",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -6512,9 +6524,9 @@
         "wires": []
     },
     {
-        "id": "3232a757392c32c3",
+        "id": "6d8fb994a724e932",
         "type": "change",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "rules": [
             {
@@ -6541,14 +6553,14 @@
         "y": 135,
         "wires": [
             [
-                "f7927892750fb3f9"
+                "fb3ebcf46be7878f"
             ]
         ]
     },
     {
-        "id": "a9000dd3028a89e5",
+        "id": "e72bcf117f4c2ba4",
         "type": "mongodb in",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "mongodb": "56dd38af8b441d46",
         "name": "Ver si hay alguna reserva en esa hora",
         "collection": "reservas",
@@ -6557,14 +6569,14 @@
         "y": 1065,
         "wires": [
             [
-                "056162c9b7dffb4f"
+                "416fb3354cd92c3a"
             ]
         ]
     },
     {
-        "id": "15db8ef3d5f7aa59",
+        "id": "0d3ae41e12063a14",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Aggregation",
         "func": "var newMsg = {};\nnewMsg.collection = \"reservas\";\nnewMsg.payload = [\n    {   \"$match\" : {    \"sala\":         msg.payload.sala, \n                        \"fecha\":        msg.payload.fecha,\n                        \"hora_inicio\":  msg.payload.hora_inicio,\n                        \"hora_fin\" :    msg.payload.hora_fin}}\n    ];\n\nreturn newMsg;",
         "outputs": 1,
@@ -6576,14 +6588,14 @@
         "y": 1065,
         "wires": [
             [
-                "a9000dd3028a89e5"
+                "e72bcf117f4c2ba4"
             ]
         ]
     },
     {
-        "id": "a2de3c881281827c",
+        "id": "96a17363fdd58de8",
         "type": "debug",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -6597,9 +6609,9 @@
         "wires": []
     },
     {
-        "id": "278e31a9e9df500a",
+        "id": "13d26cd2a4307de5",
         "type": "switch",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "hora válida?",
         "property": "payload.ack_hora_valida",
         "propertyType": "msg",
@@ -6618,45 +6630,45 @@
         "y": 885,
         "wires": [
             [
-                "e021289e0d07a26e"
+                "13c1f0e04b14dc6d"
             ],
             [
-                "1ba1d163b98e168c"
+                "65e925e80cf5588e"
             ]
         ]
     },
     {
-        "id": "1ba1d163b98e168c",
+        "id": "65e925e80cf5588e",
         "type": "link out",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "links": [
-            "ccdbf4ee3a7bcd3c"
+            "d6ca6050653cf933"
         ],
         "x": 1155,
         "y": 915,
         "wires": []
     },
     {
-        "id": "ccdbf4ee3a7bcd3c",
+        "id": "d6ca6050653cf933",
         "type": "link in",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "links": [
-            "1ba1d163b98e168c"
+            "65e925e80cf5588e"
         ],
         "x": 150,
         "y": 1065,
         "wires": [
             [
-                "15db8ef3d5f7aa59"
+                "0d3ae41e12063a14"
             ]
         ]
     },
     {
-        "id": "056162c9b7dffb4f",
+        "id": "416fb3354cd92c3a",
         "type": "switch",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -6679,17 +6691,17 @@
         "y": 1065,
         "wires": [
             [
-                "2b15be1c14735d0f"
+                "47f3658ada1d8bf3"
             ],
             [
-                "203e937079e81bf2"
+                "0aac3e492e4d30b6"
             ]
         ]
     },
     {
-        "id": "e021289e0d07a26e",
+        "id": "13c1f0e04b14dc6d",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "hora no válida",
         "func": "// mandar mensaje a Telegram\n\nreturn msg;",
         "outputs": 1,
@@ -6704,9 +6716,9 @@
         ]
     },
     {
-        "id": "2b15be1c14735d0f",
+        "id": "47f3658ada1d8bf3",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "franja ocupada - no se puede reservar",
         "func": "// mandar mensaje a Telegram\n\nreturn msg;",
         "outputs": 1,
@@ -6721,9 +6733,9 @@
         ]
     },
     {
-        "id": "203e937079e81bf2",
+        "id": "0aac3e492e4d30b6",
         "type": "mongodb out",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "mongodb": "56dd38af8b441d46",
         "name": "guardar reserva",
         "collection": "reservas",
@@ -6736,9 +6748,9 @@
         "wires": []
     },
     {
-        "id": "1d4b1d8a9eb94055",
+        "id": "110614bdf77fab32",
         "type": "comment",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Reserva Actual",
         "info": "",
         "x": 245,
@@ -6746,9 +6758,9 @@
         "wires": []
     },
     {
-        "id": "aca7b05dae5c7206",
+        "id": "39439d6ab416bd04",
         "type": "ui_button",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "group": "6c906db842b05668",
         "order": 1,
@@ -6769,15 +6781,15 @@
         "y": 195,
         "wires": [
             [
-                "87f9661e3b321c79",
-                "c4b4045ace8ae441"
+                "4f1655d4dd94111f",
+                "0bcd3c5dd01e3767"
             ]
         ]
     },
     {
-        "id": "15a2034cf3ef9eb9",
+        "id": "5c8df85444d23f4d",
         "type": "comment",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Actualizar y Última Actualización",
         "info": "",
         "x": 275,
@@ -6785,25 +6797,25 @@
         "wires": []
     },
     {
-        "id": "87f9661e3b321c79",
+        "id": "4f1655d4dd94111f",
         "type": "link out",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "links": [
             "2099185171915f1a",
-            "4858e72d6ac08bb1",
+            "dfb8f7927e8b6ac3",
             "2f9a406bd3a6a2ed",
-            "6ad285394b299219",
-            "7712c5ebf01ebb4e"
+            "ae88cd79329e0591",
+            "9a6fc9101d4c0a98"
         ],
         "x": 385,
         "y": 195,
         "wires": []
     },
     {
-        "id": "c4b4045ace8ae441",
+        "id": "0bcd3c5dd01e3767",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Última Actualización",
         "func": "var fecha;\n\nfecha = new Date();\n\nmsg.payload = fecha.toLocaleString(\"es-ES\");\n\nreturn msg;",
         "outputs": 1,
@@ -6815,14 +6827,14 @@
         "y": 285,
         "wires": [
             [
-                "abfd624593a8542f"
+                "4e790195513829ed"
             ]
         ]
     },
     {
-        "id": "abfd624593a8542f",
+        "id": "4e790195513829ed",
         "type": "ui_text",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "6c906db842b05668",
         "order": 1,
         "width": 0,
@@ -6837,9 +6849,9 @@
         "wires": []
     },
     {
-        "id": "6d498f573102963e",
+        "id": "e84778c76ade7f2f",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Reserva Actual CNC",
         "func": "var hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar ahora;\n\nahora = new Date();\nhora_actual = ahora.getHours();\n\n\nif (msg.payload != []) {\n\n    hora_inicio = msg.payload[0].hora_inicio;\n    hora_fin = msg.payload[0].hora_fin;\n    \n    if (hora_inicio <= hora_actual && hora_actual <= hora_fin) {\n        msg.reserva_actual_CNC = true;\n        \n    }\n    else {\n        msg.reserva_actual_CNC = false;\n    }\n}\n\nelse {\n    msg.reservaa_actual_CNC = false;\n}\n\nreturn msg;\n",
         "outputs": 1,
@@ -6851,31 +6863,31 @@
         "y": 840,
         "wires": [
             [
-                "df29ad2608d0b946"
+                "45b21b4b6aa30f47"
             ]
         ]
     },
     {
-        "id": "4858e72d6ac08bb1",
+        "id": "dfb8f7927e8b6ac3",
         "type": "link in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "links": [
-            "87f9661e3b321c79"
+            "4f1655d4dd94111f"
         ],
         "x": 195,
         "y": 705,
         "wires": [
             [
-                "50c9139e9fcd9500",
-                "f50703622b6b2901"
+                "1cca3e9ad0cfdcf6",
+                "1a557ab51d926919"
             ]
         ]
     },
     {
-        "id": "044b874de9bab91b",
+        "id": "1d187c491dd8c234",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Reserva Actual 3D",
         "func": "var hora_actual;\nvar hora_inicio;\nvar hora_fin;\nvar ahora;\n\nahora = new Date();\nhora_actual = ahora.getHours();\nhora_inicio = msg.payload[0].hora_inicio;\nhora_fin = msg.payload[0].hora_fin;\n\n\n\nif (hora_actual >= hora_inicio && hora_actual <= hora_fin) {\n    msg.reserva_actual_3D = true;\n    \n}\nelse {\n    msg.reserva_actual_3D = false;\n}\n\nreturn msg;\n\n",
         "outputs": 1,
@@ -6887,15 +6899,15 @@
         "y": 525,
         "wires": [
             [
-                "7e4e78dc1fb84ee6",
-                "8d096a337cbe20f5"
+                "900fc0194d82445e",
+                "ce334a3c5c679b39"
             ]
         ]
     },
     {
-        "id": "e3a15c431ed4e4c6",
+        "id": "e6b5320e8ea3b3d2",
         "type": "mongodb in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -6904,14 +6916,14 @@
         "y": 525,
         "wires": [
             [
-                "31358cbd827d17d0"
+                "5bd95423106c3827"
             ]
         ]
     },
     {
-        "id": "ea548d41785fd590",
+        "id": "e06a2c7a75989181",
         "type": "mongodb in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -6920,14 +6932,14 @@
         "y": 855,
         "wires": [
             [
-                "05416c1c7dd313a8"
+                "8dc381cb9528f057"
             ]
         ]
     },
     {
-        "id": "66b06bbc8f8b268b",
+        "id": "b93733c5d1c4224d",
         "type": "template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -6939,14 +6951,14 @@
         "y": 420,
         "wires": [
             [
-                "edb1493e70b69ec9"
+                "0ffe30b33e358c54"
             ]
         ]
     },
     {
-        "id": "edb1493e70b69ec9",
+        "id": "0ffe30b33e358c54",
         "type": "ui_template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "924d0f1c03bb7258",
         "name": "Reserva Actual 3D",
         "order": 2,
@@ -6965,9 +6977,9 @@
         ]
     },
     {
-        "id": "dd926d16ee3c3b1f",
+        "id": "245d30b83cfb1376",
         "type": "template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -6979,14 +6991,14 @@
         "y": 765,
         "wires": [
             [
-                "04fa494919da0aaa"
+                "693a8f12425a2b54"
             ]
         ]
     },
     {
-        "id": "04fa494919da0aaa",
+        "id": "693a8f12425a2b54",
         "type": "ui_template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "e2cd0e91e05d4028",
         "name": "Reserva Actual CNC",
         "order": 4,
@@ -7005,9 +7017,9 @@
         ]
     },
     {
-        "id": "7e4e78dc1fb84ee6",
+        "id": "900fc0194d82445e",
         "type": "switch",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "property": "reserva_actual_3D",
         "propertyType": "msg",
@@ -7026,18 +7038,18 @@
         "y": 525,
         "wires": [
             [
-                "66b06bbc8f8b268b",
-                "e460ba72a0724dc0"
+                "b93733c5d1c4224d",
+                "be4aebebe4b3c37e"
             ],
             [
-                "1b5cb7ec2a155482"
+                "e6f9ebc6d850c01f"
             ]
         ]
     },
     {
-        "id": "50c9139e9fcd9500",
+        "id": "1cca3e9ad0cfdcf6",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Agregación",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"3D\" , \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}}},\n    { \"$sort\" : {\"hora_inicio\" : 1}},\n    { \"$limit\" : 1 }\n    ];\n\nreturn msg;\n\n",
         "outputs": 1,
@@ -7049,15 +7061,15 @@
         "y": 525,
         "wires": [
             [
-                "e3a15c431ed4e4c6",
-                "b10a5722bf9bc9fb"
+                "e6b5320e8ea3b3d2",
+                "d9349d04bf55fbe1"
             ]
         ]
     },
     {
-        "id": "f50703622b6b2901",
+        "id": "1a557ab51d926919",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Agregación",
         "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    { \"$match\" : { \"sala\" : \"CNC\" , \"fecha\": Date.now()}},\n    { \"$sort\" : {\"hora_inicio\" : 1}},\n    {\"$limit\" : 1}\n    ];\nreturn msg;",
         "outputs": 1,
@@ -7069,14 +7081,14 @@
         "y": 855,
         "wires": [
             [
-                "ea548d41785fd590"
+                "e06a2c7a75989181"
             ]
         ]
     },
     {
-        "id": "df29ad2608d0b946",
+        "id": "45b21b4b6aa30f47",
         "type": "switch",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "property": "payload.reserva_actual_CNC",
         "propertyType": "msg",
@@ -7095,18 +7107,18 @@
         "y": 840,
         "wires": [
             [
-                "dd926d16ee3c3b1f",
-                "4b42e4a9f3e6a885"
+                "245d30b83cfb1376",
+                "18b47056273e6009"
             ],
             [
-                "63a229d535ec74fe"
+                "1eb00a91cdfdf473"
             ]
         ]
     },
     {
-        "id": "1b5cb7ec2a155482",
+        "id": "e6f9ebc6d850c01f",
         "type": "change",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "No hay reservas en curso",
         "rules": [
             {
@@ -7126,14 +7138,14 @@
         "y": 645,
         "wires": [
             [
-                "3107984e53c3c219"
+                "3c5c238d32a07f8e"
             ]
         ]
     },
     {
-        "id": "63a229d535ec74fe",
+        "id": "1eb00a91cdfdf473",
         "type": "change",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "No hay reservas en curso",
         "rules": [
             {
@@ -7153,14 +7165,14 @@
         "y": 975,
         "wires": [
             [
-                "63565bac47713c2d"
+                "eb2169ef2c7a574a"
             ]
         ]
     },
     {
-        "id": "3107984e53c3c219",
+        "id": "3c5c238d32a07f8e",
         "type": "ui_text",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "924d0f1c03bb7258",
         "order": 1,
         "width": 0,
@@ -7175,9 +7187,9 @@
         "wires": []
     },
     {
-        "id": "63565bac47713c2d",
+        "id": "eb2169ef2c7a574a",
         "type": "ui_text",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "e2cd0e91e05d4028",
         "order": 3,
         "width": 0,
@@ -7192,9 +7204,9 @@
         "wires": []
     },
     {
-        "id": "b10a5722bf9bc9fb",
+        "id": "d9349d04bf55fbe1",
         "type": "debug",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -7208,9 +7220,9 @@
         "wires": []
     },
     {
-        "id": "8d096a337cbe20f5",
+        "id": "ce334a3c5c679b39",
         "type": "debug",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -7225,9 +7237,9 @@
         "wires": []
     },
     {
-        "id": "31358cbd827d17d0",
+        "id": "5bd95423106c3827",
         "type": "switch",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -7246,17 +7258,17 @@
         "y": 525,
         "wires": [
             [
-                "044b874de9bab91b"
+                "1d187c491dd8c234"
             ],
             [
-                "1b5cb7ec2a155482"
+                "e6f9ebc6d850c01f"
             ]
         ]
     },
     {
-        "id": "05416c1c7dd313a8",
+        "id": "8dc381cb9528f057",
         "type": "switch",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -7275,17 +7287,17 @@
         "y": 855,
         "wires": [
             [
-                "6d498f573102963e"
+                "e84778c76ade7f2f"
             ],
             [
-                "63a229d535ec74fe"
+                "1eb00a91cdfdf473"
             ]
         ]
     },
     {
-        "id": "e460ba72a0724dc0",
+        "id": "be4aebebe4b3c37e",
         "type": "change",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Hay reservas en curso",
         "rules": [
             {
@@ -7305,14 +7317,14 @@
         "y": 525,
         "wires": [
             [
-                "3107984e53c3c219"
+                "3c5c238d32a07f8e"
             ]
         ]
     },
     {
-        "id": "4b42e4a9f3e6a885",
+        "id": "18b47056273e6009",
         "type": "change",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Hay reservas en curso",
         "rules": [
             {
@@ -7332,14 +7344,14 @@
         "y": 855,
         "wires": [
             [
-                "63565bac47713c2d"
+                "eb2169ef2c7a574a"
             ]
         ]
     },
     {
-        "id": "b0fb24639e02d551",
+        "id": "e0c4b56096933aac",
         "type": "mongodb in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -7348,14 +7360,14 @@
         "y": 1155,
         "wires": [
             [
-                "4c487d554e3b7f2c"
+                "416a4bd505c1a704"
             ]
         ]
     },
     {
-        "id": "486d0e4a586d5b6a",
+        "id": "c9bfa4dd0150a238",
         "type": "comment",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Listados generales de reservas por sala - Hoy",
         "info": "",
         "x": 335,
@@ -7363,9 +7375,9 @@
         "wires": []
     },
     {
-        "id": "f347fab226c59cc9",
+        "id": "5414b6fabb35aa50",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Mostrar Reservas 3D",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"3D\" }, \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -7377,14 +7389,14 @@
         "y": 1155,
         "wires": [
             [
-                "b0fb24639e02d551"
+                "e0c4b56096933aac"
             ]
         ]
     },
     {
-        "id": "4c487d554e3b7f2c",
+        "id": "416a4bd505c1a704",
         "type": "template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -7396,14 +7408,14 @@
         "y": 1155,
         "wires": [
             [
-                "be9af4e35ffda8ce"
+                "b492032f3f0d1705"
             ]
         ]
     },
     {
-        "id": "be9af4e35ffda8ce",
+        "id": "b492032f3f0d1705",
         "type": "ui_template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "924d0f1c03bb7258",
         "name": "",
         "order": 0,
@@ -7422,9 +7434,9 @@
         ]
     },
     {
-        "id": "ce1fd32f94cddc14",
+        "id": "3a5ae6f25f0e9923",
         "type": "mongodb in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -7433,14 +7445,14 @@
         "y": 1260,
         "wires": [
             [
-                "8aab6455145e49f8"
+                "e7316fa0371108ec"
             ]
         ]
     },
     {
-        "id": "ce559ef01ae52d66",
+        "id": "202ccba84f2d0299",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Mostrar Reservas CNC",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\nhora_actual = ahora.getHours();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"CNC\" }, \"fecha\": fecha_actual, \"hora_inicio\": {\"$gte\": hora_actual}},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -7452,14 +7464,14 @@
         "y": 1260,
         "wires": [
             [
-                "ce1fd32f94cddc14"
+                "3a5ae6f25f0e9923"
             ]
         ]
     },
     {
-        "id": "8aab6455145e49f8",
+        "id": "e7316fa0371108ec",
         "type": "template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -7471,14 +7483,14 @@
         "y": 1260,
         "wires": [
             [
-                "6be13a021b69b203"
+                "4b3e9df0198336dd"
             ]
         ]
     },
     {
-        "id": "6be13a021b69b203",
+        "id": "4b3e9df0198336dd",
         "type": "ui_template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "e2cd0e91e05d4028",
         "name": "",
         "order": 0,
@@ -7497,26 +7509,26 @@
         ]
     },
     {
-        "id": "6ad285394b299219",
+        "id": "ae88cd79329e0591",
         "type": "link in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "links": [
-            "87f9661e3b321c79"
+            "4f1655d4dd94111f"
         ],
         "x": 210,
         "y": 1200,
         "wires": [
             [
-                "f347fab226c59cc9",
-                "ce559ef01ae52d66"
+                "5414b6fabb35aa50",
+                "202ccba84f2d0299"
             ]
         ]
     },
     {
-        "id": "105270a8cbc5f5be",
+        "id": "3011491db703f1cd",
         "type": "mongodb in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -7525,14 +7537,14 @@
         "y": 1485,
         "wires": [
             [
-                "218b07c6fb8887ed"
+                "13da935d0b3d0cae"
             ]
         ]
     },
     {
-        "id": "c3882ccb19921618",
+        "id": "cdba65b0486cede2",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Mostrar Reservas 3D",
         "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"3D\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -7544,14 +7556,14 @@
         "y": 1485,
         "wires": [
             [
-                "105270a8cbc5f5be"
+                "3011491db703f1cd"
             ]
         ]
     },
     {
-        "id": "218b07c6fb8887ed",
+        "id": "13da935d0b3d0cae",
         "type": "template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -7563,14 +7575,14 @@
         "y": 1485,
         "wires": [
             [
-                "015cc270f8752838"
+                "17db661f8e0dd321"
             ]
         ]
     },
     {
-        "id": "015cc270f8752838",
+        "id": "17db661f8e0dd321",
         "type": "ui_template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "924d0f1c03bb7258",
         "name": "",
         "order": 0,
@@ -7589,9 +7601,9 @@
         ]
     },
     {
-        "id": "f2bbec7d8b91ef8f",
+        "id": "9d38e93c8c16e612",
         "type": "mongodb in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -7600,14 +7612,14 @@
         "y": 1590,
         "wires": [
             [
-                "76f8a788ebbb52c3"
+                "b1ea9c100641901d"
             ]
         ]
     },
     {
-        "id": "188185a4329ddb0a",
+        "id": "2a86c45a6ed5ed68",
         "type": "function",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Mostrar Reservas CNC",
         "func": "msg.collection = \"reservas\";\nmsg.payload = [ \n    \n    // He eliminado las reservas pasadas\n    { \"$match\" : { \"sala\" : \"CNC\" }},\n    { \"$sort\" : {\"fecha\" : 1}},\n    { \"$sort\" : {\"hora_inicio\" : 1}}\n    ];\n\nreturn msg;",
         "outputs": 1,
@@ -7619,14 +7631,14 @@
         "y": 1590,
         "wires": [
             [
-                "f2bbec7d8b91ef8f"
+                "9d38e93c8c16e612"
             ]
         ]
     },
     {
-        "id": "76f8a788ebbb52c3",
+        "id": "b1ea9c100641901d",
         "type": "template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "lista en formato html",
         "field": "payload",
         "fieldType": "msg",
@@ -7638,14 +7650,14 @@
         "y": 1590,
         "wires": [
             [
-                "90be1112e848e502"
+                "d604077fbc196c0d"
             ]
         ]
     },
     {
-        "id": "90be1112e848e502",
+        "id": "d604077fbc196c0d",
         "type": "ui_template",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "group": "e2cd0e91e05d4028",
         "name": "",
         "order": 0,
@@ -7664,26 +7676,26 @@
         ]
     },
     {
-        "id": "7712c5ebf01ebb4e",
+        "id": "9a6fc9101d4c0a98",
         "type": "link in",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "",
         "links": [
-            "87f9661e3b321c79"
+            "4f1655d4dd94111f"
         ],
         "x": 210,
         "y": 1530,
         "wires": [
             [
-                "c3882ccb19921618",
-                "188185a4329ddb0a"
+                "cdba65b0486cede2",
+                "2a86c45a6ed5ed68"
             ]
         ]
     },
     {
-        "id": "59a760336d2f424c",
+        "id": "b0b8c1a99ba3ff51",
         "type": "comment",
-        "z": "4b0ca85bc571f59f",
+        "z": "0c91cd2473cfb11a",
         "name": "Listados generales de reservas por sala - Próximos días",
         "info": "",
         "x": 395,
@@ -7691,9 +7703,9 @@
         "wires": []
     },
     {
-        "id": "aabb7dea004dbad0",
+        "id": "e6a120a35662f74c",
         "type": "inject",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "props": [
             {
@@ -7715,14 +7727,14 @@
         "y": 225,
         "wires": [
             [
-                "54c02f841a32f5b7"
+                "e8bb45b7ca1482c8"
             ]
         ]
     },
     {
-        "id": "02363795a3113214",
+        "id": "e8a617d80295f4ae",
         "type": "comment",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "Me llega el id de la tarjeta",
         "info": "Este id me llega porque en la caché de la placa no existe nadie con este identificador. Se pretende buscar el identificador en la base de datos y, si existe, abrir la puerta y si no existe, no abrirla. ",
         "x": 140,
@@ -7730,9 +7742,9 @@
         "wires": []
     },
     {
-        "id": "54c02f841a32f5b7",
+        "id": "e8bb45b7ca1482c8",
         "type": "function",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "id_NFC",
         "func": "msg.id_NFC = \"88:109:195:73\";\nreturn msg;",
         "outputs": 1,
@@ -7744,14 +7756,14 @@
         "y": 225,
         "wires": [
             [
-                "144604d5da0b7a67"
+                "f0acc19389a2a9e2"
             ]
         ]
     },
     {
-        "id": "626f9276f5d9ac88",
+        "id": "1f3afcb9e0fd42e5",
         "type": "mongodb in",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "usuarios",
@@ -7760,14 +7772,14 @@
         "y": 225,
         "wires": [
             [
-                "7fd2599b88a30961"
+                "91609f2bfeef4012"
             ]
         ]
     },
     {
-        "id": "144604d5da0b7a67",
+        "id": "f0acc19389a2a9e2",
         "type": "function",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "Match",
         "func": "var id_buscado;\nid_buscado = msg.id_NFC;\n\nmsg.collection = \"usuarios\";\nmsg.payload = [ \n    { \"$match\" : { \"id_NFC\" : id_buscado}}];\nreturn msg;",
         "outputs": 1,
@@ -7779,14 +7791,14 @@
         "y": 225,
         "wires": [
             [
-                "626f9276f5d9ac88"
+                "1f3afcb9e0fd42e5"
             ]
         ]
     },
     {
-        "id": "7fd2599b88a30961",
+        "id": "91609f2bfeef4012",
         "type": "switch",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -7802,14 +7814,14 @@
         "y": 225,
         "wires": [
             [
-                "0760fbad755ef549"
+                "468884134e724133"
             ]
         ]
     },
     {
-        "id": "71356a67e878988f",
+        "id": "9e616be7876d5d4c",
         "type": "mqtt out",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "topic": "puerta_[n]/puerta/abrir",
         "qos": "",
@@ -7825,9 +7837,9 @@
         "wires": []
     },
     {
-        "id": "5076241e113454a7",
+        "id": "b072a3212ceb273f",
         "type": "comment",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "manda (o no) la señal para abrir la puerta",
         "info": "",
         "x": 1300,
@@ -7835,9 +7847,9 @@
         "wires": []
     },
     {
-        "id": "7eb5cd54944831dc",
+        "id": "6162fa2e66527595",
         "type": "debug",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -7851,37 +7863,37 @@
         "wires": []
     },
     {
-        "id": "358a78779a4e0bc5",
+        "id": "dfd74f52da123ae0",
         "type": "link in",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "links": [
-            "0760fbad755ef549"
+            "468884134e724133"
         ],
         "x": 810,
         "y": 390,
         "wires": [
             [
-                "faf7b0006748cc02"
+                "ddc872014cd47b80"
             ]
         ]
     },
     {
-        "id": "0760fbad755ef549",
+        "id": "468884134e724133",
         "type": "link out",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "links": [
-            "358a78779a4e0bc5"
+            "dfd74f52da123ae0"
         ],
         "x": 1180,
         "y": 225,
         "wires": []
     },
     {
-        "id": "faf7b0006748cc02",
+        "id": "ddc872014cd47b80",
         "type": "change",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "rules": [
             {
@@ -7901,15 +7913,15 @@
         "y": 390,
         "wires": [
             [
-                "71356a67e878988f",
-                "7eb5cd54944831dc"
+                "9e616be7876d5d4c",
+                "6162fa2e66527595"
             ]
         ]
     },
     {
-        "id": "88c5a6ba73519bf1",
+        "id": "e97896827e25078d",
         "type": "comment",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "ABRIR PUERTA CON ID_NFC",
         "info": "",
         "x": 150,
@@ -7917,9 +7929,9 @@
         "wires": []
     },
     {
-        "id": "88c3065fa0cdd4d8",
+        "id": "e823d3b50667a853",
         "type": "comment",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "MANDAR LISTA DIARIA DE IDS CON RESERVA + ID ADMIN",
         "info": "",
         "x": 265,
@@ -7927,9 +7939,9 @@
         "wires": []
     },
     {
-        "id": "779b493a24c38ebb",
+        "id": "0b23100f78ac53a4",
         "type": "function",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "agregación - reservas hoy",
         "func": "var ahora;\nvar fecha_actual;\nvar hora_actual;\n\nahora = new Date();\nfecha_actual = ahora.toLocaleDateString();\n\nmsg.collection = \"reservas\";\nmsg.payload = [ { \"$match\" : {\"fecha\": fecha_actual}}\n];\n    \nreturn msg;",
         "outputs": 1,
@@ -7941,14 +7953,14 @@
         "y": 705,
         "wires": [
             [
-                "e78fffd96c9ede9b"
+                "acce419ec88bb180"
             ]
         ]
     },
     {
-        "id": "e78fffd96c9ede9b",
+        "id": "acce419ec88bb180",
         "type": "mongodb in",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "mongodb": "56dd38af8b441d46",
         "name": "",
         "collection": "reservas",
@@ -7957,14 +7969,14 @@
         "y": 705,
         "wires": [
             [
-                "811e13a0230e9db2"
+                "dceda05ef636b0f3"
             ]
         ]
     },
     {
-        "id": "81072fcb5c5be35b",
+        "id": "3cd7ef3d725c948e",
         "type": "inject",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "props": [
             {
@@ -7981,14 +7993,14 @@
         "y": 705,
         "wires": [
             [
-                "779b493a24c38ebb"
+                "0b23100f78ac53a4"
             ]
         ]
     },
     {
-        "id": "e4356ce2da4c8149",
+        "id": "f64092f49094fb46",
         "type": "debug",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8003,38 +8015,38 @@
         "wires": []
     },
     {
-        "id": "8fbd84aaeb48607a",
+        "id": "120a999b556327aa",
         "type": "link in",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "links": [
-            "d7f39c8e90fb25a7",
+            "94f912cd2689b0c9",
             "a6609b2445449f60"
         ],
         "x": 90,
         "y": 840,
         "wires": [
             [
-                "7384fa389c6e2cc1"
+                "907a575e5fc719ca"
             ]
         ]
     },
     {
-        "id": "d7f39c8e90fb25a7",
+        "id": "94f912cd2689b0c9",
         "type": "link out",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "links": [
-            "8fbd84aaeb48607a"
+            "120a999b556327aa"
         ],
         "x": 1365,
         "y": 705,
         "wires": []
     },
     {
-        "id": "800a598930009f9c",
+        "id": "51cf1492ea802fe7",
         "type": "comment",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "LEER",
         "info": "Ajustar la fecha y los días en los que queremos que se mande. ",
         "x": 95,
@@ -8042,9 +8054,9 @@
         "wires": []
     },
     {
-        "id": "7384fa389c6e2cc1",
+        "id": "907a575e5fc719ca",
         "type": "function",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "ids comunes",
         "func": "var num_ids;\nvar ids_comunes = [\"88:109:194:73\"];\n\n\nnum_ids = msg.num_ids;\n\nfor (let i = 0; i < num_ids; i++) {\n    \n    ids_comunes.push(msg.reservas_hoy[i].id_NFC);\n    msg.payload = ids_comunes;\n}\n\nmsg.payload = ids_comunes;\n\n\nreturn msg;",
         "outputs": 1,
@@ -8056,14 +8068,14 @@
         "y": 840,
         "wires": [
             [
-                "4e891332ecc2b7b9"
+                "fd99be56bb508a2b"
             ]
         ]
     },
     {
-        "id": "4e891332ecc2b7b9",
+        "id": "fd99be56bb508a2b",
         "type": "debug",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8078,9 +8090,9 @@
         "wires": []
     },
     {
-        "id": "811e13a0230e9db2",
+        "id": "dceda05ef636b0f3",
         "type": "change",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "",
         "rules": [
             {
@@ -8112,15 +8124,15 @@
         "y": 705,
         "wires": [
             [
-                "d7f39c8e90fb25a7",
-                "e4356ce2da4c8149"
+                "94f912cd2689b0c9",
+                "f64092f49094fb46"
             ]
         ]
     },
     {
-        "id": "483da9f6dc1108cf",
+        "id": "3c2d25e9fdf38885",
         "type": "comment",
-        "z": "6a9899964a8aa4bc",
+        "z": "fcf476b1caabd030",
         "name": "se manda por mqtt - LEER",
         "info": "No sé si es necesario que tenga la key \"idComun1\", \"idComun2\", etc...si no hace falta es mucho más simple como está ahora. ",
         "x": 575,
@@ -8128,9 +8140,9 @@
         "wires": []
     },
     {
-        "id": "6ec9a3d433d65f5a",
+        "id": "7df2e172e4777780",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Petición a DB con día y sala de Fer",
         "info": "msg.payload.dia = \"dd/mm/aaaa\"\nmsg.payload.sala = \"3D\"",
         "x": 600,
@@ -8138,37 +8150,39 @@
         "wires": []
     },
     {
-        "id": "24aa00c0703c574f",
+        "id": "be80b476c522fe50",
         "type": "link in",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "links": [
-            "99e352af81bde24b"
+            "99e352af81bde24b",
+            "76364fd550e1ece3"
         ],
         "x": 595,
         "y": 540,
         "wires": [
             [
-                "65bbc611c8d1f35a"
+                "138996fa4e1fbd90"
             ]
         ]
     },
     {
-        "id": "855373c53255d07a",
+        "id": "ec542fc1df39f320",
         "type": "link out",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "links": [
-            "16ff79ca21cb7d3f"
+            "16ff79ca21cb7d3f",
+            "4ef3fc5391f86cf1"
         ],
         "x": 1435,
         "y": 540,
         "wires": []
     },
     {
-        "id": "29860620904bf916",
+        "id": "03222d0bd9a330d3",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "Mandar lista de reservas a Fer",
         "info": "",
         "x": 1440,
@@ -8176,9 +8190,9 @@
         "wires": []
     },
     {
-        "id": "384c899ccfec4c31",
+        "id": "df1c451ac45b8042",
         "type": "comment",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "¿Necesitas muy fuerte crear un nuevo mensaje? Porque me jodes un poquito xd",
         "info": "",
         "x": 1040,
@@ -8186,9 +8200,9 @@
         "wires": []
     },
     {
-        "id": "18a5fe3f139a5155",
+        "id": "605f9c6da45b6e16",
         "type": "debug",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8202,9 +8216,9 @@
         "wires": []
     },
     {
-        "id": "46d75a9a33725d90",
+        "id": "0bda85b293f76b4d",
         "type": "function",
-        "z": "b991675b657dc122",
+        "z": "8463448eeef70965",
         "name": "",
         "func": "\nreturn msg;",
         "outputs": 1,
@@ -8219,9 +8233,9 @@
         ]
     },
     {
-        "id": "7a70a6aefb497255",
+        "id": "bdc334555dd6b8f5",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Sí",
         "info": "",
         "x": 2290,
@@ -8229,11 +8243,11 @@
         "wires": []
     },
     {
-        "id": "0b2ca62865bb4c53",
+        "id": "4ca94108e14ed9d0",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8245,9 +8259,9 @@
         "wires": []
     },
     {
-        "id": "a57241009d9089ee",
+        "id": "c7dd4e200504c585",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8261,9 +8275,9 @@
         "wires": []
     },
     {
-        "id": "6afb79cd19695c77",
+        "id": "c392c2f0015f0757",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8278,9 +8292,9 @@
         "wires": []
     },
     {
-        "id": "82e242254f799a28",
+        "id": "bf0fa877ffff3038",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8295,9 +8309,9 @@
         "wires": []
     },
     {
-        "id": "87a03ad25c11ae6e",
+        "id": "0340775469c98303",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8312,9 +8326,9 @@
         "wires": []
     },
     {
-        "id": "201d99ad823f00a0",
+        "id": "3071f6bab46e9f46",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8329,9 +8343,9 @@
         "wires": []
     },
     {
-        "id": "43e36665655da2c9",
+        "id": "e20e675db442f494",
         "type": "debug",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8346,9 +8360,9 @@
         "wires": []
     },
     {
-        "id": "e3d57f8d72063378",
+        "id": "d5d5e4a37f45341c",
         "type": "inject",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "props": [
             {
@@ -8370,16 +8384,16 @@
         "y": 1240,
         "wires": [
             [
-                "311a568b66396049"
+                "24db500fcb82d544"
             ]
         ]
     },
     {
-        "id": "311a568b66396049",
+        "id": "24db500fcb82d544",
         "type": "function",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Variables globales",
-        "func": "var nombre;\nvar chatId;\nmsg.payload.nombre = nombre;\nmsg.payload.chatId = chatId;\nreturn msg;",
+        "func": "var nombre;\nvar chatId;\nvar sala;\nvar mensaje;\nmsg.payload.nombre = nombre;\nmsg.payload.chatId = chatId;\nmsg.payload.sala = sala;\nmsg.payload.mensaje = mensaje;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8389,14 +8403,14 @@
         "y": 1240,
         "wires": [
             [
-                "a3dfdc6b6f4d550f"
+                "e307db6703a793d6"
             ]
         ]
     },
     {
-        "id": "a3dfdc6b6f4d550f",
+        "id": "e307db6703a793d6",
         "type": "change",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "",
         "rules": [
             {
@@ -8412,6 +8426,20 @@
                 "pt": "global",
                 "to": "payload.chatId",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "sala",
+                "pt": "global",
+                "to": "payload.sala",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "mensaje",
+                "pt": "global",
+                "to": "payload.mensaje",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -8426,13 +8454,286 @@
         ]
     },
     {
-        "id": "c2a68fd9529cb5a0",
+        "id": "79501a1845c6beec",
         "type": "comment",
-        "z": "6fd240d0a5125c84",
+        "z": "89d6dd3d78386063",
         "name": "Definir variables globales",
         "info": "",
         "x": 1390,
         "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "fb4311aba7515eed",
+        "type": "function",
+        "z": "89d6dd3d78386063",
+        "name": "Peticion a DB",
+        "func": "msg.antiguo = msg.originalMessage;\nmsg.collection = \"usuarios\";\nmsg.payload = [{\"$match\": {\"id_telegram\": msg.originalMessage.chatId}}]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 720,
+        "wires": [
+            [
+                "f2a17b4babf31496",
+                "400e53137f8d78e4"
+            ]
+        ]
+    },
+    {
+        "id": "f2a17b4babf31496",
+        "type": "mongodb in",
+        "z": "89d6dd3d78386063",
+        "mongodb": "f605fa69.8f5008",
+        "name": "",
+        "collection": "",
+        "operation": "aggregate",
+        "x": 1470,
+        "y": 720,
+        "wires": [
+            [
+                "ca2e458002821d38",
+                "595c66903382cff7"
+            ]
+        ]
+    },
+    {
+        "id": "94149b2d66184822",
+        "type": "switch",
+        "z": "89d6dd3d78386063",
+        "name": "CNC",
+        "property": "payload[0].acceso_CNC",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1930,
+        "y": 680,
+        "wires": [
+            [
+                "7e6517b26e4cd578",
+                "7bef9943f5e7d718"
+            ],
+            [
+                "160331294cb41890"
+            ]
+        ]
+    },
+    {
+        "id": "3c7645bb41deb4ab",
+        "type": "switch",
+        "z": "89d6dd3d78386063",
+        "name": "3D",
+        "property": "payload[0].acceso_3D",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1930,
+        "y": 760,
+        "wires": [
+            [
+                "66feec6ce58718f0"
+            ],
+            [
+                "160331294cb41890"
+            ]
+        ]
+    },
+    {
+        "id": "160331294cb41890",
+        "type": "chatbot-message",
+        "z": "89d6dd3d78386063",
+        "name": "Error, no tienes acceso",
+        "message": [
+            {
+                "message": "Whoops, parece que tu suscripción no incluye acceso a esta maquinaria. Puedes ponerte en /contacto con nosotros para cambiar tu suscripción a otra que incluya este servicio."
+            }
+        ],
+        "language": "none",
+        "x": 2400,
+        "y": 1100,
+        "wires": [
+            [
+                "6550a62959abc031"
+            ]
+        ]
+    },
+    {
+        "id": "6550a62959abc031",
+        "type": "link out",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "9b450680f1f39424"
+        ],
+        "x": 2555,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "4131072e879d5dca",
+        "type": "comment",
+        "z": "89d6dd3d78386063",
+        "name": "Igual hay que recuperar el mensaje anterior",
+        "info": "",
+        "x": 2130,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "595c66903382cff7",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1650,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7bef9943f5e7d718",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2130,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "400e53137f8d78e4",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "7369a1befbd3b780",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2950,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "01e4c8995324ace2",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3470,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "8560aae91731fcc6",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3690,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "8a0273e96e7b9009",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4130,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e3ac68368a0064bd",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3230,
+        "y": 760,
         "wires": []
     }
 ]
