@@ -5067,8 +5067,8 @@
         "z": "89d6dd3d78386063",
         "name": "Guardar reserva",
         "info": "",
-        "x": 4720,
-        "y": 640,
+        "x": 4760,
+        "y": 660,
         "wires": []
     },
     {
@@ -5076,17 +5076,18 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "¿Horas correctas?",
-        "func": "// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\nvar horasReserva = msg.payload.content;\nlet pattern = /w3schools/i;\n\nvar hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\nvar error = false;\n// Comprobar que la hora de inicio es anterior a la hora de fin\nif (inicio_nueva_reserva >= fin_nueva_reserva) {\n    error = true;\n} else {\n    // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n    if (inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) {\n        error = true;\n    } else {\n        // Comprobar que las horas no se solapan con otra reserva\n        for (const i of msg.payload) {\n            if (msg.payload[i].hora_inicio >= inicio_nueva_reserva && msg.payload[i].hora_inicio < fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n            if (msg.payload[i].hora_fin > inicio_nueva_reserva && msg.payload[i].hora_fin <= fin_nueva_reserva) {\n                error = true;\n                break;\n            }\n        }\n    }\n}\n\nif (!error) {\n    return [ msg, null ];\n} else {\n    return [ null, msg ];\n}\n\nreturn msg;",
+        "func": "var error = false;\nmsg.reservas = global.get(\"reservas\");\n\n// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\n\nlet pattern = /De [0-2]?[0-9] a [0-2]?[0-9]/i;\n// ¿El formato del mensaje es incorrecto?\nif(!pattern.test(msg.payload.content)) {\n    error = true;\n} else {\n\n    const horasReserva = msg.payload.content.split(\" \");\n    \n    var hora_apertura = global.get(\"hora_apertura\");\n    var hora_cierre = global.get(\"hora_cierre\");\n    var inicio_nueva_reserva = horasReserva[1];\n    var fin_nueva_reserva = horasReserva[3];\n    var reservas = msg.reservas;\n    // Comprobar que la hora de inicio es anterior a la hora de fin\n    if (inicio_nueva_reserva >= fin_nueva_reserva) {\n        error = true;\n    } else {\n        // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n        if ((inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) || fin_nueva_reserva > hora_cierre) {\n            error = true;\n        } else {\n            // Comprobar que las horas no se solapan con otra reserva\n            for (let i = 0; i < reservas.length; i++) {\n                if (reservas[i].hora_inicio >= inicio_nueva_reserva && reservas[i].hora_inicio < fin_nueva_reserva) {\n                    error = true;\n                    break;\n                }\n                if (reservas[i].hora_fin > inicio_nueva_reserva && reservas[i].hora_fin <= fin_nueva_reserva) {\n                    error = true;\n                    break;\n                }\n            }\n        }\n    }\n}\nif (!error) {\n    return [ msg, null ];\n} else {\n    msg.horasIncorrectas = true;\n    return [ null, msg ];\n}\n\nreturn msg;",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 4350,
+        "x": 4590,
         "y": 700,
         "wires": [
             [
-                "3471a2dae8b5f63d"
+                "3471a2dae8b5f63d",
+                "cdfc3ee5f9e25c4b"
             ],
             [
                 "68bdb36502ca8727"
@@ -5098,7 +5099,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Mostrar horas reservadas y preguntar horas a resevar",
-        "func": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\n\nif (msg.horasIncorrectas) {\n    msg.payload.content = \"Las horas que has introducido para la reserva son incorrectas. Venga, intentémoslo de nuevo.\\n\\n\"\n} else {\n    msg.payload.content = \"\";\n}\n\nmsg.payload.content += \"Estas son las horas ya reservadas (las que están entre paréntesis):\\n\\n\";\n\n// msg.reservas es un array de objetos con .hora_inicio y .hora_fin\n\n// Creo un array de 25 posiciones que me indicarán que horas tienen qué paréntesis.\n// Inicialmente pongo todas las horas a 0. \nvar horas;\nfor (let i = 0; i <= 24; i++) {\n    horas[i] = 0;\n}\n\n// Itero a través de las reservas para encontrar coincidencias.\n// Si una hora tiene un paréntesis a su izquierda tendrá un 1.\n// Si una hora tiene un paréntesis a su derecha tendrá un 2.\n// Si una hora tiene paréntesis a ambos lados tendrá un 3.\nfor (let i of msg.reservas) {\n    horas[msg.reservas[i].hora_inicio] += 1;\n    horas[msg.reservas[i].hora_fin] += 2;\n}\n\n// Imprimimos todas las horas con sus respectivos paréntesis\nfor (let j = hora_apertura; j < hora_cierre; j++) {\n    \n    switch(horas[j]) {\n        case 0:\n            msg.payload.content += j + \"  \";\n            break;\n        case 1:\n            msg.payload.content += \"(\" + j + \"  \";\n            break;\n        case 2:\n            msg.payload.content += j + \") \";\n            break;\n        case 3:\n            msg.payload.content += \"(\" + j + \") \";\n            break;\n        default:\n            msg.payload.content += \"error\";\n    }\n    \n    if (j == Math.ceil((hora_apertura + hora_cierre)/2)) {\n        msg.payload.content += \"\\n\";\n    }\n}\n\nmsg.payload.content += \"\\n\\n¿De qué hora a qué hora te gustaría reservar? (Formato ejemplo: \\\"De 14 a 17\\\")\";\n\nmsg.payload.content += \"\\n\\n[ Aclaración: el ejemplo dado sería un tramo horario de 3 horas comenzando a las 14 ]\";\n\nreturn msg;",
+        "func": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\nglobal.set(\"reservas\", msg.reservas);\n\nif (msg.horasIncorrectas) {\n    msg.payload.content = \"Las horas que has introducido para la reserva son incorrectas. Venga, intentémoslo de nuevo.\\n\\n\"\n} else {\n    msg.payload.content = \"\";\n}\n\nmsg.payload.content += \"Estas son las horas ya reservadas (las que están entre paréntesis):\\n\\n\";\n\n// msg.reservas es un array de objetos con .hora_inicio y .hora_fin\n\n// Creo un array de 25 posiciones que me indicarán que horas tienen qué paréntesis.\n// Inicialmente pongo todas las horas a 0. \nconst horas = [];\nfor (let i = 0; i <= 24; i++) {\n    horas[i] = 0;\n}\n\n// Itero a través de las reservas para encontrar coincidencias.\n// Si una hora tiene un paréntesis a su izquierda tendrá un 1.\n// Si una hora tiene un paréntesis a su derecha tendrá un 2.\n// Si una hora tiene paréntesis a ambos lados tendrá un 3.\nfor (let i = 0; i < msg.reservas.length; i++) {\n    horas[msg.reservas[i].hora_inicio] += 1;\n    horas[msg.reservas[i].hora_fin] += 2;\n}\n\n// Imprimimos todas las horas con sus respectivos paréntesis\nfor (let j = hora_apertura; j < hora_cierre; j++) {\n    \n    switch(horas[j]) {\n        case 0:\n            msg.payload.content += j + \"  \";\n            break;\n        case 1:\n            msg.payload.content += \"(\" + j + \"  \";\n            break;\n        case 2:\n            msg.payload.content += j + \") \";\n            break;\n        case 3:\n            msg.payload.content += \"(\" + j + \") \";\n            break;\n        default:\n            msg.payload.content += \"error\";\n    }\n    \n    if (j == Math.ceil((hora_apertura + hora_cierre)/2)) {\n        msg.payload.content += \"\\n\";\n    }\n}\n\nmsg.payload.content += \"\\n\\n¿De qué hora a qué hora te gustaría reservar? (Formato ejemplo: \\\"De 14 a 17\\\")\";\n\nmsg.payload.content += \"\\n\\n[ Aclaración: el ejemplo dado sería un tramo horario de 3 horas comenzando a las 14 ]\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5108,8 +5109,7 @@
         "y": 780,
         "wires": [
             [
-                "8ae00ceadedd06f3",
-                "8a0273e96e7b9009"
+                "8ae00ceadedd06f3"
             ]
         ]
     },
@@ -5127,6 +5127,7 @@
         "y": 780,
         "wires": [
             [
+                "182985bb7b045505",
                 "8af7c6dfce9ffdd2"
             ]
         ]
@@ -5375,8 +5376,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 4670,
-        "y": 700,
+        "x": 4910,
+        "y": 740,
         "wires": []
     },
     {
@@ -8058,7 +8059,7 @@
         "type": "function",
         "z": "fcf476b1caabd030",
         "name": "ids comunes",
-        "func": "var num_ids;\nvar ids_comunes = [\"88:109:194:73\"];\n\n\nnum_ids = msg.num_ids;\n\nfor (let i = 0; i < num_ids; i++) {\n    \n    ids_comunes.push(msg.reservas_hoy[i].id_NFC);\n    msg.payload = ids_comunes;\n}\n\nmsg.payload = ids_comunes;\n\n\nreturn msg;",
+        "func": "var num_ids;\n\nnum_ids = msg.num_ids;\n\n\nmsg.payload = \"{ \\\"idcomun0\\\" : \\\"88:109:194:73\\\",\"; \n\nfor (let i = 0; i < num_ids-1; i++) {\n    \n    msg.payload = msg.payload + \"\\\"idcomun\" + (i+1) + \"\\\" : \\\"\" +  msg.reservas_hoy[i].id_NFC + \"\\\",\";\n    // ids_comunes.push(msg.reservas_hoy[i].id_NFC);\n}\n\nmsg.payload = msg.payload + \"\\\"idcomun\"+ (num_ids) + \"\\\" : \\\"\" +  msg.reservas_hoy[num_ids-1].id_NFC + \"\\\"}\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8393,7 +8394,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Variables globales",
-        "func": "var nombre;\nvar chatId;\nvar sala;\nvar mensaje;\nmsg.payload.nombre = nombre;\nmsg.payload.chatId = chatId;\nmsg.payload.sala = sala;\nmsg.payload.mensaje = mensaje;\nreturn msg;",
+        "func": "var nombre;\nvar chatId;\nvar sala;\nvar mensaje;\nvar reservas;\nmsg.payload.nombre = nombre;\nmsg.payload.chatId = chatId;\nmsg.payload.sala = sala;\nmsg.payload.mensaje = mensaje;\nmsg.payload.reservas = reservas;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8439,6 +8440,13 @@
                 "p": "mensaje",
                 "pt": "global",
                 "to": "payload.mensaje",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reservas",
+                "pt": "global",
+                "to": "payload.reservas",
                 "tot": "msg"
             }
         ],
@@ -8622,7 +8630,7 @@
         "type": "debug",
         "z": "89d6dd3d78386063",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8656,7 +8664,7 @@
         "type": "debug",
         "z": "89d6dd3d78386063",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8673,7 +8681,7 @@
         "type": "debug",
         "z": "89d6dd3d78386063",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8690,7 +8698,7 @@
         "type": "debug",
         "z": "89d6dd3d78386063",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8703,28 +8711,11 @@
         "wires": []
     },
     {
-        "id": "8a0273e96e7b9009",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 4130,
-        "y": 880,
-        "wires": []
-    },
-    {
         "id": "e3ac68368a0064bd",
         "type": "debug",
         "z": "89d6dd3d78386063",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8735,5 +8726,58 @@
         "x": 3230,
         "y": 760,
         "wires": []
+    },
+    {
+        "id": "182985bb7b045505",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4390,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "8dd576466a839316",
+        "type": "comment",
+        "z": "89d6dd3d78386063",
+        "name": "Guardar reserva",
+        "info": "",
+        "x": 3900,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "cdfc3ee5f9e25c4b",
+        "type": "link out",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "bdeaa3a28595dcdf"
+        ],
+        "x": 4775,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "bdeaa3a28595dcdf",
+        "type": "link in",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "cdfc3ee5f9e25c4b"
+        ],
+        "x": 3855,
+        "y": 1080,
+        "wires": [
+            []
+        ]
     }
 ]
