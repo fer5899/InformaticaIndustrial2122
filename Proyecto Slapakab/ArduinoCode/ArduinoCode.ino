@@ -1,53 +1,28 @@
-#include <ESP8266WiFi.h>
-#include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <SPI.h>      // incluye libreria bus SPI
 #include <MFRC522.h>      // incluye libreria especifica para MFRC522
 #include <array>
 #include "procesoOTA.h"   //funciones para OTA
+#include "mqttHandler.h"  //Funciones MQTT y Wifi anidada
 
-//ADC_MODE(ADC_VCC);
+
 
 //pines modulo FRC
 #define RST_PIN  5      // constante para referenciar pin de reset
-#define SS_PIN  4      // constante para referenciar pin de slave select
+#define SS_PIN  4       // constante para referenciar pin de slave select
 
 //Pin cerradura
 
 #define PIN_PUERTA 10  //pin SD3, Low=cerrado, High=abierto
-
 #define N_PUERTA  1 // numero de puerta (cambiar para cada modulo)
 
-WiFiClient wClient;
-PubSubClient mqtt_client(wClient);
-MFRC522 mfrc522(SS_PIN, RST_PIN);
-
-// Update these with values suitable for your network.
-const char* ssid = "masdoritos";
-const char* password = "12345678";
-const char* mqtt_server = "192.168.216.94";
-
-const char* mqtt_user = "";
-const char* mqtt_pass = "";
-
-// Definiciones de chars (nombres para topics y otros datos)
-
-char ID_PLACA[16];
-char topicPubIDmatch[256];
-char topicPubIDunmatch[256];
-char topicPubEstado[256];
-char topicPubUpdateCache[256];
-char topicPubEstadoPuerta[256];
-
-char topicSubCache[256];
-char topicSubAbrir[256];
+//Variables de comunicacion
 
 char mensaje[128];  // cadena de 128 caracteres
-char buffer[128];  // cadena de 128 caracteres
+char buffer[128];   // cadena de 128 caracteres
 
+//mensaje de control mqtt
 
-const char* online = "{\"online\":true}" ;
-const char* offline = "{\"online\":false}" ;
 const char* abierta = "{\"estado_puerta\":\"abierta\"}" ;
 const char* cerrada = "{\"estado_puerta\":\"cerrada\"}" ;
 
@@ -56,50 +31,18 @@ unsigned long ahora;
 
 //variables para lectura y comparacion usuarios
 byte LecturaUID[4];         // crea array para almacenar el UID leido
-
 struct usuario {
   byte id[4]; 
 };
 struct usuario usuarios_comunes[4];
 bool usuario_conocido = false;
-//-----------------------------------------------------
 
-void conecta_wifi() {
-  Serial.printf("\nConnecting to %s:\n", ssid);
- 
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(200);
-    Serial.print(".");
-  }
-  Serial.printf("\nWiFi connected, IP address: %s\n", WiFi.localIP().toString().c_str());
-}
-
-//-----------------------------------------------------
-void conecta_mqtt() {
-  // Loop until we're reconnected
-  while (!mqtt_client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    // Attempt to connect
-    if (mqtt_client.connect(ID_PLACA, mqtt_user, mqtt_pass,topicPubEstado,0,true,offline)) {  //connect (clientID, [username, password], [willTopic, willQoS, willRetain, willMessage], [cleanSession])
-      Serial.printf(" conectado a broker: %s\n",mqtt_server);
-      mqtt_client.subscribe(topicSubCache);
-      mqtt_client.subscribe(topicSubAbrir);
-      mqtt_client.publish(topicPubEstado,online,true);
-      mqtt_client.publish(topicPubUpdateCache,"true");      
-    } 
-    else {
-      Serial.printf("failed, rc=%d  try again in 5s\n", mqtt_client.state());
-      // Wait 5 seconds before retrying
-      delay(5000);
-    }
-  }
-}
 
 //-----------------------------------------------------
 
+//FUNCIONES
+
+//-----------------------------------------------------
 // funcion de procesado de mensaje de ids comunes de la base de datos
 
 void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
@@ -109,8 +52,7 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
   Serial.printf("Mensaje recibido [%s] %s\n", topic, mensaje);
   // compruebo el topic
   if(strcmp(topic,topicSubAbrir)==0){
-    if(strcmp(mensaje,"true")==0){
-      abrirPuerta();
+    if(strcmp(mensaje,"true")==0) abrirPuerta();
     }
   }else if(strcmp(topic,topicSubCache)==0){
     Serial.println("Cache recibido");
@@ -125,38 +67,24 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
       Serial.println();
     }
     else{
-      if(root.containsKey("idComun1")){  // comprobar si existe el campo/clave que estamos buscando    
-        String idAux1 = root["idComun1"];
-        stringIDtoByteID( idAux1, 0);
-      }
-      else{
+      String idAux[4];
+      for ( int i = 1; i<=4; i++)
+      {
+        if(root.containsKey("idComun" + (String)i))
+        {
+          idAux[i-1] = (String) root["idComun" + (String)i];
+          stringIDtoByteID( idAux[i-1], i);
+          Serial.println("{\"ID\": \""+idAux[i-1]+"\" }");
+          
+        }
+        else{
         Serial.print("Error : ");
-        Serial.println("\"idComun1\" key not found in JSON");
+        Serial.println("\"idComun"+(String)i+"\" key not found in JSON");
+
+        }
+        
       }
-      if(root.containsKey("idComun2")){  // comprobar si existe el campo/clave que estamos buscando
-        String idAux2 = root["idComun2"];
-        stringIDtoByteID( idAux2, 1);
-      }
-      else{
-        Serial.print("Error : ");
-        Serial.println("\"idComun2\" key not found in JSON");
-      }
-      if(root.containsKey("idComun3")){  // comprobar si existe el campo/clave que estamos buscando
-        String idAux3 = root["idComun3"];
-        stringIDtoByteID( idAux3, 2);
-      }
-      else{
-        Serial.print("Error : ");
-        Serial.println("\"idComun3\" key not found in JSON");
-      }
-      if(root.containsKey("idComun4")){  // comprobar si existe el campo/clave que estamos buscando
-        String idAux4 = root["idComun4"];
-        stringIDtoByteID( idAux4, 3);
-      }
-      else{
-        Serial.print("Error : ");
-        Serial.println("\"idComun4\" key not found in JSON");
-      }
+
     }
   }
   else{
@@ -212,7 +140,6 @@ void stringIDtoByteID( String data, int user)
 
   usuarios_comunes[user].id[3]= data.substring(currPos).toInt();
   
-//>>>>>>> Stashed changes
 }
 
 //-----------------------------------------------------
@@ -280,8 +207,6 @@ void loop() {
     LecturaUID[i]=mfrc522.uid.uidByte[i];     
   }
           
-  //Serial.print("\t");         // imprime un espacio de tabulacion             
-
   for ( int i = 0; i < 4; i++)
   {
     if(comparaUID(LecturaUID, usuarios_comunes[i].id)){  
