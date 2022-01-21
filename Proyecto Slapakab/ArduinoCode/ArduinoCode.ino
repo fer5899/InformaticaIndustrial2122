@@ -10,6 +10,7 @@
 //pines modulo FRC
 #define RST_PIN  5      // constante para referenciar pin de reset
 #define SS_PIN  4       // constante para referenciar pin de slave select
+MFRC522 mfrc522(SS_PIN, RST_PIN);
 
 //Pin cerradura
 
@@ -52,9 +53,10 @@ void procesa_mensaje(char* topic, byte* payload, unsigned int length) {
   Serial.printf("Mensaje recibido [%s] %s\n", topic, mensaje);
   // compruebo el topic
   if(strcmp(topic,topicSubAbrir)==0){
-    if(strcmp(mensaje,"true")==0) abrirPuerta();
+    if(strcmp(mensaje,"true")==0) 
+    abrirPuerta();
     }
-  }else if(strcmp(topic,topicSubCache)==0){
+  else if(strcmp(topic,topicSubCache)==0){
     Serial.println("Cache recibido");
     StaticJsonDocument<512> root; // el tamaño tiene que ser adecuado para el mensaje
     // Deserialize the JSON document
