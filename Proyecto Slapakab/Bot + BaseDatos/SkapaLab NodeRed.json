@@ -363,10 +363,14 @@
                 "command": "/reservaImpresora3D"
             },
             {
+                "type": "command",
+                "command": "/salir"
+            },
+            {
                 "type": "catchAll"
             }
         ],
-        "outputs": 7,
+        "outputs": 8,
         "x": 330,
         "y": 180,
         "wires": [
@@ -389,6 +393,9 @@
                 "c9ce7766fe1a2aaf"
             ],
             [
+                "d8d736d60a985d84"
+            ],
+            [
                 "7678c818f8c4fa3d"
             ]
         ]
@@ -400,7 +407,7 @@
         "name": "Bienvenida",
         "message": [
             {
-                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\n\nComandos públicos:\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\n\nComandos para usuarios registrados:\n/reservaCNC\n/reservaImpresora3D\n\nEn cualquier momento puedes escribir /salir para que te deje en paz."
+                "message": "Hola, soy el bot de SkapaLab.\nPuedes comunicarte conmigo usando los siguientes comandos:\n\nComandos públicos:\n/start\n/contacto\n/preguntasFrecuentes\n/asociarUsuario\n\nComandos para usuarios registrados:\n/reservaCNC\n/reservaImpresora3D\n\nEn cualquier momento puedes escribir /salir para salir de cualquier proceso iniciado."
             }
         ],
         "language": "none",
@@ -494,7 +501,8 @@
         "wires": [
             [
                 "e06d40e89d6d0564",
-                "429b5c721cd734b3"
+                "429b5c721cd734b3",
+                "583bb9d9ec1509e7"
             ]
         ]
     },
@@ -635,7 +643,7 @@
         "name": "Comprobar usuario por nombre en DB",
         "collection": "usuarios",
         "operation": "count",
-        "x": 510,
+        "x": 690,
         "y": 1740,
         "wires": [
             [
@@ -648,8 +656,8 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Extraer nombre",
-        "func": "if (msg.payload.content != \"/salir\") {\n    global.set(\"nombre_escrito\",msg.payload.content);\n    msg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\n    return msg;\n}",
-        "outputs": 1,
+        "func": "if (msg.payload.content != \"/salir\") {\n    msg.payload = {\"nombre\": {\"$eq\": msg.payload.content}};\n    return [msg, null];\n} else {\n    return [null, msg];\n}",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -658,7 +666,12 @@
         "y": 1740,
         "wires": [
             [
-                "3a6c2e347114a27c"
+                "3a6c2e347114a27c",
+                "c21a97357e836145",
+                "e15b6e5110911256"
+            ],
+            [
+                "03020f7167b232a2"
             ]
         ]
     },
@@ -686,7 +699,7 @@
         "links": [
             "341065c69d7264e2"
         ],
-        "x": 695,
+        "x": 875,
         "y": 1740,
         "wires": []
     },
@@ -938,7 +951,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "preparar",
-        "func": "msg.query = {\"nombre\": {\"$eq\": global.get(\"nombre\")}};\nmsg.payload = { \"$set\": {\"id_telegram\": global.get(\"chatId\")} };\nreturn msg;",
+        "func": "msg.query = {\"nombre\": {\"$eq\": global.get(\"nombre_asociar\")}};\nmsg.payload = { \"$set\": {\"id_telegram\": global.get(\"chatId\")} };\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -948,7 +961,8 @@
         "y": 500,
         "wires": [
             [
-                "bf23af2b3d71d2fd"
+                "bf23af2b3d71d2fd",
+                "59bdf24b3fc19f10"
             ]
         ]
     },
@@ -1004,8 +1018,8 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "¿Día correcto?",
-        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\n\nif (mes == 2 && dia > 29) {\n    error = true;\n}\n\n// Si el año no es bisiesto entonces...\nif ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n    // Si el mes es febrero y el día es mayor que 28\n    if (mes == 2 && dia > 28) {\n        error = true;\n    }\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"/salir\") {\n    return [null, null, null];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = global.get(\"sala\");\n    global.set(\"mensaje\",msg);\n    return [ msg, null, null ];\n} else if (fecha < Date.now() && !Error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg ];\n}",
-        "outputs": 3,
+        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\n// ¿Mes correcto?\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\n// Meses con 31 días\nif ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) && dia > 31) {\n    error = true;\n}\n\n// Meses con 30 días\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\n\n// Febrero en año bisiesto\nif (mes == 2 && dia > 29) {\n    error = true;\n}\n\n// Febrero en año no bisiesto\nif ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n    // Si el mes es febrero y el día es mayor que 28\n    if (mes == 2 && dia > 28) {\n        error = true;\n    }\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"/salir\") {\n    return [null, null, null, msg];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = global.get(\"sala\");\n    global.set(\"mensaje\",msg);\n    return [ msg, null, null, null ];\n} else if (fecha < Date.now() && !error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg, null ];\n}",
+        "outputs": 4,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -1022,6 +1036,9 @@
             ],
             [
                 "b46676248d7ccd50"
+            ],
+            [
+                "fc68ab7a7108bdfb"
             ]
         ]
     },
@@ -1032,7 +1049,7 @@
         "name": "Error, formato incorrecto",
         "message": [
             {
-                "message": "La fecha que has introducido no es correcta, por favor, introdúcela de nuevo pero correctamente. (Formato dd/mm/aaaa)."
+                "message": "La fecha que has introducido no es correcta, por favor, introdúcela de nuevo pero correctamente. (Formato dd/mm/aaaa).\n\n/salir"
             }
         ],
         "language": "none",
@@ -1109,11 +1126,12 @@
         "name": "Comprobar contraseña en DB",
         "collection": "usuarios",
         "operation": "aggregate",
-        "x": 530,
-        "y": 1880,
+        "x": 710,
+        "y": 1980,
         "wires": [
             [
-                "e1e78a5bd154388c"
+                "e1e78a5bd154388c",
+                "1333c84342516aec"
             ]
         ]
     },
@@ -1122,17 +1140,22 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Comprobar contraseña",
-        "func": "if (msg.payload.content != \"/salir\") {\n    global.set(\"chatId\", msg.originalMessage.chatId);\n    msg.contraseña = msg.payload.content;\n    msg.payload = [{ \"$match\": {\"nombre\": global.get(\"nombre\"), \"password\": msg.contraseña}}];\n    return msg;\n}",
-        "outputs": 1,
+        "func": "if (msg.payload.content != \"/salir\") {\n    global.set(\"chatId\", msg.originalMessage.chatId);\n    msg.contraseña = msg.payload.content;\n    msg.payload = [{ \"$match\": {\"nombre\": global.get(\"nombre_escrito\"), \"password\": msg.contraseña}}];\n    return [msg, null];\n} else {\n    return [null, msg];\n}",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 1880,
+        "y": 1980,
         "wires": [
             [
-                "af4ad6ad53820393"
+                "af4ad6ad53820393",
+                "4888c0328762fad0",
+                "59980012652446d0"
+            ],
+            [
+                "03020f7167b232a2"
             ]
         ]
     },
@@ -1145,7 +1168,7 @@
             "6b364ba56008bc80"
         ],
         "x": 135,
-        "y": 1880,
+        "y": 1980,
         "wires": [
             [
                 "976dac12e743aec4"
@@ -1172,8 +1195,8 @@
         "links": [
             "0c4a249c5c0b8cfe"
         ],
-        "x": 695,
-        "y": 1880,
+        "x": 875,
+        "y": 1980,
         "wires": []
     },
     {
@@ -1191,16 +1214,6 @@
                 "dc2a5bbdd97dd761"
             ]
         ]
-    },
-    {
-        "id": "0644213796642395",
-        "type": "comment",
-        "z": "89d6dd3d78386063",
-        "name": "PROBAR",
-        "info": "",
-        "x": 540,
-        "y": 1920,
-        "wires": []
     },
     {
         "id": "dc2a5bbdd97dd761",
@@ -1224,11 +1237,13 @@
         "y": 440,
         "wires": [
             [
-                "a75e97ee8db97c7f"
+                "a75e97ee8db97c7f",
+                "d7c146810c340f6c"
             ],
             [
                 "080cb87668dddb5b",
-                "03b89081ed8f3d28"
+                "03b89081ed8f3d28",
+                "821c92d6adfbc159"
             ]
         ]
     },
@@ -1288,8 +1303,8 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "¿Horas correctas?",
-        "func": "var error = false;\nmsg.reservas = global.get(\"reservas\");\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\n\n// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\n\nlet pattern = /De [0-2]?[0-9] a [0-2]?[0-9]/i;\n// ¿El formato del mensaje es incorrecto?\nif(!pattern.test(msg.payload.content)) {\n    error = true;\n} else {\n\n    const horasReserva = msg.payload.content.split(\" \");\n    \n    var hora_apertura = global.get(\"hora_apertura\");\n    var hora_cierre = global.get(\"hora_cierre\");\n    inicio_nueva_reserva = parseInt(horasReserva[1]);\n    fin_nueva_reserva = parseInt(horasReserva[3]);\n    var reservas = msg.reservas;\n    // Comprobar que la hora de inicio es anterior a la hora de fin\n    if (inicio_nueva_reserva >= fin_nueva_reserva) {\n        error = true;\n    } else {\n        // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n        if ((inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) || fin_nueva_reserva > hora_cierre) {\n            error = true;\n        } else {\n            // Comprobar que las horas no se solapan con otra reserva\n            for (let i = 0; i < reservas.length; i++) {\n                if (reservas[i].hora_inicio >= inicio_nueva_reserva && reservas[i].hora_inicio < fin_nueva_reserva) {\n                    error = true;\n                    break;\n                }\n                if (reservas[i].hora_fin > inicio_nueva_reserva && reservas[i].hora_fin <= fin_nueva_reserva) {\n                    error = true;\n                    break;\n                }\n            }\n        }\n    }\n}\nif (msg.payload.content == \"/salir\") {\n    return [ null, null ];\n}\n\nif (!error) {\n    msg.hora_inicio = inicio_nueva_reserva;\n    msg.hora_fin = fin_nueva_reserva;\n    return [ msg, null ];\n} else {\n    msg.horasIncorrectas = true;\n    return [ null, msg ];\n}",
-        "outputs": 2,
+        "func": "var error = false;\nmsg.reservas = global.get(\"reservas\");\nvar inicio_nueva_reserva;\nvar fin_nueva_reserva;\n\n// Parsear horas de la nueva reserva. Formato: \"De 12 a 17\"\n\nlet pattern = /De [0-2]?[0-9] a [0-2]?[0-9]/i;\n// ¿El formato del mensaje es incorrecto?\nif(!pattern.test(msg.payload.content)) {\n    error = true;\n} else {\n\n    const horasReserva = msg.payload.content.split(\" \");\n    \n    var hora_apertura = global.get(\"hora_apertura\");\n    var hora_cierre = global.get(\"hora_cierre\");\n    inicio_nueva_reserva = parseInt(horasReserva[1]);\n    fin_nueva_reserva = parseInt(horasReserva[3]);\n    var reservas = msg.reservas;\n    // Comprobar que la hora de inicio es anterior a la hora de fin\n    if (inicio_nueva_reserva >= fin_nueva_reserva) {\n        error = true;\n    } else {\n        // Comprobar que las horas están dentro del horario de Skapalab puedes imprimir con Skapalab cerrao?\n        if ((inicio_nueva_reserva < hora_apertura || inicio_nueva_reserva > hora_cierre) || fin_nueva_reserva > hora_cierre) {\n            error = true;\n        } else {\n            // Comprobar que las horas no se solapan con otra reserva\n            for (let i = 0; i < reservas.length; i++) {\n                if (reservas[i].hora_inicio >= inicio_nueva_reserva && reservas[i].hora_inicio < fin_nueva_reserva) {\n                    error = true;\n                    break;\n                }\n                if (reservas[i].hora_fin > inicio_nueva_reserva && reservas[i].hora_fin <= fin_nueva_reserva) {\n                    error = true;\n                    break;\n                }\n            }\n        }\n    }\n}\nif (msg.payload.content == \"/salir\") {\n    return [ null, null, msg];\n}\n\nif (!error) {\n    msg.hora_inicio = inicio_nueva_reserva;\n    msg.hora_fin = fin_nueva_reserva;\n    return [ msg, null, null ];\n} else {\n    msg.horasIncorrectas = true;\n    return [ null, msg, null ];\n}",
+        "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -1302,6 +1317,9 @@
             ],
             [
                 "68bdb36502ca8727"
+            ],
+            [
+                "c89058ba561ad4e0"
             ]
         ]
     },
@@ -1310,7 +1328,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Mostrar horas reservadas y preguntar horas a resevar",
-        "func": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\nglobal.set(\"reservas\", msg.reservas);\n\nif (msg.horasIncorrectas) {\n    msg.payload.content = \"Las horas que has introducido para la reserva son incorrectas. Venga, intentémoslo de nuevo.\\n\\n\"\n} else {\n    msg.payload.content = \"\";\n}\n\nmsg.payload.content += \"Estas son las horas ya reservadas (las que están entre paréntesis):\\n\\n\";\n\n// msg.reservas es un array de objetos con .hora_inicio y .hora_fin\n\n// Creo un array de 25 posiciones que me indicarán que horas tienen qué paréntesis.\n// Inicialmente pongo todas las horas a 0. \nconst horas = [];\nfor (let i = 0; i <= 24; i++) {\n    horas[i] = 0;\n}\n\n// Itero a través de las reservas para encontrar coincidencias.\n// Si una hora tiene un paréntesis a su izquierda tendrá un 1.\n// Si una hora tiene un paréntesis a su derecha tendrá un 2.\n// Si una hora tiene paréntesis a ambos lados tendrá un 3.\nfor (let i = 0; i < msg.reservas.length; i++) {\n    horas[msg.reservas[i].hora_inicio] += 1;\n    horas[msg.reservas[i].hora_fin] += 2;\n}\n\n// Imprimimos todas las horas con sus respectivos paréntesis\nfor (let j = hora_apertura; j < hora_cierre; j++) {\n    \n    switch(horas[j]) {\n        case 0:\n            msg.payload.content += j + \"  \";\n            break;\n        case 1:\n            msg.payload.content += \"(\" + j + \"  \";\n            break;\n        case 2:\n            msg.payload.content += j + \") \";\n            break;\n        case 3:\n            msg.payload.content += \"(\" + j + \") \";\n            break;\n        default:\n            msg.payload.content += \"error\";\n    }\n    \n    if (j == Math.ceil((hora_apertura + hora_cierre)/2)) {\n        msg.payload.content += \"\\n\";\n    }\n}\n\nmsg.payload.content += \"\\n\\n¿De qué hora a qué hora te gustaría reservar? (Formato ejemplo: \\\"De 14 a 17\\\")\";\n\nmsg.payload.content += \"\\n\\n[ Aclaración: el ejemplo dado sería un tramo horario de 3 horas comenzando a las 14 ]\";\n\nreturn msg;",
+        "func": "var hora_apertura = global.get(\"hora_apertura\");\nvar hora_cierre = global.get(\"hora_cierre\");\nglobal.set(\"reservas\", msg.reservas);\n\nif (msg.horasIncorrectas) {\n    msg.payload.content = \"Las horas que has introducido para la reserva son incorrectas. Venga, intentémoslo de nuevo.\\n\\n\"\n} else {\n    msg.payload.content = \"\";\n}\n\nmsg.payload.content += \"Estas son las horas disponibles (las que están entre paréntesis son ya reservadas). Recuerda, cerramos a las \" + hora_cierre + \".\\n\\n\";\n\n// msg.reservas es un array de objetos con .hora_inicio y .hora_fin\n\n// Creo un array de 25 posiciones que me indicarán que horas tienen qué paréntesis.\n// Inicialmente pongo todas las horas a 0. \nconst horas = [];\nfor (let i = 0; i <= 24; i++) {\n    horas[i] = 0;\n}\n\n// Itero a través de las reservas para encontrar coincidencias.\n// Si una hora tiene un paréntesis a su izquierda tendrá un 1.\n// Si una hora tiene un paréntesis a su derecha tendrá un 2.\n// Si una hora tiene paréntesis a ambos lados tendrá un 3.\nfor (let i = 0; i < msg.reservas.length; i++) {\n    horas[msg.reservas[i].hora_inicio] += 1;\n    horas[msg.reservas[i].hora_fin-1] += 2;\n}\n\n// Imprimimos todas las horas con sus respectivos paréntesis\nfor (let j = hora_apertura; j < hora_cierre; j++) {\n    \n    switch(horas[j]) {\n        case 0:\n            msg.payload.content += j + \"  \";\n            break;\n        case 1:\n            msg.payload.content += \"(\" + j + \"  \";\n            break;\n        case 2:\n            msg.payload.content += j + \") \";\n            break;\n        case 3:\n            msg.payload.content += \"(\" + j + \") \";\n            break;\n        default:\n            msg.payload.content += \"error\";\n    }\n    \n    if (j == Math.ceil((hora_apertura + hora_cierre)/2)-1) {\n        msg.payload.content += \"\\n\";\n    }\n}\n\nmsg.payload.content += \"\\n\\n¿De qué hora a qué hora te gustaría reservar? (Formato ejemplo: \\\"De 14 a 17\\\")\";\n\nmsg.payload.content += \"\\n\\n[ Aclaración: el ejemplo dado sería un tramo horario de 3 horas comenzando a las 14 ]\";\n\nmsg.payload.content += \"\\n\\n\\/salir\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1349,7 +1367,7 @@
         "name": "Comprobar si existe algún usuario con ese nombre y contraseña",
         "info": "",
         "x": 410,
-        "y": 1840,
+        "y": 1920,
         "wires": []
     },
     {
@@ -1359,7 +1377,7 @@
         "name": "Error, día introducido anterior a hoy",
         "message": [
             {
-                "message": "La fecha que has introducido es anterior al día de hoy. Por favor, introduce el día de hoy o una fecha posterior. (Formato dd/mm/aaaa)."
+                "message": "La fecha que has introducido es anterior al día de hoy. Por favor, introduce el día de hoy o una fecha posterior. (Formato dd/mm/aaaa).\n\n/salir"
             }
         ],
         "language": "none",
@@ -1421,28 +1439,6 @@
         ]
     },
     {
-        "id": "ca2e458002821d38",
-        "type": "function",
-        "z": "89d6dd3d78386063",
-        "name": "Asignar sala",
-        "func": "if (msg.originalMessage.text == \"/reservaCNC\") {\n    global.set(\"sala\",\"CNC\");\n    return [ msg, null ];\n} else {\n    global.set(\"sala\",\"3D\");\n    return [ null, msg ];\n}",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 850,
-        "y": 880,
-        "wires": [
-            [
-                "94149b2d66184822"
-            ],
-            [
-                "3c7645bb41deb4ab"
-            ]
-        ]
-    },
-    {
         "id": "42f8698e5aca5e24",
         "type": "chatbot-message",
         "z": "89d6dd3d78386063",
@@ -1476,7 +1472,8 @@
         "y": 1020,
         "wires": [
             [
-                "42f8698e5aca5e24"
+                "42f8698e5aca5e24",
+                "e3ac68368a0064bd"
             ]
         ]
     },
@@ -4408,7 +4405,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Variables globales",
-        "func": "var nombre_escrito;\nvar chatId;\nvar mensaje;\nvar reservas;\nmsg.payload.nombre_escrito = nombre_escrito;\nmsg.payload.chatId = chatId;\nmsg.payload.mensaje = mensaje;\nmsg.payload.reservas = reservas;\nreturn msg;",
+        "func": "var mensaje;\nvar reservas;\nmsg.payload.mensaje = mensaje;\nmsg.payload.reservas = reservas;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4428,27 +4425,6 @@
         "z": "89d6dd3d78386063",
         "name": "",
         "rules": [
-            {
-                "t": "set",
-                "p": "nombre_escrito",
-                "pt": "global",
-                "to": "payload.nombre_escrito",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "chatId",
-                "pt": "global",
-                "to": "payload.chatId",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "sala",
-                "pt": "global",
-                "to": "payload.sala",
-                "tot": "msg"
-            },
             {
                 "t": "set",
                 "p": "mensaje",
@@ -4516,7 +4492,7 @@
         "y": 880,
         "wires": [
             [
-                "ca2e458002821d38"
+                "f955e5e6c81a5dc6"
             ]
         ]
     },
@@ -4524,7 +4500,7 @@
         "id": "94149b2d66184822",
         "type": "switch",
         "z": "89d6dd3d78386063",
-        "name": "CNC",
+        "name": "Acceso CNC",
         "property": "payload[0].acceso_CNC",
         "propertyType": "msg",
         "rules": [
@@ -4538,11 +4514,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1070,
+        "x": 1050,
         "y": 840,
         "wires": [
             [
-                "7e6517b26e4cd578"
+                "7e6517b26e4cd578",
+                "58e686d2a2b55a4c"
             ],
             [
                 "160331294cb41890"
@@ -4553,7 +4530,7 @@
         "id": "3c7645bb41deb4ab",
         "type": "switch",
         "z": "89d6dd3d78386063",
-        "name": "3D",
+        "name": "Acceso 3D",
         "property": "payload[0].acceso_3D",
         "propertyType": "msg",
         "rules": [
@@ -4567,11 +4544,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1070,
+        "x": 1050,
         "y": 920,
         "wires": [
             [
-                "66feec6ce58718f0"
+                "66feec6ce58718f0",
+                "4fe661c116d43c4b"
             ],
             [
                 "160331294cb41890"
@@ -4614,7 +4592,7 @@
         "type": "debug",
         "z": "89d6dd3d78386063",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4622,19 +4600,19 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2070,
-        "y": 1340,
+        "x": 2650,
+        "y": 1100,
         "wires": []
     },
     {
         "id": "429b5c721cd734b3",
         "type": "change",
         "z": "89d6dd3d78386063",
-        "name": "Guardar variable global \"nombre\"",
+        "name": "Guardar variable global \"nombre_reserva\"",
         "rules": [
             {
                 "t": "set",
-                "p": "nombre",
+                "p": "nombre_reserva",
                 "pt": "global",
                 "to": "payload[0].nombre",
                 "tot": "msg"
@@ -4645,8 +4623,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 1620,
+        "x": 880,
+        "y": 1400,
         "wires": [
             []
         ]
@@ -4656,7 +4634,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "Preparar payload para guardar reserva",
-        "func": "msg.preformateo = msg.payload;\nmsg.payload = {};\nmsg.payload.id_telegram = msg.preformateo.chatId;\nmsg.payload.nombre = global.get(\"nombre\");\nmsg.payload.sala = global.get(\"sala\");\nmsg.payload.fecha = global.get(\"dia\");\nmsg.payload.hora_inicio = parseInt(msg.hora_inicio);\nmsg.payload.hora_fin = parseInt(msg.hora_fin);\nmsg.payload.fecha_creacion = new Date();\n\nreturn msg;",
+        "func": "msg.preformateo = msg.payload;\nmsg.payload = {};\nmsg.payload.id_telegram = msg.preformateo.chatId;\nmsg.payload.nombre = global.get(\"nombre_reserva\");\nmsg.payload.sala = global.get(\"sala\");\nmsg.payload.fecha = global.get(\"dia\");\nmsg.payload.hora_inicio = parseInt(msg.hora_inicio);\nmsg.payload.hora_fin = parseInt(msg.hora_fin);\nmsg.payload.fecha_creacion = new Date();\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4675,20 +4653,13 @@
         "id": "7fe2a7b0143745f5",
         "type": "change",
         "z": "89d6dd3d78386063",
-        "name": "Guardar variable global \"dia\" y \"sala\"",
+        "name": "Guardar variable global \"dia\"",
         "rules": [
             {
                 "t": "set",
                 "p": "dia",
                 "pt": "global",
                 "to": "payload.dia",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "sala",
-                "pt": "global",
-                "to": "payload.sala",
                 "tot": "msg"
             }
         ],
@@ -4697,7 +4668,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2190,
+        "x": 2220,
         "y": 820,
         "wires": [
             []
@@ -4801,5 +4772,311 @@
         "x": 4345,
         "y": 780,
         "wires": []
+    },
+    {
+        "id": "fc68ab7a7108bdfb",
+        "type": "link out",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "2e08b563899fc13f"
+        ],
+        "x": 2035,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "2e08b563899fc13f",
+        "type": "link in",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "fc68ab7a7108bdfb",
+            "c89058ba561ad4e0",
+            "03020f7167b232a2"
+        ],
+        "x": 435,
+        "y": 60,
+        "wires": [
+            [
+                "d8d736d60a985d84"
+            ]
+        ]
+    },
+    {
+        "id": "c89058ba561ad4e0",
+        "type": "link out",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "2e08b563899fc13f"
+        ],
+        "x": 3715,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "03020f7167b232a2",
+        "type": "link out",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "links": [
+            "2e08b563899fc13f"
+        ],
+        "x": 475,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "821c92d6adfbc159",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2310,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "d7c146810c340f6c",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2350,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1333c84342516aec",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "4888c0328762fad0",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "583bb9d9ec1509e7",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "59980012652446d0",
+        "type": "change",
+        "z": "89d6dd3d78386063",
+        "name": "Guardar variable global \"chatId\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "global",
+                "to": "originalMessage.chatId",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59bdf24b3fc19f10",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2550,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c21a97357e836145",
+        "type": "change",
+        "z": "89d6dd3d78386063",
+        "name": "Guardar variable global \"nombre_asociar\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "nombre_asociar",
+                "pt": "global",
+                "to": "originalMessage.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e15b6e5110911256",
+        "type": "debug",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "58e686d2a2b55a4c",
+        "type": "change",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sala",
+                "pt": "global",
+                "to": "CNC",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fe661c116d43c4b",
+        "type": "change",
+        "z": "89d6dd3d78386063",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sala",
+                "pt": "global",
+                "to": "3D",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f955e5e6c81a5dc6",
+        "type": "switch",
+        "z": "89d6dd3d78386063",
+        "name": "¿CNC o 3D?",
+        "property": "originalMessage.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/reservaCNC",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "/reservaImpresora3D",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 830,
+        "y": 880,
+        "wires": [
+            [
+                "94149b2d66184822"
+            ],
+            [
+                "3c7645bb41deb4ab"
+            ]
+        ]
     }
 ]
