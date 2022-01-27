@@ -501,8 +501,7 @@
         "wires": [
             [
                 "e06d40e89d6d0564",
-                "429b5c721cd734b3",
-                "583bb9d9ec1509e7"
+                "429b5c721cd734b3"
             ]
         ]
     },
@@ -667,8 +666,7 @@
         "wires": [
             [
                 "3a6c2e347114a27c",
-                "c21a97357e836145",
-                "e15b6e5110911256"
+                "c21a97357e836145"
             ],
             [
                 "03020f7167b232a2"
@@ -961,8 +959,7 @@
         "y": 500,
         "wires": [
             [
-                "bf23af2b3d71d2fd",
-                "59bdf24b3fc19f10"
+                "bf23af2b3d71d2fd"
             ]
         ]
     },
@@ -1130,8 +1127,7 @@
         "y": 1980,
         "wires": [
             [
-                "e1e78a5bd154388c",
-                "1333c84342516aec"
+                "e1e78a5bd154388c"
             ]
         ]
     },
@@ -1151,7 +1147,6 @@
         "wires": [
             [
                 "af4ad6ad53820393",
-                "4888c0328762fad0",
                 "59980012652446d0"
             ],
             [
@@ -1237,13 +1232,11 @@
         "y": 440,
         "wires": [
             [
-                "a75e97ee8db97c7f",
-                "d7c146810c340f6c"
+                "a75e97ee8db97c7f"
             ],
             [
                 "080cb87668dddb5b",
-                "03b89081ed8f3d28",
-                "821c92d6adfbc159"
+                "03b89081ed8f3d28"
             ]
         ]
     },
@@ -1295,7 +1288,7 @@
         "name": "Guardar reserva",
         "info": "",
         "x": 3840,
-        "y": 800,
+        "y": 880,
         "wires": []
     },
     {
@@ -1310,7 +1303,7 @@
         "finalize": "",
         "libs": [],
         "x": 3550,
-        "y": 860,
+        "y": 940,
         "wires": [
             [
                 "fabb8f17136f410b"
@@ -1335,7 +1328,7 @@
         "finalize": "",
         "libs": [],
         "x": 2980,
-        "y": 940,
+        "y": 1020,
         "wires": [
             [
                 "8ae00ceadedd06f3"
@@ -1353,7 +1346,7 @@
         "errorOutput": false,
         "outputs": 1,
         "x": 3310,
-        "y": 940,
+        "y": 1020,
         "wires": [
             [
                 "8af7c6dfce9ffdd2"
@@ -1450,7 +1443,7 @@
         ],
         "language": "none",
         "x": 2640,
-        "y": 940,
+        "y": 1020,
         "wires": [
             [
                 "68bdb36502ca8727"
@@ -1472,8 +1465,7 @@
         "y": 1020,
         "wires": [
             [
-                "42f8698e5aca5e24",
-                "e3ac68368a0064bd"
+                "42f8698e5aca5e24"
             ]
         ]
     },
@@ -1484,7 +1476,7 @@
         "name": "Imprimir durante la noche no es posible",
         "info": "Para guardar reservas de la impresiones nocturnas, las hora de inicio y fin tienen que tener una fecha asociadas y es tremendo follón a estas alturas.",
         "x": 3490,
-        "y": 800,
+        "y": 880,
         "wires": []
     },
     {
@@ -4588,23 +4580,6 @@
         "wires": []
     },
     {
-        "id": "e3ac68368a0064bd",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2650,
-        "y": 1100,
-        "wires": []
-    },
-    {
         "id": "429b5c721cd734b3",
         "type": "change",
         "z": "89d6dd3d78386063",
@@ -4641,7 +4616,7 @@
         "finalize": "",
         "libs": [],
         "x": 3850,
-        "y": 860,
+        "y": 940,
         "wires": [
             [
                 "7cdfaacbb8edaa4e",
@@ -4686,7 +4661,7 @@
         "multi": false,
         "operation": "store",
         "x": 4190,
-        "y": 860,
+        "y": 940,
         "wires": []
     },
     {
@@ -4754,7 +4729,7 @@
         ],
         "language": "none",
         "x": 4140,
-        "y": 780,
+        "y": 860,
         "wires": [
             [
                 "dcfc33d595cbc260"
@@ -4770,7 +4745,7 @@
             "9b450680f1f39424"
         ],
         "x": 4345,
-        "y": 780,
+        "y": 860,
         "wires": []
     },
     {
@@ -4812,7 +4787,7 @@
             "2e08b563899fc13f"
         ],
         "x": 3715,
-        "y": 920,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4825,91 +4800,6 @@
         ],
         "x": 475,
         "y": 1840,
-        "wires": []
-    },
-    {
-        "id": "821c92d6adfbc159",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2310,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "d7c146810c340f6c",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2350,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "1333c84342516aec",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 2040,
-        "wires": []
-    },
-    {
-        "id": "4888c0328762fad0",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 510,
-        "y": 2060,
-        "wires": []
-    },
-    {
-        "id": "583bb9d9ec1509e7",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 1480,
         "wires": []
     },
     {
@@ -4938,23 +4828,6 @@
         ]
     },
     {
-        "id": "59bdf24b3fc19f10",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2550,
-        "y": 580,
-        "wires": []
-    },
-    {
         "id": "c21a97357e836145",
         "type": "change",
         "z": "89d6dd3d78386063",
@@ -4978,23 +4851,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "e15b6e5110911256",
-        "type": "debug",
-        "z": "89d6dd3d78386063",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 1620,
-        "wires": []
     },
     {
         "id": "58e686d2a2b55a4c",
