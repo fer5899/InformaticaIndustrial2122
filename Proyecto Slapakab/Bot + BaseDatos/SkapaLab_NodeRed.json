@@ -1015,7 +1015,7 @@
         "type": "function",
         "z": "89d6dd3d78386063",
         "name": "¿Día correcto?",
-        "func": "var parts = msg.payload.content.split('/');\nvar dia = parseInt(parts[0]);\nvar mes = parseInt(parts[1]);\nvar año = parseInt(parts[2]);\nvar error = false;\n\n// ¿Mes correcto?\nif (mes < 1 || mes > 12) {\n    error = true;\n}\n\n// Meses con 31 días\nif ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) && dia > 31) {\n    error = true;\n}\n\n// Meses con 30 días\nif ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n    error = true;\n}\n\n// Febrero en año bisiesto\nif (mes == 2 && dia > 29) {\n    error = true;\n}\n\n// Febrero en año no bisiesto\nif ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n    // Si el mes es febrero y el día es mayor que 28\n    if (mes == 2 && dia > 28) {\n        error = true;\n    }\n}\n\nvar fecha = new Date(año, mes-1, dia,23,59,0);\n\nif (msg.payload.content == \"/salir\") {\n    return [null, null, null, msg];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = global.get(\"sala\");\n    global.set(\"mensaje\",msg);\n    return [ msg, null, null, null ];\n} else if (fecha < Date.now() && !error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg, null ];\n}",
+        "func": "let pattern = /[0-3][0-9]\\/[0-1][0-9]\\/20[2-9][0-9]/;\n// ¿El formato del mensaje es incorrecto?\nif(!pattern.test(msg.payload.content)) {\n    fecha = \"Invalid Date\";\n} else {\n    \n    var parts = msg.payload.content.split('/');\n    var dia = parseInt(parts[0]);\n    var mes = parseInt(parts[1]);\n    var año = parseInt(parts[2]);\n    var error = false;\n    \n    // ¿Mes correcto?\n    if (mes < 1 || mes > 12) {\n        error = true;\n    }\n    \n    // Meses con 31 días\n    if ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) && dia > 31) {\n        error = true;\n    }\n    \n    // Meses con 30 días\n    if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {\n        error = true;\n    }\n    \n    // Febrero en año bisiesto\n    if (mes == 2 && dia > 29) {\n        error = true;\n    }\n    \n    // Febrero en año no bisiesto\n    if ( !((año%4 == 0) && ((año%100 != 0) || (año%400 == 0))) ) {\n        // Si el mes es febrero y el día es mayor que 28\n        if (mes == 2 && dia > 28) {\n            error = true;\n        }\n    }\n    \n    var fecha = new Date(año, mes-1, dia,23,59,0);\n    \n}\n\nif (msg.payload.content == \"/salir\") {\n    return [null, null, null, msg];\n}\n\nif (!error && fecha !== \"Invalid Date\" && fecha >= Date.now()) {\n    msg.payload.dia = msg.payload.content;\n    msg.payload.sala = global.get(\"sala\");\n    global.set(\"mensaje\",msg);\n    return [ msg, null, null, null ];\n} else if (fecha < Date.now() && !error && fecha !== \"Invalid Date\"){\n    msg.payload = \"Fecha introducida anterior a hoy\";\n    return [ null, msg, null, null ];\n} else {\n    msg.payload = \"Fecha Incorrecta\";\n    return [ null, null, msg, null ];\n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -1247,7 +1247,7 @@
         "name": "Contraseña incorrecta",
         "message": [
             {
-                "message": "Vaya. La contraseña no es correcta. \nPrueba otra vez usando /asociarUsuario y asegúrate de introducir la contraseña tal y cómo lo hiciste al registrarte.\nSi sigues teniendo problemas, ponte en /contacto con nosotros."
+                "message": "Vaya. La contraseña no es correcta. \nPrueba otra vez usando /asociarUsuario y asegúrate de introducir la contraseña tal y cómo lo hiciste al registrarte.\nSi sigues teniendo problemas, ponte en /contacto con nosotros.\n\n/start"
             }
         ],
         "language": "none",
@@ -4555,7 +4555,7 @@
         "name": "Error, no tienes acceso",
         "message": [
             {
-                "message": "Whoops, parece que tu suscripción no incluye acceso a esta maquinaria. Puedes ponerte en /contacto con nosotros para cambiar tu suscripción a otra que incluya este servicio."
+                "message": "Whoops, parece que tu suscripción no incluye acceso a esta maquinaria. Puedes ponerte en /contacto con nosotros para cambiar tu suscripción a otra que incluya este servicio.\n\n/start"
             }
         ],
         "language": "none",
@@ -4705,7 +4705,7 @@
         "name": "Confirmación de asociación",
         "message": [
             {
-                "message": "Tu cuenta se ha asociado correctamente.\n\nSe acabó el interrogatorio :)"
+                "message": "Tu cuenta se ha asociado correctamente.\n\nSe acabó el interrogatorio :)\n\n/start"
             }
         ],
         "language": "none",
@@ -4724,7 +4724,7 @@
         "name": "Confirmación de reserva",
         "message": [
             {
-                "message": "Reserva guardada con éxito!"
+                "message": "Reserva guardada con éxito!\n\n/start"
             }
         ],
         "language": "none",
@@ -4916,7 +4916,7 @@
                 "vt": "str"
             },
             {
-                "t": "neq",
+                "t": "eq",
                 "v": "/reservaImpresora3D",
                 "vt": "str"
             }
