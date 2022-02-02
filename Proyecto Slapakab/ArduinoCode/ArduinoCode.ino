@@ -8,8 +8,10 @@
 
 
 //pines modulo FRC
-#define RST_PIN  5      // constante para referenciar pin de reset
-#define SS_PIN  4       // constante para referenciar pin de slave select
+
+#define RST_PIN  5      // (GPIO 5, pin D1) constante para referenciar pin de reset
+#define SS_PIN  4       // (GPIO 4, pin D2)constante para referenciar pin de slave select
+
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
 //Pin cerradura
