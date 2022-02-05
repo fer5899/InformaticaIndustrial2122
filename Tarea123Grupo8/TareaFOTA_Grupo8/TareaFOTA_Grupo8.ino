@@ -7,7 +7,7 @@ ADC_MODE(ADC_VCC);
 
 
 // datos para actualización   >>>> SUSTITUIR IP <<<<<
-#define HTTP_OTA_ADDRESS      F("192.168.31.94")         // Address of OTA update server
+#define HTTP_OTA_ADDRESS      F("192.168.137.1")         // Address of OTA update server
 #define HTTP_OTA_PATH         F("/esp8266-ota/update") // Path to update firmware
 #define HTTP_OTA_PORT         1880                     // Port of update server
                                                        // Name of firmware
@@ -20,9 +20,9 @@ DHTesp dht;
 // Update these with values suitable for your network.
 const char* ssid = "masdoritos";
 const char* password = "12345678";
-const char* mqtt_server = "192.168.31.94";
-const char* mqtt_user = "infind";
-const char* mqtt_pass = "zancudo";
+const char* mqtt_server = "192.168.137.1";
+const char* mqtt_user = "";//infind";
+const char* mqtt_pass = "";//zancudo";
 const char* online = "{\"online\":true}" ;
 const char* offline = "{\"online\":false}" ;
 
