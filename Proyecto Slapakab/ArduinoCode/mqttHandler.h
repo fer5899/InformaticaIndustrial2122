@@ -26,11 +26,7 @@ const char* mqtt_user = "II8";
 const char* mqtt_pass = "kS0Oooyj";
 const char* mqtt_server = "iot.ac.uma.es";
 
-/*
-const char* mqtt_user = "";
-const char* mqtt_pass = "";
-const char* mqtt_server = "192.168.17.94";
-*/
+
 void conecta_mqtt() {
   // Loop until we're reconnected
   while (!mqtt_client.connected()) {

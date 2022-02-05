@@ -17,7 +17,7 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);
 //Pin cerradura
 
 #define PIN_PUERTA 10  //pin SD3, Low=cerrado, High=abierto
-#define N_PUERTA  1 // numero de puerta (cambiar para cada modulo)
+#define ID_PUERTA  "3D" // numero de puerta (cambiar para cada modulo)
 
 //Variables de comunicacion
 
@@ -159,23 +159,25 @@ void setup() {
   digitalWrite(PIN_PUERTA, LOW);
 
   sprintf(ID_PLACA, "ESP_%d", ESP.getChipId());
-  sprintf(topicPubIDmatch,"puerta_%d/ID_detectado/match",N_PUERTA);  
-  sprintf(topicPubIDunmatch,"puerta_%d/ID_detectado/unmatch",N_PUERTA);
-  sprintf(topicPubEstado,"puerta_%d/estado",N_PUERTA);
-  sprintf(topicPubUpdateCache,"puerta_%d/IDs_cache/update",N_PUERTA);
-  sprintf(topicPubEstadoPuerta,"puerta_%d/puerta/estado",N_PUERTA);
+  sprintf(topicPubIDmatch,"puerta_%s/ID_detectado/match",ID_PUERTA);  
+  sprintf(topicPubIDunmatch,"puerta_%s/ID_detectado/unmatch",ID_PUERTA);
+  sprintf(topicPubEstado,"puerta_%s/estado",ID_PUERTA);
+  sprintf(topicPubUpdateCache,"puerta_%s/IDs_cache/update",ID_PUERTA);
+  sprintf(topicPubEstadoPuerta,"puerta_%s/puerta/estado",ID_PUERTA);
   
-  sprintf(topicSubCache,"puerta_%d/IDs_cache",N_PUERTA);
-  sprintf(topicSubAbrir,"puerta_%d/puerta/abrir",N_PUERTA);
+  sprintf(topicSubCache,"puerta_%s/IDs_cache",ID_PUERTA);
+  sprintf(topicSubAbrir,"puerta_%s/puerta/abrir",ID_PUERTA);
   
+  Serial.print("puerta_");
+  Serial.println(ID_PUERTA);
   conecta_wifi();
   mqtt_client.setServer(mqtt_server, 1883);
   mqtt_client.setBufferSize(512); // para poder enviar mensajes de hasta X bytes
   mqtt_client.setCallback(procesa_mensaje);
   conecta_mqtt();
-  Serial.printf("Termina setup en %lu ms\n\n",millis());
   intenta_OTA();
-  Serial.println("----------------------");
+  Serial.printf("Termina setup en %lu ms\n\n",millis());
+  Serial.println("---------------------");
 
   SPI.begin();        // inicializa bus SPI
   mfrc522.PCD_Init();     // inicializa modulo lector

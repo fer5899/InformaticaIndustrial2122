@@ -1,11 +1,9 @@
 #include <ESP8266httpUpdate.h>
 
 // datos para actualización   >>>> SUSTITUIR IP <<<<<
-#define HTTP_OTA_ADDRESS      F("192.168.216.94")         // Address of OTA update server
-#define HTTP_OTA_PATH         F("/esp8266-ota/update") // Path to update firmware
-#define HTTP_OTA_PORT         1880                     // Port of update server
-                                                       // Name of firmware
-#define HTTP_OTA_VERSION      String(__FILE__).substring(String(__FILE__).lastIndexOf('\\')+1) + ".nodemcu" 
+#define OTA_URL "https://iot.ac.uma.es:1880/esp8266-ota/update"// Address of OTA update server
+//#define OTA_URL "http://192.168.137.1:1880/esp8266-ota/update"
+#define HTTP_OTA_VERSION   String(__FILE__).substring(String(__FILE__).lastIndexOf('\\')+1)+".nodemcu"
 
 
 // funciones para progreso de OTA
@@ -17,17 +15,21 @@ void error_OTA(int);
 
 void intenta_OTA()
 { 
-  Serial.println( "-------------------------" );  
+  Serial.println( "--------------------------" );  
   Serial.println( "Comprobando actualización:" );
-  Serial.print(HTTP_OTA_ADDRESS);Serial.print(":");Serial.print(HTTP_OTA_PORT);Serial.println(HTTP_OTA_PATH);
+  Serial.println(OTA_URL);
   Serial.println( "--------------------------" );  
   ESPhttpUpdate.setLedPin(LED_BUILTIN, LOW);
   ESPhttpUpdate.onStart(inicio_OTA);
   ESPhttpUpdate.onError(error_OTA);
   ESPhttpUpdate.onProgress(progreso_OTA);
   ESPhttpUpdate.onEnd(final_OTA);
-  WiFiClient wClient;
-  switch(ESPhttpUpdate.update(wClient, HTTP_OTA_ADDRESS, HTTP_OTA_PORT, HTTP_OTA_PATH, HTTP_OTA_VERSION)) {
+  //WiFiClient wClient;
+  WiFiClientSecure wClient;
+  // Reading data over SSL may be slow, use an adequate timeout
+  wClient.setTimeout(12); // timeout argument is defined in seconds for setTimeout
+  wClient.setInsecure();
+  switch(ESPhttpUpdate.update(wClient, OTA_URL, HTTP_OTA_VERSION)) {
     case HTTP_UPDATE_FAILED:
       Serial.printf(" HTTP update failed: Error (%d): %s\n", ESPhttpUpdate.getLastError(), ESPhttpUpdate.getLastErrorString().c_str());
       break;
